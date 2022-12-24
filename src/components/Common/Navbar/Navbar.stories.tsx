@@ -7,7 +7,7 @@ export default {
   component: Navbar,
   decorators: [],
   parameters: {
-    componentSubtitle: "네비게이션바 컴포넌트",
+    componentSubtitle: "Navigation Bar Component",
   },
   argTypes: {},
 } as Meta;

@@ -10,9 +10,11 @@ body {
   border: 0;
   box-sizing: border-box;
   font-family: "Inter";
-  background-color: white;
-  color: black;
-  /* 추후 바꿔줄 것 */
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  background-color: rgba(237, 237, 237, 1);
+  color: rgba(25, 25, 25, 1);
 }
 
 ul,

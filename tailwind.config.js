@@ -19,8 +19,21 @@ module.exports = {
     extend: {
       spacing,
       colors: {
-        "nav-black": "rgba(25, 25, 25, 1)",
-        "nav-white": "rgba(237, 237, 237, 1)",
+        "main-black": "rgba(25, 25, 25, 1)",
+        "main-white": "rgba(237, 237, 237, 1)",
+        "font-black": "rgba(31, 31, 31, 1)"
+      },
+      fontFamily: {
+        spline: [
+          "Spline Sans",
+          "Inter",
+          "sans-serif",
+        ],
+        inter: [
+          "Inter",
+          "Spline Sans",
+          "sans-serif",
+        ],
       },
     },
   },

@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { Home } from "pages";
-import { Navbar } from "components/Common";
+import { GlobalLayout } from "components/Common";
 const About = lazy(() => import("pages/About/About"));
 const Technology = lazy(() => import("pages/Technology/Technology"));
 const Product = lazy(() => import("pages/Product/Product"));
@@ -12,7 +12,7 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route element={<Navbar />}>
+        <Route element={<GlobalLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/technology" element={<Technology />} />
