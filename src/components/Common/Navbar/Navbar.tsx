@@ -14,7 +14,10 @@ const Navbar = () => {
     location.pathname === "/" ? "text-nav-black" : "text-nav-white";
   const isHomeBackground: string =
     location.pathname === "/" ? "bg-nav-white" : "bg-nav-black";
-  
+  const isHomeLogo: string =
+    location.pathname === "/"
+      ? "text-nav-white"
+      : "text-nav-black filter invert";
   const checkActiveLink = (current: string): void => {
     setSelected("/" + current);
   };
@@ -22,18 +25,19 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed flex justify-between items-center w-full bg-transparent p-34pxr`}
+        className={`fixed flex justify-between items-center w-full bg-transparent p-25pxr`}
       >
         <NavLink
           to="/"
-          className={`${isHome}`}
+          className={`${isHomeLogo}`}
           onClick={() => checkActiveLink("/")}
         >
-          로고
+          <img src="assets/logo/logo2.png" alt="굳갱랩스 로고" />
         </NavLink>
         <div className="flex justify-center items-center text-xl gap-x-1">
           {PATH.map((address, index) => {
-            const selectedFont = selected === "/" + address ? "font-bold" : "font-normal";
+            const selectedFont =
+              selected === "/" + address ? "font-bold" : "font-normal";
             return (
               <NavLink
                 key={`NavLinkKey${index}`}
@@ -48,9 +52,14 @@ const Navbar = () => {
           <div
             className={`flex justify-center items-center w-174pxr h-48pxr rounded-full ${isHomeBackground}`}
           >
-            <div className={`text-center ${isNotHome} font-medium`}>
+            <a
+              href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-center ${isNotHome} font-medium`}
+            >
               We're hiring!
-            </div>
+            </a>
           </div>
         </div>
       </nav>

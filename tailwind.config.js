@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-// const px0_10 = { ...Array.from(Array(11)).map((_, i) => `${i}px`) };
-// const px0_100 = { ...Array.from(Array(101)).map((_, i) => `${i}px`) };
-// const px0_200 = { ...Array.from(Array(201)).map((_, i) => `${i}px`) };
+const path = require("path");
+
 const pxToRem = (px, base = 16) => `${px / base}rem`;
 const spacing = {
   ...Array.from(Array(2000))
@@ -14,7 +13,8 @@ const spacing = {
 };
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  // content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [path.join(__dirname, "./src/**/*.(js|jsx|ts|tsx)")],
   theme: {
     extend: {
       spacing,

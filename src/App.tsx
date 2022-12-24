@@ -10,7 +10,7 @@ const Team = lazy(() => import("pages/Team/Team"));
 
 function App() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route element={<Navbar />}>
           <Route path="/" element={<Home />} />
