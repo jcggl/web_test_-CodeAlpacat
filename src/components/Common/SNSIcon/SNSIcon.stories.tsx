@@ -1,15 +1,35 @@
-import { Meta, Story } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import SNSIcon from "./SNSIcon";
+import linkedin from "../../../assets/svg/linkedin-lg.svg";
 
 export default {
-  title: "Common/SNSIcon",
+  title: "Components/Common/SNSIcon",
   component: SNSIcon,
-  decorators: [],
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          padding: "1rem 1rem 1rem 1rem",
+          backgroundColor: "black",
+          height: "100vh",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     componentSubtitle: "SNSIcon Component",
   },
-  argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof SNSIcon>;
 
-// export const Default: Story = () => <SNSIcon />;
+export const Default: ComponentStory<typeof SNSIcon> = (args) => <SNSIcon {...args} />;
+
+Default.args = {
+  href: "#",
+  alt: "#",
+  imgSrc: linkedin,
+  w: "36",
+  h: "36",
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-
+import logo2 from "../../../assets/logo/logo2.png";
 const PATH: string[] = ["about", "technology", "product", "team"];
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
           className={`${isHomeLogo}`}
           onClick={() => checkActiveLink("/")}
         >
-          <img src="assets/logo/logo2.png" alt="굳갱랩스 로고" />
+          <img src={logo2} alt="굳갱랩스 로고" />
         </NavLink>
         <div className="flex justify-center items-center gap-x-1 text-xl">
           {PATH.map((address, index) => {

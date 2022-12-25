@@ -1,11 +1,11 @@
 import React from 'react'
 
-type Props = {}
-
-const Team = (props: Props) => {
+const Team = () => {
   return (
-    <div>Team</div>
-  )
+    <section className="w-full px-259pxr pt-175pxr pb-265pxr">
+      <h3 className="title-lg text-center">Team</h3>
+    </section>
+  );
 }
 
 export default Team

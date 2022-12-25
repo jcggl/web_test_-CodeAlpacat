@@ -1,15 +1,13 @@
-import { Meta, Story } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import Footer from "./Footer";
 
 export default {
-  title: "Common/Footer",
+  title: "Components/Common/Footer",
   component: Footer,
-  decorators: [],
   parameters: {
     componentSubtitle: "Footer Component",
   },
-  argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof Footer>;
 
-export const Default: Story = () => <Footer />;
+export const Default: ComponentStory<typeof Footer> = () => <Footer />;

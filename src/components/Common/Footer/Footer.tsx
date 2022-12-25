@@ -1,5 +1,5 @@
 import React from "react";
-import { SNSIcon } from "components/Common";
+import SNSIcon from "../SNSIcon/SNSIcon";
 import { SNS_LIST } from './Footer.constants';
 import { SNSListType } from "./Footer.types";
 
@@ -25,7 +25,6 @@ const Footer = () => {
         the latest news and updates.
         <div className="flex pl-2 gap-x-[3.675rem] pt-25pxr">
           {SNS_LIST.map((item: SNSListType, index: number): JSX.Element => {
-            console.log({...item})
             return <SNSIcon {...item} key={`SNSIconFooter${index}`} />;
           })}
         </div>

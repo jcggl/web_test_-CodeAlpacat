@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const About = () => {
   return (
-    <section className="w-full px-394pxr pr-345pxr pt-344pxr pb-265pxr">
-      <header className="w-730pxr pl-1pxr pb-132pxr text-[4.375rem] font-spline text-font-black font-bold leading-[5.14rem]">
+    <section className="w-full pl-394pxr pr-345pxr pt-344pxr pb-265pxr">
+      <h3 className="w-730pxr pl-1pxr pb-132pxr title-md">
         About GoodGang Labs
-      </header>
+      </h3>
       <article className="w-1181pxr h-1066pxr text-font-black text-3xl leading-10">
         GoodGang Labs is a web3 metaverse startup dedicated to building the
         next-generation communication platform and technology for avatars. We
@@ -42,6 +42,6 @@ const About = () => {
       </article>
     </section>
   );
-}
+};
 
-export default About
+export default About;
