@@ -1,13 +1,13 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { Home } from "pages";
-import { GlobalLayout } from "components/Common";
+import { Home } from "@/pages";
+import { GlobalLayout } from "@/components/Common";
 
-const About = lazy(() => import("pages/About/About"));
-const Technology = lazy(() => import("pages/Technology/Technology"));
-const Product = lazy(() => import("pages/Product/Product"));
-const Team = lazy(() => import("pages/Team/Team"));
+const About = lazy(() => import("@/pages/About/About"));
+const Technology = lazy(() => import("@/pages/Technology/Technology"));
+const Product = lazy(() => import("@/pages/Product/Product"));
+const Team = lazy(() => import("@/pages/Team/Team"));
 
 function App() {
   return (

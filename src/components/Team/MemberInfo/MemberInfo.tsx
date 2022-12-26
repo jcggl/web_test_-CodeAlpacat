@@ -13,8 +13,8 @@ const MemberInfo = ({
       <h5 className="text-[1.375rem] leading-[2.75rem]">{job}</h5>
       <h4 className="text-[2.25rem] font-medium leading-[2.75rem]">{name}</h4>
       {hasLinkedIn ? (
-        <div className="absolute bottom-[6px] right-[-11px]">
-          <SNSIcon w="40.5" h="40.5" href={href} imgSrc={linkedin} />
+        <div className="absolute bottom-[6px] right-[-11px] w-40pxr h-40pxr">
+          <SNSIcon href={href} imgSrc={linkedin} />
         </div>
       ) : null}
     </div>

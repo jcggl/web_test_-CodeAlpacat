@@ -30,6 +30,4 @@ Default.args = {
   href: "#",
   alt: "#",
   imgSrc: linkedin,
-  w: "36",
-  h: "36",
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import { MemberCard } from 'components/Team';
+import { MemberCard } from '@/components/Team';
 
 const MemberCardList = () => {
   return (

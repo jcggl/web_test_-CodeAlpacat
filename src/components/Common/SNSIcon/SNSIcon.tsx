@@ -5,8 +5,6 @@ const SNSIcon = ({
   href = "#",
   alt = "#",
   imgSrc = "https://www.linkedin.com/company/77745265/admin/",
-  w="36",
-  h="36"
 }: SNSType) => {
   return (
     <a
@@ -14,7 +12,7 @@ const SNSIcon = ({
       target={href === "#" ? "" : "_blank"}
       rel="noopener noreferrer"
     >
-      <img src={imgSrc} alt={alt} width={w} height={h} />
+      <img src={imgSrc} alt={alt} className="w-full h-full"/>
     </a>
   );
 };
