@@ -6,8 +6,8 @@ import { SNSListType } from "./Footer.types";
 
 const Footer = () => {
   return (
-    <footer className="relative translate-y-[0%] w-full px-[clamp(2.5rem,15vw,18rem)] bg-main-black mobile:flex mobile:items-center mobile:justify-center">
-      <div className="flex text-main-white mobile:flex-col-reverse mobile:justify-around mobile:items-start mobile:pl-36pxr mobile:h-311pxr pad:flex-row pad:justify-between pad:items-center pad:w-full pad:h-185pxr pad:flex-row pad:items-center desktop:w-full desktop:h-330pxr">
+    <footer className="w-full bg-main-black mobile:px-[2.25rem] mobile:flex mobile:items-center mobile:justify-center mobile:h-311pxr pad:h-185pxr pad:px-[6.75rem] desktop:h-330pxr desktop:px-[18rem]">
+      <div className="flex text-main-white mobile:flex-col-reverse mobile:justify-around mobile:items-start pad:flex-row pad:justify-between pad:items-center pad:flex-row pad:items-center w-full h-full">
         <div className="pad:leading-10 text-[clamp(0.75rem,1.3vw,1.25rem)]">
           Contact us at:
           <br />
