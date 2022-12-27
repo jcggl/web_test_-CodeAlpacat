@@ -1,24 +1,26 @@
-export const members: object[] = [
+import { MemberInfoType } from "@/components/Team/MemberInfo/MemberInfo.types";
+
+export const members: MemberInfoType[] = [
   {
-    job: "AI Engineer",
+    role: "AI Engineer",
     name: "Junhwan Jang",
     href: "https://www.linkedin.com/in/junhwan-jang/",
     hasLinkedIn: true,
   },
   {
-    job: "3D Motion Artist",
+    role: "3D Motion Artist",
     name: "Heewon Ahn",
     href: " https://www.linkedin.com/in/hee-won-ahn-610239b4/",
     hasLinkedIn: true,
   },
   {
-    job: "3D Generalist",
+    role: "3D Generalist",
     name: "Jeonghun Kim",
     href: "",
     hasLinkedIn: false,
   },
   {
-    job: "AI Engineer",
+    role: "AI Engineer",
     name: "Junhwan Jang",
     href: "https://www.linkedin.com/in/brianlee00/",
     hasLinkedIn: true,

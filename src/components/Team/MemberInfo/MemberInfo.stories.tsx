@@ -15,7 +15,7 @@ export const Default: ComponentStory<typeof MemberInfo> = (args) => (
 );
 
 Default.args = {
-  job: "CEO / Co-Founder",
+  role: "CEO / Co-Founder",
   name: "이름을 입력하세요.",
   href: "",
   hasLinkedIn: true

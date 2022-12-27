@@ -6,8 +6,8 @@ import { SNSListType } from "./Footer.types";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-main-black mobile:px-[2.25rem] mobile:flex mobile:items-center mobile:justify-center mobile:h-311pxr pad:h-185pxr pad:px-[6.75rem] desktop:h-330pxr desktop:px-[18rem]">
-      <div className="flex text-main-white mobile:flex-col-reverse mobile:justify-around mobile:items-start pad:flex-row pad:justify-between pad:items-center pad:flex-row pad:items-center w-full h-full">
+    <footer className="relative translate-y-[0%] w-full bg-main-black mobile:flex mobile:h-311pxr pad:h-185pxr desktop:h-330pxr mobile:justify-center mobile:items-center mobile:px-[2.25rem] pad:px-[6.75rem] desktop:px-[18rem]">
+      <div className="flex text-main-white w-full h-full mobile:flex-col-reverse pad:flex-row mobile:justify-around pad:justify-between mobile:items-start pad:items-center">
         <div className="pad:leading-10 text-[clamp(0.75rem,1.3vw,1.25rem)]">
           Contact us at:
           <br />
@@ -30,8 +30,11 @@ const Footer = () => {
           <div className="flex pt-25pxr gap-x-[clamp(1.5rem,3.06vw,3.675rem)]">
             {SNS_LIST.map((item: SNSListType, index: number): JSX.Element => {
               return (
-                <div className="w-[clamp(1.25rem,1.8vw,2.2rem)]">
-                  <SNSIcon {...item} key={`SNSIconFooter${index}`} />
+                <div
+                  className="w-[clamp(1.25rem,1.8vw,2.2rem)]"
+                  key={`SNSIconFooter${index}`}
+                >
+                  <SNSIcon {...item} />
                 </div>
               );
             })}

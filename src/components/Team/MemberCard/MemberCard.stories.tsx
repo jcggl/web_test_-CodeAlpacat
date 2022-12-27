@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import MemberCard from './MemberCard';
-import logo from '../../../assets/logo/logo.png';
+import JC from '../../../assets/members/JC.png';
 
 export default {
   title: "Components/Team/MemberCard",
@@ -16,8 +16,8 @@ export const Default: ComponentStory<typeof MemberCard> = (args) => (
 );
 
 Default.args = {
-  imgSrc: logo,
-  job: "CEO / Co-Founder",
+  imgSrc: JC,
+  role: "CEO / Co-Founder",
   name: "이름을 입력하세요.",
   href: "",
   alt: "인물",
