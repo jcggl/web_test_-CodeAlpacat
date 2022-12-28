@@ -2,34 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Lemon&family=Open+Sans:wght@400;600&family=Spline+Sans:wght@300;400;500;600;700&display=swap');
-
-@layer components {
-  .title-xl,
-  .title-lg,
-  .title-md {
-    font-family: "Spline Sans";
-    font-style: normal;
-    color: #000000;
-    font-feature-settings: "pnum" on, "lnum" on;
-  }
-  .title-xl {
-    font-weight: 700;
-    font-size: 100px;
-    line-height: 120px;
-  }
-  .title-lg {
-    font-weight: 600;
-    font-size: 86px;
-    line-height: 96px;
-  }
-  .title-md {
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 83px;
-    color: #1f1f1f;
-  }
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Lemon&family=Open+Sans:wght@400;600&family=Spline+Sans:wght@300;400;500;600;700&display=swap");
 
 body {
   margin: 0;
@@ -43,6 +16,17 @@ body {
   background-color: rgba(237, 237, 237, 1);
   color: rgba(25, 25, 25, 1);
   min-width: 360px;
+  overflow-y: scroll;
+}
+
+@media (min-width: 1080px) {
+  body {
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+  }
+  body::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+  }
 }
 
 ul,

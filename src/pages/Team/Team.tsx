@@ -5,7 +5,7 @@ import { MemberInfoList } from "@/components/Team";
 const Team = () => {
   return (
     <section className="mx-auto mobile:pt-95pxr mobile:w-260pxr pad:w-893pxr desktop:w-1402pxr pad:pt-109pxr desktop:pt-175pxr mobile:pb-59pxr pad:pb-99pxr desktop:pb-224pxr">
-      <h3 className="mobile:h-30pxr pad:h-97pxr font-black font-spline font-semibold mobile:text-[1.5625rem] pad:text-[3.125rem] desktop:text-[5.375rem] text-center">
+      <h3 className="flex justify-center items-center font-black font-spline font-semibold mobile:h-30pxr pad:h-97pxr mobile:text-[1.5625rem] pad:text-[3.125rem] desktop:text-[5.375rem]">
         Team
       </h3>
       <div className="grid mobile:grid-rows-12 pad:grid-cols-3 place-items-center mobile:gap-x-[0] pad:gap-x-[3.4rem] desktop:gap-x-[5.375rem] mobile:gap-y-[40.78px] pad:gap-y-[0] mobile:pt-81pxr pad:pt-49pxr desktop:pt-152pxr">
