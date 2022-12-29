@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed flex justify-between items-center w-full mobile:px-19pxr mobile:pt-16pxr pad:p-20pxr desktop:p-34pxr bg-transparent">
+      <nav className="fixed flex justify-between items-center w-full mobile:px-19pxr mobile:pt-16pxr pad:p-20pxr desktop:p-34pxr bg-transparent z-[100]">
         <NavLogo location={location} checkActiveLink={checkActiveLink}/>
         <div className="mobile:hidden pad:flex justify-center items-center pad:gap-x-[0.375rem] desktop:gap-x-[0.5625rem] pad:text-[0.75rem] desktop:text-[1.25rem]">
           <NavRouters location={location} selected={selected} checkActiveLink={checkActiveLink}/>

@@ -13,6 +13,8 @@ const Footer = () => {
           <br />
           <a
             href="mailto:hello@goodganglabs.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-extralight underline underline-offset-8 text-[clamp(1rem,1.3vw,1.625rem)]"
           >
             hello@goodganglabs.com
