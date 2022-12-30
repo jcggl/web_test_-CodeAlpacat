@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import HamburgerButton from './components/HamburgerButton/HamburgerButton';
 import NavRouters from "./components/NavRouters/NavRouters";
@@ -8,10 +8,14 @@ import NavLogo from './components/NavLogo/NavLogo';
 const Navbar = () => {
   const location = useLocation();
   const [selected, setSelected] = useState<string>("/");
-
+  
   const checkActiveLink = (current: string): void => {
     setSelected("/" + current);
   };
+
+  useEffect(() => {
+    setSelected(location.pathname)
+  }, [location])
 
   return (
     <>

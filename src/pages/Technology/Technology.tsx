@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import DemoVideoScreen from "./Screens/DemoVideoScreen";
+import IntroScreen from './Screens/IntroScreen';
+import TechVisionScreen from './Screens/TechVisionScreen';
 
-type Props = {}
-
-const Technology = (props: Props) => {
+const Technology = () => {
   return (
-    <div>Technology</div>
-  )
-}
+    <section>
+      <IntroScreen/>
+      <DemoVideoScreen/>
+      <TechVisionScreen/>
+    </section>
+  );
+};
 
-export default Technology
+export default Technology;

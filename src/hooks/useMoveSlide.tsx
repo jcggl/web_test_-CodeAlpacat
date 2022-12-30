@@ -14,6 +14,8 @@ const useMoveSlide = (imageSize: number) => {
   });
 
   const moveSlide = (index: number): void => {
+    if (imageSize <= 3) return
+
     let nextIndex: number = current + index;
 
     //앞 뒤로 복사된 크기에서 원본 사진 개수만큼 인덱스 이동

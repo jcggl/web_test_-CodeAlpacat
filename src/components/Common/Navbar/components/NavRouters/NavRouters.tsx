@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { NavLink } from "react-router-dom";
 import { NavRouterType } from "./NavRouter.types";
 
 const PATH: string[] = ["about", "technology", "product", "team"];
 
-const NavRouters = ({ location, selected, checkActiveLink }:NavRouterType) => {
-
+const NavRouters = ({ location, selected, checkActiveLink }: NavRouterType) => {
   const isHome: string =
     location.pathname === "/" ? "text-main-white" : "text-main-black";
   const isHomeBackground: string =

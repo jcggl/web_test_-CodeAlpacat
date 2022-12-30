@@ -19,7 +19,8 @@ const Caroussl = ({ imageList = kikitownImageList }: Props) => {
   const { style, current, moveSlide } = useMoveSlide(images.current.length);
   const [touch, setTouch] = useState<number | null>(null);
   const [isSwiping, setIsSwiping] = useState<boolean>(false);
-
+  const isSinglePicture = images.current.length <= 3
+  
   /**
    *터치를 시작한 지점을 저장하는 함수
    */
@@ -55,7 +56,7 @@ const Caroussl = ({ imageList = kikitownImageList }: Props) => {
   // 자동 슬라이드
   useInterval(() => {
     moveSlide(1);
-  }, !isSwiping ? 3000 : null);
+  }, !isSwiping && !isSinglePicture ? 3000 : null);
 
   return (
     <div className="relative w-full">
