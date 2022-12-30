@@ -1,8 +1,9 @@
 export interface CarouselCardType {
   imageList?: string[],
   linkTitle?: string,
-  href?: string;
-  title?: string;
-  subTitle?: string;
-  description?: string;
+  href?: string,
+  title?: string,
+  subTitle?: string,
+  description?: string,
+  textBoxWidth?: string;
 }
