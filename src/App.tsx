@@ -11,7 +11,7 @@ const Team = lazy(() => import("@/pages/Team/Team"));
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={null}>
       <Routes>
         <Route element={<GlobalLayout />}>
           <Route path="/" element={<Home />} />
