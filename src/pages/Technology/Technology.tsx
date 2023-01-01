@@ -1,16 +1,13 @@
 import React from "react";
-import DemoVideoScreen from "./Screens/DemoVideoScreen";
-import IntroScreen from './Screens/IntroScreen';
-import OurSolutionScreen from "./Screens/OurSolutionScreen";
-import TechVisionScreen from './Screens/TechVisionScreen';
+import { TechnologyIntro, DemoVideo, TechnologyVision, OurSolutions } from "@/components/Technology";
 
 const Technology = () => {
   return (
     <section>
-      <IntroScreen/>
-      <DemoVideoScreen/>
-      <TechVisionScreen/>
-      <OurSolutionScreen/>
+      <TechnologyIntro />
+      <DemoVideo />
+      <TechnologyVision/>
+      <OurSolutions />
     </section>
   );
 };

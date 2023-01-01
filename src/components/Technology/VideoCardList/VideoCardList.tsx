@@ -9,7 +9,7 @@ const VideoCardList = (props: Props) => {
     <div>
       {solutions.map((solution, index) => {
         return (
-          <div key={`VideoCardKey${index}`} className="desktop:mb-170pxr">
+          <div key={`VideoCardKey${index}`} className="mobile:mb-33pxr pad:mb-81pxr desktop:mb-170pxr">
             <VideoCard
               {...solution}
               isEven={index % 2 === 0}

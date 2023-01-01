@@ -1,6 +1,5 @@
 import React from "react";
-import AboutDescription from "./Screens/AboutDescription";
-import AboutHeader from "./Screens/AboutHeader";
+import { AboutDescription, AboutHeader } from "@/components/About";
 
 const About = () => {
   return (

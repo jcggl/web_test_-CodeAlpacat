@@ -3,7 +3,7 @@ import techsvg1 from "@/assets/svg/TechSVG/tech-1.svg";
 import techsvg2 from "@/assets/svg/TechSVG/tech-2.svg";
 import techsvg3 from "@/assets/svg/TechSVG/tech-3.svg";
 
-const TechVisionScreen = () => {
+const TechnologyVision = () => {
   return (
     <div className="flex flex-col w-full bg-black h-screen mobile:min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px] text-center text-main-white">
       <h3 className="font-bold font-spline mobile:pt-60pxr pad:pt-105pxr desktop:pt-160pxr tracking-[.01em] mobile:text-[1.5rem] pad:text-[2.625rem] desktop:text-[4.125rem] mobile:leading-[2rem] pad:leading-[3.75rem] desktop:leading-[5rem]">
@@ -53,4 +53,4 @@ const TechVisionScreen = () => {
   );
 };
 
-export default TechVisionScreen;
+export default TechnologyVision;

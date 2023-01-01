@@ -3,7 +3,7 @@ import members from "@/assets/members/members.png";
 
 type Props = {}
 
-const GroupPictureScreen = (props: Props) => {
+const GroupPicture = (props: Props) => {
   return (
     <React.Fragment>
       <img
@@ -15,4 +15,4 @@ const GroupPictureScreen = (props: Props) => {
   );
 }
 
-export default GroupPictureScreen
+export default GroupPicture
