@@ -1,4 +1,4 @@
-import { MainIntro, SubIntro, WebThreeIntro } from "@/components/Home";
+import { JoinUs, MainIntro, Partners, SubIntro, WebThreeIntro } from "@/components/Home";
 import useScrollPagination from "@/hooks/useScrollPagination";
 import React from "react";
 
@@ -9,6 +9,8 @@ const Home = () => {
       <MainIntro />
       <SubIntro/>
       <WebThreeIntro/>
+      <Partners/>
+      <JoinUs/>
     </section>
   );
 };

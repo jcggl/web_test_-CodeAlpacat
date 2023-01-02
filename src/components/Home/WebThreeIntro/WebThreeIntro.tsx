@@ -5,30 +5,29 @@ import useIntersectAnimation from "@/hooks/useIntersectAnimation";
 
 const WebThreeIntro = () => {
   const { ref, evenStyle, oddStyle} = useIntersectAnimation(0.4);
-
   return (
     <div ref={ref} className="relative w-full h-screen">
       <img
         style={evenStyle}
-        className="absolute object-cover h-[126.944vh] left-[0%] w-[25%] z-[1]"
+        className="absolute object-cover h-[120vh] left-[0%] w-[25%] z-[1]"
         src={intersect}
         alt=""
       />
       <img
         style={oddStyle}
-        className="absolute object-cover h-[126.944vh] left-[25%] w-[25%] z-[1]"
+        className="absolute object-cover h-[120vh] left-[25%] w-[25%] z-[1]"
         src={intersectReverse}
         alt=""
       />
       <img
         style={evenStyle}
-        className="absolute object-cover h-[126.944vh] left-[50%] w-[25%] z-[1]"
+        className="absolute object-cover h-[120vh] left-[50%] w-[25%] z-[1]"
         src={intersect}
         alt=""
       />
       <img
         style={oddStyle}
-        className="absolute object-cover h-[126.944vh] left-[75%] w-[25%] z-[1]"
+        className="absolute object-cover h-[120vh] left-[75%] w-[25%] z-[1]"
         src={intersectReverse}
         alt=""
       />

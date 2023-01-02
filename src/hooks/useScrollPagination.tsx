@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
+import useResize from "./useResize";
 
 const useScrollPagination = () => {
   const ref = useRef<any>();
-  const pageHeight = window.innerHeight;
+  const {height:pageHeight} = useResize();
   const [throttle, setThrottle] = useState<boolean>(false);
 
   useEffect(() => {
@@ -18,6 +19,8 @@ const useScrollPagination = () => {
         window.scrollY >= pageHeight * 2 && window.scrollY < pageHeight * 3;
       let isFourthPage =
         window.scrollY >= pageHeight * 3 && window.scrollY < pageHeight * 4;
+      let isFifthPage =
+        window.scrollY >= pageHeight * 4 && window.scrollY < pageHeight * 5;
 
       if (throttle) return;
       if (!throttle) {
@@ -35,11 +38,14 @@ const useScrollPagination = () => {
               behavior: "smooth",
             });
           } else if (isThirdPage) {
+            console.log("3")
             window.scrollTo({
               top: pageHeight * 3,
               behavior: "smooth",
             });
-          } else if (isFourthPage) {
+          } 
+          else if (isFourthPage) {
+            console.log("4번째")
             window.scrollTo({
               top: pageHeight * 4,
               behavior: "smooth",
@@ -50,7 +56,7 @@ const useScrollPagination = () => {
           
           if (isFirstPage) {
             //현재 1페이지
-            console.log("첫 페이지")
+            console.log("첫 페이지");
           } else if (isSecondPage) {
             window.scrollTo({
               top: 0,
@@ -64,6 +70,11 @@ const useScrollPagination = () => {
           } else if (isFourthPage) {
             window.scrollTo({
               top: pageHeight * 2,
+              behavior: "smooth",
+            });
+          } else if (isFifthPage) {
+            window.scrollTo({
+              top: pageHeight * 3,
               behavior: "smooth",
             });
           }

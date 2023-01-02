@@ -7,7 +7,7 @@ const useScrollAnimation = (direction:string = "up", duration:number = 1, delay:
   const handleDirection = useCallback((name: string) => {
     switch (name) {
       case "up":
-        return "translate3d(0, 70%, 0)";
+        return "translate3d(0, 20vh, 0)";
       case "down":
         return "translate3d(0, -20vh, 0)";
       case "left":
@@ -22,7 +22,7 @@ const useScrollAnimation = (direction:string = "up", duration:number = 1, delay:
   const handleTransition = useCallback((name: string) => {
     switch (name) {
       case "up":
-        return "translate3d(0, 8%, 0)";
+        return "translate3d(0, 4vh, 0)";
       case "down":
         return "translate3d(0, -2vh, 0)";
       case "left":
@@ -40,19 +40,17 @@ const useScrollAnimation = (direction:string = "up", duration:number = 1, delay:
         ref.current.style.transitionProperty = "all";
         ref.current.style.transitionDuration = `${duration}s`;
         ref.current.style.transitionTimingFunction =
-          "cubic-bezier(0.25, 0, 0.58, 1)";
+          "cubic-bezier(0.5, 1, 1, 1)";
         ref.current.style.transitionDelay = `${delay}s`;
         ref.current.style.opacity = 1;
         ref.current.style.transform = "translate3d(0, 0, 0)";
         setTimeout(() => {
           ref.current.style.transform = handleTransition(direction);
-        }, 400);
+        }, 500);
       } else {
         if (ref.current.children[0].classList[0] === "restart-animation") {
-          ref.current.style.transform = handleDirection(direction);
-        } else {
-          ref.current.style.transform = "translate3d(0, 70%, 0)";
         }
+        ref.current.style.transform = handleDirection(direction);
       }
     },
     [delay, duration, handleDirection, handleTransition, direction]

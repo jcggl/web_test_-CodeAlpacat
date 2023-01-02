@@ -6,7 +6,6 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting) {
-        console.log("dddfddddddddddddd")
         for (let i = 0; i < 4; i++) {
           ref.current.children[i].style.transitionProperty = "all";
           ref.current.children[i].style.transitionDuration =
@@ -14,7 +13,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
           ref.current.children[i].style.transitionTimingFunction =
             "cubic-bezier(0.5, 1, 1.6, 0.8)";
           ref.current.children[i].style.transitionDelay = `${delay}s`;
-          ref.current.children[i].style.top = i % 2 ? "-10%" : "-35%";
+          ref.current.children[i].style.top = i % 2 ? "-10vh" : "-35vh";
         }
 
         ref.current.children[4].style.transitionProperty = "all";
@@ -25,20 +24,20 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
         ref.current.children[4].style["padding-bottom"] = "10vh";
 
         setTimeout(() => {
-          ref.current.children[0].style.top = "-20%";
+          ref.current.children[0].style.top = "-20vh";
           ref.current.children[1].style.top = "0";
-          ref.current.children[2].style.top = "-20%";
+          ref.current.children[2].style.top = "-20vh";
           ref.current.children[3].style.top = "0";
           ref.current.children[4].style["padding-top"] = "0vh";
           ref.current.children[4].style["padding-bottom"] = "0vh";
         }, 500);
       } else {
-        ref.current.children[0].style.top = "0";
-        ref.current.children[1].style.top = "20%";
-        ref.current.children[2].style.top = "0";
-        ref.current.children[3].style.top = "20%";
-        ref.current.children[4].style["padding-top"] = "0vh";
-        ref.current.children[4].style["padding-bottom"] = "0vh";
+        // ref.current.children[0].style.top = "0";
+        // ref.current.children[1].style.top = "20%";
+        // ref.current.children[2].style.top = "0";
+        // ref.current.children[3].style.top = "20%";
+        // ref.current.children[4].style["padding-top"] = "0vh";
+        // ref.current.children[4].style["padding-bottom"] = "0vh";
       }
     },
     [delay, duration]
