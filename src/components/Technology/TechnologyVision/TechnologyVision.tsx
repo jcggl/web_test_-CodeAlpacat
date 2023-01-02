@@ -1,7 +1,7 @@
 import React from "react";
-import techsvg1 from "@/assets/svg/TechSVG/tech-1.svg";
-import techsvg2 from "@/assets/svg/TechSVG/tech-2.svg";
-import techsvg3 from "@/assets/svg/TechSVG/tech-3.svg";
+import techsvg1 from "@/assets/svg/technology/tech-1.svg";
+import techsvg2 from "@/assets/svg/technology/tech-2.svg";
+import techsvg3 from "@/assets/svg/technology/tech-3.svg";
 
 const TechnologyVision = () => {
   return (

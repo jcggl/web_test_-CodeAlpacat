@@ -27,11 +27,20 @@ module.exports = {
         spline: ["Spline Sans", "Inter", "sans-serif"],
         inter: ["Inter", "Spline Sans", "sans-serif"],
       },
+      keyframes: {
+        fromBottom: {
+          "0%": { top: "clamp(168px,50vh,700px)" },
+          "100%": { top: "clamp(84px,19.53vh,227px)" },
+        },
+      },
+    },
+    transitionTimingFunction: {
+      spring: "cubic-bezier(0,0,0.2,1)",
     },
     screens: {
       mobile: "340px",
       pad: "1080px",
-      desktop: "1920px"
+      desktop: "1920px",
     },
   },
   plugins: [],
