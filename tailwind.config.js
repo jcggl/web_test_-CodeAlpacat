@@ -22,15 +22,20 @@ module.exports = {
         "main-black": "rgba(25, 25, 25, 1)",
         "main-white": "rgba(237, 237, 237, 1)",
         "font-black": "rgba(31, 31, 31, 1)",
+        "main-grey": "rgba(170, 170, 170, 0.8)"
       },
       fontFamily: {
         spline: ["Spline Sans", "Inter", "sans-serif"],
         inter: ["Inter", "Spline Sans", "sans-serif"],
       },
       keyframes: {
-        fromBottom: {
-          "0%": { top: "clamp(168px,50vh,700px)" },
-          "100%": { top: "clamp(84px,19.53vh,227px)" },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
       },
     },

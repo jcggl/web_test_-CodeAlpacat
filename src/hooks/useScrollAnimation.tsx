@@ -46,7 +46,7 @@ const useScrollAnimation = (direction:string = "up", duration:number = 1, delay:
         ref.current.style.transform = "translate3d(0, 0, 0)";
         setTimeout(() => {
           ref.current.style.transform = handleTransition(direction);
-        }, 500);
+        }, 400);
       } else {
         if (ref.current.children[0].classList[0] === "restart-animation") {
         }

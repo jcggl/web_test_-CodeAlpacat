@@ -1,41 +1,44 @@
 import React from "react";
 import { useRef } from "react";
-import useMoveSlide from "./../../../hooks/useMoveSlide";
 import useInterval from "./../../../hooks/useInterval";
+import useAutoSlide from "@/hooks/useAutoSlide";
 
 type Props = {
-  imageList: string[];
+  imageList: (string | { image: string })[];
 };
 
 const AutoSlider = ({ imageList }: Props) => {
-  const images = useRef<string[]>([
-    imageList[imageList.length - 1],
-    ...imageList,
-    imageList[0],
-  ]);
-  const { style, moveSlide } = useMoveSlide(images.current.length);
-  const isSinglePicture = images.current.length <= 3;
+  const images = useRef<(string | { image: string })[]>([...imageList, ...imageList]);
+  const { style, moveSlide, contentWidth } = useAutoSlide(images.current.length);
 
-  useInterval(
-    () => {
-      moveSlide(1);
-    },
-    !isSinglePicture ? 400 : null
-  );
+  useInterval(() => {
+    moveSlide(1);
+  }, 1500);
 
   return (
-    <div className="flex justify-center">
-      <div className="mobile:w-320pxr pad:w-850pxr desktop:w-1240pxr aspect-[1240/700] overflow-hidden">
+    <div style={style} className="flex">
+      <div className="w-full overflow-hidden">
         <div className={`flex`} style={style}>
-          {imageList.map(
-            (img: string, index: number): JSX.Element => (
-              <img
-                key={`${img}${index}`}
-                className="flex-none mobile:w-320pxr pad:w-850pxr desktop:w-1240pxr aspect-[1240/700] object-contain"
-                src={img}
-                alt="슬라이드 이미지"
-              />
-            )
+          {images.current.map(
+            (img: string | { image: string }, index: number): JSX.Element => {
+              return typeof img !== "string" ? (
+                <div
+                  key={`PartnersImage${index}`}
+                  style={contentWidth}
+                  className="flex-none flex justify-center items-center"
+                >
+                  <img className="mobile:w-[clamp(38px,10.578vw,76px)] pad:w-[clamp(76.16px,7vw,105px)] desktop:w-[clamp(105px,5.469vw,200px)]" src={img.image} alt="Partners" />
+                </div>
+              ) : (
+                <div
+                  key={`PartnersImage${index}`}
+                  style={contentWidth}
+                  className="flex-none flex justify-center text-center items-center font-bold text-white mobile:text-[clamp(12px,3.3vw,20px)] pad:text-[clamp(20px,1.852vw,24px)] desktop:text-[clamp(24px,1.25vw,30px)]"
+                >
+                  {img}
+                </div>
+              );
+            }
           )}
         </div>
       </div>

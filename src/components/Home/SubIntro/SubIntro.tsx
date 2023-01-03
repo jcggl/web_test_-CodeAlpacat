@@ -1,5 +1,5 @@
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import subIntroAsset from "@/assets/svg/home/sub-intro.svg";
 
 const SubIntro = () => {

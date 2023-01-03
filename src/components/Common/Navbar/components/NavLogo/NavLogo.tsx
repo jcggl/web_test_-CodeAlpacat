@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
-import logo2 from "../../../../../assets/logo/logo2.png";
-import logo from "../../../../../assets/logo/logo.png";
+import logo2 from "../../../../../assets/logo/logo2.svg";
+import logo from "../../../../../assets/logo/logo.svg";
 import { NavLogoType } from "./NavLogo.types";
+import NavigationContext from "@/contexts/NavigationContext";
 
 const NavLogo = ({ location, checkActiveLink }:NavLogoType) => {
-
+  const { toggle } = useContext(NavigationContext)
   const isHomeLogo: string =
-    location.pathname === "/"
+    location.pathname === "/" || toggle
       ? "text-main-white"
       : "text-main-black filter invert";
 
@@ -19,12 +19,12 @@ const NavLogo = ({ location, checkActiveLink }:NavLogoType) => {
       onClick={() => checkActiveLink("/")}
     >
       <img
-        className="mobile:hidden pad:block pad:w-144pxr desktop:w-221pxr aspect-[221/65]"
+        className="mobile:hidden pad:block pad:w-[clamp(144px,13.333vw,221px)] desktop:w-[clamp(221px,11.51vw,270px)] aspect-[221/65]"
         src={logo2}
         alt="굳갱랩스 로고"
       />
       <img
-        className={`mobile:block pad:hidden w-[2.97rem] p- aspect-[47.45/32]`}
+        className={`mobile:block pad:hidden w-[clamp(47.52px,13.2vw,80px)] aspect-[47.45/32]`}
         src={logo}
         alt="굳갱랩스 로고"
       />

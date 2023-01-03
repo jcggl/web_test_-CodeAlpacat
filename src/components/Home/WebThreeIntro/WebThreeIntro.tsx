@@ -31,7 +31,7 @@ const WebThreeIntro = () => {
         src={intersectReverse}
         alt=""
       />
-      <div className="flex justify-center items-center w-full h-full pt-[30vh]">
+      <div className="flex justify-center items-center w-full h-full">
         <h3 className="font-spline font-medium text-main-white mobile:text-[clamp(32px,8.889vw,80px)] pad:text-[clamp(80px,7.407vw,125px)] desktop:text-[clamp(125px,6.51vw,150px)] mobile:leading-[clamp(48px,150%,100px)] pad:leading-[clamp(100px,125%,150px)] desktop:leading-[clamp(150px,120%,180px)] z-[2]">
           We will establish
           <br />

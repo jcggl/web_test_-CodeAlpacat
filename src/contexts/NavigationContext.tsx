@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useCallback } from "react";
 
 interface Props {
   children: JSX.Element;
@@ -14,12 +14,13 @@ const NavigationContext = createContext<NavigationType>({
   toggleNavigation: () => {}
 });
 
+
 export const NavigationProvider = ({ children }: Props) => {
   const [toggle, setToggle] = useState<boolean>(false);
 
-  const toggleNavigation = ():void => {
+  const toggleNavigation = useCallback(():void => {
     setToggle((prev) => !prev)
-  }
+  },[])
   
   const context = {
     toggle,

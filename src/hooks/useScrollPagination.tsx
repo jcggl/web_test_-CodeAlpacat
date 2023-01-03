@@ -4,7 +4,7 @@ import useResize from "./useResize";
 
 const useScrollPagination = () => {
   const ref = useRef<any>();
-  const {height:pageHeight} = useResize();
+  const { height: pageHeight } = useResize();
   const [throttle, setThrottle] = useState<boolean>(false);
 
   useEffect(() => {
@@ -18,9 +18,10 @@ const useScrollPagination = () => {
       let isThirdPage =
         window.scrollY >= pageHeight * 2 && window.scrollY < pageHeight * 3;
       let isFourthPage =
-        window.scrollY >= pageHeight * 3 && window.scrollY < pageHeight * 4;
-      let isFifthPage =
-        window.scrollY >= pageHeight * 4 && window.scrollY < pageHeight * 5;
+        window.scrollY >= pageHeight * 3 &&
+        window.scrollY < pageHeight * 4 - pageHeight * (1 - 0.88981);
+      let isLastPage =
+        window.scrollY >= pageHeight * 4 - pageHeight * (1 - 0.88981);
 
       if (throttle) return;
       if (!throttle) {
@@ -38,14 +39,11 @@ const useScrollPagination = () => {
               behavior: "smooth",
             });
           } else if (isThirdPage) {
-            console.log("3")
             window.scrollTo({
               top: pageHeight * 3,
               behavior: "smooth",
             });
-          } 
-          else if (isFourthPage) {
-            console.log("4번째")
+          } else if (isFourthPage) {
             window.scrollTo({
               top: pageHeight * 4,
               behavior: "smooth",
@@ -53,10 +51,9 @@ const useScrollPagination = () => {
           }
         } else if (scrollUp) {
           //위로 스크롤
-          
+
           if (isFirstPage) {
             //현재 1페이지
-            console.log("첫 페이지");
           } else if (isSecondPage) {
             window.scrollTo({
               top: 0,
@@ -72,7 +69,7 @@ const useScrollPagination = () => {
               top: pageHeight * 2,
               behavior: "smooth",
             });
-          } else if (isFifthPage) {
+          } else if (isLastPage) {
             window.scrollTo({
               top: pageHeight * 3,
               behavior: "smooth",

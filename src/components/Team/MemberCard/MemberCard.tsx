@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../assets/logo/logo.png";
+import logo from "../../../assets/logo/logo.svg";
 
 import { MemberCardType } from "./MemberCard.types";
 import MemberInfo from './../MemberInfo/MemberInfo';
