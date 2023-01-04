@@ -21,8 +21,9 @@ const useScrollPagination = () => {
         window.scrollY >= pageHeight * 3 &&
         window.scrollY < pageHeight * 4 - pageHeight * (1 - 0.88981);
       let isLastPage =
-        window.scrollY >= pageHeight * 4 - pageHeight * (1 - 0.88981);
-
+        window.scrollY >= pageHeight * 4 - pageHeight * (1 - 0.88981) &&
+        window.scrollY < pageHeight * 5 - pageHeight * (1 - 0.88981);
+        
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
@@ -46,6 +47,16 @@ const useScrollPagination = () => {
           } else if (isFourthPage) {
             window.scrollTo({
               top: pageHeight * 4,
+              behavior: "smooth",
+            });
+          } else if (isLastPage) {
+            window.scrollTo({
+              top: pageHeight * 5,
+              behavior: "smooth",
+            });
+          } else {
+            window.scrollTo({
+              top: pageHeight * 10,
               behavior: "smooth",
             });
           }
@@ -72,6 +83,11 @@ const useScrollPagination = () => {
           } else if (isLastPage) {
             window.scrollTo({
               top: pageHeight * 3,
+              behavior: "smooth",
+            });
+          } else {
+            window.scrollTo({
+              top: pageHeight * 4,
               behavior: "smooth",
             });
           }

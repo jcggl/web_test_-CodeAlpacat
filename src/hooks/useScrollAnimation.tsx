@@ -22,7 +22,7 @@ const useScrollAnimation = (direction:string = "up", duration:number = 1, delay:
   const handleTransition = useCallback((name: string) => {
     switch (name) {
       case "up":
-        return "translate3d(0, 4vh, 0)";
+        return "translate3d(0, 3vh, 0)";
       case "down":
         return "translate3d(0, -2vh, 0)";
       case "left":
@@ -48,8 +48,6 @@ const useScrollAnimation = (direction:string = "up", duration:number = 1, delay:
           ref.current.style.transform = handleTransition(direction);
         }, 400);
       } else {
-        if (ref.current.children[0].classList[0] === "restart-animation") {
-        }
         ref.current.style.transform = handleDirection(direction);
       }
     },

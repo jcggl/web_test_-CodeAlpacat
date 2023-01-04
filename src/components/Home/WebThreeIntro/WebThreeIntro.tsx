@@ -6,7 +6,7 @@ import useIntersectAnimation from "@/hooks/useIntersectAnimation";
 const WebThreeIntro = () => {
   const { ref, evenStyle, oddStyle} = useIntersectAnimation(0.4);
   return (
-    <div ref={ref} className="relative w-full h-screen">
+    <div ref={ref} className="relative w-full h-screen min-style">
       <img
         style={evenStyle}
         className="absolute object-cover h-[120vh] left-[0%] w-[25%] z-[1]"

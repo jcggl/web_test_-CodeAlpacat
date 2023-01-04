@@ -14,7 +14,6 @@ const ModalRouter = () => {
     setSelected("/" + current);
   };
 
-
   useEffect(() => {
     setSelected(location.pathname);
     toggleNavigation();

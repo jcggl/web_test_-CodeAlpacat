@@ -6,3 +6,4 @@ export { default as Modal } from "./Modal/Modal";
 export { default as ModalOverlay } from "./ModalOverlay/ModalOverlay";
 export { default as ModalBackdrop } from "./ModalBackdrop/ModalBackdrop";
 export { default as ModalRouter } from "./ModalRouter/ModalRouter";
+export { default as HiringButton } from "./HiringButton/HiringButton";

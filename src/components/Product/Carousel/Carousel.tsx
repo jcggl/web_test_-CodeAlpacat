@@ -10,7 +10,7 @@ interface Props {
   imageList?: string[];
 }
 
-const Caroussl = ({ imageList = kikitownImageList }: Props) => {
+const Carousel = ({ imageList = kikitownImageList }: Props) => {
   const images = useRef<string[]>([
     imageList[imageList.length - 1],
     ...imageList,
@@ -41,14 +41,14 @@ const Caroussl = ({ imageList = kikitownImageList }: Props) => {
     const currentTouch = e.touches[0].clientX;
     const touchDirection = touchDown - currentTouch;
 
-    if (touchDirection > 10) {
+    if (touchDirection > 4) {
       moveSlide(1);
     }
 
-    if (touchDirection < -10) {
+    if (touchDirection < -4) {
       moveSlide(-1);
     }
-
+    console.log("TOuch!")
     setTouch(null);
     setIsSwiping(false)
   };
@@ -103,10 +103,14 @@ const Caroussl = ({ imageList = kikitownImageList }: Props) => {
                 index !== 0
                   ? "mobile:ml-4pxr pad:ml-10pxr desktop:ml-15pxr"
                   : "";
-              if (index === 0 || index === images.current.length - 1) return;
+              if (index === 0 || index === images.current.length - 1) return (
+                <React.Fragment
+                  key={`CarouselImageKey${index}`}
+                ></React.Fragment>
+              );
               return (
                 <div
-                  key={index}
+                  key={`CarouselImageKey${index}`}
                   className={isCurrentPicture + skipMarginLeft}
                 ></div>
               );
@@ -128,4 +132,4 @@ const Caroussl = ({ imageList = kikitownImageList }: Props) => {
   );
 };
 
-export default Caroussl;
+export default Carousel;
