@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import MemberCard from './MemberCard';
-import JC from '../../../assets/members/JC.png';
+import JC from '../../../assets/members/JC.webp';
 
 export default {
   title: "Components/Team/MemberCard",
