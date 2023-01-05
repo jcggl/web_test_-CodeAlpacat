@@ -1,15 +1,16 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Navbar from "./Navbar";
+import ModalRouter from "./ModalRouter";
 
 export default {
-  title: "Components/Common/Navbar",
-  component: Navbar,
+  title: "Components/Common/ModalRouter",
+  component: ModalRouter,
   decorators: [
     (Story) => (
       <div
         style={{
           display: "flex",
           justifyContent: "center",
+          backgroundColor: "black",
           height: "100vh",
         }}
       >
@@ -18,10 +19,12 @@ export default {
     ),
   ],
   parameters: {
-    componentSubtitle: "Navbar Component",
+    componentSubtitle: "ModalRouter Component",
   },
-} as ComponentMeta<typeof Navbar>;
+} as ComponentMeta<typeof ModalRouter>;
 
-export const Default: ComponentStory<typeof Navbar> = () => <Navbar />;
+export const Default: ComponentStory<typeof ModalRouter> = () => (
+  <ModalRouter/>
+);
 
 Default.args = {};

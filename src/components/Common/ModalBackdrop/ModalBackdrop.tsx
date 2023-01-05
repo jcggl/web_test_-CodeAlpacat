@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavigationContext from "@/contexts/NavigationContext";
+import NavigationContext from "../../../contexts/NavigationContext";
 import { useContext } from "react";
 import modalBackground from "../../../assets/common/modal-background.svg";
 

@@ -12,7 +12,7 @@ const useTextSlideUp = (duration: number = 1, delay: number = 0) => {
           ref.current.children[i].style.transitionTimingFunction =
             "cubic-bezier(0, 0, 0.58, 1)";
           ref.current.children[i].style.transitionDelay = `${delay}s`;
-          ref.current.children[i].style.transform = "translate3d(0, -2vh, 0)";
+          ref.current.children[i].style.transform = "translate3d(0, -1vh, 0)";
         }
         setTimeout(() => {
           ref.current.children[1].style.transform = "translate3d(0, 0, 0)";

@@ -14,16 +14,16 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
           ref.current.children[i].style.transitionDelay = `${delay}s`;
         }
 
-        ref.current.children[0].style.transform = "translate3d(0, -1.5vw, 0)";
-        ref.current.children[1].style.transform = "translate3d(1vw, 0, 0)";
-        ref.current.children[2].style.transform = "translate3d(-1vw, 0, 0)";
-        ref.current.children[3].style.transform = "translate3d(1vw, 0, 0)";
+        ref.current.children[0].style.transform = "translate3d(0, -0.5vw, 0)";
+        ref.current.children[1].style.transform = "translate3d(0.5vw, -0.5vw, 0)";
+        ref.current.children[2].style.transform = "translate3d(-0.5vw, -0.5vw, 0)";
+        ref.current.children[3].style.transform = "translate3d(0.5vw, 0, 0)";
         setTimeout(() => {
           ref.current.children[0].style.transform = "translate3d(0, 0, 0)";
           ref.current.children[1].style.transform = "translate3d(0, 0, 0)";
           ref.current.children[2].style.transform = "translate3d(0, 0, 0)";
           ref.current.children[3].style.transform = "translate3d(0, 0, 0)";
-        }, 500);
+        }, 600);
       } else {
         ref.current.children[0].style.transform = "translate3d(0, 31vw, 0)";
         ref.current.children[1].style.transform = "translate3d(-31vw, 0, 0)";

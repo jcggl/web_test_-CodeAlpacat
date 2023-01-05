@@ -1,15 +1,15 @@
 import React from "react";
 
-import left from "@/assets/home/join-us/pad/left.png";
-import right from "@/assets/home/join-us/pad/right.png";
-import top from "@/assets/home/join-us/pad/top.png";
-import bottom from "@/assets/home/join-us/pad/bottom.png";
+import left from "@/assets/home/join-us/pad/left.webp";
+import right from "@/assets/home/join-us/pad/right.webp";
+import top from "@/assets/home/join-us/pad/top.webp";
+import bottom from "@/assets/home/join-us/pad/bottom.webp";
 import useCombineWall from "@/hooks/useCombineWall";
 
 const WallTablet = () => {
-  const { ref, bottomStyle, leftStyle, rightStyle, topStyle } = useCombineWall(0.4);
+  const { ref, bottomStyle, leftStyle, rightStyle, topStyle } = useCombineWall(0.6);
   return (
-    <div ref={ref} className="hidden pad:block desktop:hidden">
+    <div ref={ref} className="hidden pad:block middlePad:hidden">
       <img style={bottomStyle} className="absolute bottom-0 w-screen" src={bottom} alt="하단 벽" />
       <img
         style={leftStyle}

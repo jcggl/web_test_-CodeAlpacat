@@ -76,7 +76,9 @@ module.exports = {
     },
     screens: {
       mobile: "340px",
+      middleMobile: "510px",
       pad: "1080px",
+      middlePad: "1250px",
       desktop: "1920px",
     },
   },
