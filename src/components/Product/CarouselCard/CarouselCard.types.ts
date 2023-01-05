@@ -5,5 +5,4 @@ export interface CarouselCardType {
   title?: string,
   subTitle?: string,
   description?: string,
-  textBoxWidth?: string;
 }

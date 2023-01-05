@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect } from "react";
 
 const useTextSlideUp = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();

@@ -13,9 +13,13 @@ const MemberCard = ({
   hasLinkedIn = true
 }:MemberCardType) => {
   return (
-    <div className="mobile:w-260pxr pad:w-261pxr desktop:w-410pxr">
-      <img src={imgSrc} alt={alt} className="aspect-[41/49]" />
-      <div className="mobile:mt-5pxr pad:mt-11pxr desktop:mt-18pxr">
+    <div className="w-[clamp(260px,72vw,100vw)] pad:w-[clamp(261px,24.167vw,410px)] desktop:w-[clamp(410px,21.354vw,100vw)]">
+      <img
+        src={imgSrc}
+        alt={alt}
+        className="aspect-[41/49] w-[clamp(260px,72vw,100vw)] pad:w-[clamp(261px,24.167vw,410px)] desktop:w-[clamp(410px,21.354vw,100vw)]"
+      />
+      <div className="mt-[clamp(5px,1.389vw,11px)] pad:mt-[clamp(11px,1.109vw,18px)] desktop:mt-[clamp(18px,0.938vw,25px)]">
         <MemberInfo
           role={role}
           name={name}

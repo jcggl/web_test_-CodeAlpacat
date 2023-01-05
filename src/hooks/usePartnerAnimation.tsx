@@ -1,4 +1,3 @@
-import React from "react";
 import { useCallback, useRef, useEffect } from "react";
 
 const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {

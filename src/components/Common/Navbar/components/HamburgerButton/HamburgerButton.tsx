@@ -16,7 +16,7 @@ const HamburgerButton = ({location}:HamburgerButtonType) => {
       <img
         className={`w-[clamp(44px,12.222vw,70px)] ${isHomeBorder}`}
         src={hamburger}
-        alt=""
+        alt="모바일 햄버거 버튼"
       />
     </div>
   );

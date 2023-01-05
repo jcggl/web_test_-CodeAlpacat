@@ -1,7 +1,6 @@
 import NavigationContext from "@/contexts/NavigationContext";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import modalBackground from "../../../assets/common/modal-background.svg";
 import ModalRouter from "../ModalRouter/ModalRouter";
 
 const ModalOverlay = () => {

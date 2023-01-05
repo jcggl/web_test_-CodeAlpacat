@@ -10,24 +10,24 @@ const WallTablet = () => {
   const { ref, bottomStyle, leftStyle, rightStyle, topStyle } = useCombineWall(0.4);
   return (
     <div ref={ref} className="hidden pad:block desktop:hidden">
-      <img style={bottomStyle} className="absolute bottom-0 w-screen" src={bottom} alt="" />
+      <img style={bottomStyle} className="absolute bottom-0 w-screen" src={bottom} alt="하단 벽" />
       <img
         style={leftStyle}
         className="absolute left-0 bottom-0 w-[clamp(71.16px,6.589vw,176.28px)]"
         src={left}
-        alt=""
+        alt="좌측 벽"
       />
       <img
         style={rightStyle}
         className="absolute right-0 bottom-[clamp(235px,21.759vw,100vw)] w-[clamp(423px,39.167vw,100vw)]"
         src={right}
-        alt=""
+        alt="우측 벽"
       />
       <img
         style={topStyle}
         className="absolute bottom-[clamp(473px,43.796vw,100vw)] w-screen"
         src={top}
-        alt=""
+        alt="상단 벽"
       />
     </div>
   );

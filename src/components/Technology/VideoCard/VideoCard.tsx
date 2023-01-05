@@ -15,9 +15,9 @@ const VideoCard = ({
   const zigZagLayout = isEven ? "desktop:flex-row" : "desktop:flex-row-reverse"
   return (
     <div
-      className={`mx-auto flex mobile:flex-col ${zigZagLayout} desktop:justify-between mobile:w-272pxr pad:w-710pxr desktop:w-1558pxr`}
+      className={`mx-auto flex flex-col items-center ${zigZagLayout} desktop:justify-between w-[clamp(272px,75.556vw,710px)] pad:w-[clamp(710px,65.741vw,1558px)] desktop:w-[clamp(1558px,81.146vw,100vw)]`}
     >
-      <div className="mobile:272pxr pad:w-710pxr desktop:w-910pxr mobile:h-[9.53125rem] pad:h-400pxr desktop:h-510pxr">
+      <div className="w-[clamp(272px,75.556vw,710px)] pad:w-[clamp(710px,65.741vw,910px)] desktop:w-[clamp(910px,47.396vw,100vw)]">
         <Video
           src={src}
           muted={muted}
@@ -26,11 +26,11 @@ const VideoCard = ({
           controls={controls}
         />
       </div>
-      <div className="flex flex-col desktop:justify-center desktop:w-580pxr mobile:h-86pxr pad:h-98pxr desktop:h-auto">
-        <h3 className="font-bold desktop:w-450pxr mobile:text-[0.875rem] pad:text-[1.625rem] desktop:text-[2.625rem] mobile:leading-[1rem] pad:leading-[1.125rem] desktop:leading-[3.25rem] mobile:my-[0.90625rem] pad:my-25pxr desktop:my-[0px]">
+      <div className="flex flex-col desktop:justify-center w-[clamp(272px,75.556vw,710px)] pad:w-[clamp(710px,65.741vw,910px)]  desktop:w-[clamp(580px,30.208vw,100vw)]">
+        <h3 className="font-bold desktop:w-[clamp(450px,23.438vw,100vw)] text-[clamp(14px,3.889vw,26px)] pad:text-[clamp(26px,2.407vw,42px)] desktop:text-[clamp(42px,2.188vw,100vw)] leading-[110%] desktop:leading-[120%] my-[clamp(14.5px,4.028vw,25px)] pad:my-[clamp(25px,2.315vw,100vw)] desktop:my-[0px]">
           {title}
         </h3>
-        <h4 className="mobile:text-[0.75rem] pad:text-[1.125rem] desktop:text-[1.4375rem] mobile:leading-[1rem] pad:leading-[1.375rem] desktop:leading-[2rem] desktop:w-583pxr">
+        <h4 className="text-[clamp(12px,3.333vw,18px)] pad:text-[clamp(18px,1.667vw,23px)] desktop:text-[clamp(23px,1.198vw,100vw)] leading-[130%] pad:leading-[120%] desktop:leading-[140%] desktop:w-[clamp(583px,30.365vw,100vw)]">
           {description}
         </h4>
       </div>

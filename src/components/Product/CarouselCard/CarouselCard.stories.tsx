@@ -22,5 +22,4 @@ Default.args = {
   title: "Title",
   subTitle: "Subtitle",
   description: "Description",
-  textBoxWidth: "w-full",
 };

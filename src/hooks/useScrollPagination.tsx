@@ -19,11 +19,10 @@ const useScrollPagination = () => {
         window.scrollY >= pageHeight * 2 && window.scrollY < pageHeight * 3;
       let isFourthPage =
         window.scrollY >= pageHeight * 3 &&
-        window.scrollY < pageHeight * 4 - pageHeight * (1 - 0.88981);
+        window.scrollY < pageHeight * 4 - pageHeight * (1 - 0.88981) * 2; // 마지막 페이지는 끝 높이가 스크롤이 4페이지에 겹칠 수 있음.
       let isLastPage =
-        window.scrollY >= pageHeight * 4 - pageHeight * (1 - 0.88981) &&
-        window.scrollY < pageHeight * 5 - pageHeight * (1 - 0.88981);
-        
+        window.scrollY >= pageHeight * 4 - pageHeight * (1 - 0.88981) * 2
+
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
@@ -47,16 +46,6 @@ const useScrollPagination = () => {
           } else if (isFourthPage) {
             window.scrollTo({
               top: pageHeight * 4,
-              behavior: "smooth",
-            });
-          } else if (isLastPage) {
-            window.scrollTo({
-              top: pageHeight * 5,
-              behavior: "smooth",
-            });
-          } else {
-            window.scrollTo({
-              top: pageHeight * 10,
               behavior: "smooth",
             });
           }
@@ -83,11 +72,6 @@ const useScrollPagination = () => {
           } else if (isLastPage) {
             window.scrollTo({
               top: pageHeight * 3,
-              behavior: "smooth",
-            });
-          } else {
-            window.scrollTo({
-              top: pageHeight * 4,
               behavior: "smooth",
             });
           }

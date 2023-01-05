@@ -9,7 +9,7 @@ const CarouselCardList = () => {
       {products.map((product, index) => {
         return (
           <div
-            className="mobile:pb-60pxr pad:pb-129pxr desktop:pb-74pxr"
+            className="pb-[clamp(60px,16.667vw,129px)] pad:pb-[clamp(129px,11.944vw,150px)] desktop:pb-[clamp(74px,3.854vw,150px)]"
             key={`Product${index}`}
           >
             <CarouselCard {...product} />

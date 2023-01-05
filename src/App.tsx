@@ -1,17 +1,11 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { Home, About, Technology, Product, Team } from "@/pages";
 import { GlobalLayout } from "@/components/Common";
 
-// const About = lazy(() => import("@/pages/About/About"));
-// const Technology = lazy(() => import("@/pages/Technology/Technology"));
-// const Product = lazy(() => import("@/pages/Product/Product"));
-// const Team = lazy(() => import("@/pages/Team/Team"));
-
 function App() {
   return (
-    <Suspense fallback={null}>
       <Routes>
         <Route element={<GlobalLayout />}>
           <Route path="/" element={<Home />} />
@@ -21,7 +15,6 @@ function App() {
           <Route path="/team" element={<Team />} />
         </Route>
       </Routes>
-    </Suspense>
   );
 }
 

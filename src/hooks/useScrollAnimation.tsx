@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useRef } from "react";
 
 const useScrollAnimation = (direction:string = "up", duration:number = 1, delay:number = 0) => {

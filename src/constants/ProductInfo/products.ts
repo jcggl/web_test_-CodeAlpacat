@@ -12,7 +12,6 @@ export const products: CarouselCardType[] = [
     subTitle: "Off with your video, On with your avatar!",
     description:
       "A place where you feel comfortable and private, no matter how you look and what you're talking about.",
-    textBoxWidth: "desktop:w-559pxr",
   },
   {
     imageList: marionetteImageList,
@@ -21,7 +20,6 @@ export const products: CarouselCardType[] = [
     subTitle: "Make your avatar alive with your face and voice.",
     description:
       "Our cloud-based real-time avatar motion API lets developers quickly and easily apply our product, which allows users to animate their avatars only with webcam, audio, or text input.",
-    textBoxWidth: "desktop:w-639pxr",
   },
   {
     imageList: beergangImageList,
@@ -31,6 +29,5 @@ export const products: CarouselCardType[] = [
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",
     description:
       "Beergang is a collection avatars built on the Homebrew Algorithm and stored on blockchain network and IPFS. Using beer and pub culture as a motif.",
-    textBoxWidth: "desktop:w-627pxr",
   },
 ];

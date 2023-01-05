@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect } from "react";
 
 const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
@@ -28,7 +28,6 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
           ref.current.children[1].style.top = "0";
           ref.current.children[2].style.top = "-20vh";
           ref.current.children[3].style.top = "0";
-          // ref.current.children[4].style["padding-top"] = "0vh";
           ref.current.children[4].style["padding-bottom"] = "0vh";
         }, 350);
       }

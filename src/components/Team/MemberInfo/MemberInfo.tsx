@@ -10,16 +10,16 @@ const MemberInfo = ({
   hasLinkedIn = true,
 }:MemberInfoType) => {
   return (
-    <div className="flex flex-col justify-center mobile:h-42pxr pad:h-60pxr desktop:h-94pxr">
-      <h5 className="mobile:text-[0.6875rem] pad:text-[0.875rem] desktop:text-[1.375rem] mobile:leading-[1.375rem] pad:leading-[1.625rem] desktop:leading-[2.75rem]">
+    <div className="flex flex-col justify-center w-[clamp(260px,72vw,100vw)] pad:w-[clamp(261px,24.167vw,410px)] desktop:w-[clamp(410px,21.354vw,100vw)]">
+      <h5 className="text-[clamp(11px,3.056vw,14px)] pad:text-[clamp(14px,1.296vw,22px)] desktop:text-[clamp(22px,1.146vw,100vw)] leading-[200%] pad:leading-[180%] desktop:leading-[200%]">
         {role}
       </h5>
       <div className="flex justify-between">
-        <h4 className="mobile:text-[1.125rem] pad:text-[1.375rem] desktop:text-[2.25rem] font-[500] mobile:leading-[1.375rem] pad:leading-[1.625rem] desktop:leading-[2.75rem] text-black">
+        <h4 className="font-medium text-black text-[clamp(18px,5vw,22px)] pad:text-[clamp(22px,2.037vw,36px)] desktop:text-[clamp(36px,1.875vw,100vw)] leading-[120%]">
           {name}
         </h4>
         {hasLinkedIn ? (
-          <div className="mobile:w-[1.4rem] pad:w-[1.615rem] desktop:w-[2.53125rem] mr-3pxr">
+          <div className="w-[clamp(22.5px,6.250vw,40.5px)] pad:w-[clamp(25.84px,2.393vw,40.5px)] desktop:w-[clamp(40.5px,2.109vw,45px)]">
             <SNSIcon href={href} imgSrc={linkedin} />
           </div>
         ) : null}

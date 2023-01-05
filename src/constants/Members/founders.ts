@@ -1,6 +1,6 @@
-import JC from "@/assets/members/JC.png";
-import DK from "@/assets/members/DK.png";
-import SY from "@/assets/members/SY.png";
+import JC from "@/assets/members/JC.webp";
+import DK from "@/assets/members/DK.webp";
+import SY from "@/assets/members/SY.webp";
 import { MemberCardType } from '@/components/Team/MemberCard/MemberCard.types';
 
 export const founders:MemberCardType[] = [

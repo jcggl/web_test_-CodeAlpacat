@@ -27,13 +27,13 @@ const AutoSlider = ({ imageList }: Props) => {
                   style={contentWidth}
                   className="flex-none flex justify-center items-center"
                 >
-                  <img className="mobile:w-[clamp(38px,10.578vw,76px)] pad:w-[clamp(76.16px,7vw,105px)] desktop:w-[clamp(105px,5.469vw,200px)]" src={img.image} alt="Partners" />
+                  <img className="w-[clamp(38px,10.578vw,76px)] pad:w-[clamp(76.16px,7vw,105px)] desktop:w-[clamp(105px,5.469vw,200px)]" src={img.image} alt="Partners" />
                 </div>
               ) : (
                 <div
                   key={`PartnersImage${index}`}
                   style={contentWidth}
-                  className="flex-none flex justify-center text-center items-center font-bold text-white mobile:text-[clamp(12px,3.3vw,20px)] pad:text-[clamp(20px,1.852vw,24px)] desktop:text-[clamp(24px,1.25vw,30px)]"
+                  className="flex-none flex justify-center text-center items-center font-bold text-white text-[clamp(12px,3.3vw,20px)] pad:text-[clamp(20px,1.852vw,24px)] desktop:text-[clamp(24px,1.25vw,30px)]"
                 >
                   {img}
                 </div>
