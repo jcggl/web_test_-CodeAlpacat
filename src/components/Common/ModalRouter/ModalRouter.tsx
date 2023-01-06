@@ -12,12 +12,12 @@ const ModalRouter = () => {
 
   const checkActiveLink = (current: string): void => {
     setSelected("/" + current);
+    toggleNavigation()
   };
 
   useEffect(() => {
     setSelected(location.pathname);
-    toggleNavigation();
-  }, [location, toggleNavigation]);
+  }, [location]);
 
   return (
     <div className="flex flex-col justify-center pl-[clamp(52px,14.444vw,600px)] w-full h-screen font-spline">

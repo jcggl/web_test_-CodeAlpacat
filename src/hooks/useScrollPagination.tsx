@@ -44,7 +44,6 @@ const useScrollPagination = () => {
               behavior: "smooth",
             });
           } else if (isFourthPage) {
-            console.log(window.scrollY, pageHeight, "에라이");
             window.scrollTo({
               top: pageHeight * 3 + pageHeight * 0.88981,
               behavior: "smooth",

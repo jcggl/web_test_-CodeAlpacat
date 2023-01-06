@@ -1,5 +1,5 @@
 import React from 'react'
-import members from "@/assets/members/members.webp";
+import members from "@/assets/members/members.png";
 
 type Props = {}
 

@@ -18,9 +18,10 @@ const NavigationContext = createContext<NavigationType>({
 export const NavigationProvider = ({ children }: Props) => {
   const [toggle, setToggle] = useState<boolean>(false);
 
-  const toggleNavigation = useCallback(():void => {
+  const toggleNavigation = ():void => {
+    console.log(toggle)
     setToggle((prev) => !prev)
-  },[])
+  }
   
   const context = {
     toggle,
