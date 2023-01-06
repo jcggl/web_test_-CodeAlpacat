@@ -6,7 +6,7 @@
 
 @layer components {
   .min-style {
-    @apply mobile:min-w-[360px] pad:min-w-[1080px] desktop:min-w-[1920px] mobile:min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px];
+    @apply min-w-[360px] pad:min-w-[1080px] desktop:min-w-[1920px] min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px];
   }
 }
 

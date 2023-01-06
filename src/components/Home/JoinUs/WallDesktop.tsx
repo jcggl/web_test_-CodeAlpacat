@@ -10,7 +10,7 @@ const WallDesktop = () => {
   const { ref, bottomStyle, leftStyle, rightStyle, topStyle } =
     useCombineWall(0.6);
   return (
-    <div ref={ref} className="mobile:hidden middleMobile:block pad:hidden middlePad:block">
+    <div ref={ref} className="hidden middleMobile:block pad:hidden middlePad:block">
       <img
         style={bottomStyle}
         className="absolute right-[0] bottom-0 w-[148.854vw] aspect-[2858/490.04] max-w-none max-h-none"

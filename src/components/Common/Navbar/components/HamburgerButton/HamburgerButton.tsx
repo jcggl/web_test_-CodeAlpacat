@@ -12,7 +12,7 @@ const HamburgerButton = ({location}:HamburgerButtonType) => {
       : "text-main-black filter invert";
 
   return (
-    <div className="mobile:block pad:hidden flex justify-center cursor-pointer" onClick={toggleNavigation}>
+    <div className="block pad:hidden flex justify-center cursor-pointer" onClick={toggleNavigation}>
       <img
         className={`w-[clamp(44px,12.222vw,70px)] ${isHomeBorder}`}
         src={hamburger}

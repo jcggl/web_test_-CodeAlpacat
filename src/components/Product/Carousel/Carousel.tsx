@@ -59,11 +59,11 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
   }, !isSwiping && !isSinglePicture ? 3000 : null);
 
   return (
-    <div className="relative w-full">
+    <div className="w-full">
       <div className="flex justify-between">
         <div className="flex items-center">
           <img
-            className="mobile:hidden pad:block pad:w-[clamp(25px,2.315vw,38px)] desktop:w-[clamp(38px,1.979vw,50px)] aspect-[38/24] object-contain cursor-pointer"
+            className="hidden pad:block pad:w-[clamp(25px,2.315vw,38px)] desktop:w-[clamp(38px,1.979vw,50px)] aspect-[38/24] object-contain cursor-pointer"
             onClick={() => {
               moveSlide(-1);
             }}
@@ -71,7 +71,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
             alt="ArrowLeft"
           />
         </div>
-        <div className="flex justify-center">
+        <div className="relative flex justify-center">
           <div className="w-[clamp(320px,88.889vw,850px)] pad:w-[clamp(850px,78.704vw,1240px)] desktop:w-[clamp(1240px,64.583vw,100vw)] aspect-[1240/700] overflow-hidden">
             <div
               className="flex"
@@ -112,7 +112,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
               return (
                 <div
                   key={`CarouselImageKey${index}`}
-                  className={isCurrentPicture + skipMarginLeft}
+                  className={isCurrentPicture+ " " + skipMarginLeft}
                 ></div>
               );
             })}
@@ -120,7 +120,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
         </div>
         <div className="flex items-center">
           <img
-            className="mobile:hidden pad:block pad:w-[clamp(25px,2.315vw,38px)] desktop:w-[clamp(38px,1.979vw,50px)] aspect-[38/24] object-contain cursor-pointer"
+            className="hidden pad:block pad:w-[clamp(25px,2.315vw,38px)] desktop:w-[clamp(38px,1.979vw,50px)] aspect-[38/24] object-contain cursor-pointer"
             onClick={() => {
               moveSlide(1);
             }}

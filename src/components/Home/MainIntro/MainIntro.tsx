@@ -20,7 +20,7 @@ const MainIntro = () => {
         <br />
         Into Avatars
       </h3>
-      <h4 className="mobile:hidden pad:block absolute pad:top-[clamp(524px,48.519vw,741px)] desktop:top-[clamp(741px,38.594vw,1000px)] text-main-white pad:right-[clamp(175px,16.204vw,318px)] desktop:right-[clamp(318px,16.563vw,100vw)] pad:text-[clamp(20px,1.852vw,34px)] desktop:text-[clamp(34px,1.771vw,100vw)] pad:leading-[140%] desktop:leading-[130%] animate-[mobileSlideUp_.5s_ease-out] pad:animate-[padSlideUp_.5s_ease-out] desktop:animate-[desktopSlideUp_.5s_ease-out]">
+      <h4 className="hidden pad:block absolute pad:top-[clamp(524px,48.519vw,741px)] desktop:top-[clamp(741px,38.594vw,1000px)] text-main-white pad:right-[clamp(175px,16.204vw,318px)] desktop:right-[clamp(318px,16.563vw,100vw)] pad:text-[clamp(20px,1.852vw,34px)] desktop:text-[clamp(34px,1.771vw,100vw)] pad:leading-[140%] desktop:leading-[130%] animate-[mobileSlideUp_.5s_ease-out] pad:animate-[padSlideUp_.5s_ease-out] desktop:animate-[desktopSlideUp_.5s_ease-out]">
         Establishing the next generation
         <br />
         communication technology

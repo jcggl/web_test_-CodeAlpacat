@@ -19,12 +19,12 @@ const NavLogo = ({ location, checkActiveLink }:NavLogoType) => {
       onClick={() => checkActiveLink("/")}
     >
       <img
-        className="mobile:hidden pad:block pad:w-[clamp(144px,13.333vw,221px)] desktop:w-[clamp(221px,11.51vw,270px)] aspect-[221/65]"
+        className="hidden pad:block pad:w-[clamp(144px,13.333vw,221px)] desktop:w-[clamp(221px,11.51vw,270px)] aspect-[221/65]"
         src={logo2}
         alt="굳갱랩스 로고"
       />
       <img
-        className={`mobile:block pad:hidden w-[clamp(47.52px,13.2vw,80px)] aspect-[47.45/32]`}
+        className={`block pad:hidden w-[clamp(47.52px,13.2vw,80px)] aspect-[47.45/32]`}
         src={logo}
         alt="굳갱랩스 로고"
       />

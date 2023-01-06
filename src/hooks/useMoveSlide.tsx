@@ -12,16 +12,21 @@ const useMoveSlide = (imageSize: number) => {
     marginLeft: `-${current}00%`,
     transition: "all 0.3s ease-out",
   });
+  const [throttle, setThrottle] = useState<boolean>(false);
 
   const moveSlide = (index: number): void => {
     if (imageSize <= 3) return
+    if (throttle) return
+    setTimeout(() => {
+      setThrottle(false)
+    }, 300)
 
     let nextIndex: number = current + index;
 
     //앞 뒤로 복사된 크기에서 원본 사진 개수만큼 인덱스 이동
     if (nextIndex < 0) nextIndex += imgSize.current - 1;
     else if (nextIndex >= imgSize.current) nextIndex -= imgSize.current - 1;
-
+    setThrottle(true)
     setCurrent(nextIndex);
   };
 
@@ -46,7 +51,7 @@ const useMoveSlide = (imageSize: number) => {
     } else if (current === 1 || current === imgSize.current-2) {      
       let timer = setTimeout(() => {
         setStyle((prev) => ({ ...prev, transition: "all 0.3s ease-out" }));
-      }, 10);
+      }, 5);
       return () => clearTimeout(timer);
     }
   }, [current]);
