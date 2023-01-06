@@ -1,17 +1,28 @@
-import { JoinUs, MainIntro, Partners, SubIntro, WebThreeIntro } from "@/components/Home";
+import {
+  JoinUs,
+  MainIntro,
+  Partners,
+  SubIntro,
+  WebThreeIntro,
+} from "@/components/Home";
+import { TouchScrollProvider } from "@/contexts/TouchScrollContext";
+import useResetScroll from "@/hooks/useResetScroll";
 import useScrollPagination from "@/hooks/useScrollPagination";
 import React from "react";
 
 const Home = () => {
   const { ref: scrollRef } = useScrollPagination();
+  useResetScroll()
   return (
-    <section ref={scrollRef} className="bg-[#1A1A1A]">
-      <MainIntro />
-      <SubIntro/>
-      <WebThreeIntro/>
-      <Partners/>
-      <JoinUs/>
-    </section>
+    <TouchScrollProvider>
+      <section ref={scrollRef} className="bg-[#1A1A1A]">
+        <MainIntro />
+        <SubIntro />
+        <WebThreeIntro />
+        <Partners />
+        <JoinUs />
+      </section>
+    </TouchScrollProvider>
   );
 };
 

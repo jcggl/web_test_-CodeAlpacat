@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import intersect from "@/assets/svg/home/Intersect.svg";
 import intersectReverse from "@/assets/svg/home/Intersect-reverse.svg";
 import useIntersectAnimation from "@/hooks/useIntersectAnimation";
+import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const WebThreeIntro = () => {
   const { ref, evenStyle, oddStyle, textStyle} = useIntersectAnimation(0.5);
+    const { touchScrollHandler, handleTouchStart } =
+      useContext(TouchScrollContext);
+      
   return (
-    <div ref={ref} className="relative w-full h-screen">
+    <div
+      ref={ref}
+      className="relative w-full h-screen touch-none"
+      onTouchStart={handleTouchStart}
+      onTouchMove={touchScrollHandler}
+    >
       <img
         style={evenStyle}
         className="absolute object-cover h-[120vh] left-[0%] w-[25%]"

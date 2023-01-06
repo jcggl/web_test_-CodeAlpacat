@@ -18,9 +18,6 @@ const useTextSlideUp = (duration: number = 1, delay: number = 0) => {
           ref.current.children[1].style.transform = "translate3d(0, 0, 0)";
           ref.current.children[2].style.transform = "translate3d(0, 0, 0)";
         }, 650);
-      } else {
-        ref.current.children[1].style.transform = "translate3d(0, 36vh, 0)";
-        ref.current.children[2].style.transform = "translate3d(0, 36vh, 0)";
       }
     },
     [duration, delay]

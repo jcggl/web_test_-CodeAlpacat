@@ -1,13 +1,18 @@
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import React from "react";
+import React, { useContext } from "react";
 import subIntroAsset from "@/assets/svg/home/sub-intro.svg";
-
+import TouchScrollContext from "@/contexts/TouchScrollContext";
 const SubIntro = () => {
   const { ref, textStyle, imageStyle } = useScrollAnimation(0.65);
-  // const { ref: assetRef, style: assetStyle } = useScrollAnimation(0.45);
-
+    const { touchScrollHandler, handleTouchStart } =
+      useContext(TouchScrollContext);
   return (
-    <div ref={ref} className="w-full h-screen font-spline text-main-white">
+    <div
+      ref={ref}
+      className="w-full h-screen font-spline text-main-white touch-none"
+      onTouchStart={handleTouchStart}
+      onTouchMove={touchScrollHandler}
+    >
       {/* title */}
       <div className="flex flex-col pad:flex-row pad:items-center ml-[clamp(30px,5.041vw,178px)] pt-[clamp(84px,23.3vw,130px)] pad:pt-[clamp(152px,14.074vw,180px)]">
         <h3
@@ -32,9 +37,7 @@ const SubIntro = () => {
         </div>
       </div>
       {/* subtitle */}
-      <div
-        className="flex flex-row-reverse pad:flex-row-reverse relative pt-[clamp(10px,2.778vw,50px)] pad:pt-[clamp(75px,6.944vw,90px)] desktop:pt-[clamp(106px,5.521vw,130px)]"
-      >
+      <div className="flex flex-row-reverse pad:flex-row-reverse relative pt-[clamp(10px,2.778vw,50px)] pad:pt-[clamp(75px,6.944vw,90px)] desktop:pt-[clamp(106px,5.521vw,130px)]">
         <h4
           style={textStyle}
           className="mr-[clamp(17px,4.72vw,101px)] pad:mr-[clamp(101px,9.352vw,140px)] desktop:mr-[clamp(180px,9.375vw,200px)] w-[clamp(209px,58vw,280px)] pad:w-[clamp(382px,35.37vw,628px)] desktop:w-[clamp(623px,32.4vw,700px)] text-[clamp(16px,4.4vw,20px)] pad:text-[clamp(20px,1.852vw,34px)] desktop:text-[clamp(34px,1.771vw,50px)]"
