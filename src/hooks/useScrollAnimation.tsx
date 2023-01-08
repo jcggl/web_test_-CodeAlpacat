@@ -40,12 +40,12 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
             "translate3d(-20%, 0, 0)";
         }, 650);
       } else {
-        // ref.current.children[1].children[0].style.transform =
-        //   "translate3d(0, 35vh, 0)";
-        // ref.current.children[0].children[0].style.transform =
-        //   "translate3d(0, 35vh, 0)";
-        // ref.current.children[0].children[1].children[0].style.transform =
-        //   "translate3d(-300%, 0, 0)";
+        ref.current.children[1].children[0].style.transform =
+          "translate3d(0, 35vh, 0)";
+        ref.current.children[0].children[0].style.transform =
+          "translate3d(0, 35vh, 0)";
+        ref.current.children[0].children[1].children[0].style.transform =
+          "translate3d(-300%, 0, 0)";
       }
     },
     [delay, duration]

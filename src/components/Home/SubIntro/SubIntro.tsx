@@ -9,7 +9,7 @@ const SubIntro = () => {
   return (
     <div
       ref={ref}
-      className="w-full h-screen font-spline text-main-white touch-none"
+      className="w-full h-screen font-spline text-main-white touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >

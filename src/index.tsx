@@ -6,6 +6,7 @@ import "./reset.css";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { NavigationProvider } from "@/contexts/NavigationContext";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

@@ -23,7 +23,7 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
           ref.current.children[1].style.transform = "translate3d(0, 0, 0)";
           ref.current.children[2].style.transform = "translate3d(0, 0, 0)";
           ref.current.children[3].style.transform = "translate3d(0, 0, 0)";
-        }, 600);
+        }, 500);
       } else {
         ref.current.children[0].style.transform = "translate3d(0, 31vw, 0)";
         ref.current.children[1].style.transform = "translate3d(-31vw, 0, 0)";

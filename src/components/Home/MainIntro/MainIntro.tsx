@@ -9,9 +9,10 @@ import TouchScrollContext from "@/contexts/TouchScrollContext";
 const MainIntro = () => {
   const { touchScrollHandler, handleTouchStart } =
     useContext(TouchScrollContext);
+
   return (
     <div
-      className="relative w-screen h-screen touch-none"
+      className="relative w-screen h-screen touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >

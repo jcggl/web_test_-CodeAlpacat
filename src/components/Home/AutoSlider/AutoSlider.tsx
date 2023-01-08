@@ -14,7 +14,7 @@ const AutoSlider = ({ imageList }: Props) => {
 
   useInterval(() => {
     moveSlide(1);
-  }, 1500);
+  }, 2500);
 
   return (
     <div style={style} className="flex">

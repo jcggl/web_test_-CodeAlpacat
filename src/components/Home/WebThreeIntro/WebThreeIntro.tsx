@@ -8,11 +8,10 @@ const WebThreeIntro = () => {
   const { ref, evenStyle, oddStyle, textStyle} = useIntersectAnimation(0.5);
     const { touchScrollHandler, handleTouchStart } =
       useContext(TouchScrollContext);
-      
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen touch-none"
+      className="relative w-full h-screen touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >

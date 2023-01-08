@@ -5,7 +5,7 @@ import AutoSlider from "@/components/Home/AutoSlider/AutoSlider";
 import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const Partners = () => {
-  const { ref, style } = usePartnerAnimation(0.5);
+  const { ref, style } = usePartnerAnimation(0.65);
   const { touchScrollHandler, handleTouchStart } =
     useContext(TouchScrollContext);
 
@@ -13,7 +13,7 @@ const Partners = () => {
     <div
       ref={ref}
       style={style}
-      className="flex flex-col justify-center w-full h-[88.981vh] touch-none"
+      className="flex flex-col justify-center w-full h-[88.981vh] touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >

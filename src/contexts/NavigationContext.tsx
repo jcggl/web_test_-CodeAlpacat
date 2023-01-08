@@ -6,12 +6,14 @@ interface Props {
 
 interface NavigationType {
   toggle: boolean,
-  toggleNavigation(): void
+  toggleNavigation(): void,
+  closeNavigation(): void,
 }
 
 const NavigationContext = createContext<NavigationType>({
   toggle: false,
-  toggleNavigation: () => {}
+  toggleNavigation: () => {},
+  closeNavigation: () => {},
 });
 
 
@@ -21,10 +23,15 @@ export const NavigationProvider = ({ children }: Props) => {
   const toggleNavigation = useCallback(():void => {
     setToggle((prev) => !prev)
   },[])
+
+  const closeNavigation = useCallback((): void => {
+    setToggle((prev) => false);
+  }, []);
   
   const context = {
     toggle,
-    toggleNavigation
+    toggleNavigation,
+    closeNavigation,
   }
   
   return (

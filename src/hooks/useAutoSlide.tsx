@@ -17,7 +17,7 @@ const useAutoSlide = (imageSize: number) => {
   const [current, setCurrent] = useState<number>(0);
   const [style, setStyle] = useState<positionStyleType>({
     marginLeft: `-${current}00%`,
-    transition: "all 0.3s ease-out",
+    transition: "all 0.5s ease-out",
   });
 
 
@@ -53,13 +53,13 @@ const useAutoSlide = (imageSize: number) => {
       let timer = setTimeout(() => {
         setStyle((prev) => ({ ...prev, transition: "" }));
         setCurrent(0);
-      }, 300);
+      }, 500);
       return () => clearTimeout(timer);
     } else if (current === 0) {
       let timer = setTimeout(() => {
         setStyle((prev) => ({
           ...prev,
-          transition: "all 0.3s ease-out",
+          transition: "all 0.5s ease-out",
         }));
       }, 100);
       return () => clearTimeout(timer);

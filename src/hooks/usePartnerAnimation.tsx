@@ -12,13 +12,13 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
           "cubic-bezier(0, 0, 0.58, 1)";
         ref.current.style.transitionDelay = `${delay}s`;
 
-        ref.current.style["padding-bottom"] = "7vh";
+        ref.current.style.transform = "translate3d(0,1vh,0)";
         setTimeout(() => {
-          ref.current.style["padding-bottom"] = "0vh";
-          ref.current.style["padding-bottom"] = "0vh";
-        }, 400);
+          ref.current.style.transform = "translate3d(0,0,0)";
+          ref.current.style.transform = "translate3d(0,0,0)";
+        }, 700);
       } else {
-        ref.current.style["padding-bottom"] = "0vh";
+        ref.current.style.transform = "translate3d(0,-20vh,0)";
       }
     },
     [duration, delay]
@@ -38,7 +38,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   return {
     ref,
     style: {
-      paddingBottom: "20vh",
+      transform: "translate3d(0,-20vh,0)",
     },
   };
 };
