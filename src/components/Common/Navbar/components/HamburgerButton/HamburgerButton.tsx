@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { HamburgerButtonType } from "./NavRouter.types";
-import hamburger from "../../../../../assets/common/hamburger.svg";
+import hamburger from "@/assets/common/hamburger.svg";
 import NavigationContext from "@/contexts/NavigationContext";
+
+import { HamburgerButtonType } from "./NavRouter.types";
 
 const HamburgerButton = ({location}:HamburgerButtonType) => {
   const {toggle, toggleNavigation} = useContext(NavigationContext)

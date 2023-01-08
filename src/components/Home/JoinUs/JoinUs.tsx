@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
+import { HiringButton } from "@/components/Common";
+import useTextSlideUp from '@/hooks/useTextSlideUp';
+import TouchScrollContext from "@/contexts/TouchScrollContext";
+
 import WallDesktop from "./WallDesktop";
 import WallTablet from "./WallTablet";
 import WallMobile from "./WallMobile";
-import { HiringButton } from "@/components/Common";
-import useTextSlideUp from './../../../hooks/useTextSlideUp';
-import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const JoinUs = () => {
   const {ref, style} = useTextSlideUp(0.6, 0.05);

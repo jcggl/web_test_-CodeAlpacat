@@ -1,7 +1,7 @@
 import { CarouselCardType } from "@/components/Product/CarouselCard/CarouselCard.types";
-import { beergangImageList } from "../Images/beergang-image-list";
-import { kikitownImageList } from "../Images/kikitown-image-list";
-import { marionetteImageList } from "../Images/marionette-image-list";
+import { beergangImageList } from "@/constants/Images/beergang-image-list";
+import { kikitownImageList } from "@/constants/Images/kikitown-image-list";
+import { marionetteImageList } from "@/constants/Images/marionette-image-list";
 
 export const products: CarouselCardType[] = [
   {

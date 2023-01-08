@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import { NavRouterType } from "./NavRouter.types";
 
 const PATH: string[] = ["about", "technology", "product", "team"];

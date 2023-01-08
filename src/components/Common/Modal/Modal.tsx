@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ModalOverlay from "../ModalOverlay/ModalOverlay";
-import ModalBackdrop from './../ModalBackdrop/ModalBackdrop';
+import ModalOverlay from "@/components/Common/ModalOverlay/ModalOverlay";
+import ModalBackdrop from '@/components/Common/ModalBackdrop/ModalBackdrop';
 
 const Modal = () => {
   return (

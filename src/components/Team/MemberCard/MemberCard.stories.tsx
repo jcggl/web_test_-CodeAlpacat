@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import MemberCard from './MemberCard';
-import JC from '../../../assets/members/JC.webp';
+import JC from "@/assets/members/JC.webp";
+
+import MemberCard from "./MemberCard";
 
 export default {
   title: "Components/Team/MemberCard",
@@ -21,5 +22,5 @@ Default.args = {
   name: "이름을 입력하세요.",
   href: "",
   alt: "인물",
-  hasLinkedIn: true
+  hasLinkedIn: true,
 };

@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
 
-import useMoveSlide from "./../../../hooks/useMoveSlide";
-import { kikitownImageList } from "./../../../constants/Images/kikitown-image-list";
-import arrowLeft from "./../../../assets/common/arrow-left.png";
-import arrowRight from "./../../../assets/common/arrow-right.png";
-import useInterval from "./../../../hooks/useInterval";
+import useMoveSlide from "@/hooks/useMoveSlide";
+import { kikitownImageList } from "@/constants/Images/kikitown-image-list";
+import arrowLeft from "@/assets/common/arrow-left.png";
+import arrowRight from "@/assets/common/arrow-right.png";
+import useInterval from "@/hooks/useInterval";
 
 interface Props {
   imageList?: string[];

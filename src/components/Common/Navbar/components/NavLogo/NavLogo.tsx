@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import logo2 from "../../../../../assets/logo/logo2.svg";
-import logo from "../../../../../assets/logo/logo.svg";
-import { NavLogoType } from "./NavLogo.types";
+
+import logo2 from "@/assets/logo/logo2.svg";
+import logo from "@/assets/logo/logo.svg";
 import NavigationContext from "@/contexts/NavigationContext";
+
+import { NavLogoType } from "./NavLogo.types";
 
 const NavLogo = ({ location, checkActiveLink }:NavLogoType) => {
   const { toggle } = useContext(NavigationContext)

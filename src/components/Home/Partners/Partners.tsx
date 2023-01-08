@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { partnersImageList } from "@/constants/Images/partners-image-list";
 import usePartnerAnimation from "@/hooks/usePartnerAnimation";
-import AutoSlider from "./../AutoSlider/AutoSlider";
+import AutoSlider from "@/components/Home/AutoSlider/AutoSlider";
 import TouchScrollContext from "@/contexts/TouchScrollContext";
+
 const Partners = () => {
   const { ref, style } = usePartnerAnimation(0.5);
   const { touchScrollHandler, handleTouchStart } =

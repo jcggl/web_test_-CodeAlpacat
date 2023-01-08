@@ -1,6 +1,6 @@
 import React from "react";
-// import SNSIcon from "../SNSIcon/SNSIcon";
-import { SNSIcon } from "@/components/Common";
+import SNSIcon from "@/components/Common/SNSIcon/SNSIcon";
+
 import { SNS_LIST } from "./Footer.constants";
 import { SNSListType } from "./Footer.types";
 

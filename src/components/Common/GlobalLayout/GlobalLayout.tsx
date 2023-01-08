@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Navbar, Footer } from "@/components/Common";
 import { Outlet, useLocation } from "react-router-dom";
+import Modal from "@/components/Common/Modal/Modal";
 
 const GlobalLayout = () => {
   const { pathname } = useLocation();
@@ -13,7 +14,8 @@ const GlobalLayout = () => {
   return (
     <>
       <Navbar />
-      <Outlet/>
+      <Modal />
+      <Outlet />
       <Footer />
     </>
   );

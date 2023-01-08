@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+import useHideOnScroll from '@/hooks/useHideOnScroll';
+
 import HamburgerButton from "./components/HamburgerButton/HamburgerButton";
 import NavRouters from "./components/NavRouters/NavRouters";
 import NavLogo from "./components/NavLogo/NavLogo";
-import Modal from "../Modal/Modal";
-import useHideOnScroll from './../../../hooks/useHideOnScroll';
 
 const Navbar = () => {
   const location = useLocation();
@@ -31,7 +32,6 @@ const Navbar = () => {
           />
         </div>
         <HamburgerButton location={location} />
-        <Modal />
       </nav>
   );
 };

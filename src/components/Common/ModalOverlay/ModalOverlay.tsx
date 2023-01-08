@@ -1,7 +1,7 @@
 import NavigationContext from "@/contexts/NavigationContext";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import ModalRouter from "../ModalRouter/ModalRouter";
+import ModalRouter from "@/components/Common/ModalRouter/ModalRouter";
 
 const ModalOverlay = () => {
   const { toggle } = useContext(NavigationContext);

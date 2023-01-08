@@ -1,8 +1,10 @@
 import React from "react";
-import Carousel from "../Carousel/Carousel";
+
+import Carousel from "@/components/Product/Carousel/Carousel";
+import { kikitownImageList } from "@/constants/Images/kikitown-image-list";
+import longArrowRight from "@/assets/common/long-arrow-right.png";
+
 import { CarouselCardType } from "./CarouselCard.types";
-import { kikitownImageList } from "./../../../constants/Images/kikitown-image-list";
-import longArrowRight from "../../../assets/common/long-arrow-right.png";
 
 const CarouselCard = ({
   imageList = kikitownImageList,

@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../../../assets/logo/logo.svg";
+import logo from "@/assets/logo/logo.svg";
+import MemberInfo from "@/components/Team/MemberInfo/MemberInfo";
 
 import { MemberCardType } from "./MemberCard.types";
-import MemberInfo from './../MemberInfo/MemberInfo';
 
 const MemberCard = ({
   imgSrc = logo,
@@ -10,8 +10,8 @@ const MemberCard = ({
   name = "이름을 입력하세요.",
   href = "",
   alt = "인물",
-  hasLinkedIn = true
-}:MemberCardType) => {
+  hasLinkedIn = true,
+}: MemberCardType) => {
   return (
     <div className="w-[clamp(260px,72vw,100vw)] pad:w-[clamp(261px,24.167vw,410px)] desktop:w-[clamp(410px,21.354vw,100vw)]">
       <img

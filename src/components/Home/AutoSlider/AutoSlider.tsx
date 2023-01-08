@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
-import useInterval from "./../../../hooks/useInterval";
+
+import useInterval from "@/hooks/useInterval";
 import useAutoSlide from "@/hooks/useAutoSlide";
 
 type Props = {

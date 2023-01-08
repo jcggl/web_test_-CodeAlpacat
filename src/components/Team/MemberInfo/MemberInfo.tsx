@@ -1,6 +1,8 @@
 import React from "react";
-import SNSIcon from "./../../Common/SNSIcon/SNSIcon";
-import linkedin from "../../../assets/svg/linkedIn.svg";
+
+import SNSIcon from "@/components/Common/SNSIcon/SNSIcon";
+import linkedin from "@/assets/svg/linkedIn.svg";
+
 import { MemberInfoType } from "./MemberInfo.types";
 
 const MemberInfo = ({

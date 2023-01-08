@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import linkedin from "@/assets/svg/linkedin-lg.svg";
+
 import SNSIcon from "./SNSIcon";
-import linkedin from "../../../assets/svg/linkedin-lg.svg";
 
 export default {
   title: "Components/Common/SNSIcon",
@@ -12,7 +13,8 @@ export default {
         style={{
           padding: "1rem 1rem 1rem 1rem",
           backgroundColor: "black",
-          height: "100vh",
+          height: "100px",
+          width: "100px"
         }}
       >
         <Story />

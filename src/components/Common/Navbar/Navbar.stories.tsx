@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+
 import Navbar from "./Navbar";
 
 export default {
@@ -6,15 +7,17 @@ export default {
   component: Navbar,
   decorators: [
     (Story) => (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "100vh",
-        }}
-      >
-        <Story />
-      </div>
+      <>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <Story />
+        </div>
+      </>
     ),
   ],
   parameters: {

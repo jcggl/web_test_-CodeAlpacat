@@ -1,4 +1,4 @@
-import { VideoType } from './../Video/Video.types';
+import { VideoType } from '@/components/Technology/Video/Video.types';
 
 export interface VideoCardType extends VideoType {
   title: string,

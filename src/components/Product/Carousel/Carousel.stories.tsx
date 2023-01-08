@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { kikitownImageList } from "@/constants/Images/kikitown-image-list";
+
 import Carousel from "./Carousel";
-import { kikitownImageList } from "./../../../constants/Images/kikitown-image-list";
 
 export default {
   title: "Components/Product/Carousel",

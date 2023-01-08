@@ -1,6 +1,7 @@
 import React from "react";
+import Video from "@/components/Technology/Video/Video";
+
 import { VideoCardType } from "./VideoCard.types";
-import Video from "./../Video/Video";
 
 const VideoCard = ({
   title = "Title",

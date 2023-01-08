@@ -1,6 +1,7 @@
 import React from "react";
+import useScrollOnPlay from "@/hooks/useScrollOnPlay";
+
 import { VideoType } from "./Video.types";
-import useScrollOnPlay from './../../../hooks/useScrollOnPlay';
 
 const Video = ({
   muted = true,
