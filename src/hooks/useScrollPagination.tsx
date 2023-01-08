@@ -4,15 +4,12 @@ import useResize from "./useResize";
 
 const useScrollPagination = () => {
   const ref = useRef<any>();
-  const { height } = useResize();
-  const [searchBarHeight, setSearchBarHeight] = useState<number>(window.scrollY);
+  const { height:pageHeight } = useResize();
   const [throttle, setThrottle] = useState<boolean>(false);
 
   useEffect(() => {
     const wheelHandler = (e: React.WheelEvent) => {
       e.preventDefault();
-      const pageHeight = searchBarHeight + height
-      console.log(searchBarHeight)
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
       let isFirstPage: boolean =
@@ -92,7 +89,7 @@ const useScrollPagination = () => {
     return () => {
       refCurrent.removeEventListener("wheel", wheelHandler);
     };
-  }, [throttle, searchBarHeight, height]);
+  }, [throttle, pageHeight]);
 
   return { ref };
 };

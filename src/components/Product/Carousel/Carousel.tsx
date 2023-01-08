@@ -19,15 +19,17 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
   const { style, current, moveSlide } = useMoveSlide(images.current.length);
   const [touch, setTouch] = useState<number | null>(null);
   const [isSwiping, setIsSwiping] = useState<boolean>(false);
-  const isSinglePicture = images.current.length <= 3
-  
+  const [throttle, setThrottle] = useState<boolean>(false);
+  const [timer, setTimer] = useState<any>();
+  const isSinglePicture = images.current.length <= 3;
+
   /**
    *터치를 시작한 지점을 저장하는 함수
    */
   const handleTouchStart = (e: React.TouchEvent<HTMLInputElement>): void => {
     const currentTouch = e.touches[0].clientX;
     setTouch(currentTouch);
-    setIsSwiping(true)
+    setIsSwiping(true);
   };
 
   /**
@@ -35,8 +37,15 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
    */
   const handleTouchMove = (e: React.TouchEvent<HTMLInputElement>): void => {
     const touchDown: number | null = touch;
-
+    if (throttle) return;
     if (touchDown === null) return;
+
+    clearTimeout(timer);
+    setTimer(
+      setTimeout(() => {
+        setThrottle(false);
+      }, 500)
+    );
 
     const currentTouch = e.touches[0].clientX;
     const touchDirection = touchDown - currentTouch;
@@ -48,15 +57,19 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
     if (touchDirection < -4) {
       moveSlide(-1);
     }
-    
+
+    setThrottle(true);
     setTouch(null);
-    setIsSwiping(false)
+    setIsSwiping(false);
   };
 
   // 자동 슬라이드
-  useInterval(() => {
-    moveSlide(1);
-  }, !isSwiping && !isSinglePicture ? 3000 : null);
+  useInterval(
+    () => {
+      moveSlide(1);
+    },
+    !isSwiping && !isSinglePicture && !throttle ? 3000 : null
+  );
 
   return (
     <div className="w-full">
@@ -112,7 +125,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
               return (
                 <div
                   key={`CarouselImageKey${index}`}
-                  className={isCurrentPicture+ " " + skipMarginLeft}
+                  className={isCurrentPicture + " " + skipMarginLeft}
                 ></div>
               );
             })}

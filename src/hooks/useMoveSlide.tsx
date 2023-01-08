@@ -13,20 +13,22 @@ const useMoveSlide = (imageSize: number) => {
     transition: "all 0.3s ease-out",
   });
   const [throttle, setThrottle] = useState<boolean>(false);
-
+  const [timer, setTimer] = useState<any>();
   const moveSlide = (index: number): void => {
-    if (imageSize <= 3) return
+    if (imageSize <= 3) return;
     if (throttle) return
-    setTimeout(() => {
-      setThrottle(false)
-    }, 300)
+    
+    clearTimeout(timer);
+    setTimer(setTimeout(() => {
+      setThrottle(false);
+    }, 500));
 
     let nextIndex: number = current + index;
 
     //앞 뒤로 복사된 크기에서 원본 사진 개수만큼 인덱스 이동
     if (nextIndex < 0) nextIndex += imgSize.current - 1;
     else if (nextIndex >= imgSize.current) nextIndex -= imgSize.current - 1;
-    setThrottle(true)
+    setThrottle(true);
     setCurrent(nextIndex);
   };
 
@@ -38,20 +40,20 @@ const useMoveSlide = (imageSize: number) => {
   useEffect(() => {
     if (current === 0) {
       let timer = setTimeout(() => {
-        setCurrent(imgSize.current-2)
+        setCurrent(imgSize.current - 2);
         setStyle((prev) => ({ ...prev, transition: "" }));
-      }, 300)
-      return () => clearTimeout(timer)
+      }, 300);
+      return () => clearTimeout(timer);
     } else if (current === imgSize.current - 1) {
       let timer = setTimeout(() => {
         setCurrent(1);
         setStyle((prev) => ({ ...prev, transition: "" }));
       }, 300);
       return () => clearTimeout(timer);
-    } else if (current === 1 || current === imgSize.current-2) {      
+    } else if (current === 1 || current === imgSize.current - 2) {
       let timer = setTimeout(() => {
         setStyle((prev) => ({ ...prev, transition: "all 0.3s ease-out" }));
-      }, 5);
+      }, 10);
       return () => clearTimeout(timer);
     }
   }, [current]);
