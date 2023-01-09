@@ -21,7 +21,7 @@ export const members: MemberInfoType[] = [
   },
   {
     role: "AI Engineer",
-    name: "Junhwan Jang",
+    name: "Brian Lee, Ph.D.",
     href: "https://www.linkedin.com/in/brianlee00/",
     hasLinkedIn: true,
   },
