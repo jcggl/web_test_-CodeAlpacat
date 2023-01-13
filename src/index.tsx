@@ -6,6 +6,11 @@ import "./reset.css";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { NavigationProvider } from "@/contexts/NavigationContext";
+import ReactGA from "react-ga";
+
+if (process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID) {
+  ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID);
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
