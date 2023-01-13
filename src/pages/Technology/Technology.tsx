@@ -1,11 +1,11 @@
 import React from "react";
-import { TechnologyIntro, DemoVideo, TechnologyVision, OurSolutions } from "@/components/Technology";
+import { TechnologyIntro, TechnologyVision, OurSolutions } from "@/components/Technology";
 
 const Technology = () => {
   return (
     <section>
       <TechnologyIntro />
-      <DemoVideo />
+      {/* <DemoVideo /> */}
       <TechnologyVision/>
       <OurSolutions />
     </section>

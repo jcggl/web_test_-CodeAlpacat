@@ -8,7 +8,6 @@ import {
 import { TouchScrollProvider } from "@/contexts/TouchScrollContext";
 import useResetScroll from "@/hooks/useResetScroll";
 import useScrollPagination from "@/hooks/useScrollPagination";
-import React from "react";
 
 const Home = () => {
   const { ref: scrollRef } = useScrollPagination();

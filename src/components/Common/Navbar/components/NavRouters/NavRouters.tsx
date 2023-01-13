@@ -5,13 +5,17 @@ import { NavRouterType } from "./NavRouter.types";
 
 const PATH: string[] = ["about", "technology", "product", "team"];
 
-const NavRouters = ({ location, selected, checkActiveLink }: NavRouterType) => {
+const NavRouters = ({ location, selected, checkActiveLink, isTechVision }: NavRouterType) => {
   const isHome: string =
-    location.pathname === "/" ? "text-main-white" : "text-main-black";
+    location.pathname === "/" || isTechVision ? "text-main-white" : "text-main-black";
   const isHomeBackground: string =
-    location.pathname === "/" ? "bg-main-white" : "bg-main-black";
+    location.pathname === "/" || isTechVision
+      ? "bg-main-white"
+      : "bg-main-black";
   const isNotHome: string =
-    location.pathname === "/" ? "text-main-black" : "text-main-white";
+    location.pathname === "/" || isTechVision
+      ? "text-main-black"
+      : "text-main-white";
 
   return (
     <>
@@ -22,7 +26,7 @@ const NavRouters = ({ location, selected, checkActiveLink }: NavRouterType) => {
           <NavLink
             key={`NavLinkKey${index}`}
             to={`/${address}`}
-            className={`flex justify-center items-center pad:w-[clamp(72px,6.667vw,140px)] ${isHome} ${selectedFont}`}
+            className={`flex justify-center items-center pad:w-[clamp(72px,6.667vw,140px)] ${isHome} ${selectedFont} transition delay-150 hover:opacity-70`}
             onClick={() => checkActiveLink(address)}
           >
             {address}
@@ -30,13 +34,13 @@ const NavRouters = ({ location, selected, checkActiveLink }: NavRouterType) => {
         );
       })}
       <div
-        className={`flex justify-center items-center pad:w-[clamp(104px,9.63vw,174px)] desktop:w-[clamp(174px,9.063vw,200px)] pad:h-[clamp(28px,2.593vw,48px)] desktop:h-[48px,2.5vw,70px] ${isHomeBackground} rounded-[5rem]`}
+        className={`flex justify-center items-center pad:w-[clamp(104px,9.63vw,174px)] desktop:w-[clamp(174px,9.063vw,200px)] pad:h-[clamp(28px,2.593vw,48px)] desktop:h-[48px,2.5vw,70px] ${isHomeBackground} rounded-[5rem] transition delay-150 hover:opacity-70`}
       >
         <a
           href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-center ${isNotHome} font-medium font-spline`}
+          className={`text-center ${isNotHome} font-medium font-spline tracking-[.01em]`}
         >
           We're hiring!
         </a>

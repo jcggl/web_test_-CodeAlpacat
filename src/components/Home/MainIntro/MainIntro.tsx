@@ -16,7 +16,7 @@ const MainIntro = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >
-      <h3 className="absolute top-[clamp(213px,59.167vw,229px)] pad:top-[clamp(229px,21.204vw,295px)] desktop:top-[clamp(295px,15.365vw,350px)] text-main-white font-spline font-semibold left-[clamp(33px,9.167vw,201px)] pad:left-[clamp(201px,18.611vw,384px)] desktop:left-[clamp(384px,20vw,100vw)] text-[clamp(40px,11.111vw,95px)] pad:text-[clamp(95px,8.796vw,150px)] desktop:text-[clamp(150px,7.813vw,100vw)] leading-[118%] animate-[mobileSlideDown_.5s_ease-out] pad:animate-[padSlideDown_.5s_ease-out] desktop:animate-[desktopSlideDown_.5s_ease-out]">
+      <h3 className="absolute top-[clamp(213px,59.167vw,229px)] pad:top-[clamp(229px,21.204vw,295px)] desktop:top-[clamp(295px,15.365vw,350px)] text-main-white font-spline font-semibold left-[clamp(33px,9.167vw,201px)] pad:left-[clamp(201px,18.611vw,384px)] desktop:left-[clamp(384px,20vw,100vw)] text-[clamp(40px,11.111vw,95px)] pad:text-[clamp(95px,8.796vw,150px)] desktop:text-[clamp(150px,7.813vw,100vw)] leading-[118%] animate-[mobileSlideDown_.5s_ease-out] pad:animate-[padSlideDown_.5s_ease-out] desktop:animate-[desktopSlideDown_.5s_ease-out] tracking-[.01em]">
         Inspire Life
         <br />
         Into Avatars

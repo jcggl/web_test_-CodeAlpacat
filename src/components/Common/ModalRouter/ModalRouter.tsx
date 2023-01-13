@@ -20,7 +20,7 @@ const ModalRouter = () => {
   }, [location]);
 
   return (
-    <div className="flex flex-col justify-center pl-[clamp(52px,14.444vw,600px)] w-full h-screen font-spline">
+    <div className="flex flex-col justify-center pl-[clamp(52px,14.444vw,600px)] w-full h-screen font-spline tracking-[.01em]">
       {PATH.map((address, index) => {
         const selectedFont =
           selected === "/" + address ? "text-main-white" : "text-main-grey";
