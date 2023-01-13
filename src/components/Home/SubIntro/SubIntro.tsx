@@ -9,7 +9,7 @@ const SubIntro = () => {
   return (
     <div
       ref={ref}
-      className="w-full h-screen font-spline text-main-white touch-none overflow-hidden"
+      className="w-full h-screen font-spline tracking-[.01em] text-main-white touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >
@@ -17,7 +17,7 @@ const SubIntro = () => {
       <div className="flex flex-col pad:flex-row pad:items-center ml-[clamp(30px,5.041vw,178px)] pt-[clamp(84px,23.3vw,130px)] pad:pt-[clamp(152px,14.074vw,180px)]">
         <h3
           style={textStyle}
-          className="font-spline text-main-white text-[clamp(34px,9.44vw,45px)] pad:text-[clamp(65px,6.019vw,110px)] desktop:text-[clamp(110px,5.729vw,130px)] leading-[clamp(40px,120%,124px)]"
+          className="font-spline tracking-[.01em] text-main-white text-[clamp(34px,9.44vw,45px)] pad:text-[clamp(65px,6.019vw,110px)] desktop:text-[clamp(110px,5.729vw,130px)] leading-[clamp(40px,120%,124px)]"
         >
           Avatar Communication
           <br />

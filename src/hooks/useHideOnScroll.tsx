@@ -12,20 +12,19 @@ const useHideOnScroll = () => {
     clearTimeout(timer)
     setTimer(setTimeout(() => {
       setScroll((prev) => false)
-    }, 900))
+    }, 500))
     setScroll((prev) => true);
     setThrottle((prev) => true);
   }, [throttle, timer]);
 
   useEffect(() => {
-
     let throttleTimer = setTimeout(() => {
       setThrottle(false);
-    }, 100);
+    }, 50);
 
-    window.addEventListener("wheel", onScrollHandler);
+    window.addEventListener("scroll", onScrollHandler);
     return () => {
-      window.removeEventListener("wheel", onScrollHandler);
+      window.removeEventListener("scroll", onScrollHandler);
       clearTimeout(throttleTimer);
     };
   }, [throttle, scroll, onScrollHandler]);

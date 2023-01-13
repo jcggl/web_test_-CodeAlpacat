@@ -20,7 +20,6 @@ const useAutoSlide = (imageSize: number) => {
     transition: "all 0.5s ease-out",
   });
 
-
   /**
    * 윈도우 크기에 따라 화면에 보이는 파트너 갯수
    */
@@ -31,7 +30,6 @@ const useAutoSlide = (imageSize: number) => {
     return 6
   }, [windowWidth])
   const [contentWidth, setContentWidth] = useState<contentWidthType>({width:`${windowWidth/contentsNumberChecker()}px`})
-
   
   const moveSlide = (index: number): void => {
     let nextIndex: number = current + index;
@@ -49,7 +47,7 @@ const useAutoSlide = (imageSize: number) => {
 
   //0.3초의 transition을 잠깐 없애고 양 끝이 아니라면 transition을 다시 적용.
   useEffect(() => {
-    if (current === 6) {
+    if (current === imgSize.current/2) {
       let timer = setTimeout(() => {
         setStyle((prev) => ({ ...prev, transition: "" }));
         setCurrent(0);

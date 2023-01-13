@@ -3,7 +3,7 @@ import React from "react";
 const TechnologyIntro = () => {
   return (
     <div className="flex flex-col justify-center items-center w-full h-screen min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px]">
-      <h3 className="flex text-black font-spline font-bold text-center pt-[clamp(73px,20.278vw,100px)] pad:pt-[clamp(100px,9.259vw,114px)] desktop:pt-[clamp(114px,5.938vw,100vw)] text-[clamp(32px,8.889vw,65px)] pad:text-[clamp(65px,6.019vw,100px)] desktop:text-[clamp(100px,5.208vw,100vw)] leading-[120%]">
+      <h3 className="flex text-black font-spline tracking-[.01em] font-bold text-center pt-[clamp(73px,20.278vw,100px)] pad:pt-[clamp(100px,9.259vw,114px)] desktop:pt-[clamp(114px,5.938vw,100vw)] text-[clamp(32px,8.889vw,65px)] pad:text-[clamp(65px,6.019vw,100px)] desktop:text-[clamp(100px,5.208vw,100vw)] leading-[120%]">
         Your face, voice, or words.
         <br />
         We can handle it all.

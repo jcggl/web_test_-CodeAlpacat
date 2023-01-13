@@ -7,13 +7,12 @@ import NavigationContext from "@/contexts/NavigationContext";
 
 import { NavLogoType } from "./NavLogo.types";
 
-const NavLogo = ({ location, checkActiveLink }:NavLogoType) => {
+const NavLogo = ({ location, checkActiveLink, isTechVision }:NavLogoType) => {
   const { toggle } = useContext(NavigationContext)
   const isHomeLogo: string =
-    location.pathname === "/" || toggle
+    location.pathname === "/" || toggle || isTechVision
       ? "text-main-white"
       : "text-main-black filter invert";
-
   return (
     <NavLink
       to="/"
@@ -21,12 +20,12 @@ const NavLogo = ({ location, checkActiveLink }:NavLogoType) => {
       onClick={() => checkActiveLink("/")}
     >
       <img
-        className="hidden pad:block pad:w-[clamp(144px,13.333vw,221px)] desktop:w-[clamp(221px,11.51vw,270px)] aspect-[221/65]"
+        className="hidden pad:block pad:w-[clamp(144px,13.333vw,221px)] desktop:w-[clamp(221px,11.51vw,270px)] aspect-[221/65] transition delay-150 hover:opacity-70"
         src={logo2}
         alt="굳갱랩스 로고"
       />
       <img
-        className={`block pad:hidden w-[clamp(47.52px,13.2vw,80px)] aspect-[47.45/32]`}
+        className="block pad:hidden w-[clamp(47.52px,13.2vw,80px)] aspect-[47.45/32] transition delay-200 hover:opacity-70"
         src={logo}
         alt="굳갱랩스 로고"
       />

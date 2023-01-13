@@ -10,10 +10,12 @@ export const SNS_LIST:SNSListType[] = [
     imgSrc: linkedin,
   },
   {
+    href: "https://twitter.com/GGLabs_Official",
     alt: "트위터",
     imgSrc: twitter,
   },
   {
+    href: "#",
     alt: "인스타그램",
     imgSrc: instagram,
   },

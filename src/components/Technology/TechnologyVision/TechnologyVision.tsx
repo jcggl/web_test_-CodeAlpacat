@@ -6,7 +6,7 @@ import techsvg3 from "@/assets/svg/technology/tech-3.svg";
 const TechnologyVision = () => {
   return (
     <div className="flex flex-col w-full bg-black h-screen min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px] text-center text-main-white">
-      <h3 className="font-bold font-spline pt-[clamp(60px,16.667vw,105px)] pad:pt-[clamp(105px,9.722vw,160px)] desktop:pt-[clamp(160px,8.333vw,100vw)] tracking-[.01em] text-[clamp(24px,6.667vw,42px)] pad:text-[clamp(42px,3.889vw,66px)] desktop:text-[clamp(66px,3.438vw,100vw)] leading-[130%] pad:leading-[140%] desktop:leading-[120%]">
+      <h3 className="font-bold font-spline tracking-[.01em] pt-[clamp(60px,16.667vw,105px)] pad:pt-[clamp(105px,9.722vw,160px)] desktop:pt-[clamp(160px,8.333vw,100vw)] tracking-[.01em] text-[clamp(24px,6.667vw,42px)] pad:text-[clamp(42px,3.889vw,66px)] desktop:text-[clamp(66px,3.438vw,100vw)] leading-[130%] pad:leading-[140%] desktop:leading-[120%]">
         Focus on your product,
         <br />
         and let us handle the rest.
