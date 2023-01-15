@@ -12,7 +12,7 @@ const useHideOnScroll = () => {
     clearTimeout(timer)
     setTimer(setTimeout(() => {
       setScroll((prev) => false)
-    }, 500))
+    }, 400))
     setScroll((prev) => true);
     setThrottle((prev) => true);
   }, [throttle, timer]);

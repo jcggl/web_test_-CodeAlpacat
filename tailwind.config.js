@@ -47,7 +47,7 @@ module.exports = {
         },
         desktopSlideDown: {
           "0%": { top: "0px" },
-          "100%": { top: "clamp(295px,15.365vw,350px)" },
+          "100%": { top: "clamp(307px,15.99vw,100vw)" },
         },
         mobileSlideUp: {
           "0%": { top: "88%" },
@@ -59,7 +59,7 @@ module.exports = {
         },
         desktopSlideUp: {
           "0%": { top: "88%" },
-          "100%": { top: "clamp(741px,38.594vw,1000px)" },
+          "100%": { top: "clamp(690px,35.938vw,100vw)" },
         },
         zoomBlurIn: {
           "0%": { transform: "scale(150%, 150%)", filter: "blur(64px)" },
@@ -67,7 +67,7 @@ module.exports = {
         },
         navSlideDown: {
           "0%": { transform: "translate3d(0,-100%,0)", opacity: 0 },
-          "100%": { transform: "translate3d(0,0,0)", opacity: 1 }
+          "100%": { transform: "translate3d(0,0,0)", opacity: 1 },
         },
       },
     },

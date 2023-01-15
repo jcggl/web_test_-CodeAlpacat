@@ -30,14 +30,14 @@ const Navbar = () => {
     <nav
       ref={ref}
       style={style}
-      className="fixed flex justify-between items-center w-full px-[clamp(19px,5.278vw,30px)] pt-[clamp(16px,4.444vw,20px)] pad:p-[clamp(20px,1.852vw,34px)] pad:pb-[0px] desktop:p-[clamp(34px,1.771vw,36px)] desktop:pb-[0px] bg-transparent z-[100] animate-[navSlideDown_.5s_ease-out] transition ease-in-out duration-[320ms]"
+      className="fixed flex justify-between items-center w-full px-[clamp(19px,5.278vw,30px)] desktop:px-[clamp(260px,13.542vw,100vw)] pt-[clamp(16px,4.444vw,20px)] pad:pt-[clamp(20px,1.852vw,34px)] desktop:pt-[clamp(34px,1.771vw,100vw)] bg-transparent z-[100] animate-[navSlideDown_.5s_ease-out] transition ease-in-out duration-[320ms]"
     >
       <NavLogo
         location={location}
         checkActiveLink={checkActiveLink}
         isTechVision={isTechVision}
       />
-      <div className="hidden pad:flex justify-center items-center pad:gap-x-[clamp(6px,0.556vw,9px)] desktop:gap-x-[clamp(9px,0.469vw,12px)] pad:text-[clamp(12px,1.111vw,20px)] desktop:text-[clamp(20px,1.042vw,28px)]">
+      <div className="hidden pad:flex justify-center items-center font-spline pad:gap-x-[clamp(6px,0.556vw,9px)] desktop:gap-x-[clamp(10px,0.521vw,100vw)] pad:text-[clamp(12px,1.111vw,18px)] desktop:text-[clamp(18px,0.938vw,100vw)] leading-[166%]">
         <NavRouters
           isTechVision={isTechVision}
           location={location}
