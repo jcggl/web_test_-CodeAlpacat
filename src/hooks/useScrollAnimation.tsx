@@ -25,19 +25,19 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
         ref.current.children[0].children[1].children[0].style.transitionDelay = `${delay}s`;
 
         ref.current.children[1].children[0].style.transform =
-          "translate3d(0, 0, 0)";
+          "translate3d(0, -3vh, 0)";
         ref.current.children[0].children[0].style.transform =
-          "translate3d(0, 0, 0)";
+          "translate3d(0, -3vh, 0)";
         ref.current.children[0].children[1].children[0].style.transform =
-          "translate3d(0, 0, 0)";
+          "translate3d(20%, 0, 0)";
 
         setTimeout(() => {
           ref.current.children[1].children[0].style.transform =
-            "translate3d(0, 3vh, 0)";
+            "translate3d(0, 0, 0)";
           ref.current.children[0].children[0].style.transform =
-            "translate3d(0, 3vh, 0)";
+            "translate3d(0, 0, 0)";
           ref.current.children[0].children[1].children[0].style.transform =
-            "translate3d(-20%, 0, 0)";
+            "translate3d(0, 0, 0)";
         }, 650);
       } else {
         ref.current.children[1].children[0].style.transform =

@@ -16,9 +16,9 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
         setTimeout(() => {
           ref.current.style.transform = "translate3d(0,0,0)";
           ref.current.style.transform = "translate3d(0,0,0)";
-        }, 700);
+        }, 650);
       } else {
-        ref.current.style.transform = "translate3d(0,-20vh,0)";
+        ref.current.style.transform = "translate3d(0,-25vh,0)";
       }
     },
     [duration, delay]
@@ -38,7 +38,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   return {
     ref,
     style: {
-      transform: "translate3d(0,-20vh,0)",
+      transform: "translate3d(0,-25vh,0)",
     },
   };
 };

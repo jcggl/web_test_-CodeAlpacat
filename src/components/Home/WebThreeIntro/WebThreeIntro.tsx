@@ -5,13 +5,13 @@ import useIntersectAnimation from "@/hooks/useIntersectAnimation";
 import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const WebThreeIntro = () => {
-  const { ref, evenStyle, oddStyle, textStyle} = useIntersectAnimation(0.5);
-    const { touchScrollHandler, handleTouchStart } =
-      useContext(TouchScrollContext);
+  const { ref, evenStyle, oddStyle, textStyle } = useIntersectAnimation(0.6);
+  const { touchScrollHandler, handleTouchStart } =
+    useContext(TouchScrollContext);
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen touch-none overflow-hidden"
+      className="relative w-full h-screen touch-none"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >
