@@ -13,16 +13,20 @@ const useScrollPagination = () => {
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
       let isFirstPage: boolean =
-        window.scrollY >= 0 && window.scrollY < pageHeight;
+        window.scrollY >= 0 && window.scrollY < pageHeight/2;
       let isSecondPage: boolean =
-        window.scrollY >= pageHeight && window.scrollY < pageHeight * 2;
+        window.scrollY >= pageHeight / 2 &&
+        window.scrollY < pageHeight * 2 - pageHeight / 2;
       let isThirdPage: boolean =
-        window.scrollY >= pageHeight * 2 && window.scrollY < pageHeight * 3;
+        window.scrollY >= pageHeight * 2 - pageHeight / 2 &&
+        window.scrollY < pageHeight * 3 - pageHeight / 2;
       let isFourthPage: boolean =
-        window.scrollY >= pageHeight * 3 &&
-        window.scrollY < pageHeight * 4 - pageHeight * (1 - 0.88981) * 3; // 마지막 페이지는 끝 높이가 스크롤이 4페이지에 겹칠 수 있음.
-      let isLastPage: boolean =
-        window.scrollY >= pageHeight * 4 - pageHeight * (1 - 0.88981) * 3;
+        window.scrollY >= pageHeight * 3 - pageHeight / 2 &&
+        window.scrollY < pageHeight * 4 - pageHeight / 2;
+      let isFifthPage: boolean =
+        window.scrollY >= pageHeight * 4 - pageHeight / 2 &&
+        window.scrollY < pageHeight * 4 + pageHeight / 2;
+      let isFooter: boolean = window.scrollY >= pageHeight * 4 + pageHeight / 2;
 
       if (throttle) return;
       if (!throttle) {
@@ -46,15 +50,18 @@ const useScrollPagination = () => {
             });
           } else if (isFourthPage) {
             window.scrollTo({
-              top: pageHeight * 3 + pageHeight * 0.88981,
+              top: pageHeight * 4,
+              behavior: "smooth",
+            });
+          } else if (isFifthPage) {
+            window.scrollTo({
+              top: pageHeight * 5,
               behavior: "smooth",
             });
           }
         } else if (scrollUp) {
           //위로 스크롤
-          if (isFirstPage) {
-            //현재 1페이지
-          } else if (isSecondPage) {
+          if (isSecondPage) {
             window.scrollTo({
               top: 0,
               behavior: "smooth",
@@ -69,11 +76,16 @@ const useScrollPagination = () => {
               top: pageHeight * 2,
               behavior: "smooth",
             });
-          } else if (isLastPage) {
+          } else if (isFifthPage) {
             window.scrollTo({
               top: pageHeight * 3,
               behavior: "smooth",
             });
+          } else if (isFooter) {
+            window.scrollTo({
+              top: pageHeight * 4,
+              behavior: "smooth"
+            })
           }
         }
         setThrottle(true);
@@ -81,7 +93,7 @@ const useScrollPagination = () => {
 
       setTimeout(() => {
         setThrottle(false);
-      }, 700);
+      }, 800);
     };
 
     const refCurrent = ref.current;

@@ -6,7 +6,7 @@ import { marionetteImageList } from "@/constants/Images/marionette-image-list";
 export const products: CarouselCardType[] = [
   {
     imageList: kikitownImageList,
-    linkTitle: "Go to Kiki Town",
+    linkTitle: "go to Kiki Town",
     href: "https://www.kiki.town/",
     title: "Kiki Town",
     subTitle: "Off with your video, On with your avatar!",
@@ -23,7 +23,7 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: beergangImageList,
-    linkTitle: "Go to Beergang",
+    linkTitle: "go to beergang",
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",
