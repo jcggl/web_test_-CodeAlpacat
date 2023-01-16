@@ -44,7 +44,8 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
     setTimer(
       setTimeout(() => {
         setThrottle(false);
-      }, 500)
+        setIsSwiping(false);
+      }, 600)
     );
 
     const currentTouch = e.touches[0].clientX;
@@ -60,7 +61,6 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
 
     setThrottle(true);
     setTouch(null);
-    setIsSwiping(false);
   };
 
   // 자동 슬라이드
@@ -68,7 +68,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
     () => {
       moveSlide(1);
     },
-    !isSwiping && !isSinglePicture && !throttle ? 3000 : null
+    !isSwiping && !isSinglePicture && !throttle ? 2600 : null
   );
 
   return (
