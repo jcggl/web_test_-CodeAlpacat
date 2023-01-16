@@ -45,7 +45,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
       setTimeout(() => {
         setThrottle(false);
         setIsSwiping(false);
-      }, 600)
+      }, 400)
     );
 
     const currentTouch = e.touches[0].clientX;
