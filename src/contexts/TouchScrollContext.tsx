@@ -47,6 +47,7 @@ export const TouchScrollProvider = ({ children }: Props) => {
     (e: React.TouchEvent<HTMLInputElement>): void => {
       const touchDown: number | null = touch;
       if (touchDown === null) return;
+      if (throttle) return;
 
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
@@ -123,6 +124,7 @@ export const TouchScrollProvider = ({ children }: Props) => {
       isFourthPage,
       isFifthPage,
       isFooter,
+      throttle,
       pageHeight,
     ]
   );
