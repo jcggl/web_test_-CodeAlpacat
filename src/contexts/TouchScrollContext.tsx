@@ -18,6 +18,7 @@ const TouchScrollContext = createContext<NavigationType>({
 export const TouchScrollProvider = ({ children }: Props) => {
   const [touch, setTouch] = useState<number | null>(null);
   const { height: pageHeight } = useResize();
+  const [throttle, setThrottle] = useState<boolean>(false);
   const handleTouchStart = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
       const currentTouch = e.touches[0].clientY;
@@ -107,6 +108,10 @@ export const TouchScrollProvider = ({ children }: Props) => {
           });
         }
       }
+      setThrottle(true);
+      setTimeout(() => {
+        setThrottle(false);
+      }, 800);
 
       setTouch(null);
     },

@@ -5,7 +5,7 @@ import useIntersectAnimation from "@/hooks/useIntersectAnimation";
 import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const WebThreeIntro = () => {
-  const { ref, evenStyle, oddStyle, textStyle } = useIntersectAnimation(0.6);
+  const { ref, evenStyle, oddStyle, textStyle } = useIntersectAnimation(0.65);
   const { touchScrollHandler, handleTouchStart } =
     useContext(TouchScrollContext);
   return (
@@ -18,25 +18,25 @@ const WebThreeIntro = () => {
     >
       <img
         style={evenStyle}
-        className="absolute object-cover h-[120vh] left-[0%] w-[25%]"
+        className="absolute object-cover left-[0%] w-[25%]"
         src={intersect}
         alt="Intersect BG"
       />
       <img
         style={oddStyle}
-        className="absolute object-cover h-[120vh] left-[25%] w-[25%]"
+        className="absolute object-cover left-[25%] w-[25%]"
         src={intersectReverse}
         alt="Intersect BG"
       />
       <img
         style={evenStyle}
-        className="absolute object-cover h-[120vh] left-[50%] w-[25%]"
+        className="absolute object-cover left-[50%] w-[25%]"
         src={intersect}
         alt="Intersect BG"
       />
       <img
         style={oddStyle}
-        className="absolute object-cover h-[120vh] left-[75%] w-[25%]"
+        className="absolute object-cover left-[75%] w-[25%]"
         src={intersectReverse}
         alt="Intersect BG"
       />
