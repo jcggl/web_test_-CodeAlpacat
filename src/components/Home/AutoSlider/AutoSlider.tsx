@@ -27,13 +27,14 @@ const AutoSlider = ({ imageList }: Props) => {
         <div className={`flex`} style={style}>
           {images.current.map(
             (img: string[] | { image: string }, index: number): JSX.Element => {
-                return !(Array.isArray(img)) ? (
+                return !Array.isArray(img) ? (
                   <div
                     key={`PartnersImage${index}`}
                     style={contentWidth}
                     className="flex-none flex justify-center items-center"
                   >
                     <img
+                      className="h-[clamp(60px,16.667vw,80px)] pad:h-auto"
                       src={img.image}
                       alt="Partners"
                     />
@@ -45,7 +46,7 @@ const AutoSlider = ({ imageList }: Props) => {
                     className="flex-none flex flex-col justify-center text-center items-center font-bold text-white text-[clamp(12px,3.3vw,20px)] pad:text-[clamp(20px,1.852vw,24px)] desktop:text-[clamp(24px,1.25vw,30px)]"
                   >
                     {img.map((item, index) => {
-                      return <h3 key={`partnerName${index}`}>{item}</h3>
+                      return <h3 key={`partnerName${index}`}>{item}</h3>;
                     })}
                   </div>
                 );
