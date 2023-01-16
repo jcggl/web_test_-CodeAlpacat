@@ -21,7 +21,7 @@ const useMoveSlide = (imageSize: number) => {
     clearTimeout(timer);
     setTimer(setTimeout(() => {
       setThrottle(false);
-    }, 600));
+    }, 400));
 
     let nextIndex: number = current + index;
 
