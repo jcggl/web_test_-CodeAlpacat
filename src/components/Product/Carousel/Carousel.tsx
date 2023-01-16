@@ -44,7 +44,6 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
     setTimer(
       setTimeout(() => {
         setThrottle(false);
-        setIsSwiping(false);
       }, 400)
     );
 
@@ -59,6 +58,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
       moveSlide(-1);
     }
 
+    setIsSwiping(false);
     setThrottle(true);
     setTouch(null);
   };
@@ -68,7 +68,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
     () => {
       moveSlide(1);
     },
-    !isSwiping && !isSinglePicture && !throttle ? 2600 : null
+    !isSwiping && !isSinglePicture && !throttle ? 2400 : null
   );
 
   return (
@@ -76,7 +76,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
       <div className="flex justify-around">
         <div className="flex items-center">
           <img
-            className="hidden pad:block pad:w-[clamp(25px,2.315vw,38px)] desktop:w-[clamp(28px,1.458vw,50px)] cursor-pointer"
+            className="hidden pad:block pad:w-[clamp(15.19px,1.406vw,38px)] desktop:w-[clamp(25px,1.302vw,50px)] cursor-pointer"
             onClick={() => {
               moveSlide(-1);
             }}
@@ -85,7 +85,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
           />
         </div>
         <div className="relative flex justify-center">
-          <div className="w-[clamp(320px,88.889vw,850px)] pad:w-[clamp(850px,78.704vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] overflow-hidden">
+          <div className="w-[clamp(320px,88.889vw,850px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] overflow-hidden">
             <div
               className="flex"
               style={style}
@@ -96,7 +96,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
                 (img: string, index: number): JSX.Element => (
                   <img
                     key={`${img}${index}`}
-                    className="flex-none w-[clamp(320px,88.889vw,850px)] pad:w-[clamp(850px,78.704vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] object-contain"
+                    className="flex-none w-[clamp(320px,88.889vw,850px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] object-contain"
                     src={img}
                     alt="슬라이드 이미지"
                   />
@@ -133,7 +133,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
         </div>
         <div className="flex items-center">
           <img
-            className="hidden pad:block pad:w-[clamp(25px,2.315vw,38px)] desktop:w-[clamp(28px,1.458vw,50px)] cursor-pointer"
+            className="hidden pad:block pad:w-[clamp(15.19px,1.406vw,38px)] desktop:w-[clamp(25px,1.302vw,50px)] cursor-pointer"
             onClick={() => {
               moveSlide(1);
             }}

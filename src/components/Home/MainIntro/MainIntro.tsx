@@ -17,18 +17,18 @@ const MainIntro = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >
-      <h3 className="absolute top-[clamp(213px,59.167vw,229px)] pad:top-[clamp(229px,21.204vw,295px)] desktop:top-[clamp(307px,15.99vw,100vw)] text-main-white font-spline font-semibold left-[clamp(33px,9.167vw,201px)] pad:left-[clamp(201px,18.611vw,384px)] desktop:left-[clamp(441px,22.969vw,100vw)] text-[clamp(40px,11.111vw,95px)] pad:text-[clamp(95px,8.796vw,150px)] desktop:text-[clamp(140px,7.292vw,100vw)] leading-[118%] animate-[mobileSlideDown_.5s_ease-out] pad:animate-[padSlideDown_.5s_ease-out] desktop:animate-[desktopSlideDown_.5s_ease-out] tracking-[.01em]">
+      <h3 className="absolute top-[clamp(213px,59.167vw,229px)] pad:top-[clamp(251px,23.241vw,295px)] desktop:top-[clamp(307px,15.99vw,100vw)] text-main-white font-spline font-semibold left-[clamp(33px,9.167vw,201px)] pad:left-[clamp(243px,22.5vw,384px)] desktop:left-[clamp(441px,22.969vw,100vw)] text-[clamp(40px,11.111vw,95px)] pad:text-[clamp(85px,7.870vw,150px)] desktop:text-[clamp(140px,7.292vw,100vw)] leading-[118%] animate-[mobileSlideDown_.5s_ease-out] pad:animate-[padSlideDown_.5s_ease-out] desktop:animate-[desktopSlideDown_.5s_ease-out] tracking-[.01em]">
         Inspire Life
         <br />
         Into Avatars
       </h3>
-      <h4 className="hidden pad:block absolute font-spline font-light pad:top-[clamp(524px,48.519vw,741px)] desktop:top-[clamp(690px,35.938vw,100vw)] text-main-white pad:right-[clamp(175px,16.204vw,318px)] desktop:right-[clamp(435px,22.656vw,100vw)] pad:text-[clamp(20px,1.852vw,34px)] desktop:text-[clamp(28px,1.458vw,100vw)] pad:leading-[143%] animate-[mobileSlideUp_.5s_ease-out] pad:animate-[padSlideUp_.5s_ease-out] desktop:animate-[desktopSlideUp_.5s_ease-out] tracking-[.01em]">
+      <h4 className="hidden pad:block absolute font-spline font-light pad:top-[clamp(496px,45.926vw,741px)] desktop:top-[clamp(690px,35.938vw,100vw)] text-main-white pad:right-[clamp(223px,20.648vw,318px)] desktop:right-[clamp(435px,22.656vw,100vw)] pad:text-[clamp(20px,1.852vw,34px)] desktop:text-[clamp(28px,1.458vw,100vw)] pad:leading-[143%] animate-[mobileSlideUp_.5s_ease-out] pad:animate-[padSlideUp_.5s_ease-out] desktop:animate-[desktopSlideUp_.5s_ease-out] tracking-[.01em]">
         Establishing the next generation
         <br />
         communication technology
         <br />
         for the metaverse
-      </h4>
+      </h4> 
       <h4 className="pad:hidden absolute top-[clamp(386px,107.222vw,524px)] text-main-white right-[clamp(31px,8.611vw,100vw)] text-[clamp(16px,4.444vw,20px)] leading-[137%] animate-[mobileSlideUp_.5s_ease-out]">
         GoodGang Labs is building
         <br />
