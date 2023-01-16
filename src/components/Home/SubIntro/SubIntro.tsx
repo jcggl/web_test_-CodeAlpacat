@@ -9,6 +9,7 @@ const SubIntro = () => {
   return (
     <div
       ref={ref}
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       className="relative w-full h-screen font-spline tracking-[.01em] text-main-white touch-none overflow-hidden max-w-[600px] pad:max-w-[1920px] desktop:max-w-[100vw] mx-auto"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}

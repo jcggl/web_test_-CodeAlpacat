@@ -12,7 +12,7 @@ const Partners = () => {
   return (
     <div
       ref={ref}
-      style={style}
+      style={{...style, height: "calc(var(--vh, 1vh) * 100)" }}
       className="flex flex-col justify-center w-full h-screen touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
