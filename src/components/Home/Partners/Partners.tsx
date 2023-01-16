@@ -5,15 +5,15 @@ import AutoSlider from "@/components/Home/AutoSlider/AutoSlider";
 import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const Partners = () => {
-  const { ref, style } = usePartnerAnimation(0.65);
+  const { ref, style } = usePartnerAnimation(0.6);
   const { touchScrollHandler, handleTouchStart } =
     useContext(TouchScrollContext);
 
   return (
     <div
       ref={ref}
-      style={style}
-      className="flex flex-col justify-center w-full h-[88.981vh] touch-none overflow-hidden"
+      style={{...style, height: "calc(var(--vh, 1vh) * 100)" }}
+      className="flex flex-col justify-center w-full h-screen touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >

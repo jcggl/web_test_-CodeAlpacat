@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useRef } from "react";
 import useResize from "./useResize";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const useReverseColor = () => {
   const location = useLocation();
@@ -11,19 +11,20 @@ const useReverseColor = () => {
   const [isTechVision, setIsTechVision] = useState<boolean>(false);
   const wheelHandler = useCallback(() => {
     if (throttle) return;
-    if (!(ref.current)) return
+    if (!ref.current) return;
     if (
       window.scrollY >= pageHeight - ref.current.clientHeight / 2 &&
       window.scrollY < pageHeight * 2 - ref.current.clientHeight &&
-      location.pathname === "/technology"
-    )
+      location.pathname === "/Technology"
+    ) {
       setIsTechVision(true);
-    else setIsTechVision(false);
+    } else setIsTechVision(false);
+
     setThrottle(true);
     setTimeout(() => {
       setThrottle(false);
     }, 50);
-  },[throttle, pageHeight, location]);
+  }, [throttle, pageHeight, location]);
 
   useEffect(() => {
     window.addEventListener("scroll", wheelHandler);
