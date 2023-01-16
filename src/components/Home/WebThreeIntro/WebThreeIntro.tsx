@@ -12,7 +12,7 @@ const WebThreeIntro = () => {
     <div
       ref={ref}
       style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      className="relative w-full h-screen touch-none"
+      className="relative w-full h-screen touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >
@@ -44,7 +44,7 @@ const WebThreeIntro = () => {
         style={textStyle}
         className="flex justify-center items-center w-full h-full"
       >
-        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(32px,8.889vw,80px)] pad:text-[clamp(80px,7.407vw,125px)] desktop:text-[clamp(125px,6.51vw,150px)] leading-[clamp(48px,150%,100px)] pad:leading-[clamp(100px,125%,150px)] desktop:leading-[clamp(150px,120%,180px)] z-[2]">
+        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(32px,8.889vw,80px)] pad:text-[clamp(64px,5.926vw,125px)] desktop:text-[clamp(125px,6.51vw,150px)] leading-[clamp(48px,150%,100px)] pad:leading-[125%] desktop:leading-[clamp(150px,120%,180px)] z-[2]">
           We will establish
           <br />
           the new standard for

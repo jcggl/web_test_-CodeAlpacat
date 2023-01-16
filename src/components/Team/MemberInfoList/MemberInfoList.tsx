@@ -4,7 +4,7 @@ import { MemberInfo } from "@/components/Team";
 
 const MemberInfoList = () => {
   return (
-    <div className="grid grid-rows-12 pad:grid-cols-3 gap-y-[clamp(54px,14.167vw,77px)] pad:gap-y-[clamp(77px,7.13vw,118px)] desktop:gap-y-[clamp(118px,6.146vw,100vw)] pad:gap-x-[clamp(57px,5.278vw,90px)] desktop:gap-x-[clamp(166.76px,8.685vw,100vw)] w-full mt-[clamp(52px,14.444vw,77px)] pad:mt-[clamp(77px,7.13vw,122px)] desktop:mt-[clamp(95px,4.948vw,100vw)]">
+    <div className="grid grid-rows-12 pad:grid-cols-3 gap-y-[clamp(54px,14.167vw,77px)] pad:gap-y-[clamp(52.83px,4.892vw,118px)] desktop:gap-y-[clamp(118px,6.146vw,100vw)] pad:gap-x-[clamp(46.12px,4.270vw,90px)] desktop:gap-x-[clamp(166.76px,8.685vw,100vw)] w-full mt-[clamp(52px,14.444vw,77px)] pad:mt-[clamp(52.28px,4.841vw,122px)] desktop:mt-[clamp(95px,4.948vw,100vw)]">
       {members.map((member, index) => {
         return (
           <div

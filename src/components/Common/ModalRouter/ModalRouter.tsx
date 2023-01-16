@@ -28,7 +28,7 @@ const ModalRouter = () => {
           <NavLink
             key={`NavLinkKey${index}`}
             to={`/${address}`}
-            className={`block h-[clamp(46px,12.778vw,80px)] text-[clamp(30px,8.333vw,45px)] mb-[clamp(21px,5.833vw,30px)] ${selectedFont}`}
+            className={`block h-[clamp(46px,12.778vw,80px)] text-[clamp(30px,8.333vw,45px)] mb-[clamp(46px,12.778vw,60px)] ${selectedFont}`}
             onClick={() => checkActiveLink(address)}
           >
             {address}
@@ -36,7 +36,7 @@ const ModalRouter = () => {
         );
       })}
       <div
-        className={`flex justify-center items-center text-[clamp(20px,5.556vw,30px)] w-[clamp(156px,43.333vw,245px)] h-[clamp(46px,12.778vw,64px)] bg-main-grey rounded-[5rem] mt-[clamp(14px,3.889vw,21px)]`}
+        className={`flex justify-center items-center text-[clamp(20px,5.556vw,30px)] w-[clamp(156px,43.333vw,245px)] h-[clamp(46px,12.778vw,64px)] bg-main-grey rounded-[5rem]`}
       >
         <a
           href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"

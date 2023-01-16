@@ -34,7 +34,7 @@ const AutoSlider = ({ imageList }: Props) => {
                     className="flex-none flex justify-center items-center"
                   >
                     <img
-                      className="h-[clamp(60px,16.667vw,80px)] pad:h-auto"
+                      className="h-[clamp(60px,16.667vw,80px)] pad:h-[clamp(121.74px,11.272vw,200px)] pad:w-[clamp(200px,18.519vw,300px)] desktop:w-auto desktop:h-auto"
                       src={img.image}
                       alt="Partners"
                     />
