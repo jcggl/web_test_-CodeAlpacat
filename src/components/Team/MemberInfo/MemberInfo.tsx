@@ -10,9 +10,10 @@ const MemberInfo = ({
   name = "이름을 입력하세요.",
   href = "",
   hasLinkedIn = true,
-}:MemberInfoType) => {
+  mobileIconWidth = "w-[clamp(18.8px,5.222vw,25.5px)]",
+}: MemberInfoType) => {
   return (
-    <div className="flex flex-col justify-center w-[clamp(260px,72vw,100vw)] pad:w-[clamp(199.35px,18.458vw,410px)] desktop:w-[clamp(340.53px,17.736vw,100vw)]">
+    <div className="flex flex-col justify-center">
       <h5 className="text-[clamp(11px,3.056vw,14px)] pad:text-[clamp(12px,1.111vw,22px)] desktop:text-[clamp(18px,0.938vw,100vw)] leading-[200%] pad:leading-[216%] desktop:leading-[200%]">
         {role}
       </h5>
@@ -21,7 +22,7 @@ const MemberInfo = ({
           {name}
         </h4>
         {hasLinkedIn ? (
-          <div className="w-[clamp(22.5px,6.250vw,40.5px)] pad:w-[clamp(19.69px,1.823vw,40.5px)] desktop:w-[clamp(33.64px,1.752vw,45px)]">
+          <div className={`${mobileIconWidth} pad:w-[clamp(19.69px,1.823vw,40.5px)] desktop:w-[clamp(33.64px,1.752vw,45px)] mb-[clamp(3px,0.833vw,5px)] mr-[clamp(3px,0.833vw,5px)] pad:mb-[0px] pad:mb-[0px]`}>
             <SNSIcon href={href} imgSrc={linkedin} />
           </div>
         ) : null}

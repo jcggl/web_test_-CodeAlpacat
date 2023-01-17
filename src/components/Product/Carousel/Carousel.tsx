@@ -85,7 +85,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
           />
         </div>
         <div className="relative flex justify-center">
-          <div className="w-[clamp(320px,88.889vw,850px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] overflow-hidden">
+          <div className="w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] overflow-hidden">
             <div
               className="flex"
               style={style}
@@ -96,7 +96,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
                 (img: string, index: number): JSX.Element => (
                   <img
                     key={`${img}${index}`}
-                    className="flex-none w-[clamp(320px,88.889vw,850px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] object-contain"
+                    className="flex-none w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] object-contain"
                     src={img}
                     alt="슬라이드 이미지"
                   />
