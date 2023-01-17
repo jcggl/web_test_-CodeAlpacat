@@ -47,19 +47,19 @@ module.exports = {
         },
         desktopSlideDown: {
           "0%": { top: "0px" },
-          "100%": { top: "clamp(307px,15.99vw,100vw)" },
+          "100%": { top: "clamp(307px,15.99vw,360px)" },
         },
         mobileSlideUp: {
-          "0%": { top: "88%" },
+          "0%": { top: "88vh" },
           "100%": { top: "clamp(386px,107.222vw,524px)" },
         },
         padSlideUp: {
-          "0%": { top: "88%" },
+          "0%": { top: "88vh" },
           "100%": { top: "clamp(524px,48.519vw,741px)" },
         },
         desktopSlideUp: {
-          "0%": { top: "88%" },
-          "100%": { top: "clamp(690px,35.938vw,100vw)" },
+          "0%": { top: "88vh" },
+          "100%": { top: "clamp(690px,35.938vw,828px)" },
         },
         zoomBlurIn: {
           "0%": { transform: "scale(150%, 150%)", filter: "blur(64px)" },

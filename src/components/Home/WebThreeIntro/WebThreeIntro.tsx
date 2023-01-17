@@ -11,7 +11,7 @@ const WebThreeIntro = () => {
   return (
     <div
       ref={ref}
-      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       className="relative w-full h-screen touch-none overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}

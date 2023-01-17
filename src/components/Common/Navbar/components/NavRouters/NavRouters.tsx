@@ -26,7 +26,7 @@ const NavRouters = ({ location, selected, checkActiveLink, isTechVision }: NavRo
           <NavLink
             key={`NavLinkKey${index}`}
             to={`/${address}`}
-            className={`flex justify-center items-center pad:w-[clamp(74px,6.852vw,100vw)] ${isHome} ${selectedFont} transition delay-150 hover:opacity-70`}
+            className={`flex justify-center items-center pad:w-[clamp(74px,6.852vw,100px)] desktop:w-[clamp(128px,6.667vw,153.6px)] ${isHome} ${selectedFont} transition delay-150 hover:opacity-70`}
             onClick={() => checkActiveLink(address)}
           >
             {address}
@@ -34,7 +34,7 @@ const NavRouters = ({ location, selected, checkActiveLink, isTechVision }: NavRo
         );
       })}
       <div
-        className={`flex justify-center items-center pad:w-[clamp(96px,8.889vw,154px)] desktop:w-[clamp(145px,7.552vw,100vw)] ${isHomeBackground} rounded-[5rem] transition delay-150 hover:opacity-70 aspect-[96/28]`}
+        className={`flex justify-center items-center pad:w-[clamp(96px,8.889vw,154px)] desktop:w-[clamp(145px,7.552vw,174px)] ${isHomeBackground} rounded-[5rem] transition delay-150 hover:opacity-70 aspect-[96/28]`}
       >
         <a
           href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"

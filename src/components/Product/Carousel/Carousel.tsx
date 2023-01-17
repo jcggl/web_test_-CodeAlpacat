@@ -76,7 +76,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
       <div className="flex justify-around">
         <div className="flex items-center">
           <img
-            className="hidden pad:block pad:w-[clamp(15.19px,1.406vw,38px)] desktop:w-[clamp(25px,1.302vw,50px)] cursor-pointer"
+            className="hidden pad:block pad:w-[clamp(15.19px,1.406vw,38px)] desktop:w-[clamp(25px,1.302vw,30px)] cursor-pointer"
             onClick={() => {
               moveSlide(-1);
             }}
@@ -85,7 +85,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
           />
         </div>
         <div className="relative flex justify-center">
-          <div className="w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] overflow-hidden">
+          <div className="w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,1200px)] aspect-[1000/580] overflow-hidden">
             <div
               className="flex"
               style={style}
@@ -96,7 +96,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
                 (img: string, index: number): JSX.Element => (
                   <img
                     key={`${img}${index}`}
-                    className="flex-none w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,100vw)] aspect-[1000/580] object-contain"
+                    className="flex-none w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,1200px)] aspect-[1000/580] object-contain"
                     src={img}
                     alt="슬라이드 이미지"
                   />
@@ -104,17 +104,17 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
               )}
             </div>
           </div>
-          <div className="flex absolute bottom-[clamp(6px,1.667vw,19px)] pad:bottom-[clamp(19px,1.759vw,26px)] desktop:bottom-[clamp(26px,1.354vw,50px)]">
+          <div className="flex absolute bottom-[clamp(6px,1.667vw,19px)] pad:bottom-[clamp(19px,1.759vw,26px)] desktop:bottom-[clamp(26px,1.354vw,31.2px)]">
             {images.current.map((_, index: number): JSX.Element | undefined => {
               const isCurrentPicture: string =
                 index === current ||
                 (index === 1 && current === images.current.length - 1) ||
                 (index === images.current.length - 2 && current === 0)
-                  ? "w-[clamp(4.2px,1.167vw,10px)] pad:w-[clamp(10px,0.926vw,15px)] desktop:w-[clamp(15px,0.781vw,30px)] aspect-square rounded-[100%] bg-white opacity-1"
-                  : "w-[clamp(4.2px,1.167vw,10px)] pad:w-[clamp(10px,0.926vw,15px)] desktop:w-[clamp(15px,0.781vw,30px)] aspect-square rounded-[100%] bg-black opacity-60";
+                  ? "w-[clamp(4.2px,1.167vw,10px)] pad:w-[clamp(10px,0.926vw,15px)] desktop:w-[clamp(15px,0.781vw,18px)] aspect-square rounded-[100%] bg-white opacity-1"
+                  : "w-[clamp(4.2px,1.167vw,10px)] pad:w-[clamp(10px,0.926vw,15px)] desktop:w-[clamp(15px,0.781vw,18px)] aspect-square rounded-[100%] bg-black opacity-60";
               const skipMarginLeft: string =
                 index !== 0
-                  ? "ml-[clamp(4px,1.111vw,10px)] pad:ml-[clamp(10px,0.926vw,15px)] desktop:ml-[clamp(15px,0.781vw,30px)]"
+                  ? "ml-[clamp(4px,1.111vw,10px)] pad:ml-[clamp(10px,0.926vw,15px)] desktop:ml-[clamp(15px,0.781vw,18px)]"
                   : "";
               if (index === 0 || index === images.current.length - 1)
                 return (
@@ -133,7 +133,7 @@ const Carousel = ({ imageList = kikitownImageList }: Props) => {
         </div>
         <div className="flex items-center">
           <img
-            className="hidden pad:block pad:w-[clamp(15.19px,1.406vw,38px)] desktop:w-[clamp(25px,1.302vw,50px)] cursor-pointer"
+            className="hidden pad:block pad:w-[clamp(15.19px,1.406vw,38px)] desktop:w-[clamp(25px,1.302vw,30px)] cursor-pointer"
             onClick={() => {
               moveSlide(1);
             }}

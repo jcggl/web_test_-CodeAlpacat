@@ -7,14 +7,14 @@ import {
 } from "@/components/Home";
 import { TouchScrollProvider } from "@/contexts/TouchScrollContext";
 import useResetScroll from "@/hooks/useResetScroll";
-import useScrollPagination from "@/hooks/useScrollPagination";
+// import useScrollPagination from "@/hooks/useScrollPagination";
 
 const Home = () => {
-  const { ref: scrollRef } = useScrollPagination();
+  // const { ref: scrollRef } = useScrollPagination();
   useResetScroll()
   return (
     <TouchScrollProvider>
-      <section ref={scrollRef} className="bg-[#1A1A1A]">
+      <section className="bg-[#1A1A1A]">
         <MainIntro />
         <SubIntro />
         <WebThreeIntro />

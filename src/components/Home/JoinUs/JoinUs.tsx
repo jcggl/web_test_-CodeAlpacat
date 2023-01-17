@@ -12,7 +12,7 @@ const JoinUs = () => {
   return (
     <div
       className="relative w-full h-screen overflow-hidden touch-none"
-      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >
