@@ -28,7 +28,7 @@ const ModalRouter = () => {
           <NavLink
             key={`NavLinkKey${index}`}
             to={`/${address}`}
-            className={`block h-[clamp(46px,12.778vw,80px)] text-[clamp(30px,8.333vw,45px)] mb-[clamp(46px,12.778vw,60px)] ${selectedFont}`}
+            className={`block h-[clamp(46px,12.778vw,60px)] text-[clamp(30px,8.333vw,40px)] mb-[clamp(46px,12.778vw,50px)] ${selectedFont}`}
             onClick={() => checkActiveLink(address)}
           >
             {address}

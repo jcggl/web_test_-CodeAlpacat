@@ -3,4 +3,5 @@ export interface MemberInfoType {
   name: string;
   href?: string;
   hasLinkedIn?: boolean;
+  mobileIconWidth?: string;
 }
