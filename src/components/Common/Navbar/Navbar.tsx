@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import useHideOnScroll from '@/hooks/useHideOnScroll';
+import useHideOnScroll from "@/hooks/useHideOnScroll";
 import useReverseColor from "@/hooks/useReverseColor";
 import NavigationContext from "@/contexts/NavigationContext";
 
@@ -13,7 +13,7 @@ import NavLogo from "./components/NavLogo/NavLogo";
 const Navbar = () => {
   const location = useLocation();
   const { ref, isTechVision } = useReverseColor();
-  const {style} = useHideOnScroll();
+  const { style} = useHideOnScroll();
   const { closeNavigation } = useContext(NavigationContext);
   const [selected, setSelected] = useState<string>("/");
 

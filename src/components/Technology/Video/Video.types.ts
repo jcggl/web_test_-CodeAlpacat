@@ -3,5 +3,5 @@ export interface VideoType {
   autoPlay?: boolean;
   loop?: boolean;
   controls?: boolean;
-  src: string;
+  src?: string;
 }

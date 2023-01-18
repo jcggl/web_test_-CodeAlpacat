@@ -23,6 +23,7 @@ module.exports = {
         "main-white": "rgba(237, 237, 237, 1)",
         "font-black": "rgba(31, 31, 31, 1)",
         "main-grey": "rgba(170, 170, 170, 0.8)",
+        "sub-grey": "rgba(130, 130, 130, 1)",
       },
       fontFamily: {
         spline: ["Spline Sans", "Inter", "sans-serif"],
@@ -62,7 +63,8 @@ module.exports = {
           "100%": { top: "clamp(690px,35.938vw,828px)" },
         },
         zoomBlurIn: {
-          "0%": { transform: "scale(150%, 150%)", filter: "blur(64px)" },
+          "0%": { transform: "scale(200%, 200%)", filter: "blur(64px)" },
+          "30%": { transform: "scale(150%, 150%)", filter: "blur(0px)" },
           "100%": { transform: "scale(100%, 100%)", filter: "blur(0px)" },
         },
         navSlideDown: {

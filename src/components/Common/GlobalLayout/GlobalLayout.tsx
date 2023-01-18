@@ -11,13 +11,14 @@ const GlobalLayout = () => {
       left: 0,
     });
   }, [pathname]);
+
   return (
-    <>
+    <div>
       <Navbar />
       <Modal />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 

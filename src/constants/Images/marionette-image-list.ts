@@ -1,5 +1,3 @@
-import kikitown1 from "@/assets/common/kikitown-1.webp";
-import marionette1 from "@/assets/common/marionette-1.webp";
-import beergang1 from "@/assets/common/beergang-1.webp";
+import marionette1 from "@/assets/product/marionette1.webp";
 
-export const marionetteImageList: string[] = [marionette1, kikitown1, beergang1];
+export const marionetteImageList: string[] = [marionette1];

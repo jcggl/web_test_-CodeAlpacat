@@ -22,7 +22,9 @@ const MemberInfo = ({
           {name}
         </h4>
         {hasLinkedIn ? (
-          <div className={`${mobileIconWidth} pad:w-[clamp(19.69px,1.823vw,40.5px)] desktop:w-[clamp(33.64px,1.752vw,40.37px)] mb-[clamp(3px,0.833vw,5px)] mr-[clamp(3px,0.833vw,5px)] pad:mb-[0px] pad:mb-[0px]`}>
+          <div
+            className={`${mobileIconWidth} pad:w-[clamp(19.69px,1.823vw,40.5px)] desktop:w-[clamp(37.5px,1.953vw,45px)] mb-[clamp(3px,0.833vw,5px)] mr-[clamp(3px,0.833vw,5px)] pad:mb-[0px] pad:mb-[0px]`}
+          >
             <SNSIcon href={href} imgSrc={linkedin} />
           </div>
         ) : null}

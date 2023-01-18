@@ -52,11 +52,9 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
     ref,
     evenStyle: {
       transform: "translate3d(0,10%,0)",
-      height: "calc(var(--vh, 1vh) * 120)",
     },
     oddStyle: {
       transform: "translate3d(0,20%,0)",
-      height: "calc(var(--vh, 1vh) * 120)",
     },
     textStyle: {
       transform: "translate3d(0,30vh,0)",

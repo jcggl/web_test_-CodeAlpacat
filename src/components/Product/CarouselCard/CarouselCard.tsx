@@ -18,7 +18,7 @@ const CarouselCard = ({
 
   return (
     <div>
-      <Carousel imageList={imageList} />
+      <Carousel imageList={imageList}/>
       <div className="w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,1200px)] mx-auto">
         <div className="flex justify-end">
           <a

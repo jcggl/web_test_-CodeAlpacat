@@ -13,7 +13,6 @@ const MainIntro = () => {
   return (
     <div
       className="relative w-screen h-screen min-h-[640px] pad:desktop:min-h-[768px] desktop:min-h-[1080px] touch-none overflow-hidden"
-      // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       onTouchStart={handleTouchStart}
       onTouchMove={touchScrollHandler}
     >
