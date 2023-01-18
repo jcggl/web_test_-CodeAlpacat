@@ -20,7 +20,7 @@ const NavLogo = ({ location, checkActiveLink, isTechVision }:NavLogoType) => {
       onClick={() => checkActiveLink("/")}
     >
       <img
-        className="hidden pad:block pad:w-[clamp(144px,13.333vw,204px)] desktop:w-[clamp(204px,10.625vw,100vw)] aspect-[221/65] transition delay-150 hover:opacity-70"
+        className="hidden pad:block pad:w-[clamp(144px,13.333vw,204px)] desktop:w-[clamp(204px,10.625vw,244.8px)] aspect-[221/65] transition delay-150 hover:opacity-70"
         src={logo2}
         alt="굳갱랩스 로고"
       />

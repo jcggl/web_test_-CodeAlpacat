@@ -1,8 +1,12 @@
 import React from "react";
-import Video from "@/components/Technology/Video/Video";
 
 import { VideoCardType } from "./VideoCard.types";
-import useResize from '@/hooks/useResize';
+import useResize from "@/hooks/useResize";
+import Carousel from "@/components/Product/Carousel/Carousel";
+import ComingSoon from "@/components/Common/ComingSoon/ComingSoon";
+import webcamBased1 from "@/assets/technology/webcam-based1.webp";
+import webcamBased2 from "@/assets/technology/webcam-based2.webp";
+import speechBased1 from "@/assets/technology/speech-based1.webp";
 
 const VideoCard = ({
   title = "Title",
@@ -12,26 +16,44 @@ const VideoCard = ({
   loop = true,
   controls = false,
   src = "",
+  index = 0,
   isEven = false,
 }: VideoCardType) => {
   const { width } = useResize();
-  const titleList:string[] = title.split(" ");
+  const titleList: string[] = title.split(" ");
   const zigZagLayout = isEven ? "desktop:flex-row" : "desktop:flex-row-reverse";
   return (
     <div
-      className={`mx-auto flex flex-col items-center ${zigZagLayout} desktop:justify-between w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(1400px,72.917vw,100vw)]`}
+      className={`mx-auto flex flex-col items-center ${zigZagLayout} desktop:justify-between w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(1400px,72.917vw,1680px)]`}
     >
-      <div className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(880px,45.833vw,100vw)]">
-        <Video
+      <div className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(880px,45.833vw,1056px)] aspect-[300/172.4] pad:aspect-[710/400] desktop:aspect-[880/490]">
+        {/* <Video
           src={src}
           muted={muted}
           autoPlay={autoPlay}
           loop={loop}
           controls={controls}
-        />
+        /> */}
+        {/* 임시 대체 이미지 */}
+        {index === 0 && (
+          <Carousel
+            imageList={[webcamBased1, webcamBased2]}
+            carouselSize="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
+            hasDot={false}
+            intervalTime={4020}
+          />
+        )}
+        {index === 1 && (
+          <img
+            className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
+            src={speechBased1}
+            alt="speechBasedPics"
+          />
+        )}
+        {index === 2 && <ComingSoon />}
       </div>
-      <div className="flex flex-col desktop:justify-center w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)]  desktop:w-[clamp(455px,23.698vw,100vw)]">
-        <h3 className="font-bold text-[clamp(12px,3.333vw,26px)] pad:text-[clamp(24px,2.222vw,42px)] desktop:text-[clamp(40px,2.083vw,100vw)] leading-[166%] pad:leading-[140%] desktop:leading-[130%] mb-[clamp(6px,1.667vw,16px)] mt-[clamp(9.5px,2.639vw,25px)] pad:my-[clamp(10px,0.926vw,24px)] desktop:my-[clamp(24px,1.25vw,100vw)]">
+      <div className="flex flex-col desktop:justify-center w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)]  desktop:w-[clamp(455px,23.698vw,546px)]">
+        <h3 className="font-bold text-[clamp(12px,3.333vw,26px)] pad:text-[clamp(24px,2.222vw,42px)] desktop:text-[clamp(40px,2.083vw,48px)] leading-[166%] pad:leading-[140%] desktop:leading-[130%] mb-[clamp(6px,1.667vw,16px)] mt-[clamp(9.5px,2.639vw,25px)] pad:my-[clamp(10px,0.926vw,24px)] desktop:my-[clamp(24px,1.25vw,28.8px)]">
           {width >= 1920 ? (
             <>
               {titleList[0]}
@@ -42,7 +64,7 @@ const VideoCard = ({
             title
           )}
         </h3>
-        <h4 className="text-[clamp(11px,3.056vw,18px)] pad:text-[clamp(14px,1.296vw,23px)] desktop:text-[clamp(20px,1.042vw,100vw)] leading-[145%] pad:leading-[120%] desktop:leading-[150%]">
+        <h4 className="text-[clamp(11px,3.056vw,18px)] pad:text-[clamp(14px,1.296vw,23px)] desktop:text-[clamp(20px,1.042vw,24px)] leading-[145%] pad:leading-[120%] desktop:leading-[150%]">
           {description}
         </h4>
       </div>

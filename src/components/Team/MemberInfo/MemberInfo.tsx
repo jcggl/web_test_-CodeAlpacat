@@ -14,15 +14,17 @@ const MemberInfo = ({
 }: MemberInfoType) => {
   return (
     <div className="flex flex-col justify-center">
-      <h5 className="text-[clamp(11px,3.056vw,14px)] pad:text-[clamp(12px,1.111vw,22px)] desktop:text-[clamp(18px,0.938vw,100vw)] leading-[200%] pad:leading-[216%] desktop:leading-[200%]">
+      <h5 className="text-[clamp(11px,3.056vw,14px)] pad:text-[clamp(12px,1.111vw,22px)] desktop:text-[clamp(18px,0.938vw,21.6px)] leading-[200%] pad:leading-[216%] desktop:leading-[200%]">
         {role}
       </h5>
       <div className="flex justify-between">
-        <h4 className="font-medium text-black text-[clamp(18px,5vw,22px)] pad:text-[clamp(20px,1.852vw,36px)] desktop:text-[clamp(30px,1.563vw,100vw)] leading-[120%]">
+        <h4 className="font-medium text-black text-[clamp(18px,5vw,22px)] pad:text-[clamp(20px,1.852vw,36px)] desktop:text-[clamp(30px,1.563vw,36px)] leading-[120%]">
           {name}
         </h4>
         {hasLinkedIn ? (
-          <div className={`${mobileIconWidth} pad:w-[clamp(19.69px,1.823vw,40.5px)] desktop:w-[clamp(33.64px,1.752vw,45px)] mb-[clamp(3px,0.833vw,5px)] mr-[clamp(3px,0.833vw,5px)] pad:mb-[0px] pad:mb-[0px]`}>
+          <div
+            className={`${mobileIconWidth} pad:w-[clamp(19.69px,1.823vw,40.5px)] desktop:w-[clamp(37.5px,1.953vw,45px)] mb-[clamp(3px,0.833vw,5px)] mr-[clamp(3px,0.833vw,5px)] pad:mb-[0px] pad:mb-[0px]`}
+          >
             <SNSIcon href={href} imgSrc={linkedin} />
           </div>
         ) : null}

@@ -23,6 +23,7 @@ module.exports = {
         "main-white": "rgba(237, 237, 237, 1)",
         "font-black": "rgba(31, 31, 31, 1)",
         "main-grey": "rgba(170, 170, 170, 0.8)",
+        "sub-grey": "rgba(130, 130, 130, 1)",
       },
       fontFamily: {
         spline: ["Spline Sans", "Inter", "sans-serif"],
@@ -47,22 +48,23 @@ module.exports = {
         },
         desktopSlideDown: {
           "0%": { top: "0px" },
-          "100%": { top: "clamp(307px,15.99vw,100vw)" },
+          "100%": { top: "clamp(307px,15.99vw,360px)" },
         },
         mobileSlideUp: {
-          "0%": { top: "88%" },
+          "0%": { top: "88vh" },
           "100%": { top: "clamp(386px,107.222vw,524px)" },
         },
         padSlideUp: {
-          "0%": { top: "88%" },
+          "0%": { top: "88vh" },
           "100%": { top: "clamp(524px,48.519vw,741px)" },
         },
         desktopSlideUp: {
-          "0%": { top: "88%" },
-          "100%": { top: "clamp(690px,35.938vw,100vw)" },
+          "0%": { top: "88vh" },
+          "100%": { top: "clamp(690px,35.938vw,828px)" },
         },
         zoomBlurIn: {
-          "0%": { transform: "scale(150%, 150%)", filter: "blur(64px)" },
+          "0%": { transform: "scale(200%, 200%)", filter: "blur(64px)" },
+          "30%": { transform: "scale(150%, 150%)", filter: "blur(0px)" },
           "100%": { transform: "scale(100%, 100%)", filter: "blur(0px)" },
         },
         navSlideDown: {

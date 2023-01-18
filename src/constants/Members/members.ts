@@ -10,7 +10,7 @@ export const members: MemberInfoType[] = [
   {
     role: "3D Motion Artist",
     name: "Heewon Ahn",
-    href: " https://www.linkedin.com/in/hee-won-ahn-610239b4/",
+    href: "https://www.linkedin.com/in/hee-won-ahn-610239b4/",
     hasLinkedIn: true,
   },
   {

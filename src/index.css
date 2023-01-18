@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Lemon&family=Open+Sans:wght@400;600&family=Spline+Sans:wght@300;400;500;600;700&display=swap");
-
 @layer components {
   .min-style {
     @apply min-w-[360px] pad:min-w-[1080px] desktop:min-w-[1920px] min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px];
