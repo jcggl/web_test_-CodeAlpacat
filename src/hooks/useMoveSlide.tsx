@@ -40,20 +40,20 @@ const useMoveSlide = (imageSize: number) => {
   useEffect(() => {
     if (current === 0) {
       let timer = setTimeout(() => {
-        setCurrent(imgSize.current - 2);
+        setCurrent((prev) => imgSize.current - 2);
         setStyle((prev) => ({ ...prev, transition: "" }));
       }, 300);
       return () => clearTimeout(timer);
     } else if (current === imgSize.current - 1) {
       let timer = setTimeout(() => {
-        setCurrent(1);
+        setCurrent((prev) => 1);
         setStyle((prev) => ({ ...prev, transition: "" }));
       }, 300);
       return () => clearTimeout(timer);
     } else if (current === 1 || current === imgSize.current - 2) {
       let timer = setTimeout(() => {
         setStyle((prev) => ({ ...prev, transition: "all 0.3s ease-out" }));
-      }, 5);
+      }, 100);
       return () => clearTimeout(timer);
     }
   }, [current]);
