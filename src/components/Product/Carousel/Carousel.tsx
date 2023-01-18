@@ -47,12 +47,11 @@ const Carousel = ({
     const touchDown: number | null = touch;
     if (throttle) return;
     if (touchDown === null) return;
-
     clearTimeout(timer);
-    setTimer(
+    setTimer((prev:any) =>
       setTimeout(() => {
         setThrottle(false);
-      }, 400)
+      }, 600)
     );
 
     const currentTouch = e.touches[0].clientX;

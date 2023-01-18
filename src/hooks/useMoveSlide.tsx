@@ -21,7 +21,7 @@ const useMoveSlide = (imageSize: number) => {
     clearTimeout(timer);
     setTimer(setTimeout(() => {
       setThrottle(false);
-    }, 400));
+    }, 600));
 
     let nextIndex: number = current + index;
 
@@ -53,7 +53,7 @@ const useMoveSlide = (imageSize: number) => {
     } else if (current === 1 || current === imgSize.current - 2) {
       let timer = setTimeout(() => {
         setStyle((prev) => ({ ...prev, transition: "all 0.3s ease-out" }));
-      }, 10);
+      }, 5);
       return () => clearTimeout(timer);
     }
   }, [current]);
