@@ -15,7 +15,7 @@ interface Props {
 
 const Carousel = ({
   imageList = kikitownImageList,
-  carouselSize = "w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1240px)] desktop:w-[clamp(1000px,52.083vw,1200px)] aspect-[1000/580]",
+  carouselSize = "w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1000px)] desktop:w-[clamp(1000px,52.083vw,1200px)] aspect-[1000/580]",
   hasDot = true,
   intervalTime=2812,
 }: Props) => {

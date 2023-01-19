@@ -11,7 +11,7 @@ const ModalBackdrop = () => {
     if (!toggle) {
       timer = setTimeout(() => setAnimate(false), 200);
     }
-
+    
     setAnimate(true);
     return () => clearTimeout(timer);
   }, [toggle]);

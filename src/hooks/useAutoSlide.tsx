@@ -24,7 +24,7 @@ const useAutoSlide = (imageSize: number) => {
    * 윈도우 크기에 따라 화면에 보이는 파트너 갯수
    */
   const contentsNumberChecker = useCallback(():number => {
-    if (360 <= windowWidth && 1080 > windowWidth) return 3
+    if (1080 > windowWidth) return 2
     if (1080 <= windowWidth && 1920 > windowWidth) return 4
     if (1920 <= windowWidth) return 6
     return 6

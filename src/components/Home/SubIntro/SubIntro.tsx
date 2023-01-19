@@ -1,19 +1,20 @@
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import React, { useContext } from "react";
+import React from "react";
 import subIntroAsset from "@/assets/svg/home/sub-intro.svg";
-import TouchScrollContext from "@/contexts/TouchScrollContext";
+// import TouchScrollContext from "@/contexts/TouchScrollContext";
+
 const SubIntro = () => {
   const { ref, textStyle, imageStyle } = useScrollAnimation(0.65);
-  const { touchScrollHandler, handleTouchStart } =
-    useContext(TouchScrollContext);
+  // const { touchScrollHandler, handleTouchStart } =
+  //   useContext(TouchScrollContext);
   return (
     <div
       ref={ref}
-      className="relative w-full min-h-screen h-screen font-spline tracking-[.01em] text-main-white touch-none min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px] overflow-hidden mx-auto"
-      onTouchStart={handleTouchStart}
-      onTouchMove={touchScrollHandler}
+      className="relative w-full min-h-screen h-screen font-spline tracking-[.01em] text-main-white min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] overflow-hidden mx-auto max-w-[450px] pad:max-w-none"
+      // onTouchStart={handleTouchStart}
+      // onTouchMove={touchScrollHandler}
     >
-      {/* title */}
+      {/* title */} 
       <div className="relative mx-auto max-w-[2304px]">
         <h3
           style={textStyle}
@@ -40,7 +41,7 @@ const SubIntro = () => {
       <div className="relative mx-auto max-w-[2304px]">
         <h4
           style={textStyle}
-          className="absolute right-[clamp(17px,4.722vw,20px)] pad:right-[clamp(149px,13.796vw,248px)] desktop:right-[clamp(248px,12.917vw,297.6px)] top-[clamp(482px,133.889vw,610px)] pad:top-[clamp(531px,49.167vw,769px)] desktop:top-[clamp(769px,40.052vw,852.8px)] font-spline font-light font-main-white tracking-[.01em] w-[clamp(209px,58vw,270px)] pad:w-[clamp(426px,39.444vw,511.2px)] desktop:w-[clamp(600px,31.25vw,720px)] text-[clamp(16px,4.4vw,20px)] pad:text-[clamp(20px,1.852vw,24px)] desktop:text-[clamp(28px,1.458vw,33.6px)] leading-[143%]"
+          className="absolute right-[clamp(17px,4.722vw,20px)] pad:right-[clamp(149px,13.796vw,248px)] desktop:right-[clamp(248px,12.917vw,297.6px)] top-[clamp(482px,133.889vw,610px)] pad:top-[clamp(531px,49.167vw,769px)] desktop:top-[clamp(769px,40.052vw,852.8px)] font-spline font-light font-main-white tracking-[.01em] w-[clamp(209px,58vw,270px)] pad:w-[clamp(426px,39.444vw,600px)] desktop:w-[clamp(600px,31.25vw,720px)] text-[clamp(16px,4.4vw,20px)] pad:text-[clamp(20px,1.852vw,28px)] desktop:text-[clamp(28px,1.458vw,33.6px)] leading-[143%]"
         >
           GoodGang Labs is pushing the forefront by developing the core
           technologies that enable fluid, natural, and expressive avatar

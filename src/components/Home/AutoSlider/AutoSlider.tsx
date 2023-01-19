@@ -1,8 +1,10 @@
-import React from "react";
 import { useRef } from "react";
 
 import useInterval from "@/hooks/useInterval";
 import useAutoSlide from "@/hooks/useAutoSlide";
+
+
+
 
 type Props = {
   imageList: (string[] | { image: string })[];
@@ -16,6 +18,19 @@ const AutoSlider = ({ imageList }: Props) => {
   const { style, moveSlide, contentWidth } = useAutoSlide(
     images.current.length
   );
+  const imageRatio = useRef<string[]>([
+    "aspect-[108.34/162]",
+    "aspect-[266.79/60.65]",
+    "aspect-[149.08/137.48]",
+    "aspect-[254.55/100]",
+  ])
+
+  const imageWidth = useRef<string[]>([
+    "w-[clamp(54.85px,15.236vw,65.82px)] pad:w-[clamp(81.25px,7.523vw,98.34px)] desktop:w-[clamp(108.34px,5.643vw,130px)]",
+    "w-[clamp(135.06px,37.517vw,162.072px)] pad:w-[clamp(200.09px,18.527vw,246.79px)] desktop:w-[clamp(266.79px,13.895vw,320.148px)]",
+    "w-[clamp(83.86px,23.294vw,100.7px)] pad:w-[clamp(111.81px,10.353vw,129.08px)] desktop:w-[clamp(149.08px,7.765vw,178.9px)]",
+    "w-[clamp(130px,36.111vw,160.91px)] pad:w-[clamp(218.91px,20.269vw,225.55px)] desktop:w-[clamp(245.55px,12.789vw,294.66px)]",
+  ]);
 
   useInterval(() => {
     moveSlide(1);
@@ -34,7 +49,9 @@ const AutoSlider = ({ imageList }: Props) => {
                     className="flex-none flex justify-center items-center"
                   >
                     <img
-                      className="h-[clamp(60px,16.667vw,80px)] pad:h-[clamp(121.74px,11.272vw,200px)] pad:w-[clamp(200px,18.519vw,300px)] desktop:w-auto desktop:h-auto"
+                      className={`${
+                        imageRatio.current[index % imageList.length]
+                      } ${imageWidth.current[index % imageList.length]}`}
                       src={img.image}
                       alt="Partners"
                     />

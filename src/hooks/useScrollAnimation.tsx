@@ -1,8 +1,9 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRef } from "react";
 
 const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
+  const [isAnimated, setIsAnimated] = useState<boolean>(false);
 
   const handleScroll = useCallback(
     ([entry]: any) => {
@@ -24,31 +25,27 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
         ref.current.children[0].children[0].style.transitionDelay = `${delay}s`;
         ref.current.children[0].children[1].children[0].style.transitionDelay = `${delay}s`;
 
-        ref.current.children[1].children[0].style.transform =
-          "translate3d(0, -3vh, 0)";
-        ref.current.children[0].children[0].style.transform =
-          "translate3d(0, -3vh, 0)";
-        ref.current.children[0].children[1].children[0].style.transform =
-          "translate3d(20%, 0, 0)";
-
-        setTimeout(() => {
+        if (!isAnimated) {
           ref.current.children[1].children[0].style.transform =
-            "translate3d(0, 0, 0)";
+            "translate3d(0, -3vh, 0)";
           ref.current.children[0].children[0].style.transform =
-            "translate3d(0, 0, 0)";
+            "translate3d(0, -3vh, 0)";
           ref.current.children[0].children[1].children[0].style.transform =
-            "translate3d(0, 0, 0)";
-        }, 650);
-      } else {
-        ref.current.children[1].children[0].style.transform =
-          "translate3d(0, 35vh, 0)";
-        ref.current.children[0].children[0].style.transform =
-          "translate3d(0, 35vh, 0)";
-        ref.current.children[0].children[1].children[0].style.transform =
-          "translate3d(-300%, 0, 0)";
+            "translate3d(20%, 0, 0)";
+
+          setTimeout(() => {
+            ref.current.children[1].children[0].style.transform =
+              "translate3d(0, 0, 0)";
+            ref.current.children[0].children[0].style.transform =
+              "translate3d(0, 0, 0)";
+            ref.current.children[0].children[1].children[0].style.transform =
+              "translate3d(0, 0, 0)";
+          }, 650);
+          setIsAnimated(true);
+        }
       }
     },
-    [delay, duration]
+    [delay, duration, isAnimated]
   );
 
   useEffect(() => {
@@ -56,7 +53,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        rootMargin: "0px 0px -50px 0px",
+        threshold: 0.4,
       });
       observer.observe(ref.current);
     }
@@ -70,7 +67,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
       transform: "translate3d(0, 35vh, 0)",
     },
     imageStyle: {
-      transform: "translate3d(-300%, 0, 0)",
+      transform: "translate3d(-300%, 100%, 0)",
     },
   };
 };
