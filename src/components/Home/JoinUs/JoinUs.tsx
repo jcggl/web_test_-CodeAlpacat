@@ -11,7 +11,7 @@ const JoinUs = () => {
   //   useContext(TouchScrollContext);
   return (
     <div
-      className="relative w-full h-screen overflow-hidden min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px]"
+      className="relative w-full h-screen overflow-hidden min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)]"
       // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       // onTouchStart={handleTouchStart}
       // onTouchMove={touchScrollHandler}
