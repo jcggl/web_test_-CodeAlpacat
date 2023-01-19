@@ -1,5 +1,5 @@
 import React from 'react'
-import Video from "@/components/Technology/Video/Video";
+// import Video from "@/components/Technology/Video/Video";
 
 
 const DemoVideo = () => {

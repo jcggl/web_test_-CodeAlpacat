@@ -1,20 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import { HiringButton } from "@/components/Common";
 import useTextSlideUp from "@/hooks/useTextSlideUp";
-import TouchScrollContext from "@/contexts/TouchScrollContext";
+// import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 import Walls from "./Walls";
 
 const JoinUs = () => {
   const { ref, style } = useTextSlideUp(0.6, 0.05);
-  const { touchScrollHandler, handleTouchStart } =
-    useContext(TouchScrollContext);
+  // const { touchScrollHandler, handleTouchStart } =
+  //   useContext(TouchScrollContext);
   return (
     <div
-      className="relative w-full h-screen overflow-hidden touch-none min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px]"
+      className="relative w-full h-screen overflow-hidden min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px]"
       // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      onTouchStart={handleTouchStart}
-      onTouchMove={touchScrollHandler}
+      // onTouchStart={handleTouchStart}
+      // onTouchMove={touchScrollHandler}
     >
       <Walls />
       <div

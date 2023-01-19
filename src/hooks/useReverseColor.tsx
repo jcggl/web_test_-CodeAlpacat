@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRef } from "react";
 import useResize from "./useResize";
 import { useLocation } from "react-router-dom";

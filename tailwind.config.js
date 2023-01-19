@@ -24,6 +24,7 @@ module.exports = {
         "font-black": "rgba(31, 31, 31, 1)",
         "main-grey": "rgba(170, 170, 170, 0.8)",
         "sub-grey": "rgba(130, 130, 130, 1)",
+        "third-grey": "rgba(169, 169, 169, 1)",
       },
       fontFamily: {
         spline: ["Spline Sans", "Inter", "sans-serif"],
@@ -40,26 +41,26 @@ module.exports = {
         },
         mobileSlideDown: {
           "0%": { top: "0px" },
-          "100%": { top: "clamp(213px,59.167vw,229px)" },
+          "100%": { top: "clamp(190px,52.778vw,228px)" },
         },
         padSlideDown: {
           "0%": { top: "0px" },
-          "100%": { top: "clamp(229px,21.204vw,295px)" },
+          "100%": { top: "clamp(251px,23.241vw,307px)" },
         },
         desktopSlideDown: {
           "0%": { top: "0px" },
           "100%": { top: "clamp(307px,15.99vw,360px)" },
         },
         mobileSlideUp: {
-          "0%": { top: "88vh" },
-          "100%": { top: "clamp(386px,107.222vw,524px)" },
+          "0%": { top: "clamp(500px,138.889vw,600px)" },
+          "100%": { top: "clamp(344px,95.556vw,442.8px)" },
         },
         padSlideUp: {
-          "0%": { top: "88vh" },
-          "100%": { top: "clamp(524px,48.519vw,741px)" },
+          "0%": { top: "clamp(700px,64.815vw,900px)" },
+          "100%": { top: "clamp(496px,45.926vw,690px)" },
         },
         desktopSlideUp: {
-          "0%": { top: "88vh" },
+          "0%": { top: "clamp(950px,49.479vw,1050px)" },
           "100%": { top: "clamp(690px,35.938vw,828px)" },
         },
         zoomBlurIn: {

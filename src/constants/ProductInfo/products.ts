@@ -23,7 +23,6 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: beergangImageList,
-    linkTitle: "go to beergang",
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",
