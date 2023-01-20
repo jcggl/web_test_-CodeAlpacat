@@ -28,8 +28,8 @@ const AutoSlider = ({ imageList }: Props) => {
   const imageWidth = useRef<string[]>([
     "w-[clamp(54.85px,15.236vw,65.82px)] pad:w-[clamp(81.25px,7.523vw,98.34px)] desktop:w-[clamp(108.34px,5.643vw,130px)]",
     "w-[clamp(135.06px,37.517vw,162.072px)] pad:w-[clamp(200.09px,18.527vw,246.79px)] desktop:w-[clamp(266.79px,13.895vw,320.148px)]",
-    "w-[clamp(83.86px,23.294vw,100.7px)] pad:w-[clamp(111.81px,10.353vw,129.08px)] desktop:w-[clamp(149.08px,7.765vw,178.9px)]",
-    "w-[clamp(130px,36.111vw,160.91px)] pad:w-[clamp(218.91px,20.269vw,225.55px)] desktop:w-[clamp(245.55px,12.789vw,294.66px)]",
+    "w-[clamp(75px,20.833vw,90px)] pad:w-[clamp(111.81px,10.353vw,129.08px)] desktop:w-[clamp(149.08px,7.765vw,178.9px)]",
+    "w-[clamp(136px,37.778vw,163px)] pad:w-[clamp(200px,18.519vw,220px)] desktop:w-[clamp(254.55px,13.258vw,294.66px)]",
   ]);
 
   useInterval(() => {

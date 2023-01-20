@@ -15,9 +15,9 @@ interface Props {
 
 const Carousel = ({
   imageList = kikitownImageList,
-  carouselSize = "w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1000px)] desktop:w-[clamp(1000px,52.083vw,1200px)] aspect-[1000/580]",
+  carouselSize = "w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(1000px,52.083vw,1200px)] aspect-[1000/580]",
   hasDot = true,
-  intervalTime=2812,
+  intervalTime = 2812,
 }: Props) => {
   const images = useRef<string[]>([
     imageList[imageList.length - 1],
@@ -48,7 +48,7 @@ const Carousel = ({
     if (throttle) return;
     if (touchDown === null) return;
     clearTimeout(timer);
-    setTimer((prev:any) =>
+    setTimer((prev: any) =>
       setTimeout(() => {
         setThrottle(false);
       }, 600)

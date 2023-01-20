@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useRef } from "react";
 
 const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
-  const [isAnimated, setIsAnimated] = useState<boolean>(false);
 
   const handleScroll = useCallback(
     ([entry]: any) => {
@@ -25,7 +24,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
         ref.current.children[0].children[0].style.transitionDelay = `${delay}s`;
         ref.current.children[0].children[1].children[0].style.transitionDelay = `${delay}s`;
 
-        if (!isAnimated) {
+
           ref.current.children[1].children[0].style.transform =
             "translate3d(0, -3vh, 0)";
           ref.current.children[0].children[0].style.transform =
@@ -41,11 +40,16 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
             ref.current.children[0].children[1].children[0].style.transform =
               "translate3d(0, 0, 0)";
           }, 650);
-          setIsAnimated(true);
-        }
+      } else {
+        ref.current.children[1].children[0].style.transform =
+          "translate3d(0, 40vh, 0)";
+        ref.current.children[0].children[0].style.transform =
+          "translate3d(0, 40vh, 0)";
+        ref.current.children[0].children[1].children[0].style.transform =
+          "translate3d(-300%, 100%, 0)";
       }
     },
-    [delay, duration, isAnimated]
+    [delay, duration]
   );
 
   useEffect(() => {
@@ -53,7 +57,8 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.4,
+        threshold: 0.05,
+        rootMargin: "0px 0px 0px 0px"
       });
       observer.observe(ref.current);
     }
@@ -64,7 +69,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
   return {
     ref,
     textStyle: {
-      transform: "translate3d(0, 35vh, 0)",
+      transform: "translate3d(0, 40vh, 0)",
     },
     imageStyle: {
       transform: "translate3d(-300%, 100%, 0)",

@@ -1,12 +1,11 @@
-import { useRef, useCallback, useEffect, useState } from "react";
+import { useRef, useCallback, useEffect } from "react";
 
 const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
-  const [isAnimated, setIsAnimated] = useState<boolean>(false);
+
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting) {
-        if (isAnimated) return
 
         for (let i = 0; i < 4; i++) {
           ref.current.children[i].style.transitionProperty = "all";
@@ -32,18 +31,26 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
           ref.current.children[2].style.top = "0%";
           ref.current.children[3].style.top = "0%";
           ref.current.children[4].style.transform = "translate3d(0,0,0)";
-        }, 700);
-        setIsAnimated(true)
+        }, 750);
+      } else {
+          ref.current.children[0].style.top = "139%";
+          ref.current.children[1].style.top = "112.4%";
+          ref.current.children[2].style.top = "103.8%";
+          ref.current.children[3].style.top = "60%";
+          ref.current.children[4].style.transform = "translate3d(0,100vh,0)";
       }
     },
-    [delay, duration, isAnimated]
+    [delay, duration]
   );
 
   useEffect(() => {
     let observer: any;
 
     if (ref.current) {
-      observer = new IntersectionObserver(handleScroll, { threshold: 0.5 });
+      observer = new IntersectionObserver(handleScroll, {
+        threshold: 0.6,
+        rootMargin: "100000px 0px 30% 0px",
+      });
       observer.observe(ref.current);
     }
 

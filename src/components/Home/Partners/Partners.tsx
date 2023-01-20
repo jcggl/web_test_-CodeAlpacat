@@ -17,7 +17,7 @@ const Partners = () => {
       // onTouchStart={handleTouchStart}
       // onTouchMove={touchScrollHandler}
     >
-      <h3 className="font-spline tracking-[.01em] text-main-white text-[clamp(18px,5vw,26px)] pad:text-[clamp(26px,2.407vw,40px)] desktop:text-[clamp(40px,2.083vw,48px)] leading-[118%] ml-[clamp(23px,6.389vw,90px)] pad:ml-[clamp(159px,14.722vw,115px)] desktop:ml-[clamp(115px,5.99vw,160px)] pb-[clamp(50px,7.813vh,54px)] pad:pb-[clamp(85px,7.870vw,68px)] desktop:pb-[clamp(68px,6.296vh,81.6px)]">
+      <h3 className="font-spline tracking-[.01em] text-main-white text-[clamp(16px,4.444vw,26px)] pad:text-[clamp(26px,2.407vw,40px)] desktop:text-[clamp(40px,2.083vw,48px)] leading-[118%] ml-[clamp(30px,8.333vw,150px)] pad:ml-[clamp(159px,14.722vw,258px)] desktop:ml-[clamp(258px,13.438vw,310px)] pb-[clamp(98px,27.222vw,118px)] pad:pb-[clamp(94.23px,8.725vw,112px)] desktop:pb-[clamp(140px,7.292vw,168px)]">
         Our Partners
       </h3>
       <AutoSlider imageList={partnersImageList} />

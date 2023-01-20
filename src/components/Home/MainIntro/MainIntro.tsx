@@ -18,7 +18,7 @@ const MainIntro = () => {
     >
       <div className="relative max-w-[500px] pad:max-w-[1705px] desktop:max-w-[2304px] mx-auto">
         <h3 className="absolute top-[clamp(190px,52.778vw,228px)] pad:top-[clamp(251px,23.241vw,307px)] desktop:top-[clamp(307px,15.99vw,360px)] text-main-white font-spline font-semibold left-[clamp(55px,15.278vw,66px)] pad:left-[clamp(243px,22.5vw,441px)] desktop:left-[clamp(441px,22.969vw,529px)] text-[clamp(40px,11.111vw,60px)] pad:text-[clamp(85px,7.870vw,130px)] desktop:text-[clamp(140px,7.292vw,168px)] leading-[145%] pad:leading-[119%] animate-[mobileSlideDown_.5s_ease-out] pad:animate-[padSlideDown_.5s_ease-out] desktop:animate-[desktopSlideDown_.5s_ease-out] tracking-[.01em]">
-          Inspiring Life
+          Inspire Life
           <br />
           Into Avatars
         </h3>
