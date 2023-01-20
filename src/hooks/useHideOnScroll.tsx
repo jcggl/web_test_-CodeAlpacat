@@ -17,18 +17,18 @@ const useHideOnScroll = () => {
       // }, 400))
       setThrottle((prev) => true);
       if (!prevScrollY) return;
-      if (window.pageYOffset - prevScrollY > 3) setScroll((prev) => true);
-      else if (window.pageYOffset - prevScrollY < -3) setScroll((prev) => false);
+      if (window.scrollY - prevScrollY > 3) setScroll((prev) => true);
+      else if (window.scrollY - prevScrollY < -3 && window.scrollY > 5) setScroll((prev) => false);
     },
     [throttle, prevScrollY]
   );
 
   useEffect(() => {
-    setPrevScrollY((prev) => window.pageYOffset);
+    setPrevScrollY((prev) => window.scrollY);
 
     let throttleTimer = setTimeout(() => {
       setThrottle(false);
-    }, 50);
+    }, 10);
 
     window.addEventListener("scroll", onScrollHandler);
     return () => {

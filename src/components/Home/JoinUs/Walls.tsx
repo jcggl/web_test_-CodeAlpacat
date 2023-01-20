@@ -25,7 +25,7 @@ const Walls = () => {
       />
       <img
         style={rightStyle}
-        className="absolute pad:right-[-33.908vw] desktop:right-[0] pad:top-[clamp(-133.92px,-12.4vw,-133.92px)] desktop:top-[-172px] w-[79.392vw] pad:w-[73.056vw] pad:h-[clamp(615.76px,57.015vw,738.912px)] desktop:h-[798.77px] pad:aspect-auto max-w-none max-h-none"
+        className="absolute pad:right-[-33.908vw] desktop:right-[0] pad:top-[clamp(-133.92px,-12.4vw,-133.92px)] desktop:top-[-172px] w-[79.392vw] pad:w-[73.056vw] pad:h-[clamp(615.76px,57.015vw,738.912px)] desktop:w-[53.313vw] desktop:h-[798.77px] pad:aspect-auto max-w-none max-h-none"
         src={right}
         alt="우측 벽"
       />

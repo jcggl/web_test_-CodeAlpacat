@@ -15,7 +15,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
           ref.current.children[i].style.transitionTimingFunction =
             "cubic-bezier(0, 0, 0.58, 1)";
           ref.current.children[i].style.transitionDelay = `${delay}s`;
-          ref.current.children[i].style.top = i % 2 ? "-15%" : "-5%";
+          ref.current.children[i].style.top = i % 2 ? "-7vh" : "-35vh";
         }
 
         ref.current.children[4].style.transitionProperty = "all";
@@ -26,12 +26,12 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
         ref.current.children[4].style.transform = "translate3d(0,-5vh,0)";
 
         setTimeout(() => {
-          ref.current.children[0].style.top = "0%";
+          ref.current.children[0].style.top = "-20vh";
           ref.current.children[1].style.top = "0%";
-          ref.current.children[2].style.top = "0%";
+          ref.current.children[2].style.top = "-20vh";
           ref.current.children[3].style.top = "0%";
           ref.current.children[4].style.transform = "translate3d(0,0,0)";
-        }, 750);
+        }, 730);
       } else {
           ref.current.children[0].style.top = "139%";
           ref.current.children[1].style.top = "112.4%";
@@ -60,16 +60,16 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
   return {
     ref,
     FirstStyle: {
-      top: "139%",
+      top: "139vh",
     },
     SecondStyle: {
-      top: "112.4%",
+      top: "112.4vh",
     },
     ThirdStyle: {
-      top: "103.8%",
+      top: "103.8vh",
     },
     FourthStyle: {
-      top: "60%",
+      top: "60vh",
     },
     textStyle: {
       transform: "translate3d(0,100vh,0)",

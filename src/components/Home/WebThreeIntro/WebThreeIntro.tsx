@@ -5,7 +5,7 @@ import useIntersectAnimation from "@/hooks/useIntersectAnimation";
 // import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const WebThreeIntro = () => {
-  const { ref, FirstStyle, SecondStyle, ThirdStyle, FourthStyle, textStyle } = useIntersectAnimation(0.75);
+  const { ref, FirstStyle, SecondStyle, ThirdStyle, FourthStyle, textStyle } = useIntersectAnimation(0.7);
   // const { touchScrollHandler, handleTouchStart } =
   //   useContext(TouchScrollContext);
   return (
@@ -17,25 +17,25 @@ const WebThreeIntro = () => {
     >
       <img
         style={FirstStyle}
-        className="absolute object-cover left-[0%] w-[25%] h-full pad:h-auto"
+        className="absolute object-cover left-[0%] w-[25%] h-[130vh]"
         src={intersect}
         alt="Intersect BG"
       />
       <img
         style={SecondStyle}
-        className="absolute object-cover left-[25%] w-[25%] h-full pad:h-auto"
+        className="absolute object-cover left-[25%] w-[25%] h-[120vh]"
         src={intersectReverse}
         alt="Intersect BG"
       />
       <img
         style={ThirdStyle}
-        className="absolute object-cover left-[50%] w-[25%] h-full pad:h-auto"
+        className="absolute object-cover left-[50%] w-[25%] h-[130vh]"
         src={intersect}
         alt="Intersect BG"
       />
       <img
         style={FourthStyle}
-        className="absolute object-cover left-[75%] w-[25%] h-full pad:h-auto"
+        className="absolute object-cover left-[75%] w-[25%] h-[120vh]"
         src={intersectReverse}
         alt="Intersect BG"
       />
@@ -43,7 +43,7 @@ const WebThreeIntro = () => {
         style={textStyle}
         className="flex justify-center items-center w-full h-full"
       >
-        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(32px,8.889vw,50px)] pad:text-[clamp(64px,5.926vw,125px)] desktop:text-[clamp(125px,6.51vw,130px)] leading-[clamp(48px,150%,100px)] pad:leading-[125%] desktop:leading-[clamp(150px,120%,180px)] z-[2]">
+        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(30px,8.333vw,50px)] pad:text-[clamp(64px,5.926vw,110px)] desktop:text-[clamp(110px,5.729vw,132px)] leading-[clamp(48px,150%,100px)] pad:leading-[125%] desktop:leading-[clamp(150px,120%,180px)] z-[2]">
           We will establish
           <br />
           the new standard for
