@@ -25,7 +25,7 @@ const NavLogo = ({ location, checkActiveLink, isTechVision }:NavLogoType) => {
         alt="굳갱랩스 로고"
       />
       <img
-        className="block pad:hidden w-[clamp(47.52px,13.2vw,80px)] aspect-[47.45/32] transition delay-200 hover:opacity-70"
+        className="block pad:hidden w-[clamp(47.52px,13.2vw,65px)] aspect-[47.45/32] transition delay-200 hover:opacity-70"
         src={logo}
         alt="굳갱랩스 로고"
       />

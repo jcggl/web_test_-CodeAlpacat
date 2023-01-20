@@ -1,13 +1,11 @@
-import { useCallback, useRef, useEffect, useState } from "react";
+import { useCallback, useRef, useEffect } from "react";
 
 const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
-  const [isAnimated, setIsAnimated] = useState<boolean>(false);
 
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting) {
-        if (isAnimated) return
         ref.current.style.transitionProperty = "all";
         ref.current.style.transitionDuration = `${duration}s`;
         ref.current.style.transitionTimingFunction =
@@ -15,17 +13,21 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
         ref.current.style.transitionDelay = `${delay}s`;
 
         ref.current.style.transform = "translate3d(0,0,0)";
-        setIsAnimated(true)
+      } else {
+        ref.current.style.transform = "translate3d(0,-10%,0)";
       }
     },
-    [duration, delay, isAnimated]
+    [duration, delay]
   );
 
   useEffect(() => {
     let observer: any;
 
     if (ref.current) {
-      observer = new IntersectionObserver(handleScroll, { threshold: 0.45 });
+      observer = new IntersectionObserver(handleScroll, {
+        threshold: 0.5,
+        rootMargin: "100000px 0px 0px 0px",
+      });
       observer.observe(ref.current);
     }
 

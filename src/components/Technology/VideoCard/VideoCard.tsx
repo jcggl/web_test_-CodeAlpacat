@@ -4,9 +4,9 @@ import { VideoCardType } from "./VideoCard.types";
 import useResize from "@/hooks/useResize";
 import Carousel from "@/components/Product/Carousel/Carousel";
 import ComingSoon from "@/components/Common/ComingSoon/ComingSoon";
-import webcamBased1 from "@/assets/technology/webcam-based1.webp";
-import webcamBased2 from "@/assets/technology/webcam-based2.webp";
-import speechBased1 from "@/assets/technology/speech-based1.webp";
+import webcamBased1 from "@/assets/technology/tech-webcam1.webp";
+import webcamBased2 from "@/assets/technology/tech-webcam2.webp";
+import speechBased1 from "@/assets/technology/tech-voice1.webp";
 
 const VideoCard = ({
   title = "Title",
@@ -24,9 +24,9 @@ const VideoCard = ({
   const zigZagLayout = isEven ? "desktop:flex-row" : "desktop:flex-row-reverse";
   return (
     <div
-      className={`mx-auto flex flex-col items-center ${zigZagLayout} desktop:justify-between w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(1400px,72.917vw,1680px)]`}
+      className={`mx-auto flex flex-col items-center ${zigZagLayout} desktop:justify-between w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(1400px,72.917vw,1680px)]`}
     >
-      <div className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(880px,45.833vw,1056px)] aspect-[300/172.4] pad:aspect-[710/400] desktop:aspect-[880/490]">
+      <div className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)] aspect-[300/172.4] pad:aspect-[710/400] desktop:aspect-[880/490]">
         {/* <Video
           src={src}
           muted={muted}
@@ -38,21 +38,21 @@ const VideoCard = ({
         {index === 0 && (
           <Carousel
             imageList={[webcamBased1, webcamBased2]}
-            carouselSize="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
+            carouselSize="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
             hasDot={false}
             intervalTime={4020}
           />
         )}
         {index === 1 && (
           <img
-            className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
+            className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
             src={speechBased1}
             alt="speechBasedPics"
           />
         )}
         {index === 2 && <ComingSoon />}
       </div>
-      <div className="flex flex-col desktop:justify-center w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(710px,65.741vw,1250px)]  desktop:w-[clamp(455px,23.698vw,546px)]">
+      <div className="flex flex-col desktop:justify-center w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)]  desktop:w-[clamp(455px,23.698vw,546px)]">
         <h3 className="font-bold text-[clamp(12px,3.333vw,26px)] pad:text-[clamp(24px,2.222vw,42px)] desktop:text-[clamp(40px,2.083vw,48px)] leading-[166%] pad:leading-[140%] desktop:leading-[130%] mb-[clamp(6px,1.667vw,16px)] mt-[clamp(9.5px,2.639vw,25px)] pad:my-[clamp(10px,0.926vw,24px)] desktop:my-[clamp(24px,1.25vw,28.8px)]">
           {width >= 1920 ? (
             <>

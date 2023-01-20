@@ -18,7 +18,7 @@ const HamburgerButton = ({ location, isTechVision }: HamburgerButtonType) => {
       onClick={toggleNavigation}
     >
       <img
-        className={`w-[clamp(44px,12.222vw,70px)] ${isHomeBorder}`}
+        className={`w-[clamp(44px,12.222vw,65px)] ${isHomeBorder}`}
         src={hamburger}
         alt="모바일 햄버거 버튼"
       />
