@@ -103,7 +103,7 @@ const Carousel = ({
                 (img: string, index: number): JSX.Element => (
                   <img
                     key={`${img}${index}`}
-                    className={`flex-none ${carouselSize} object-contain`}
+                    className={`flex-none ${carouselSize} object-cover`}
                     src={img}
                     alt="슬라이드 이미지"
                   />

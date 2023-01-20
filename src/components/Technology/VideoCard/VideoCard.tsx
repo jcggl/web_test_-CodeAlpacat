@@ -38,14 +38,14 @@ const VideoCard = ({
         {index === 0 && (
           <Carousel
             imageList={[webcamBased1, webcamBased2]}
-            carouselSize="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
+            carouselSize="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)] aspect-[680/383.1]"
             hasDot={false}
             intervalTime={4020}
           />
         )}
         {index === 1 && (
           <img
-            className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)]"
+            className="w-[clamp(272.11px,75.586vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)] aspect-[680/383.1]"
             src={speechBased1}
             alt="speechBasedPics"
           />
