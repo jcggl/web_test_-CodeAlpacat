@@ -18,6 +18,7 @@ const TechnologyVision = () => {
               className="w-[clamp(79px,21.944vw,151px)] pad:w-[clamp(129.51px,11.992vw,230px)] desktop:w-[clamp(189px,9.844vw,226.8px)]"
               src={techsvg1}
               alt="기술1"
+              loading="lazy"
             />
           </div>
           <h4 className="mx-auto pad:mt-[clamp(35px,0.1vw,47px)] desktop:mt-[clamp(47px,2.448vw,56.4px)] w-[clamp(126px,35vw,170px)] pad:w-[clamp(218.06px,20.191vw,396px)] desktop:w-[clamp(396px,20.625vw,475.2px)] pad:h-[clamp(59.66px,5.524vw,100vw)] desktop:h-auto">
@@ -30,6 +31,7 @@ const TechnologyVision = () => {
               className="w-[clamp(125px,34.722vw,203px)] pad:w-[clamp(203px,18.796vw,308px)] pad:scale-[clamp(1,10%,1.5)] desktop:scale-[1] desktop:w-[clamp(270px,14.063vw,324px)]"
               src={techsvg2}
               alt="기술2"
+              loading="lazy"
             />
           </div>
           <h4 className="mx-auto pad:mt-[clamp(35px,0.1vw,47px)] desktop:mt-[clamp(47px,2.448vw,56.4px)] pr-[clamp(0px,3.8vw,35px)] pad:pr-[0px] w-[clamp(115px,31.944vw,170px)] pad:w-[clamp(172.8px,16vw,252px)] desktop:w-[clamp(252px,13.125vw,302.4px)] pad:h-[clamp(59.66px,5.524vw,100vw)] desktop:h-auto">
@@ -42,6 +44,7 @@ const TechnologyVision = () => {
               className="w-[clamp(76px,21.111vw,128px)] pad:w-[clamp(121.26px,11.228vw,194px)] desktop:w-[clamp(177px,9.219vw,212.4px)]"
               src={techsvg3}
               alt="기술3"
+              loading="lazy"
             />
           </div>
           <h4 className="mx-auto pad:mt-[clamp(35px,0.1vw,47px)] desktop:mt-[clamp(47px,2.448vw,56.4px)] w-[clamp(95px,26.389vw,120px)] pad:w-[clamp(175.54px,16.254vw,256px)] desktop:w-[clamp(256px,13.333vw,307.2px)] pad:h-[clamp(59.66px,5.524vw,100vw)] desktop:h-auto">

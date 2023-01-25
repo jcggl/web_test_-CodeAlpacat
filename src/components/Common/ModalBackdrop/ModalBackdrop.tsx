@@ -29,6 +29,7 @@ const ModalBackdrop = () => {
         className="fixed top-0 left-0 w-full h-screen object-cover"
         src={modalBackground}
         alt="모달 백그라운드 이미지"
+        loading="lazy"
       />
     </div>
   );

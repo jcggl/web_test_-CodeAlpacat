@@ -48,6 +48,7 @@ const VideoCard = ({
             className="w-[clamp(300px,83.333vw,710px)] pad:w-[clamp(680px,62.963vw,1000px)] desktop:w-[clamp(880px,45.833vw,1056px)] aspect-[300/176.47]"
             src={speechBased1}
             alt="speechBasedPics"
+            loading="lazy"
           />
         )}
         {index === 2 && <ComingSoon />}

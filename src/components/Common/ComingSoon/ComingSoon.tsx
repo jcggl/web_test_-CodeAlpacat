@@ -8,6 +8,7 @@ const ComingSoon = () => {
         className="w-[clamp(28px,7.778vw,58px)] pad:w-[clamp(58px,5.370vw,84.56px)] desktop:w-[clamp(70px,3.646vw,84px)]"
         src={comingSoon}
         alt="Coming soon"
+        loading="lazy"
       />
       <h3 className="font-bold text-[clamp(22px,6.111vw,45px)] pad:text-[clamp(36px,3.333vw,52.488px)] desktop:text-[clamp(50px,2.604vw,60px)] mt-[clamp(11.76px,3.267vw,23px)] pad:mt-[clamp(32px,2.963vw,46.65px)] desktop:mt-[clamp(30px,1.563vw,36px)] leading-[100%]">
         Coming soon!

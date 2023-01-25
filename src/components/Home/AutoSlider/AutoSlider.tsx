@@ -54,6 +54,7 @@ const AutoSlider = ({ imageList }: Props) => {
                       } ${imageWidth.current[index % imageList.length]}`}
                       src={img.image}
                       alt="Partners"
+                      loading="lazy"
                     />
                   </div>
                 ) : (

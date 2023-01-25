@@ -89,6 +89,7 @@ const Carousel = ({
             }}
             src={arrowLeft}
             alt="ArrowLeft"
+            loading="lazy"
           />
         </div>
         <div className="relative flex justify-center">
@@ -106,6 +107,7 @@ const Carousel = ({
                     className={`flex-none ${carouselSize} object-cover`}
                     src={img}
                     alt="슬라이드 이미지"
+                    loading="lazy"
                   />
                 )
               )}
@@ -150,6 +152,7 @@ const Carousel = ({
             }}
             src={arrowRight}
             alt="ArrowRight"
+            loading="lazy"
           />
         </div>
       </div>

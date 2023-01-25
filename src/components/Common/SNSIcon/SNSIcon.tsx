@@ -11,7 +11,7 @@ const SNSIcon = ({
       target={href === "#" ? "" : "_blank"}
       rel="noopener noreferrer"
     >
-      <img src={imgSrc} alt={alt} className="w-full h-full"/>
+      <img src={imgSrc} alt={alt} loading="lazy" className="w-full h-full" />
     </a>
   );
 };

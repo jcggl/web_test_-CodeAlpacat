@@ -21,6 +21,7 @@ const HamburgerButton = ({ location, isTechVision }: HamburgerButtonType) => {
         className={`w-[clamp(20.21px,5.614vw,25px)] ${isHomeBorder}`}
         src={hamburger}
         alt="모바일 햄버거 버튼"
+        loading="lazy"
       />
     </div>
   );
