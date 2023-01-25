@@ -9,16 +9,14 @@ const useHideOnScroll = () => {
   const [prevScrollY, setPrevScrollY] = useState<number | null>(null);
 
   const onScrollHandler = useCallback(
-    (e: any) => {
+    () => {
       if (throttle) return;
-      // clearTimeout(timer);
-      // setTimer(setTimeout(() => {
-      //   setScroll((prev) => false)
-      // }, 400))
+
       setThrottle((prev) => true);
       if (!prevScrollY) return;
-      if (window.scrollY - prevScrollY > 3) setScroll((prev) => true);
-      else if (window.scrollY - prevScrollY < -3 && window.scrollY > 5) setScroll((prev) => false);
+      if (window.scrollY - prevScrollY > 3 && window.scrollY > 10)
+        setScroll((prev) => true);
+      else if (window.scrollY - prevScrollY < -3) setScroll((prev) => false);
     },
     [throttle, prevScrollY]
   );

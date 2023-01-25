@@ -9,8 +9,8 @@ const HamburgerButton = ({ location, isTechVision }: HamburgerButtonType) => {
 
   const isHomeBorder: string =
     location.pathname === "/" || toggle || isTechVision
-      ? "text-main-white"
-      : "text-main-black filter invert";
+      ? "text-main-white filter invert"
+      : "text-main-black";
 
   return (
     <div
@@ -18,7 +18,7 @@ const HamburgerButton = ({ location, isTechVision }: HamburgerButtonType) => {
       onClick={toggleNavigation}
     >
       <img
-        className={`w-[clamp(44px,12.222vw,65px)] ${isHomeBorder}`}
+        className={`w-[clamp(20.21px,5.614vw,25px)] ${isHomeBorder}`}
         src={hamburger}
         alt="모바일 햄버거 버튼"
       />

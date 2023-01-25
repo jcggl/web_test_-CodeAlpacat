@@ -43,7 +43,7 @@ const WebThreeIntro = () => {
         style={textStyle}
         className="flex justify-center items-center w-full h-full"
       >
-        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(30px,8.333vw,50px)] pad:text-[clamp(64px,5.926vw,110px)] desktop:text-[clamp(110px,5.729vw,132px)] leading-[clamp(48px,150%,100px)] pad:leading-[125%] desktop:leading-[clamp(150px,120%,180px)] z-[2]">
+        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(30px,8.333vw,70px)] pad:text-[clamp(64px,5.926vw,110px)] desktop:text-[clamp(110px,5.729vw,132px)] leading-[153%] pad:leading-[125%] desktop:leading-[118%] z-[2]">
           We will establish
           <br />
           the new standard for
