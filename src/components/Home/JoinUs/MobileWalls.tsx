@@ -8,7 +8,7 @@ import useCombineWall from "@/hooks/useCombineWall";
 
 const MobileWalls = () => {
   const { ref, bottomStyle, leftStyle, rightStyle, topStyle } =
-    useCombineWall(0.5);
+    useCombineWall(0.55);
   return (
     <div ref={ref} className="pad:hidden">
       <img

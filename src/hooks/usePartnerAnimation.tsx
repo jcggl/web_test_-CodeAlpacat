@@ -14,7 +14,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
 
         ref.current.style.transform = "translate3d(0,0,0)";
       } else {
-        ref.current.style.transform = "translate3d(0,-10%,0)";
+        ref.current.style.transform = "translate3d(0,-15%,0)";
       }
     },
     [duration, delay]
@@ -25,7 +25,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.5,
+        threshold: 0.3,
         rootMargin: "100000px 0px 0px 0px",
       });
       observer.observe(ref.current);
@@ -37,7 +37,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   return {
     ref,
     style: {
-      transform: "translate3d(0,-10%,0)",
+      transform: "translate3d(0,-15%,0)",
     },
   };
 };

@@ -10,11 +10,11 @@ const SubIntro = () => {
   return (
     <div
       ref={ref}
-      className="relative w-full min-h-screen h-screen font-spline tracking-[.01em] text-main-white min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] overflow-hidden mx-auto max-w-[450px] pad:max-w-none"
+      className="relative w-full min-h-screen h-screen font-spline tracking-[.01em] text-main-white min-h-[clamp(640px,177.778vw,820px)] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] overflow-hidden mx-auto max-w-[450px] pad:max-w-none"
       // onTouchStart={handleTouchStart}
       // onTouchMove={touchScrollHandler}
     >
-      {/* title */} 
+      {/* title */}
       <div className="relative mx-auto max-w-[2304px]">
         <h3
           style={textStyle}
