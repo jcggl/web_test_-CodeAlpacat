@@ -1,23 +1,23 @@
-import { useCallback, useEffect, useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect, useCallback } from "react";
 import TechHeightContext from "@/contexts/TechHeightContext";
 
-const useResizeTechHeight = () => {
+const useResizeTechIntroHeight = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { techHeightHandler } = useContext(TechHeightContext);
+  const { introHeightHandler } = useContext(TechHeightContext);
 
   const resizeHandler = useCallback(() => {
     const { current } = ref;
     if (current !== null) {
-      techHeightHandler(current.clientHeight);
+      introHeightHandler(current.clientHeight);
     }
-  }, [techHeightHandler, ref]);
+  }, [introHeightHandler, ref]);
 
   useEffect(() => {
     const { current } = ref;
     if (current !== null) {
-      techHeightHandler(current.clientHeight);
+      introHeightHandler(current.clientHeight);
     }
-  }, [techHeightHandler, ref]);
+  }, [introHeightHandler, ref]);
 
   useEffect(() => {
     window.addEventListener("resize", resizeHandler);
@@ -27,4 +27,4 @@ const useResizeTechHeight = () => {
   return { ref };
 };
 
-export default useResizeTechHeight;
+export default useResizeTechIntroHeight

@@ -1,8 +1,10 @@
 import React from "react";
+import useResizeTechIntroHeight from "@/hooks/useResizeTechIntroHeight";
 
 const TechnologyIntro = () => {
+  const { ref } = useResizeTechIntroHeight();
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px]">
+    <div ref={ref} className="flex flex-col items-center justify-center w-full h-screen min-h-[640px] pad:min-h-[768px] desktop:min-h-[1080px]">
       <h3 className="flex text-black font-spline tracking-[.01em] font-bold text-center text-[clamp(28px,7.778vw,51px)] pad:text-[clamp(55px,5.093vw,70px)] desktop:text-[clamp(85px,4.427vw,102px)] leading-[140%] px-[clamp(40px,11.111vw,70px)] pad:px-[0px]">
         Your face, voice, or words.
         <br />

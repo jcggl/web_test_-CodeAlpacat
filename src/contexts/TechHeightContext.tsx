@@ -6,24 +6,35 @@ interface Props {
 
 interface TechHeightType {
   techHeight: number;
-  techHeightHandler(height:number): void;
+  introHeight: number;
+  techHeightHandler(height: number): void;
+  introHeightHandler(height: number): void;
 }
 
 const TechHeightContext = createContext<TechHeightType>({
   techHeight: 0,
-  techHeightHandler: (height:number) => {},
+  introHeight: 0,
+  techHeightHandler: (height: number) => {},
+  introHeightHandler: (height: number) => {},
 });
 
 export const TechHeightProvider = ({ children }: Props) => {
   const [techHeight, setTechHeight] = useState<number>(0);
+  const [introHeight, setIntroHeight] = useState<number>(0);
 
   const techHeightHandler = useCallback((height:number): void => {
     setTechHeight((prev) => height)
   }, []);
 
+  const introHeightHandler = useCallback((height: number): void => {
+    setIntroHeight((prev) => height);
+  }, []);
+
   const context = {
   techHeight,
-  techHeightHandler
+  introHeight,
+  techHeightHandler,
+  introHeightHandler,
 };
 
   return (
