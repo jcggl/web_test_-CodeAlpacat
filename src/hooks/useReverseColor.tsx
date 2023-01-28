@@ -14,8 +14,8 @@ const useReverseColor = () => {
     if (throttle) return;
     if (!ref.current) return;
     if (
-      window.scrollY >= techHeight + ref.current.clientHeight / 2 &&
-      window.scrollY < techHeight * 2 - ref.current.clientHeight / 2 &&
+      window.scrollY >= techHeight - ref.current.clientHeight &&
+      window.scrollY < techHeight * 2 + ref.current.clientHeight &&
       location.pathname === "/Technology"
     ) {
       setIsTechVision(true);
