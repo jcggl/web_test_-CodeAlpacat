@@ -13,7 +13,7 @@ const useReverseColor = () => {
     if (throttle) return;
     if (!ref.current) return;
     if (
-      window.scrollY >= pageHeight + ref.current.clientHeight / 4 &&
+      window.scrollY >= pageHeight + ref.current.clientHeight / 2 &&
       window.scrollY < pageHeight * 2 + ref.current.clientHeight / 2 &&
       location.pathname === "/Technology"
     ) {

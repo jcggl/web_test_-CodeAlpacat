@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback} from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const useHideOnScroll = () => {
   //스크롤 중이면 setScroll을 true
@@ -8,18 +8,23 @@ const useHideOnScroll = () => {
   // const [timer, setTimer] = useState<any>();
   const [prevScrollY, setPrevScrollY] = useState<number | null>(null);
 
-  const onScrollHandler = useCallback(
-    () => {
-      if (throttle) return;
+  const navbarOpacityGenerator = useCallback(() => {
+    setScroll((prev) => false);
+  }, []);
 
-      setThrottle((prev) => true);
-      if (!prevScrollY) return;
-      if (window.scrollY - prevScrollY > 3 && window.scrollY > 10)
-        setScroll((prev) => true);
-      else if (window.scrollY - prevScrollY < -3) setScroll((prev) => false);
-    },
-    [throttle, prevScrollY]
-  );
+  const navbarOpacityRemover = useCallback(() => {
+    setScroll((prev) => true);
+  }, []);
+
+  const onScrollHandler = useCallback(() => {
+    if (throttle) return;
+
+    setThrottle((prev) => true);
+    if (!prevScrollY) return;
+    if (window.scrollY - prevScrollY > 3 && window.scrollY > 10)
+      setScroll((prev) => true);
+    else if (window.scrollY - prevScrollY < -3) setScroll((prev) => false);
+  }, [throttle, prevScrollY]);
 
   useEffect(() => {
     setPrevScrollY((prev) => window.scrollY);
@@ -35,7 +40,11 @@ const useHideOnScroll = () => {
     };
   }, [throttle, scroll, onScrollHandler]);
 
-  return { style: scroll ? { opacity: 0 } : { opacity: 1 } };
+  return {
+    style: scroll ? { opacity: 0, transition: ".2s ease-out" } : { opacity: 1 },
+    navbarOpacityGenerator,
+    navbarOpacityRemover,
+  };
 };
 
 export default useHideOnScroll;

@@ -20,8 +20,8 @@ const ModalOverlay = () => {
     <div
       className={`pad:hidden fixed top-0 left-0 w-full h-screen z-[92] bg-transparent ${
         toggle
-          ? "animate-[fadeIn_.25s_ease-in-out]"
-          : "animate-[fadeOut_.25s_ease-in-out]"
+          ? "animate-[fadeIn_.3s_ease-in-out]"
+          : "animate-[fadeOut_.3s_ease-in-out]"
       }`}>
       <ModalRouter/>
     </div>

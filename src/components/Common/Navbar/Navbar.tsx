@@ -14,7 +14,7 @@ const Navbar = () => {
   const location = useLocation();
   const { ref, isTechVision } = useReverseColor();
   const { style } = useHideOnScroll();
-  const { closeNavigation } = useContext(NavigationContext);
+  const { closeNavigation, toggle } = useContext(NavigationContext);
   const [selected, setSelected] = useState<string>("/");
 
   const checkActiveLink = (current: string): void => {
@@ -27,15 +27,17 @@ const Navbar = () => {
   }, [location]);
 
   const bgReversed: string =
-    location.pathname === "/"
-      ? "bg-main-transparent"
-      : isTechVision ? "bg-black" : "bg-main-white";
+    location.pathname === "/" || toggle
+      ? "bg-transparent"
+      : isTechVision
+      ? "bg-black transition duration-[200ms] ease-out"
+      : "bg-main-white transition duration-[200ms] ease-out";
 
   return (
     <nav
       ref={ref}
       style={style}
-      className={`fixed flex justify-between items-center w-full px-[clamp(19px,5.278vw,30px)] pad:px-[clamp(160px,14.815vw,260px)] desktop:px-[clamp(260px,13.542vw,100vw)] py-[clamp(16px,4.444vw,20px)] pad:py-[clamp(20px,1.852vw,34px)] desktop:py-[clamp(25px,1.302vw,30px)] z-[100] animate-[navSlideDown_.5s_ease-out] transition ease-out duration-[300ms] ${bgReversed}`}
+      className={`fixed flex top-0 left-0 justify-between items-center w-full px-[clamp(19px,5.278vw,30px)] pad:px-[clamp(160px,14.815vw,260px)] desktop:px-[clamp(260px,13.542vw,100vw)] py-[clamp(16px,4.444vw,20px)] pad:py-[clamp(20px,1.852vw,34px)] desktop:py-[clamp(25px,1.302vw,30px)] z-[200] animate-[navSlideDown_.5s_ease-out] ${bgReversed}`}
     >
       <NavLogo
         location={location}
