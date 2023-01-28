@@ -2,10 +2,12 @@ import React from "react";
 import techsvg1 from "@/assets/svg/technology/tech-1.svg";
 import techsvg2 from "@/assets/svg/technology/tech-2.svg";
 import techsvg3 from "@/assets/svg/technology/tech-3.svg";
+import useResizeTechHeight from "@/hooks/useResizeTechHeight";
 
 const TechnologyVision = () => {
+  const {ref} = useResizeTechHeight()
   return (
-    <div className="flex flex-col w-full bg-black min-h-screen text-center text-main-white">
+    <div ref={ref} className="flex flex-col w-full bg-black min-h-screen text-center text-main-white">
       <h3 className="font-semibold font-spline tracking-[.01em] pt-[clamp(60px,16.667vw,105px)] pad:pt-[clamp(105px,9.722vw,160px)] desktop:pt-[clamp(129px,6.719vw,154.8px)] pb-[clamp(25px,6.944vw,50px)] pad:pb-[0px] tracking-[.01em] text-[clamp(22px,6.111vw,42px)] pad:text-[clamp(38px,3.519vw,66px)] desktop:text-[clamp(60px,3.125vw,72px)] leading-[163%] pad:leading-[155%] desktop:leading-[143%]">
         Focus on your product,
         <br />
