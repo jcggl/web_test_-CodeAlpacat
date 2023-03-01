@@ -1,12 +1,18 @@
 import { useCallback, useEffect } from "react";
 import { useRef } from "react";
+import useResize from "@/hooks/useResize";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { intersectionState, subIntroState } from "@/store/atoms";
 
 const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
+  const { height } = useResize();
+  const [subIntroValue, setSubIntroValue] = useRecoilState(subIntroState);
+  const setIntersection = useSetRecoilState(intersectionState);
 
   const handleScroll = useCallback(
     ([entry]: any) => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && subIntroValue) {
         ref.current.children[1].children[0].style.transitionProperty = "all";
         ref.current.children[0].children[0].style.transitionProperty = "all";
         ref.current.children[0].children[1].children[0].style.transitionProperty =
@@ -24,7 +30,10 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
         ref.current.children[0].children[0].style.transitionDelay = `${delay}s`;
         ref.current.children[0].children[1].children[0].style.transitionDelay = `${delay}s`;
 
-
+        if (
+          ref.current.children[1].children[0].style.transform !==
+          "translate3d(0px, 0px, 0px)"
+        ) {
           ref.current.children[1].children[0].style.transform =
             "translate3d(0, -3vh, 0)";
           ref.current.children[0].children[0].style.transform =
@@ -39,17 +48,20 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
               "translate3d(0, 0, 0)";
             ref.current.children[0].children[1].children[0].style.transform =
               "translate3d(0, 0, 0)";
-          }, 650);
-      } else {
+            setIntersection(false);
+          }, 900);
+        }
+      } else if (!subIntroValue) {
         ref.current.children[1].children[0].style.transform =
-          "translate3d(0, 40vh, 0)";
+          "translate3d(0, 100vh, 0)";
         ref.current.children[0].children[0].style.transform =
-          "translate3d(0, 40vh, 0)";
+          "translate3d(0, 100vh, 0)";
         ref.current.children[0].children[1].children[0].style.transform =
-          "translate3d(-300%, 100%, 0)";
+          "translate3d(-300%, 100vh, 0)";
+        setSubIntroValue(true);
       }
     },
-    [delay, duration]
+    [delay, duration, subIntroValue, setSubIntroValue, setIntersection]
   );
 
   useEffect(() => {
@@ -57,14 +69,14 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.05,
-        rootMargin: "0px 0px 0px 0px"
+        threshold: 0.7,
+        rootMargin: `0px 0px 0px 0px`,
       });
       observer.observe(ref.current);
     }
 
     return () => observer && observer.disconnect();
-  }, [handleScroll]);
+  }, [handleScroll, height]);
 
   return {
     ref,

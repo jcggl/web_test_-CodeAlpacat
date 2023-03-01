@@ -8,9 +8,10 @@ import useAutoSlide from "@/hooks/useAutoSlide";
 
 type Props = {
   imageList: (string[] | { image: string })[];
+  intersectionStyle: {transform: string}
 };
 
-const AutoSlider = ({ imageList }: Props) => {
+const AutoSlider = ({ imageList, intersectionStyle }: Props) => {
   const images = useRef<(string[] | { image: string })[]>([
     ...imageList,
     ...imageList,
@@ -37,7 +38,7 @@ const AutoSlider = ({ imageList }: Props) => {
   }, 1200);
 
   return (
-    <div style={style} className="flex">
+    <div style={{...style, ...intersectionStyle}} className="flex">
       <div className="w-full overflow-hidden">
         <div className={`flex`} style={style}>
           {images.current.map(

@@ -1,23 +1,33 @@
+import { intersectionState, partnerState } from "@/store/atoms";
 import { useCallback, useRef, useEffect } from "react";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
 const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
+  const [partner, setPartner] = useRecoilState(partnerState)
+  const setIntersection = useSetRecoilState(intersectionState);
 
   const handleScroll = useCallback(
     ([entry]: any) => {
-      if (entry.isIntersecting) {
-        ref.current.style.transitionProperty = "all";
-        ref.current.style.transitionDuration = `${duration}s`;
-        ref.current.style.transitionTimingFunction =
-          "cubic-bezier(0, 0, 0.58, 1)";
-        ref.current.style.transitionDelay = `${delay}s`;
+      if (entry.isIntersecting && partner) {
+        for (let i=0; i<2; i++) {
 
-        ref.current.style.transform = "translate3d(0,0,0)";
-      } else {
-        ref.current.style.transform = "translate3d(0,-15%,0)";
+          ref.current.children[i].style.transitionProperty = "all";
+          ref.current.children[i].style.transitionDuration = `${duration}s`;
+          ref.current.children[i].style.transitionTimingFunction =
+            "cubic-bezier(0, 0, 0.58, 1)";
+          ref.current.children[i].style.transitionDelay = `${delay}s`; 
+        }
+          ref.current.children[0].style.transform = "translate3d(0,0,0)";
+          ref.current.children[1].style.transform = "translate3d(0,0,0)";
+        setIntersection(false);
+      } else if (!partner) {
+        ref.current.children[0].style.transform = "translate3d(0,-15vh,0)";
+        ref.current.children[1].style.transform = "translate3d(0,-15vh,0)";
+        setPartner(true)
       }
     },
-    [duration, delay]
+    [duration, delay, setIntersection, partner, setPartner]
   );
 
   useEffect(() => {
@@ -25,8 +35,8 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.3,
-        rootMargin: "100000px 0px 0px 0px",
+        threshold: 0.8,
+        rootMargin: "0px 0px 0px 0px",
       });
       observer.observe(ref.current);
     }
@@ -37,7 +47,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   return {
     ref,
     style: {
-      transform: "translate3d(0,-15%,0)",
+      transform: "translate3d(0,-15vh,0)",
     },
   };
 };

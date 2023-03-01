@@ -5,7 +5,7 @@ import useIntersectAnimation from "@/hooks/useIntersectAnimation";
 // import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const WebThreeIntro = () => {
-  const { ref, FirstStyle, SecondStyle, ThirdStyle, FourthStyle, textStyle } = useIntersectAnimation(0.7);
+  const { ref, FirstStyle, SecondStyle, ThirdStyle, FourthStyle, textStyle } = useIntersectAnimation(0.9);
   // const { touchScrollHandler, handleTouchStart } =
   //   useContext(TouchScrollContext);
   return (
