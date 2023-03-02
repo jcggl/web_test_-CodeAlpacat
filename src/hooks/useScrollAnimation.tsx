@@ -49,7 +49,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
             ref.current.children[0].children[1].children[0].style.transform =
               "translate3d(0, 0, 0)";
             setIntersection(false);
-          }, 900);
+          }, 800);
         }
       } else if (!subIntroValue) {
         ref.current.children[1].children[0].style.transform =

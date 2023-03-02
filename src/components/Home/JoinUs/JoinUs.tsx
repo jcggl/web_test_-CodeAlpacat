@@ -5,24 +5,22 @@ import useTextSlideUp from "@/hooks/useTextSlideUp";
 
 import Walls from "./Walls";
 import MobileWalls from "./MobileWalls";
+import useResize from '@/hooks/useResize';
 
 const JoinUs = () => {
-  const { ref, style, JoinUsStyle } = useTextSlideUp(0.6, 0.05);
+  const { width } = useResize();
+  const { ref, style, JoinUsStyle } = useTextSlideUp(width > 1080 ? 0.8 : 0.6);
   // const { touchScrollHandler, handleTouchStart } =
   //   useContext(TouchScrollContext);
   return (
     <div
+      ref={ref}
       className="relative w-full h-screen overflow-hidden min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)]"
       // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       // onTouchStart={handleTouchStart}
       // onTouchMove={touchScrollHandler}
     >
-      <Walls />
-      <MobileWalls />
-      <div
-        ref={ref}
-        className="relative flex flex-col w-[clamp(255px,70.833vw,360px)] pad:w-[clamp(603px,55.833vw,870px)] desktop:w-[clamp(812px,42.292vw,812px)] gap-y-[clamp(45px,12.5vw,52px)] pad:gap-y-[clamp(52px,4.815vw,60.4px)] desktop:gap-y-[62.5px] ml-[clamp(50px,13.889vw,150px)] pad:ml-[clamp(160px,14.815vw,260px)] desktop:ml-[clamp(260px,13.542vw,100vw)] pt-[clamp(249px,69.167vw,240px)] pad:pt-[clamp(309px,28.611vw,340px)] desktop:pt-[clamp(340px,17.708vw,350px)] text-main-white font-spline z-[1] tracking-[.01em]"
-      >
+      <div className="absolute flex flex-col w-[clamp(255px,70.833vw,360px)] pad:w-[clamp(603px,55.833vw,870px)] desktop:w-[clamp(812px,42.292vw,812px)] gap-y-[clamp(45px,12.5vw,52px)] pad:gap-y-[clamp(52px,4.815vw,60.4px)] desktop:gap-y-[62.5px] ml-[clamp(50px,13.889vw,150px)] pad:ml-[clamp(160px,14.815vw,260px)] desktop:ml-[clamp(260px,13.542vw,100vw)] pt-[clamp(249px,69.167vw,240px)] pad:pt-[clamp(309px,28.611vw,340px)] desktop:pt-[clamp(340px,17.708vw,350px)] text-main-white font-spline z-[1] tracking-[.01em]">
         <h4
           style={JoinUsStyle}
           className="font-light text-[clamp(16px,4.444vw,21.6px)] pad:text-[clamp(26px,2.407vw,40px)] desktop:text-[40px]"
@@ -37,6 +35,8 @@ const JoinUs = () => {
         </h3>
         <HiringButton animationStyle={style} />
       </div>
+      <Walls />
+      <MobileWalls />
     </div>
   );
 };

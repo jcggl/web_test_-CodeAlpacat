@@ -5,7 +5,7 @@ import AutoSlider from "@/components/Home/AutoSlider/AutoSlider";
 // import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const Partners = () => {
-  const { ref, style } = usePartnerAnimation(0.9);
+  const { ref, style } = usePartnerAnimation(0.7);
   // const { touchScrollHandler, handleTouchStart } =
   //   useContext(TouchScrollContext);
 

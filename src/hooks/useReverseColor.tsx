@@ -13,7 +13,6 @@ const useReverseColor = () => {
   const wheelHandler = useCallback(() => {
     if (throttle) return;
     if (!ref.current) return;
-    console.log(introHeight);
     if (
       window.scrollY >= introHeight - ref.current.clientHeight / 4 &&
       window.scrollY <

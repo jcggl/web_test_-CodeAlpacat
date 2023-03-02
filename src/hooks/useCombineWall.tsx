@@ -1,7 +1,16 @@
-import { useRef, useCallback, useEffect } from "react";
+import { partnerState, wallState } from "@/store/atoms";
+import { useRef, useCallback, useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import useResize from "./useResize";
 
 const useCombineWall = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
+  const [wall, setWall] = useRecoilState(wallState);
+  const [time, setTime] = useState<any>([]);
+  const [partner, setPartner] = useRecoilState(partnerState);
+  const { width } = useResize();
+
+  const mobileWidth = width < 1080 ? 600 : 800;
 
   const handleScroll = useCallback(
     ([entry]: any) => {
@@ -14,24 +23,45 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
           ref.current.children[i].style.transitionDelay = `${delay}s`;
         }
 
-        ref.current.children[0].style.transform = "translate3d(0, -1vw, 0)";
-        ref.current.children[1].style.transform = "translate3d(1vw, -1vw, 0)";
-        ref.current.children[2].style.transform = "translate3d(-1vw, -1vw, 0)";
-        ref.current.children[3].style.transform = "translate3d(1vw, 0, 0)";
-        setTimeout(() => {
-          ref.current.children[0].style.transform = "translate3d(0, 0, 0)";
-          ref.current.children[1].style.transform = "translate3d(0, 0, 0)";
-          ref.current.children[2].style.transform = "translate3d(0, 0, 0)";
-          ref.current.children[3].style.transform = "translate3d(0, 0, 0)";
-        }, 600);
-      } else {
+        if (
+          ref.current.children[0].style.transform !==
+          "translate3d(0px, 0px, 0px)"
+        ) {
+          ref.current.children[0].style.transform = "translate3d(0, -0.7vw, 0)";
+          ref.current.children[1].style.transform =
+            "translate3d(1vw, -0.7vw, 0)";
+          ref.current.children[2].style.transform =
+            "translate3d(-0.7vw, -0.7vw, 0)";
+          ref.current.children[3].style.transform = "translate3d(1vw, 0, 0)";
+          let t = setTimeout(() => {
+            ref.current.children[0].style.transform =
+              "translate3d(0px, 0px, 0px)";
+            ref.current.children[1].style.transform =
+              "translate3d(0px, 0px, 0px)";
+            ref.current.children[2].style.transform =
+              "translate3d(0px, 0px, 0px)";
+            ref.current.children[3].style.transform =
+              "translate3d(0px, 0px, 0px)";
+          }, mobileWidth);
+          setPartner(false);
+          setWall(true)
+          setTime((prev: any) => [...prev, t]);
+        }
+      } else if (
+        !wall &&
+        ref.current.children[0].style.transform !== "translate3d(0px, 40vw, 0px)"
+      ) {
+        time.forEach((item: any) => {
+          clearTimeout(item);
+        });
+        setTime([]);
         ref.current.children[0].style.transform = "translate3d(0, 40vw, 0)";
         ref.current.children[1].style.transform = "translate3d(-40vw, 0, 0)";
         ref.current.children[2].style.transform = "translate3d(40vw, 0, 0)";
         ref.current.children[3].style.transform = "translate3d(-40vw, 0, 0)";
-      }
+      } 
     },
-    [duration, delay]
+    [duration, delay, wall, setWall, mobileWidth, time, setPartner]
   );
 
   useEffect(() => {
@@ -39,8 +69,8 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 1,
-        rootMargin: "10000px 0px -30% 0px",
+        threshold: 0.7,
+        rootMargin: "0px 0px 0px 0px",
       });
       observer.observe(ref.current);
     }

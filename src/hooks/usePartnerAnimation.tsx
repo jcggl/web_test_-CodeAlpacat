@@ -1,33 +1,34 @@
-import { intersectionState, partnerState } from "@/store/atoms";
+import { intersectionState, partnerState, wallState } from "@/store/atoms";
 import { useCallback, useRef, useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
 const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
-  const [partner, setPartner] = useRecoilState(partnerState)
+  const [partner, setPartner] = useRecoilState(partnerState);
   const setIntersection = useSetRecoilState(intersectionState);
+  const setWall = useSetRecoilState(wallState);
 
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting && partner) {
-        for (let i=0; i<2; i++) {
-
+        for (let i = 0; i < 2; i++) {
           ref.current.children[i].style.transitionProperty = "all";
           ref.current.children[i].style.transitionDuration = `${duration}s`;
           ref.current.children[i].style.transitionTimingFunction =
             "cubic-bezier(0, 0, 0.58, 1)";
-          ref.current.children[i].style.transitionDelay = `${delay}s`; 
+          ref.current.children[i].style.transitionDelay = `${delay}s`;
         }
-          ref.current.children[0].style.transform = "translate3d(0,0,0)";
-          ref.current.children[1].style.transform = "translate3d(0,0,0)";
+        ref.current.children[0].style.transform = "translate3d(0,0,0)";
+        ref.current.children[1].style.transform = "translate3d(0,0,0)";
         setIntersection(false);
+        setWall(() => false);
       } else if (!partner) {
         ref.current.children[0].style.transform = "translate3d(0,-15vh,0)";
         ref.current.children[1].style.transform = "translate3d(0,-15vh,0)";
-        setPartner(true)
+        setPartner(true);
       }
     },
-    [duration, delay, setIntersection, partner, setPartner]
+    [duration, delay, setIntersection, partner, setPartner, setWall]
   );
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.8,
+        threshold: 0.85,
         rootMargin: "0px 0px 0px 0px",
       });
       observer.observe(ref.current);

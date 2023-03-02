@@ -8,9 +8,9 @@ import useCombineWall from "@/hooks/useCombineWall";
 
 const Walls = () => {
   const { ref, bottomStyle, leftStyle, rightStyle, topStyle } =
-    useCombineWall(0.6);
+    useCombineWall(0.8);
   return (
-    <div ref={ref} className="hidden pad:block">
+    <div ref={ref} className="relative top-0 left-0 hidden pad:block w-full h-screen">
       <img
         style={bottomStyle}
         className="absolute pad:right-[-34vw] desktop:right-[-2.4vw] pad:top-[clamp(348px,32.222vw,437.6px)] desktop:top-[441.6px] w-[221.667vw] pad:w-[204.001vw] desktop:w-[148.854vw] pad:h-[clamp(377.77px,34.979vw,453.324px)] desktop:h-[490.04px] pad:aspect-auto max-w-none max-h-none"

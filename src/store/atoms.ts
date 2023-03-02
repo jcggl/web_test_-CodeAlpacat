@@ -20,3 +20,13 @@ export const resetScrollState = atom<boolean>({
   key: "resetScrollState",
   default: false,
 });
+
+export const wallState = atom<boolean>({
+  key: "wallState",
+  default: false,
+});
+
+export const joinUsTextState = atom<boolean>({
+  key: "joinUsTextState",
+  default: false,
+});

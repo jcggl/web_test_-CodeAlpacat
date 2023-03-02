@@ -1,4 +1,4 @@
-import { intersectionState, partnerState, subIntroState } from "@/store/atoms";
+import { intersectionState, partnerState, subIntroState, wallState } from "@/store/atoms";
 import { useRef, useCallback, useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
@@ -6,6 +6,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
   const setSubIntro = useSetRecoilState(subIntroState);
   const setPartner = useSetRecoilState(partnerState);
+  const setWall = useSetRecoilState(wallState);
 
   const [intersection, setIntersection] = useRecoilState(intersectionState);
 
@@ -46,7 +47,8 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
             ref.current.children[4].style.transform = "translate3d(0,0,0)";
             setSubIntro(false);
             setPartner(false);
-          }, 930);
+            setWall(false)
+          }, 830);
         }
       } else if (!intersection) {
         ref.current.children[0].style.top = "278vh";
@@ -58,7 +60,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
         setIntersection(true);
       }
     },
-    [delay, duration, setSubIntro, intersection, setIntersection, setPartner]
+    [delay, duration, setSubIntro, intersection, setIntersection, setPartner, setWall]
   );
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.65,
+        threshold: 0.7,
         rootMargin: "0px 0px 0px 0px",
       });
       observer.observe(ref.current);

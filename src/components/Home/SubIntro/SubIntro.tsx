@@ -6,7 +6,7 @@ import { subIntroState } from "@/store/atoms";
 // import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const SubIntro = () => {
-  const { ref, textStyle, imageStyle } = useScrollAnimation(0.9);
+  const { ref, textStyle, imageStyle } = useScrollAnimation(0.8);
   const subIntroValue = useRecoilValue(subIntroState);
   // const { touchScrollHandler, handleTouchStart } =
   //   useContext(TouchScrollContext);

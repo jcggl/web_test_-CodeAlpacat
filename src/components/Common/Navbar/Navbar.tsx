@@ -9,12 +9,15 @@ import NavigationContext from "@/contexts/NavigationContext";
 import HamburgerButton from "./components/HamburgerButton/HamburgerButton";
 import NavRouters from "./components/NavRouters/NavRouters";
 import NavLogo from "./components/NavLogo/NavLogo";
+import { resetScrollState } from "@/store/atoms";
+import { useRecoilValue } from "recoil";
 
 const Navbar = () => {
   const location = useLocation();
   const { ref, isTechVision } = useReverseColor();
   const { style } = useHideOnScroll();
   const { closeNavigation, toggle } = useContext(NavigationContext);
+  const resetScroll = useRecoilValue(resetScrollState);
   const [selected, setSelected] = useState<string>("/");
 
   const checkActiveLink = (current: string): void => {
@@ -37,7 +40,9 @@ const Navbar = () => {
     <nav
       ref={ref}
       style={style}
-      className={`fixed flex top-0 left-0 justify-between items-center w-full px-[clamp(19px,5.278vw,30px)] pad:px-[clamp(160px,14.815vw,260px)] desktop:px-[clamp(260px,13.542vw,100vw)] py-[clamp(16px,4.444vw,20px)] pad:py-[clamp(20px,1.852vw,34px)] desktop:py-[clamp(25px,1.302vw,30px)] z-[200] animate-[navSlideDown_.5s_ease-out] ${bgReversed}`}
+      className={`fixed flex top-0 left-0 justify-between items-center w-full px-[clamp(19px,5.278vw,30px)] pad:px-[clamp(160px,14.815vw,260px)] desktop:px-[clamp(260px,13.542vw,100vw)] py-[clamp(16px,4.444vw,20px)] pad:py-[clamp(20px,1.852vw,34px)] desktop:py-[clamp(25px,1.302vw,30px)] z-[200] ${
+        resetScroll && "animate-[navSlideDown_.5s_ease-out]"
+      } ${bgReversed}`}
     >
       <NavLogo
         location={location}
