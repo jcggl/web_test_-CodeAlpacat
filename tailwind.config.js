@@ -40,28 +40,28 @@ module.exports = {
           "100%": { opacity: 0 },
         },
         mobileSlideDown: {
-          "0%": { top: "0px" },
-          "100%": { top: "clamp(190px,52.778vw,228px)" },
+          "0%": { top: "0vh" },
+          "100%": { top: "clamp(190px,29.688vh,100vh)" },
         },
         padSlideDown: {
-          "0%": { top: "0px" },
-          "100%": { top: "clamp(251px,23.241vw,307px)" },
+          "0%": { top: "0vh" },
+          "100%": { top: "clamp(251px,32.682vh,100vh)" },
         },
         desktopSlideDown: {
-          "0%": { top: "0px" },
-          "100%": { top: "clamp(307px,15.99vw,360px)" },
+          "0%": { top: "0vh" },
+          "100%": { top: "clamp(307px,28.426vh,100vh)" },
         },
         mobileSlideUp: {
-          "0%": { top: "clamp(500px,138.889vw,600px)" },
-          "100%": { top: "clamp(344px,95.556vw,442.8px)" },
+          "0%": { top: "80vh" },
+          "100%": { top: "clamp(344px,53.750vh,100vh)" },
         },
         padSlideUp: {
-          "0%": { top: "clamp(700px,64.815vw,900px)" },
-          "100%": { top: "clamp(496px,45.926vw,690px)" },
+          "0%": { top: "80vh" },
+          "100%": { top: "clamp(496px,64.583vh,100vh)" },
         },
         desktopSlideUp: {
-          "0%": { top: "clamp(950px,49.479vw,1050px)" },
-          "100%": { top: "clamp(690px,35.938vw,828px)" },
+          "0%": { top: "80vh" },
+          "100%": { top: "clamp(690px,63.889vh,100vh)" },
         },
         zoomBlurIn: {
           "0%": { transform: "scale(200%, 200%)", filter: "blur(64px)" },

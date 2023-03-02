@@ -31,7 +31,7 @@ const MobileWalls = () => {
       />
       <img
         style={topStyle}
-        className="absolute right-[-81.7vw] top-[-165px] w-[277.778vw] h-[382.32px] max-w-none max-h-none"
+        className="absolute right-[-81.7vw] top-[-166px] w-[277.778vw] h-[382.32px] max-w-none max-h-none"
         src={top}
         alt="상단 벽"
       />

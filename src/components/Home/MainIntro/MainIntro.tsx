@@ -45,7 +45,7 @@ const MainIntro = () => {
     >
       <div className="relative max-w-[500px] pad:max-w-[1705px] desktop:max-w-[2304px] mx-auto">
         <h3
-          className={`absolute top-[clamp(190px,52.778vw,220px)] pad:top-[clamp(251px,23.241vw,307px)] desktop:top-[clamp(307px,15.99vw,360px)] text-main-white font-spline font-semibold left-[clamp(55px,15.278vw,66px)] pad:left-[clamp(243px,22.5vw,441px)] desktop:left-[clamp(441px,22.969vw,529px)] text-[clamp(40px,11.111vw,60px)] pad:text-[clamp(85px,7.870vw,130px)] desktop:text-[clamp(140px,7.292vw,168px)] leading-[145%] pad:leading-[119%] tracking-[.01em] ${
+          className={`absolute top-[clamp(190px,29.688vh,100vh)] pad:top-[clamp(251px,32.682vh,100vh)] desktop:top-[clamp(307px,28.426vh,100vh)] text-main-white font-spline font-semibold left-[clamp(55px,15.278vw,66px)] pad:left-[clamp(243px,22.5vw,441px)] desktop:left-[clamp(441px,22.969vw,529px)] text-[clamp(40px,11.111vw,60px)] pad:text-[clamp(85px,7.870vw,130px)] desktop:text-[clamp(140px,7.292vw,168px)] leading-[145%] pad:leading-[119%] tracking-[.01em] ${
             resetScrollValue &&
             "animate-[mobileSlideDown_.5s_ease-out] pad:animate-[padSlideDown_.5s_ease-out] desktop:animate-[desktopSlideDown_.5s_ease-out]"
           }`}
@@ -55,9 +55,9 @@ const MainIntro = () => {
           Into Avatars
         </h3>
         <h4
-          className={`hidden pad:block absolute font-spline font-light pad:top-[clamp(496px,45.926vw,690px)] desktop:top-[clamp(690px,35.938vw,828px)] text-main-white pad:right-[clamp(223px,20.648vw,475px)] desktop:right-[clamp(435px,22.656vw,522px)] pad:text-[clamp(20px,1.852vw,28px)] desktop:text-[clamp(28px,1.458vw,33px)] pad:leading-[143%] tracking-[.01em] ${
+          className={`hidden pad:block absolute font-spline font-light pad:top-[clamp(496px,64.583vh,100vh)] desktop:top-[clamp(690px,63.889vh,100vh)] text-main-white pad:right-[clamp(223px,20.648vw,475px)] desktop:right-[clamp(435px,22.656vw,522px)] pad:text-[clamp(20px,1.852vw,28px)] desktop:text-[clamp(28px,1.458vw,33px)] pad:leading-[143%] tracking-[.01em] ${
             resetScrollValue &&
-            "animate-[mobileSlideUp_.5s_ease-out] pad:animate-[padSlideUp_.5s_ease-out] desktop:animate-[desktopSlideUp_.5s_ease-out]"
+            "pad:animate-[padSlideUp_.5s_ease-out] desktop:animate-[desktopSlideUp_.5s_ease-out]"
           }`}
         >
           Establishing the next generation
@@ -67,7 +67,7 @@ const MainIntro = () => {
           for the metaverse
         </h4>
         <h4
-          className={`pad:hidden absolute top-[clamp(344px,95.556vw,424.8px)] font-spline tracking-[.01em] text-main-white right-[clamp(46px,12.778vw,50px)] text-[clamp(14px,3.889vw,20px)] leading-[157%] ${
+          className={`pad:hidden absolute top-[clamp(344px,53.750vh,100vh)] font-spline tracking-[.01em] text-main-white right-[clamp(46px,12.778vw,50px)] text-[clamp(14px,3.889vw,20px)] leading-[157%] ${
             resetScrollValue && "animate-[mobileSlideUp_.5s_ease-out]"
           }`}
         >
