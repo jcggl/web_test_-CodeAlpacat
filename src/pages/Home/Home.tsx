@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Common";
 import {
   JoinUs,
   MainIntro,
@@ -7,20 +8,21 @@ import {
 } from "@/components/Home";
 import { TouchScrollProvider } from "@/contexts/TouchScrollContext";
 import useResetScroll from "@/hooks/useResetScroll";
-// import useScrollPagination from "@/hooks/useScrollPagination";
+import useScrollPagination from "@/hooks/useScrollPagination";
 
 const Home = () => {
-  // const { ref: scrollRef } = useScrollPagination();
+  const { ref: scrollRef } = useScrollPagination();
   useResetScroll()
   return (
     <TouchScrollProvider>
-      <section className="bg-[#1A1A1A]">
+      <div ref={scrollRef} className="bg-[#1A1A1A] h-screen overflow-y-auto">
         <MainIntro />
         <SubIntro />
         <WebThreeIntro />
         <Partners />
         <JoinUs />
-      </section>
+        <Footer />
+      </div>
     </TouchScrollProvider>
   );
 };

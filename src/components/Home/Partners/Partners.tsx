@@ -2,19 +2,14 @@ import React from "react";
 import { partnersImageList } from "@/constants/Images/partners-image-list";
 import usePartnerAnimation from "@/hooks/usePartnerAnimation";
 import AutoSlider from "@/components/Home/AutoSlider/AutoSlider";
-// import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const Partners = () => {
   const { ref, style } = usePartnerAnimation(0.7);
-  // const { touchScrollHandler, handleTouchStart } =
-  //   useContext(TouchScrollContext);
 
   return (
     <div
       ref={ref}
-      className="flex flex-col justify-center w-full h-screen overflow-hidden min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)]"
-      // onTouchStart={handleTouchStart}
-      // onTouchMove={touchScrollHandler}
+      className="flex flex-col justify-center w-full h-screen overflow-hidden"
     >
       <h3
         style={style}

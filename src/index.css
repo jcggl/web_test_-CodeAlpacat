@@ -28,7 +28,7 @@ body {
   font-feature-settings: "pnum" on, "lnum" on;
   background-color: rgba(237, 237, 237, 1);
   color: rgba(25, 25, 25, 1);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 @media (min-width: 1080px) {

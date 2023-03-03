@@ -39,34 +39,17 @@ module.exports = {
           "0%": { opacity: 1 },
           "100%": { opacity: 0 },
         },
-        mobileSlideDown: {
-          "0%": { top: "0vh" },
-          "100%": { top: "clamp(190px,29.688vh,100vh)" },
+        slideDown: {
+          "0%": { transform: "translateY(-20vh)" },
+          "100%": { transform: "translateY(0px)" },
         },
-        padSlideDown: {
-          "0%": { top: "0vh" },
-          "100%": { top: "clamp(251px,32.682vh,100vh)" },
-        },
-        desktopSlideDown: {
-          "0%": { top: "0vh" },
-          "100%": { top: "clamp(307px,28.426vh,100vh)" },
-        },
-        mobileSlideUp: {
-          "0%": { top: "80vh" },
-          "100%": { top: "clamp(344px,53.750vh,100vh)" },
-        },
-        padSlideUp: {
-          "0%": { top: "80vh" },
-          "100%": { top: "clamp(496px,64.583vh,100vh)" },
-        },
-        desktopSlideUp: {
-          "0%": { top: "80vh" },
-          "100%": { top: "clamp(690px,63.889vh,100vh)" },
+        slideUp: {
+          "0%": { transform: "translateY(20vh)" },
+          "100%": { transform: "translateY(0px)" },
         },
         zoomBlurIn: {
-          "0%": { transform: "scale(200%, 200%)", filter: "blur(64px)" },
-          "30%": { transform: "scale(150%, 150%)", filter: "blur(0px)" },
-          "100%": { transform: "scale(100%, 100%)", filter: "blur(0px)" },
+          "0%": { transform: "scale(2.5, 2.5)", filter: "blur(48px)" },
+          "100%": { transform: "scale(1, 1)", filter: "blur(0px)" },
         },
         navSlideDown: {
           "0%": { transform: "translate3d(0,-100%,0)", opacity: 0 },

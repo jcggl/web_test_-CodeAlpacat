@@ -25,7 +25,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
             ref.current.children[4].style.transform !==
             "translate3d(0px, 0px, 0px)"
           ) {
-            ref.current.children[i].style.top = i % 2 ? "-7vh" : "-35vh";
+            ref.current.children[i].style.top = i % 2 ? "-5vh" : "-30vh";
           }
         }
 
@@ -48,7 +48,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
             setSubIntro(false);
             setPartner(false);
             setWall(false)
-          }, 830);
+          }, 800);
         }
       } else if (!intersection) {
         ref.current.children[0].style.top = "278vh";
@@ -68,7 +68,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.7,
+        threshold: 0.5,
         rootMargin: "0px 0px 0px 0px",
       });
       observer.observe(ref.current);

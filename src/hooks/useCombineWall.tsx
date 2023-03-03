@@ -10,7 +10,7 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
   const [partner, setPartner] = useRecoilState(partnerState);
   const { width } = useResize();
 
-  const mobileWidth = width < 1080 ? 600 : 800;
+  const mobileWidth = width < 1080 ? 600 : 700;
 
   const handleScroll = useCallback(
     ([entry]: any) => {
@@ -19,7 +19,7 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
           ref.current.children[i].style.transitionProperty = "all";
           ref.current.children[i].style.transitionDuration = `${duration}s`;
           ref.current.children[i].style.transitionTimingFunction =
-            "cubic-bezier(0, 0, 0.58, 1)";
+            "ease-out";
           ref.current.children[i].style.transitionDelay = `${delay}s`;
         }
 
@@ -27,12 +27,12 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
           ref.current.children[0].style.transform !==
           "translate3d(0px, 0px, 0px)"
         ) {
-          ref.current.children[0].style.transform = "translate3d(0, -0.7vw, 0)";
+          ref.current.children[0].style.transform = "translate3d(2vw, -1.4vw, 0)";
           ref.current.children[1].style.transform =
-            "translate3d(1vw, -0.7vw, 0)";
+            "translate3d(2vw, -1.4vw, 0)";
           ref.current.children[2].style.transform =
-            "translate3d(-0.7vw, -0.7vw, 0)";
-          ref.current.children[3].style.transform = "translate3d(1vw, 0, 0)";
+            "translate3d(-0.7vw, -1.4vw, 0)";
+          ref.current.children[3].style.transform = "translate3d(2vw, 1.4vw, 0)";
           let t = setTimeout(() => {
             ref.current.children[0].style.transform =
               "translate3d(0px, 0px, 0px)";
@@ -42,7 +42,7 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
               "translate3d(0px, 0px, 0px)";
             ref.current.children[3].style.transform =
               "translate3d(0px, 0px, 0px)";
-          }, mobileWidth);
+          }, mobileWidth + 80);
           setPartner(false);
           setWall(true)
           setTime((prev: any) => [...prev, t]);
@@ -69,7 +69,7 @@ const useCombineWall = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.7,
+        threshold: 0.4,
         rootMargin: "0px 0px 0px 0px",
       });
       observer.observe(ref.current);

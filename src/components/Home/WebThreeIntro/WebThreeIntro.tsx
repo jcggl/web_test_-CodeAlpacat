@@ -2,18 +2,14 @@ import React from "react";
 import intersect from "@/assets/svg/home/Intersect.svg";
 import intersectReverse from "@/assets/svg/home/Intersect-reverse.svg";
 import useIntersectAnimation from "@/hooks/useIntersectAnimation";
-// import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const WebThreeIntro = () => {
   const { ref, FirstStyle, SecondStyle, ThirdStyle, FourthStyle, textStyle } = useIntersectAnimation(0.8);
-  // const { touchScrollHandler, handleTouchStart } =
-  //   useContext(TouchScrollContext);
+
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen overflow-hidden min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)]"
-      // onTouchStart={handleTouchStart}
-      // onTouchMove={touchScrollHandler}
+      className="relative w-full h-screen overflow-hidden"
     >
       <img
         style={FirstStyle}
@@ -43,7 +39,7 @@ const WebThreeIntro = () => {
         style={textStyle}
         className="flex justify-center items-center w-full h-full"
       >
-        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(30px,8.333vw,70px)] pad:text-[clamp(64px,5.926vw,110px)] desktop:text-[clamp(110px,5.729vw,132px)] leading-[153%] pad:leading-[125%] desktop:leading-[118%] z-[2]">
+        <h3 className="font-spline tracking-[.01em] font-medium text-main-white text-[clamp(30px,8.333vw,70px)] pad:text-[clamp(64px,5.926vw,110px)] desktop:text-[clamp(110px,5.729vw,100vw)] leading-[153%] pad:leading-[125%] desktop:leading-[118%] z-[2]">
           We will establish
           <br />
           the new standard for

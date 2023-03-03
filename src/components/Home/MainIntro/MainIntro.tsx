@@ -4,94 +4,70 @@ import leftWall from "@/assets/home/main-intro/left-wall.webp";
 import rightWall from "@/assets/home/main-intro/right-wall.webp";
 import topWall from "@/assets/home/main-intro/top-wall.webp";
 import bottomWall from "@/assets/home/main-intro/bottom-wall.webp";
-import { resetScrollState, subIntroState } from "@/store/atoms";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-// import TouchScrollContext from "@/contexts/TouchScrollContext";
+import { resetScrollState } from "@/store/atoms";
+import { useRecoilValue } from "recoil";
+import useMainAnimation from "@/hooks/useMainAnimation";
 
 const MainIntro = () => {
-  // const { touchScrollHandler, handleTouchStart } =
-  //   useContext(TouchScrollContext);
-  const ref = useRef<any>();
-  const setSubIntro = useSetRecoilState(subIntroState);
+  const {
+    ref: mainAniRef,
+    slideUpStyle,
+    slideDownStyle,
+  } = useMainAnimation(0.6);
   const resetScrollValue = useRecoilValue(resetScrollState);
-
-  useEffect(() => {
-    let observer: any;
-
-    if (ref.current) {
-      observer = new IntersectionObserver(
-        ([entry]: any) => {
-          if (entry.isIntersecting) {
-            setSubIntro(false);
-          }
-        },
-        {
-          threshold: 0.8,
-          rootMargin: "0px 0px 0px 0px",
-        }
-      );
-      observer.observe(ref.current);
-    }
-
-    return () => observer && observer.disconnect();
-  }, [setSubIntro]);
 
   return (
     <div
-      ref={ref}
-      className="relative w-screen h-screen min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] overflow-hidden"
-      // onTouchStart={handleTouchStart}
-      // onTouchMove={touchScrollHandler}
+      ref={mainAniRef}
+      className="relative w-screen h-screen overflow-hidden"
+      // min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)]
     >
-      <div className="relative max-w-[500px] pad:max-w-[1705px] desktop:max-w-[2304px] mx-auto">
-        <h3
-          className={`absolute top-[clamp(190px,29.688vh,100vh)] pad:top-[clamp(251px,32.682vh,100vh)] desktop:top-[clamp(307px,28.426vh,100vh)] text-main-white font-spline font-semibold left-[clamp(55px,15.278vw,66px)] pad:left-[clamp(243px,22.5vw,441px)] desktop:left-[clamp(441px,22.969vw,529px)] text-[clamp(40px,11.111vw,60px)] pad:text-[clamp(85px,7.870vw,130px)] desktop:text-[clamp(140px,7.292vw,168px)] leading-[145%] pad:leading-[119%] tracking-[.01em] ${
-            resetScrollValue &&
-            "animate-[mobileSlideDown_.5s_ease-out] pad:animate-[padSlideDown_.5s_ease-out] desktop:animate-[desktopSlideDown_.5s_ease-out]"
-          }`}
-        >
-          Inspire Life
-          <br />
-          Into Avatars
-        </h3>
-        <h4
-          className={`hidden pad:block absolute font-spline font-light pad:top-[clamp(496px,64.583vh,100vh)] desktop:top-[clamp(690px,63.889vh,100vh)] text-main-white pad:right-[clamp(223px,20.648vw,475px)] desktop:right-[clamp(435px,22.656vw,522px)] pad:text-[clamp(20px,1.852vw,28px)] desktop:text-[clamp(28px,1.458vw,33px)] pad:leading-[143%] tracking-[.01em] ${
-            resetScrollValue &&
-            "pad:animate-[padSlideUp_.5s_ease-out] desktop:animate-[desktopSlideUp_.5s_ease-out]"
-          }`}
-        >
-          Establishing the next generation
-          <br />
-          communication technology
-          <br />
-          for the metaverse
-        </h4>
-        <h4
-          className={`pad:hidden absolute top-[clamp(344px,53.750vh,100vh)] font-spline tracking-[.01em] text-main-white right-[clamp(46px,12.778vw,50px)] text-[clamp(14px,3.889vw,20px)] leading-[157%] ${
-            resetScrollValue && "animate-[mobileSlideUp_.5s_ease-out]"
-          }`}
-        >
-          GoodGang Labs is building
-          <br />
-          the next generation
-          <br />
-          communication platform
-          <br />
-          and technology for avatars.
-        </h4>
+      <div className="absolute flex justify-center items-center w-screen h-screen">
+        <div className="flex flex-col w-[clamp(258px,71.667vw,516px)] pad:w-[clamp(614px,56.852vw,890px)] desktop:w-[clamp(1044px,54.375vw,100vw)] mb-[clamp(18px,5vw,36px)] pad:mb-0 ml-[clamp(8px,2.222vw,16px)] pad:ml-[clamp(20px,1.852vw,100vw)] desktop:ml-[clamp(6px,0.313vw,100vw)] pad:mt-[clamp(64px,5.926vw,100vw)] desktop:mt-[clamp(37px,1.927vw,100vw)]">
+          <h3
+            style={slideDownStyle}
+            className={`self-start text-main-white font-spline font-semibold text-[clamp(40px,11.111vw,80px)] pad:text-[clamp(85px,7.870vw,130px)] desktop:text-[clamp(140px,7.292vw,100vw)] leading-[145%] pad:leading-[119%] tracking-[.01em]`}
+          >
+            Inspire Life
+            <br />
+            Into Avatars
+          </h3>
+          <h4
+            style={slideUpStyle}
+            className={`hidden pad:block self-end font-spline font-light text-main-white pad:text-[clamp(20px,1.852vw,28px)] desktop:text-[clamp(28px,1.458vw,100vw)] pad:leading-[143%] tracking-[.01em] pad:mt-[clamp(43px,3.981vw,100vw)] desktop:mt-[clamp(50px,2.604vw,100vw)]`}
+          >
+            Establishing the next generation
+            <br />
+            communication technology
+            <br />
+            for the metaverse
+          </h4>
+          <h4
+            style={slideUpStyle}
+            className={`pad:hidden self-end font-spline tracking-[.01em] text-main-white text-[clamp(14px,3.889vw,28px)] leading-[157%] mt-[clamp(38px,10.556vw,76px)]`}
+          >
+            GoodGang Labs is building
+            <br />
+            the next generation
+            <br />
+            communication platform
+            <br />
+            and technology for avatars.
+          </h4>
+        </div>
       </div>
       <div
-        className={`relative w-screen h-screen min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] ${
-          resetScrollValue && "animate-[zoomBlurIn_.5s_ease-out]"
+        className={`relative w-screen h-screen ${
+          resetScrollValue && "animate-[zoomBlurIn_.6s_ease-out]"
         }`}
       >
         <img
-          className="absolute left-0 w-[clamp(0px,30.856%,100%)] h-screen min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] object-fill"
+          className="absolute left-0 w-[clamp(0px,30.856%,100%)] h-screen object-fill"
           src={leftWall}
           alt="좌측 벽"
         />
         <img
-          className="absolute right-0 w-[clamp(0px,30.856%,100%)] h-screen min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] object-fill"
+          className="absolute right-0 w-[clamp(0px,30.856%,100%)] h-screen object-fill"
           src={rightWall}
           alt="우측 벽"
         />

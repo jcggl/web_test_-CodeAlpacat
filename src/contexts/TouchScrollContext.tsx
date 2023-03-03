@@ -112,7 +112,7 @@ export const TouchScrollProvider = ({ children }: Props) => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 800);
+      }, 1500);
 
       setTouch(null);
     },

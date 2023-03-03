@@ -3,19 +3,16 @@ import React from "react";
 import subIntroAsset from "@/assets/svg/home/sub-intro.svg";
 import { useRecoilValue } from "recoil";
 import { subIntroState } from "@/store/atoms";
-// import TouchScrollContext from "@/contexts/TouchScrollContext";
+import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const SubIntro = () => {
   const { ref, textStyle, imageStyle } = useScrollAnimation(0.8);
   const subIntroValue = useRecoilValue(subIntroState);
-  // const { touchScrollHandler, handleTouchStart } =
-  //   useContext(TouchScrollContext);
+
   return (
     <div
       ref={ref}
-      className={`relative w-full min-h-screen h-screen font-spline tracking-[.01em] text-main-white min-h-[clamp(640px,177.778vw,820px)] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)] overflow-hidden mx-auto max-w-[450px] pad:max-w-none`}
-      // onTouchStart={handleTouchStart}
-      // onTouchMove={touchScrollHandler}
+      className={`relative w-full h-screen font-spline tracking-[.01em] text-main-white overflow-hidden mx-auto max-w-[450px] pad:max-w-none`}
     >
       {/* title */}
       <div className="relative mx-auto max-w-[2304px]">

@@ -8,7 +8,7 @@ import useCombineWall from "@/hooks/useCombineWall";
 
 const Walls = () => {
   const { ref, bottomStyle, leftStyle, rightStyle, topStyle } =
-    useCombineWall(0.8);
+    useCombineWall(0.7);
   return (
     <div ref={ref} className="relative top-0 left-0 hidden pad:block w-full h-screen">
       <img

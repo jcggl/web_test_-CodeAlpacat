@@ -30,3 +30,8 @@ export const joinUsTextState = atom<boolean>({
   key: "joinUsTextState",
   default: false,
 });
+
+export const mainAnimationState = atom<boolean>({
+  key: "mainAnimationState",
+  default: false,
+});
