@@ -9,6 +9,7 @@ import { NavigationProvider } from "@/contexts/NavigationContext";
 import ReactGA from "react-ga";
 import { TechHeightProvider } from "./contexts/TechHeightContext";
 import { RecoilRoot } from "recoil";
+import { CookiesProvider } from "react-cookie";
 
 if (process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID) {
   ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID);
@@ -19,15 +20,17 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RecoilRoot>
-      <NavigationProvider>
-        <TechHeightProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </TechHeightProvider>
-      </NavigationProvider>
-    </RecoilRoot>
+    <CookiesProvider>
+      <RecoilRoot>
+        <NavigationProvider>
+          <TechHeightProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </TechHeightProvider>
+        </NavigationProvider>
+      </RecoilRoot>
+    </CookiesProvider>
   </React.StrictMode>
 );
 
