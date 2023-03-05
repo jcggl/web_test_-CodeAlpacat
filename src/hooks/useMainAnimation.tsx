@@ -48,7 +48,7 @@ const useMainAnimation = (
             setSubIntro(false);
           }, 1000);
         }
-        console.log(ref.current.style.transform !== "scale(1, 1)");
+        
       } else if (!mainAnimation) {
         ref.current.children[1].style.transform = "scale(2.5, 2.5)";
         ref.current.children[1].style.filter = "blur(48px)";

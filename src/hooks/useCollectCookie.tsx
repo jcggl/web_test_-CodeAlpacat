@@ -15,7 +15,6 @@ const useCollectCookie = () => {
         expires: expiration
       })
     });
-    console.log(cookie)
   },[setCookie])
   
   useEffect(() => {
