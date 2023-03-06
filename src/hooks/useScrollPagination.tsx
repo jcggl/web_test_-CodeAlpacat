@@ -14,7 +14,7 @@ const useScrollPagination = () => {
     smoothscroll.polyfill();
     setTimeout(() => {
       setThrottle(false);
-    }, 600);
+    }, 1010);
   }, []);
 
   const handleTouchStart = useCallback(
@@ -34,6 +34,7 @@ const useScrollPagination = () => {
       if (throttle) return;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
+      const pageHeight = ref.current.clientHeight;
       if (touchDirection > 3) {
         //아래로 스크롤;
         gsap.to(ref.current, {
@@ -76,7 +77,7 @@ const useScrollPagination = () => {
 
       setTouch(null);
     },
-    [touch, throttle, pageHeight]
+    [touch, throttle]
   );
 
   const wheelHandler = useCallback(
@@ -85,7 +86,7 @@ const useScrollPagination = () => {
       const { scrollTop } = ref.current;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
-
+      const pageHeight = ref.current.clientHeight;
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
@@ -131,7 +132,7 @@ const useScrollPagination = () => {
         }, 1500);
       }
     },
-    [pageHeight, throttle]
+    [throttle]
   );
 
   useEffect(() => {
