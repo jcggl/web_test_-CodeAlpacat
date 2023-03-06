@@ -19,10 +19,11 @@ const useScrollPagination = () => {
 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
+      if (throttle) return;
       const currentTouch = e.touches[0].clientY;
       setTouch(currentTouch);
     },
-    []
+    [throttle]
   );
 
   const touchScrollHandler = useCallback(
@@ -34,8 +35,7 @@ const useScrollPagination = () => {
       if (throttle) return;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
-      const pageHeight = ref.current.clientHeight;
-      if (touchDirection > 3) {
+      if (touchDirection > 5) {
         //아래로 스크롤;
         gsap.to(ref.current, {
           scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
@@ -46,7 +46,7 @@ const useScrollPagination = () => {
         //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
         //   behavior: "smooth",
         // });
-      } else if (touchDirection < -3) {
+      } else if (touchDirection < -5) {
         //위로 스크롤
         if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
           gsap.to(ref.current, {
@@ -77,7 +77,7 @@ const useScrollPagination = () => {
 
       setTouch(null);
     },
-    [touch, throttle]
+    [touch, throttle, pageHeight]
   );
 
   const wheelHandler = useCallback(
@@ -86,7 +86,6 @@ const useScrollPagination = () => {
       const { scrollTop } = ref.current;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
-      const pageHeight = ref.current.clientHeight;
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
@@ -96,7 +95,7 @@ const useScrollPagination = () => {
             duration: 0.7,
             ease: "power1.inOut",
           });
-
+          
           // ref.current.scrollTo({
           //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
           //   behavior: "smooth",
@@ -119,6 +118,7 @@ const useScrollPagination = () => {
               duration: 0.7,
               ease: "power1.inOut",
             });
+            
             // ref.current.scrollTo({
             //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
             //   behavior: "smooth",
@@ -132,7 +132,7 @@ const useScrollPagination = () => {
         }, 1500);
       }
     },
-    [throttle]
+    [throttle, pageHeight]
   );
 
   useEffect(() => {
