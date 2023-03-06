@@ -9,7 +9,8 @@ const WebThreeIntro = () => {
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full overflow-hidden"
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
       <img
         style={FirstStyle}

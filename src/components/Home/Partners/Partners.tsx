@@ -9,7 +9,8 @@ const Partners = () => {
   return (
     <div
       ref={ref}
-      className="flex flex-col justify-center w-full h-screen overflow-hidden"
+      className="flex flex-col justify-center w-full overflow-hidden"
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
       <h3
         style={style}

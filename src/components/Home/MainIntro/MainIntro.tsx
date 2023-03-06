@@ -19,8 +19,8 @@ const MainIntro = () => {
   return (
     <div
       ref={mainAniRef}
-      className="relative w-screen h-screen overflow-hidden"
-      // min-h-[640px] pad:min-h-[clamp(768px,71.111vw,1080px)] desktop:min-h-[clamp(1080px,56.250vw,1296px)]
+      className="relative w-screen overflow-hidden"
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
       <div className="absolute flex justify-center items-center w-screen h-screen">
         <div className="flex flex-col w-[clamp(258px,71.667vw,516px)] pad:w-[clamp(614px,56.852vw,890px)] desktop:w-[clamp(1044px,54.375vw,100vw)] mb-[clamp(18px,5vw,36px)] pad:mb-0 ml-[clamp(8px,2.222vw,16px)] pad:ml-[clamp(20px,1.852vw,100vw)] desktop:ml-[clamp(6px,0.313vw,100vw)] pad:mt-[clamp(64px,5.926vw,100vw)] desktop:mt-[clamp(37px,1.927vw,100vw)]">
