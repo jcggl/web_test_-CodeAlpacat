@@ -34,7 +34,7 @@ const NavRouters = ({ location, selected, checkActiveLink, isTechVision }: NavRo
         );
       })}
       <div
-        className={`flex justify-center items-center pad:w-[clamp(96px,8.889vw,154px)] desktop:w-[clamp(147.58px,7.686vw,174px)] ${isHomeBackground} rounded-[5rem] transition delay-150 hover:opacity-70 aspect-[96/28]`}
+        className={`flex justify-center items-center pad:w-[clamp(96px,8.889vw,154px)] desktop:w-[clamp(145px,7.552vw,174px)] ${isHomeBackground} rounded-[5rem] transition delay-150 hover:opacity-70 aspect-[96/28]`}
       >
         <a
           href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"

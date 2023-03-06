@@ -60,11 +60,11 @@ const useScrollPagination = () => {
           // });
         } else {
           gsap.to(ref.current, {
-            scrollTop: pageHeight * (scrollTop / pageHeight - 1),
+            scrollTop: pageHeight * (Math.round(scrollTop / pageHeight) - 1),
             duration: 0.7,
             ease: "power1.inOut",
           });
-          console.log(scrollTop, pageHeight)
+          console.log(scrollTop , pageHeight);
           // ref.current.scrollTo({
           //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
           //   behavior: "smooth",
@@ -74,7 +74,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1500);
+      }, 1200);
 
       setTouch(null);
     },
@@ -130,7 +130,7 @@ const useScrollPagination = () => {
         setThrottle(true);
         setTimeout(() => {
           setThrottle(false);
-        }, 1500);
+        }, 1200);
       }
     },
     [throttle, pageHeight]
