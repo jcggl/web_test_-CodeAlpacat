@@ -60,10 +60,11 @@ const useScrollPagination = () => {
           // });
         } else {
           gsap.to(ref.current, {
-            scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+            scrollTop: pageHeight * (scrollTop / pageHeight - 1),
             duration: 0.7,
             ease: "power1.inOut",
           });
+          console.log(scrollTop, pageHeight)
           // ref.current.scrollTo({
           //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
           //   behavior: "smooth",
