@@ -55,7 +55,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1000);
+      }, 1500);
 
       setTouch(null);
     },
@@ -69,6 +69,7 @@ const useScrollPagination = () => {
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
       const pageHeight = ref.current.clientHeight;
+      console.log(pageHeight);
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
@@ -91,12 +92,13 @@ const useScrollPagination = () => {
             });
           }
         }
+        
         setThrottle(true);
+        setTimeout(() => {
+          setThrottle(false);
+        }, 1500);
       }
 
-      setTimeout(() => {
-        setThrottle(false);
-      }, 1500);
     },
     [pageHeight, throttle]
   );
