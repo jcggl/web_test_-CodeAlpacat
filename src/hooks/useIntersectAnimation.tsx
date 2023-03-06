@@ -25,7 +25,8 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
             ref.current.children[4].style.transform !==
             "translate3d(0px, 0px, 0px)"
           ) {
-            ref.current.children[i].style.top = i % 2 ? "-5vh" : "-30vh";
+            ref.current.children[i].style.transform =
+              i % 2 ? "translateY(-5vh)" : "translateY(-30vh)";
           }
         }
 
@@ -40,10 +41,10 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
         ) {
           ref.current.children[4].style.transform = "translate3d(0,-5vh,0)";
           setTimeout(() => {
-            ref.current.children[0].style.top = "-20vh";
-            ref.current.children[1].style.top = "0%";
-            ref.current.children[2].style.top = "-20vh";
-            ref.current.children[3].style.top = "0%";
+            ref.current.children[0].style.transform = "translateY(-20vh)";
+            ref.current.children[1].style.transform = "translateY(0)";
+            ref.current.children[2].style.transform = "translateY(-20vh)";
+            ref.current.children[3].style.transform = "translateY(0)";
             ref.current.children[4].style.transform = "translate3d(0,0,0)";
             setSubIntro(false);
             setPartner(false);
@@ -54,10 +55,10 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
         // for (let i=0; i < 5; i++) {
         //   ref.current.children[i].style.transitionDuration = `0s`;
         // }
-        ref.current.children[0].style.top = "278vh";
-        ref.current.children[1].style.top = "224.8vh";
-        ref.current.children[2].style.top = "207vh";
-        ref.current.children[3].style.top = "120vh";
+        ref.current.children[0].style.transform = "translateY(278vh)";
+        ref.current.children[1].style.transform = "translateY(224.8vh)";
+        ref.current.children[2].style.transform = "translateY(207vh)";
+        ref.current.children[3].style.transform = "translateY(120vh)";
         ref.current.children[4].style.transform =
           "translate3d(0px, 100vh, 0px)";
         setIntersection(true);
@@ -83,19 +84,24 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
   return {
     ref,
     FirstStyle: {
-      top: "278vh",
+      transform: "translateY(278vh)",
+      willChange: "transform",
     },
     SecondStyle: {
-      top: "224.8vh",
+      transform: "translateY(224.8vh)",
+      willChange: "transform",
     },
     ThirdStyle: {
-      top: "207vh",
+      transform: "translateY(207vh)",
+      willChange: "transform",
     },
     FourthStyle: {
-      top: "120vh",
+      transform: "translateY(120vh)",
+      willChange: "transform",
     },
     textStyle: {
       transform: "translate3d(0,100vh,0)",
+      willChange: "transform",
     },
   };
 };

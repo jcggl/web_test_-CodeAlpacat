@@ -23,7 +23,7 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
         setTimeout(() => {
           setIntersection(false);
           setWall(() => false);
-        }, 1090)
+        }, 710)
       } else if (!partner) {
         ref.current.children[0].style.transform = "translate3d(0,-15vh,0)";
         ref.current.children[1].style.transform = "translate3d(0,-15vh,0)";
