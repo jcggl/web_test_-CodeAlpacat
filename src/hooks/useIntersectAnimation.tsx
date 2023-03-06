@@ -71,7 +71,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.3,
+        threshold: 0.2,
         rootMargin: "0px 0px 0px 0px",
       });
       observer.observe(ref.current);

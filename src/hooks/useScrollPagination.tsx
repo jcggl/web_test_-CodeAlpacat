@@ -14,7 +14,7 @@ const useScrollPagination = () => {
     smoothscroll.polyfill();
     setTimeout(() => {
       setThrottle(false);
-    }, 1000);
+    }, 600);
   }, []);
 
   const handleTouchStart = useCallback(
@@ -34,39 +34,39 @@ const useScrollPagination = () => {
       if (throttle) return;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
-      if (touchDirection > 4) {
+      if (touchDirection > 3) {
         //아래로 스크롤;
-        // gsap.to(ref.current, {
-        //   scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-        //   duration: 1.1,
-        //   ease: "power1.inOut",
-        // });
-        ref.current.scrollTo({
-          top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-          behavior: "smooth",
+        gsap.to(ref.current, {
+          scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+          duration: 0.7,
+          ease: "power1.inOut",
         });
-      } else if (touchDirection < -4) {
+        // ref.current.scrollTo({
+        //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+        //   behavior: "smooth",
+        // });
+      } else if (touchDirection < -3) {
         //위로 스크롤
         if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
-          // gsap.to(ref.current, {
-          //   scrollTop: pageHeight * 4,
-          //   duration: 0.5,
-          //   ease: "power1.in",
-          // });
-          ref.current.scrollTo({
-            top: pageHeight * 4,
-            behavior: "smooth",
+          gsap.to(ref.current, {
+            scrollTop: pageHeight * 4,
+            duration: 0.5,
+            ease: "power1.in",
           });
+          // ref.current.scrollTo({
+          //   top: pageHeight * 4,
+          //   behavior: "smooth",
+          // });
         } else {
-          // gsap.to(ref.current, {
-          //   scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-          //   duration: 1.1,
-          //   ease: "power1.inOut",
-          // });
-          ref.current.scrollTo({
-            top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-            behavior: "smooth",
+          gsap.to(ref.current, {
+            scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+            duration: 0.7,
+            ease: "power1.inOut",
           });
+          // ref.current.scrollTo({
+          //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+          //   behavior: "smooth",
+          // });
         }
       }
       setThrottle(true);
@@ -90,38 +90,38 @@ const useScrollPagination = () => {
       if (!throttle) {
         if (scrollDown) {
           //아래로 스크롤;
-          // gsap.to(ref.current, {
-          //   scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-          //   duration: 1.1,
-          //   ease: "power1.inOut",
-          // });
-
-          ref.current.scrollTo({
-            top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-            behavior: "smooth",
+          gsap.to(ref.current, {
+            scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+            duration: 0.7,
+            ease: "power1.inOut",
           });
+
+          // ref.current.scrollTo({
+          //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+          //   behavior: "smooth",
+          // });
         } else if (scrollUp) {
           //위로 스크롤
           if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
-            // gsap.to(ref.current, {
-            //   scrollTop: pageHeight * 4,
-            //   duration: 0.5,
-            //   ease: "power1.in",
-            // });
-            ref.current.scrollTo({
-              top: pageHeight * 4,
-              behavior: "smooth",
+            gsap.to(ref.current, {
+              scrollTop: pageHeight * 4,
+              duration: 0.5,
+              ease: "power1.in",
             });
+            // ref.current.scrollTo({
+            //   top: pageHeight * 4,
+            //   behavior: "smooth",
+            // });
           } else {
-            // gsap.to(ref.current, {
-            //   scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-            //   duration: 1.1,
-            //   ease: "power1.inOut",
-            // });
-            ref.current.scrollTo({
-              top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-              behavior: "smooth",
+            gsap.to(ref.current, {
+              scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+              duration: 0.7,
+              ease: "power1.inOut",
             });
+            // ref.current.scrollTo({
+            //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+            //   behavior: "smooth",
+            // });
           }
         }
 
