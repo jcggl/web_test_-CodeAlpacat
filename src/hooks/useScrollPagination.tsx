@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import React, { useState, useEffect, useCallback } from "react";
 import { useRef } from "react";
 import useResize from "./useResize";
@@ -29,26 +30,28 @@ const useScrollPagination = () => {
       const { scrollTop } = ref.current;
       if (touchDown === null) return;
       if (throttle) return;
-      const pageHeight = ref.current.clientHeight;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
       if (touchDirection > 4) {
         //아래로 스크롤;
-        ref.current.scrollTo({
-          top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-          behavior: "smooth",
+        gsap.to(ref.current, {
+          scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+          duration: 1.1,
+          ease: "power1.inOut",
         });
       } else if (touchDirection < -4) {
         //위로 스크롤
         if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
-          ref.current.scrollTo({
-            top: pageHeight * 4,
-            behavior: "smooth",
+          gsap.to(ref.current, {
+            scrollTop: pageHeight * 4,
+            duration: 0.5,
+            ease: "power1.in",
           });
         } else {
-          ref.current.scrollTo({
-            top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-            behavior: "smooth",
+          gsap.to(ref.current, {
+            scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+            duration: 1.1,
+            ease: "power1.inOut",
           });
         }
       }
@@ -68,37 +71,50 @@ const useScrollPagination = () => {
       const { scrollTop } = ref.current;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
-      const pageHeight = ref.current.clientHeight;
-      console.log(pageHeight);
+
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
           //아래로 스크롤;
-          ref.current.scrollTo({
-            top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-            behavior: "smooth",
+          gsap.to(ref.current, {
+            scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+            duration: 1.1,
+            ease: "power1.inOut",
           });
+          // ref.current.scrollTo({
+          //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+          //   behavior: "smooth",
+          // });
         } else if (scrollUp) {
           //위로 스크롤
           if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
-            ref.current.scrollTo({
-              top: pageHeight * 4,
-              behavior: "smooth",
+            gsap.to(ref.current, {
+              scrollTop: pageHeight * 4,
+              duration: 0.5,
+              ease: "power1.in",
             });
+            // ref.current.scrollTo({
+            //   top: pageHeight * 4,
+            //   behavior: "smooth",
+            // });
           } else {
-            ref.current.scrollTo({
-              top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-              behavior: "smooth",
+            gsap.to(ref.current, {
+              scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+              duration: 1.1,
+              ease: "power1.inOut",
             });
+            // ref.current.scrollTo({
+            //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+            //   behavior: "smooth",
+            // });
           }
         }
-        
+
         setThrottle(true);
         setTimeout(() => {
           setThrottle(false);
         }, 1500);
       }
-
     },
     [pageHeight, throttle]
   );
