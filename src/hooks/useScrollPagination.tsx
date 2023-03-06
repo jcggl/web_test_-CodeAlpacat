@@ -19,7 +19,6 @@ const useScrollPagination = () => {
 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
-      e.preventDefault();
       const currentTouch = e.touches[0].clientY;
       setTouch(currentTouch);
     },
@@ -91,38 +90,38 @@ const useScrollPagination = () => {
       if (!throttle) {
         if (scrollDown) {
           //아래로 스크롤;
-          gsap.to(ref.current, {
-            scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-            duration: 1.1,
-            ease: "power1.inOut",
-          });
-
-          // ref.current.scrollTo({
-          //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-          //   behavior: "smooth",
+          // gsap.to(ref.current, {
+          //   scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+          //   duration: 1.1,
+          //   ease: "power1.inOut",
           // });
+
+          ref.current.scrollTo({
+            top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
+            behavior: "smooth",
+          });
         } else if (scrollUp) {
           //위로 스크롤
           if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
-            gsap.to(ref.current, {
-              scrollTop: pageHeight * 4,
-              duration: 0.5,
-              ease: "power1.in",
-            });
-            // ref.current.scrollTo({
-            //   top: pageHeight * 4,
-            //   behavior: "smooth",
+            // gsap.to(ref.current, {
+            //   scrollTop: pageHeight * 4,
+            //   duration: 0.5,
+            //   ease: "power1.in",
             // });
+            ref.current.scrollTo({
+              top: pageHeight * 4,
+              behavior: "smooth",
+            });
           } else {
-            gsap.to(ref.current, {
-              scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-              duration: 1.1,
-              ease: "power1.inOut",
-            });
-            // ref.current.scrollTo({
-            //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-            //   behavior: "smooth",
+            // gsap.to(ref.current, {
+            //   scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+            //   duration: 1.1,
+            //   ease: "power1.inOut",
             // });
+            ref.current.scrollTo({
+              top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+              behavior: "smooth",
+            });
           }
         }
 
