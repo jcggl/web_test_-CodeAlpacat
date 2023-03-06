@@ -64,7 +64,7 @@ const useScrollPagination = () => {
             duration: 0.7,
             ease: "power1.inOut",
           });
-          console.log(scrollTop , pageHeight);
+
           // ref.current.scrollTo({
           //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
           //   behavior: "smooth",
