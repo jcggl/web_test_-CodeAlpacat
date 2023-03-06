@@ -51,9 +51,9 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
           }, 800);
         }
       } else if (!intersection) {
-        for (let i=0; i < 5; i++) {
-          ref.current.children[i].style.transitionDuration = `0s`;
-        }
+        // for (let i=0; i < 5; i++) {
+        //   ref.current.children[i].style.transitionDuration = `0s`;
+        // }
         ref.current.children[0].style.top = "278vh";
         ref.current.children[1].style.top = "224.8vh";
         ref.current.children[2].style.top = "207vh";
