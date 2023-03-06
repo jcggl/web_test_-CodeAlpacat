@@ -23,7 +23,7 @@ const useScrollPagination = () => {
       const { scrollTop } = ref.current;
       if (touchDown === null) return;
       if (throttle) return;
-
+      const pageHeight = ref.current.clientHeight;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
       if (touchDirection > 4) {
@@ -62,7 +62,7 @@ const useScrollPagination = () => {
       const { scrollTop } = ref.current;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
-
+      const pageHeight = ref.current.clientHeight;
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
