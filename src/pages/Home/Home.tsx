@@ -7,6 +7,7 @@ import {
   WebThreeIntro,
 } from "@/components/Home";
 import { TouchScrollProvider } from "@/contexts/TouchScrollContext";
+import styles from "./Home.module.css"
 import useResetScroll from "@/hooks/useResetScroll";
 import useScrollPagination from "@/hooks/useScrollPagination";
 
@@ -17,7 +18,7 @@ const Home = () => {
     <TouchScrollProvider>
       <div
         ref={scrollRef}
-        className="bg-[#1A1A1A] overflow-y-auto"
+        className={`bg-[#1A1A1A] overflow-y-scroll ${styles.smoothScroll}`}
         style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       >
         <MainIntro />
