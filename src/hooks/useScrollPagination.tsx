@@ -17,6 +17,7 @@ const useScrollPagination = () => {
 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
+      e.preventDefault();
       const currentTouch = e.touches[0].clientY;
       setTouch(currentTouch);
     },
