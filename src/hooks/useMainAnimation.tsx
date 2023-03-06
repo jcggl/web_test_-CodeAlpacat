@@ -11,7 +11,6 @@ const useMainAnimation = (
   const { height } = useResize();
   const setSubIntro = useSetRecoilState(subIntroState);
   const [mainAnimation, setMainAnimation] = useRecoilState(mainAnimationState);
-  const resetScrollValue = useRecoilValue(resetScrollState);
 
   const handleScroll = useCallback(
     ([entry]: any) => {

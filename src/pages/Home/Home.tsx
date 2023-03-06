@@ -12,10 +12,14 @@ import useScrollPagination from "@/hooks/useScrollPagination";
 
 const Home = () => {
   const { ref: scrollRef } = useScrollPagination();
-  useResetScroll()
+  useResetScroll();
   return (
     <TouchScrollProvider>
-      <div ref={scrollRef} className="bg-[#1A1A1A] h-screen overflow-y-auto">
+      <div
+        ref={scrollRef}
+        className="bg-[#1A1A1A] overflow-y-auto"
+        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      >
         <MainIntro />
         <SubIntro />
         <WebThreeIntro />

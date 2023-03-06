@@ -6,7 +6,13 @@ const useScrollPagination = () => {
   const ref = useRef<any>();
   const [touch, setTouch] = useState<number | null>(null);
   const { height: pageHeight } = useResize();
-  const [throttle, setThrottle] = useState<boolean>(false);
+  const [throttle, setThrottle] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setThrottle(false);
+    }, 1000);
+  }, []);
 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
@@ -49,7 +55,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1500);
+      }, 1000);
 
       setTouch(null);
     },
