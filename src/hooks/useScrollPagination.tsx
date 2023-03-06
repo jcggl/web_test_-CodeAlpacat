@@ -12,6 +12,7 @@ const useScrollPagination = () => {
 
   useEffect(() => {
     smoothscroll.polyfill();
+    console.log(smoothscroll)
     setTimeout(() => {
       setThrottle(false);
     }, 1000);
