@@ -9,12 +9,15 @@ const useScrollPagination = () => {
   const [touch, setTouch] = useState<number | null>(null);
   const { height: pageHeight } = useResize();
   const [throttle, setThrottle] = useState<boolean>(true);
+  const [page, setPage] = useState<number>(0);
+  const [isFooter, setIsFooter] = useState<boolean>(false);
 
   useEffect(() => {
     smoothscroll.polyfill();
     setTimeout(() => {
       setThrottle(false);
     }, 1010);
+    ref.current.children[0].style.transform = "translateY(0px)";
   }, []);
 
   const handleTouchStart = useCallback(
@@ -29,7 +32,7 @@ const useScrollPagination = () => {
   const touchScrollHandler = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
       e.preventDefault();
-      const pageHeight = ref.current.clientHeight
+      const pageHeight = ref.current.clientHeight;
       const touchDown: number | null = touch;
       const { scrollTop } = ref.current;
       if (touchDown === null) return;
@@ -38,104 +41,105 @@ const useScrollPagination = () => {
       const touchDirection = touchDown - currentTouch;
       if (touchDirection > 5) {
         //아래로 스크롤;
-        gsap.to(ref.current, {
-          scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-          duration: 0.7,
-          ease: "power1.inOut",
-        });
-        // ref.current.scrollTo({
-        //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-        //   behavior: "smooth",
-        // });
-      } else if (touchDirection < -5) {
-        //위로 스크롤
-        if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
-          gsap.to(ref.current, {
-            scrollTop: pageHeight * 4,
-            duration: 0.5,
-            ease: "power1.in",
-          });
-          // ref.current.scrollTo({
-          //   top: pageHeight * 4,
-          //   behavior: "smooth",
-          // });
-        } else {
-          gsap.to(ref.current, {
-            scrollTop: pageHeight * (Math.round(scrollTop / pageHeight) - 1),
+        if (page < 4) {
+          gsap.to(ref.current.children[0].style, {
+            transform: `translateY(-${pageHeight * (page + 1)}px)`,
             duration: 0.7,
             ease: "power1.inOut",
           });
-
-          // ref.current.scrollTo({
-          //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-          //   behavior: "smooth",
-          // });
+          setPage((prev) => prev + 1);
+          
+        } else if (page === 4 && !isFooter) {
+          const footerHeight = ref.current.children[0].children[5].clientHeight;
+          gsap.to(ref.current.children[0].style, {
+            transform: `translateY(-${pageHeight * page + footerHeight}px)`,
+            duration: 0.4,
+            ease: "power1.inOut",
+          });
+          setIsFooter(true);
+        }
+      } else if (touchDirection < -5) {
+        //위로 스크롤
+        if (page === 4 && isFooter) {
+          gsap.to(ref.current.children[0].style, {
+            transform: `translateY(-${pageHeight * page}px)`,
+            duration: 0.4,
+            ease: "power1.inOut",
+          });
+          setIsFooter(false);
+        } else if (page > 0) {
+          gsap.to(ref.current.children[0].style, {
+            transform: `translateY(-${pageHeight * (page - 1)}px)`,
+            duration: 0.7,
+            ease: "power1.inOut",
+          });
+          setPage((prev) => prev - 1);
         }
       }
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1200);
+      }, 1510);
 
       setTouch(null);
     },
-    [touch, throttle]
+    [touch, throttle, isFooter, page]
   );
 
   const wheelHandler = useCallback(
     (e: React.WheelEvent) => {
       e.preventDefault();
-      const { scrollTop } = ref.current;
       const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
+
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
           //아래로 스크롤;
-          gsap.to(ref.current, {
-            scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-            duration: 0.7,
-            ease: "power1.inOut",
-          });
-          
-          // ref.current.scrollTo({
-          //   top: pageHeight * (Math.floor(scrollTop / pageHeight) + 1),
-          //   behavior: "smooth",
-          // });
-        } else if (scrollUp) {
-          //위로 스크롤
-          if (parseFloat((scrollTop / pageHeight).toFixed(1)) > 4) {
-            gsap.to(ref.current, {
-              scrollTop: pageHeight * 4,
-              duration: 0.5,
-              ease: "power1.in",
-            });
-            // ref.current.scrollTo({
-            //   top: pageHeight * 4,
-            //   behavior: "smooth",
-            // });
-          } else {
-            gsap.to(ref.current, {
-              scrollTop: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
+          if (page < 4) {
+            gsap.to(ref.current.children[0].style, {
+              transform: `translateY(-${pageHeight * (page + 1)}px)`,
               duration: 0.7,
               ease: "power1.inOut",
             });
-            
-            // ref.current.scrollTo({
-            //   top: pageHeight * (Math.floor(scrollTop / pageHeight) - 1),
-            //   behavior: "smooth",
-            // });
+            setPage((prev) => prev + 1);
+
+          } else if (page === 4 && !isFooter) {
+            const footerHeight =
+              ref.current.children[0].children[5].clientHeight;
+            gsap.to(ref.current.children[0].style, {
+              transform: `translateY(-${pageHeight * page + footerHeight}px)`,
+              duration: 0.4,
+              ease: "power1.inOut",
+            });
+            setIsFooter(true);
+          }
+        } else if (scrollUp) {
+          //위로 스크롤
+          if (page === 4 && isFooter) {
+            gsap.to(ref.current.children[0].style, {
+              transform: `translateY(-${pageHeight * page}px)`,
+              duration: 0.4,
+              ease: "power1.inOut",
+            });
+            setIsFooter(false);
+          } else if (page > 0) {
+            gsap.to(ref.current.children[0].style, {
+              transform: `translateY(-${pageHeight * (page - 1)}px)`,
+              duration: 0.7,
+              ease: "power1.inOut",
+            });
+            setPage((prev) => prev - 1);
           }
         }
-
         setThrottle(true);
         setTimeout(() => {
           setThrottle(false);
-        }, 1200);
+        }, 1510);
       }
     },
-    [throttle]
+    [throttle, page, isFooter]
   );
 
   useEffect(() => {
