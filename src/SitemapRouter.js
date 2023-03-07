@@ -6,7 +6,7 @@ export default (
     <Routes>
       <Route path="/" />
       <Route path="/About" />
-      <Route path="/Technology" />
+      {/* <Route path="/Technology" /> */}
       <Route path="/Product" />
       <Route path="/Team" />
     </Routes>

@@ -11,9 +11,7 @@ import { TechHeightProvider } from "./contexts/TechHeightContext";
 import { RecoilRoot } from "recoil";
 import { CookiesProvider } from "react-cookie";
 
-if (process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID) {
-  ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID);
-}
+ReactGA.initialize("UA-217346279-2");
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
