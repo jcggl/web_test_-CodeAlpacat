@@ -29,6 +29,7 @@ const useScrollPagination = () => {
   const touchScrollHandler = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
       e.preventDefault();
+      const pageHeight = ref.current.clientHeight
       const touchDown: number | null = touch;
       const { scrollTop } = ref.current;
       if (touchDown === null) return;
@@ -78,13 +79,14 @@ const useScrollPagination = () => {
 
       setTouch(null);
     },
-    [touch, throttle, pageHeight]
+    [touch, throttle]
   );
 
   const wheelHandler = useCallback(
     (e: React.WheelEvent) => {
       e.preventDefault();
       const { scrollTop } = ref.current;
+      const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
       if (throttle) return;
@@ -133,7 +135,7 @@ const useScrollPagination = () => {
         }, 1200);
       }
     },
-    [throttle, pageHeight]
+    [throttle]
   );
 
   useEffect(() => {

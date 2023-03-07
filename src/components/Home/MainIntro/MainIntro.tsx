@@ -15,7 +15,6 @@ const MainIntro = () => {
     slideDownStyle,
   } = useMainAnimation(0.6);
   const resetScrollValue = useRecoilValue(resetScrollState);
-
   return (
     <div
       ref={mainAniRef}
