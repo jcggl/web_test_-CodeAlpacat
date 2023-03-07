@@ -12,12 +12,12 @@ import useResetScroll from "@/hooks/useResetScroll";
 import useScrollPagination from "@/hooks/useScrollPagination";
 
 const Home = () => {
-  const { ref: scrollRef } = useScrollPagination();
+  // const { ref: scrollRef } = useScrollPagination();
   useResetScroll();
   return (
     <TouchScrollProvider>
       <div
-        ref={scrollRef}
+        // ref={scrollRef}ㄹ
         className={`bg-[#1A1A1A] overflow-y-scroll touch-none ${styles.smoothScroll}`}
         style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       >
