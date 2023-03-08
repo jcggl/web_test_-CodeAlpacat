@@ -39,6 +39,7 @@ const useScrollPagination = () => {
       const touchDirection = touchDown - currentTouch;
       if (touchDirection > 3) {
         //아래로 스크롤;
+        
         if (page < 4) {
           gsap.to(ref.current.style, {
             transform: `translateY(${-pageHeight * (page + 1)}px)`,
