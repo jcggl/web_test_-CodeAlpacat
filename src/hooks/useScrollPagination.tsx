@@ -3,14 +3,13 @@ import React, { useState, useEffect, useCallback } from "react";
 import smoothscroll from "smoothscroll-polyfill";
 import { useRef } from "react";
 import useResize from "./useResize";
-let page = 0;
 
 const useScrollPagination = () => {
   const ref = useRef<any>();
   const [touch, setTouch] = useState<number | null>(null);
   const { height: pageHeight } = useResize();
   const [throttle, setThrottle] = useState<boolean>(true);
-  // const [page, setPage] = useState<number>(0);
+  const [page, setPage] = useState<number>(0);
   const [isFooter, setIsFooter] = useState<boolean>(false);
 
   useEffect(() => {
@@ -47,8 +46,7 @@ const useScrollPagination = () => {
             duration: 0.7,
             ease: "power1.inOut",
           });
-          // setPage((prev) => prev + 1);
-          page += 1
+          setPage((prev) => prev + 1);
         } else if (page === 4 && !isFooter) {
           const footerHeight = ref.current.children[5].clientHeight;
           gsap.to(ref.current.style, {
@@ -73,18 +71,17 @@ const useScrollPagination = () => {
             duration: 0.7,
             ease: "power1.inOut",
           });
-          // setPage((prev) => prev - 1);
-          page -= 1
+          setPage((prev) => prev - 1);
         }
       }
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1210);
+      }, 1810);
 
       setTouch(null);
     },
-    [touch, throttle, isFooter, pageHeight]
+    [touch, throttle, isFooter, page, pageHeight]
   );
 
   const wheelHandler = useCallback(
@@ -104,8 +101,7 @@ const useScrollPagination = () => {
               duration: 0.7,
               ease: "power1.inOut",
             });
-            // setPage((prev) => prev + 1);
-            page += 1
+            setPage((prev) => prev + 1);
           } else if (page === 4 && !isFooter) {
             const footerHeight = ref.current.children[5].clientHeight;
             gsap.to(ref.current.style, {
@@ -130,8 +126,7 @@ const useScrollPagination = () => {
               duration: 0.7,
               ease: "power1.inOut",
             });
-            // setPage((prev) => prev - 1);
-            page -= 1
+            setPage((prev) => prev - 1);
           }
         }
         setThrottle(true);
@@ -140,7 +135,7 @@ const useScrollPagination = () => {
         }, 1210);
       }
     },
-    [throttle, isFooter, pageHeight]
+    [throttle, page, isFooter, pageHeight]
   );
 
   useEffect(() => {
