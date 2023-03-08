@@ -14,13 +14,13 @@ import AngelPartnerWrapper from "../AngelPartnerWrapper/AngelPartnerWrapper";
 
 const PartnersListMobile = () => {
   const partnersList = useRef<string[]>([
-    "w-[clamp(115.5px,32.083vw,173.25px)] brightness-0", //naverZ
-    "w-[clamp(101.75px,28.264vw,152.625px)] brightness-0", //lineNext
-    "w-[clamp(108.56px,30.156vw,162.84px)] brightness-0", //d2StartUp
-    "w-[clamp(101.14px,28.094vw,151.71px)] brightness-0", //dosi
-    "w-[clamp(127.81px,35.503vw,191.715px)] brightness-0", //nvidia
-    "w-[clamp(64.46px,17.906vw,96.69px)] brightness-0", //planetarium
-    "w-[clamp(46.48px,12.911vw,69.72px)]", //kimgisaLab
+    "w-[clamp(103.87px,28.853vw,155.8px)] brightness-0", //naverZ
+    "w-[clamp(92.97px,25.825vw,139.45px)] brightness-0", //lineNext
+    "w-[clamp(99.91px,27.753vw,149.86px)] brightness-0", //d2StartUp
+    "w-[clamp(91.61px,25.447vw,137.41px)] brightness-0", //dosi
+    "w-[clamp(115.77px,32.158vw,173.65px)] brightness-0", //nvidia
+    "w-[clamp(57.97px,16.103vw,86.95px)] brightness-0", //planetarium
+    "w-[clamp(39.32px,10.922vw,58.98px)]", //kimgisaLab
   ]);
   
   const firstLayerImage = useRef<string[]>([
@@ -43,7 +43,7 @@ const PartnersListMobile = () => {
   ]);
 
   return (
-    <div className="grid pad:hidden justify-center items-center mt-[clamp(63px,17.5vw,94.5px)] grid-cols-2 gap-x-[clamp(14px,3.889vw,21px)] gap-y-[clamp(39px,10.833vw,58.5px)] mx-[clamp(47px,13.056vw,70.5px)] mb-[clamp(103.77px,28.825vw,155.655px)]">
+    <div className="grid pad:hidden justify-center items-center mt-[clamp(63px,17.5vw,94.5px)] grid-cols-2 gap-x-[clamp(7px,1.944vw,10.5px)] gap-y-[clamp(44px,12.222vw,66px)] mx-[clamp(55px,15.278vw,82.5px)] mb-[clamp(105.8px,29.389vw,158.7px)]">
       {firstLayerImage.current.map((item, index) => {
         if (index < 7)
           return (
@@ -62,9 +62,9 @@ const PartnersListMobile = () => {
               key={`mobileGridPartner${index}`}
               src={item}
               boxStyle={
-                "w-[w-[clamp(125px,34.722vw,187.5px)]] text-[clamp(9px,2.5vw,13.5px)] leading-[130%] text-main-black font-inter"
+                "w-[w-[clamp(125px,34.722vw,187.5px)]] text-[clamp(7.5px,2.083vw,11.25px)] leading-[130%] text-main-black font-inter"
               }
-              innerStyle="w-[clamp(55px,15.278vw,82.5px)] mb-[clamp(10.89px,3.025vw,16.335px)] aspect-square"
+              innerStyle="w-[clamp(52.76px,14.656vw,79.14px)] mb-[clamp(10.89px,3.025vw,16.335px)] aspect-square"
               name={partnersName.current[index - 7]}
             />
           );
