@@ -18,7 +18,7 @@ const Home = () => {
     <TouchScrollProvider>
       <div
         ref={scrollRef}
-        className={`bg-[#1A1A1A] overflow-hidden ${styles.smoothScroll}`}
+        className={`bg-[#1A1A1A] overflow-hidden touch-none ${styles.smoothScroll}`}
         // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       >
           <MainIntro />
