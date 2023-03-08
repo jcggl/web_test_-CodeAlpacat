@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 interface positionStyleType {
   transform: string;
   transition: string;
-  OverflowY: string;
+  OverflowY?: string;
 }
 
 const useScrollPagination = () => {
@@ -21,7 +21,6 @@ const useScrollPagination = () => {
   const [style, setStyle] = useState<positionStyleType>({
     transform: `translateY(0px)`,
     transition: "all 0.7s ease-in-out",
-    OverflowY: "hidden"
   });
 
   useEffect(() => {
@@ -35,14 +34,8 @@ const useScrollPagination = () => {
   }, [page]);
 
   const movePage = useCallback((index: number): void => {
-    if (throttle) return
     setPage((prev) => prev + index);
-    setThrottle(true);
-    setTimeout(() => {
-      setThrottle(false);
-    }, 1510);
-    setTouch(null);
-  }, [throttle]);
+  }, []);
 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
@@ -61,6 +54,11 @@ const useScrollPagination = () => {
       const { scrollTop } = ref.current;
       if (touchDown === null) return;
       if (throttle) return;
+      setThrottle(true);
+      setTimeout(() => {
+        setThrottle(false);
+      }, 1510);
+      setTouch(null);
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
       if (touchDirection > 4) {
@@ -87,13 +85,17 @@ const useScrollPagination = () => {
   const wheelHandler = useCallback(
     (e: React.WheelEvent) => {
       e.preventDefault();
-      e.stopPropagation()
+      e.stopPropagation();
       // const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
       const footerHeight = ref.current.children[5].clientHeight;
-
       if (throttle) return;
+      setThrottle(true);
+      setTimeout(() => {
+        setThrottle(false);
+      }, 1510);
+      setTouch(null);
       if (!throttle) {
         if (scrollDown) {
           //아래로 스크롤;
