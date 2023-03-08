@@ -24,6 +24,10 @@ const useScrollPagination = () => {
   });
 
   useEffect(() => {
+    setStyle((prev) => ({
+      transform: `translateY(0px)`,
+      transition: "all 0.7s ease-in-out",
+    }));
     setTimeout(() => {
       setThrottle(false);
     }, 1010);
@@ -47,8 +51,6 @@ const useScrollPagination = () => {
 
   const touchScrollHandler = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
-      e.preventDefault();
-      e.stopPropagation();
       const touchDown: number | null = touch;
       const footerHeight = ref.current.children[5].clientHeight;
       const { scrollTop } = ref.current;
@@ -84,8 +86,6 @@ const useScrollPagination = () => {
 
   const wheelHandler = useCallback(
     (e: React.WheelEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
       // const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
@@ -119,26 +119,26 @@ const useScrollPagination = () => {
     [throttle, page, isFooter, pageHeight, movePage]
   );
 
-  useEffect(() => {
-    const refCurrent = ref.current;
-    refCurrent.addEventListener("wheel", wheelHandler);
-    refCurrent.addEventListener("touchstart", handleTouchStart);
-    refCurrent.addEventListener("touchmove", touchScrollHandler);
+  // useEffect(() => {
+  //   const refCurrent = ref.current;
+  //   refCurrent.addEventListener("wheel", wheelHandler);
+  //   refCurrent.addEventListener("touchstart", handleTouchStart);
+  //   refCurrent.addEventListener("touchmove", touchScrollHandler);
 
-    return () => {
-      refCurrent.removeEventListener("wheel", wheelHandler);
-      refCurrent.removeEventListener("touchstart", handleTouchStart);
-      refCurrent.removeEventListener("touchmove", touchScrollHandler);
-    };
-  }, [
-    throttle,
-    pageHeight,
-    wheelHandler,
-    handleTouchStart,
-    touchScrollHandler,
-  ]);
+  //   return () => {
+  //     refCurrent.removeEventListener("wheel", wheelHandler);
+  //     refCurrent.removeEventListener("touchstart", handleTouchStart);
+  //     refCurrent.removeEventListener("touchmove", touchScrollHandler);
+  //   };
+  // }, [
+  //   throttle,
+  //   pageHeight,
+  //   wheelHandler,
+  //   handleTouchStart,
+  //   touchScrollHandler,
+  // ]);
 
-  return { ref, style };
+  return { ref, style, wheelHandler, handleTouchStart, touchScrollHandler};
 };
 
 export default useScrollPagination;

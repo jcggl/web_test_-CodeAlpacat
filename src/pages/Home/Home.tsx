@@ -11,7 +11,7 @@ import useResetScroll from "@/hooks/useResetScroll";
 import useScrollPagination from "@/hooks/useScrollPagination";
 
 const Home = () => {
-  const { ref: scrollRef, style } = useScrollPagination();
+  const { ref: scrollRef, style, wheelHandler, touchScrollHandler, handleTouchStart } = useScrollPagination();
   useResetScroll();
   return (
     <TouchScrollProvider>
@@ -19,6 +19,9 @@ const Home = () => {
         ref={scrollRef}
         className={`bg-[#1A1A1A] overflow-y-scroll`}
         style={style}
+        onWheel={wheelHandler}
+        onTouchStart={handleTouchStart}
+        onTouchMove={touchScrollHandler}
       >
           <MainIntro />
           <SubIntro />
