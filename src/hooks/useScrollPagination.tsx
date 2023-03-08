@@ -39,7 +39,7 @@ const useScrollPagination = () => {
       if (throttle) return;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
-      if (touchDirection > 5) {
+      if (touchDirection > 3) {
         //아래로 스크롤;
         if (page < 4) {
           gsap.to(ref.current.children[0].style, {
@@ -48,7 +48,6 @@ const useScrollPagination = () => {
             ease: "power1.inOut",
           });
           setPage((prev) => prev + 1);
-          
         } else if (page === 4 && !isFooter) {
           const footerHeight = ref.current.children[0].children[5].clientHeight;
           gsap.to(ref.current.children[0].style, {
@@ -58,7 +57,7 @@ const useScrollPagination = () => {
           });
           setIsFooter(true);
         }
-      } else if (touchDirection < -5) {
+      } else if (touchDirection < -3) {
         //위로 스크롤
         if (page === 4 && isFooter) {
           gsap.to(ref.current.children[0].style, {
