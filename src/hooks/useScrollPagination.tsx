@@ -24,10 +24,6 @@ const useScrollPagination = () => {
   });
 
   useEffect(() => {
-    setStyle((prev) => ({
-      transform: `translateY(0px)`,
-      transition: "all 0.7s ease-in-out",
-    }));
     setTimeout(() => {
       setThrottle(false);
     }, 1010);
@@ -37,22 +33,15 @@ const useScrollPagination = () => {
     setStyle((prev) => ({ ...prev, transform: `translateY(${page}px)` }));
   }, [page]);
 
-  const movePage = useCallback((index: number): void => {
-    setPage((prev) => prev + index);
-  }, []);
-
-  const handleTouchStart = useCallback(
-    (e: React.TouchEvent<HTMLInputElement>): void => {
+  useEffect(() => {
+    const handleTouchStart = (e: React.TouchEvent<HTMLInputElement>): void => {
       const currentTouch = e.touches[0].clientY;
       setTouch(currentTouch);
-    },
-    []
-  );
-
-  const touchScrollHandler = useCallback(
-    (e: React.TouchEvent<HTMLInputElement>): void => {
+    };
+    const touchScrollHandler = (
+      e: React.TouchEvent<HTMLInputElement>
+    ): void => {
       e.preventDefault();
-      e.stopPropagation();
       const touchDown: number | null = touch;
       const footerHeight = ref.current.children[5].clientHeight;
       const { scrollTop } = ref.current;
@@ -68,28 +57,25 @@ const useScrollPagination = () => {
       if (touchDirection > 4) {
         //아래로 스크롤;
         if (page <= 0 && page > -pageHeight * 4) {
-          movePage(-pageHeight);
+          setPage((prev) => prev - pageHeight);
         } else if (page === -pageHeight * 4 && !isFooter) {
-          movePage(-footerHeight);
+          setPage((prev) => prev - footerHeight);
           setIsFooter(true);
         }
       } else if (touchDirection < -4) {
         //위로 스크롤
         if (page < -pageHeight * 4 && isFooter) {
-          movePage(footerHeight);
+          setPage((prev) => prev + footerHeight);
           setIsFooter(false);
         } else if (page < 0) {
-          movePage(pageHeight);
+          // movePage(pageHeight);
+          setPage((prev) => prev + pageHeight);
         }
       }
-    },
-    [touch, isFooter, page, pageHeight, throttle, movePage]
-  );
+    };
 
-  const wheelHandler = useCallback(
-    (e: React.WheelEvent) => {
+    const wheelHandler = (e: React.WheelEvent) => {
       e.preventDefault();
-      e.stopPropagation();
       // const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
@@ -104,26 +90,24 @@ const useScrollPagination = () => {
         if (scrollDown) {
           //아래로 스크롤;
           if (page <= 0 && page > -pageHeight * 4) {
-            movePage(-pageHeight);
+            setPage((prev) => prev - pageHeight);
           } else if (page === -pageHeight * 4 && !isFooter) {
-            movePage(-footerHeight);
+            setPage((prev) => prev - footerHeight);
             setIsFooter(true);
           }
         } else if (scrollUp) {
           //위로 스크롤
           if (page < -pageHeight * 4 && isFooter) {
-            movePage(footerHeight);
+            setPage((prev) => prev + footerHeight);
             setIsFooter(false);
           } else if (page < 0) {
-            movePage(pageHeight);
+            // movePage(pageHeight);
+            setPage((prev) => prev + pageHeight);
           }
         }
       }
-    },
-    [throttle, page, isFooter, pageHeight, movePage]
-  );
+    };
 
-  useEffect(() => {
     const refCurrent = ref.current;
     refCurrent.addEventListener("wheel", wheelHandler);
     refCurrent.addEventListener("touchstart", handleTouchStart);
@@ -137,12 +121,12 @@ const useScrollPagination = () => {
   }, [
     throttle,
     pageHeight,
-    wheelHandler,
-    handleTouchStart,
-    touchScrollHandler,
+    isFooter,
+    page,
+    touch
   ]);
 
-  return { ref, style, wheelHandler, handleTouchStart, touchScrollHandler};
+  return { ref, style };
 };
 
 export default useScrollPagination;
