@@ -32,9 +32,15 @@ const useScrollPagination = () => {
     setStyle((prev) => ({ ...prev, transform: `translateY(${page}px)` }));
   }, [page]);
 
-  const movePage = (index: number): void => {
+  const movePage = useCallback((index: number): void => {
+    if (throttle) return
     setPage((prev) => prev + index);
-  };
+    setThrottle(true);
+    setTimeout(() => {
+      setThrottle(false);
+    }, 1510);
+    setTouch(null);
+  }, [throttle]);
 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
@@ -47,7 +53,7 @@ const useScrollPagination = () => {
   const touchScrollHandler = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
       e.preventDefault();
-      e.stopPropagation()
+      e.stopPropagation();
       const touchDown: number | null = touch;
       const footerHeight = ref.current.children[5].clientHeight;
       const { scrollTop } = ref.current;
@@ -72,14 +78,8 @@ const useScrollPagination = () => {
           movePage(pageHeight);
         }
       }
-
-      setThrottle(true);
-      setTimeout(() => {
-        setThrottle(false);
-      }, 1510);
-      setTouch(null);
     },
-    [touch, throttle, isFooter, page, pageHeight]
+    [touch, isFooter, page, pageHeight, throttle, movePage]
   );
 
   const wheelHandler = useCallback(
@@ -109,14 +109,9 @@ const useScrollPagination = () => {
             movePage(pageHeight);
           }
         }
-
-        setThrottle(true);
-        setTimeout(() => {
-          setThrottle(false);
-        }, 1210);
       }
     },
-    [throttle, page, isFooter, pageHeight]
+    [throttle, page, isFooter, pageHeight, movePage]
   );
 
   useEffect(() => {
