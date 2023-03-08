@@ -2,11 +2,14 @@ import { CarouselCardType } from "@/components/Product/CarouselCard/CarouselCard
 import { beergangImageList } from "@/constants/Images/beergang-image-list";
 import { kikitownImageList } from "@/constants/Images/kikitown-image-list";
 import { marionetteImageList } from "@/constants/Images/marionette-image-list";
+import kikitown from "@/assets/product/kiki_video.mp4";
+import marionette from "@/assets/product/marionette_video.mp4";
+import beergang from "@/assets/product/beergang_video.mp4";
 
 export const products: CarouselCardType[] = [
   {
     imageList: kikitownImageList,
-    linkTitle: "go to Kiki Town",
+    videoSrc: kikitown,
     href: "https://www.kiki.town/",
     title: "Kiki Town",
     subTitle: "Off with your video, On with your avatar!",
@@ -15,6 +18,7 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: marionetteImageList,
+    videoSrc: marionette,
     href: "#",
     title: "Marionette API",
     subTitle: "Make your avatar alive with your face and voice.",
@@ -23,6 +27,7 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: beergangImageList,
+    videoSrc: beergang,
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",

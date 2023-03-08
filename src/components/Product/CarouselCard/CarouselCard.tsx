@@ -5,9 +5,11 @@ import { kikitownImageList } from "@/constants/Images/kikitown-image-list";
 import longArrowRight from "@/assets/common/long-arrow-right.svg";
 
 import { CarouselCardType } from "./CarouselCard.types";
+import ProductVideo from "../ProductVideo/ProductVideo";
 
 const CarouselCard = ({
   imageList = kikitownImageList,
+  videoSrc,
   linkTitle = "coming soon!",
   href = "#",
   title = "Title",
@@ -16,7 +18,8 @@ const CarouselCard = ({
 }: CarouselCardType) => {
   return (
     <div>
-      <Carousel imageList={imageList} />
+      {/* <Carousel imageList={imageList} /> */}
+      <ProductVideo videoSrc={videoSrc}/>
       <div className="w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1000px)] desktop:w-[clamp(1000px,52.083vw,1200px)] mx-auto">
         <div className="flex justify-end">
           {linkTitle !== "coming soon!" ? (

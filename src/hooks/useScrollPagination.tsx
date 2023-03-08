@@ -10,9 +10,11 @@ interface positionStyleType {
   OverflowY?: string;
 }
 
+let touch:number | null = null;
+
 const useScrollPagination = () => {
   const ref = useRef<any>();
-  const [touch, setTouch] = useState<number | null>(null);
+  // const [touch, setTouch] = useState<number | null>(null);
   const { height: pageHeight } = useResize();
   const [throttle, setThrottle] = useState<boolean>(true);
   const [page, setPage] = useState<number>(0);
@@ -36,12 +38,14 @@ const useScrollPagination = () => {
   useEffect(() => {
     const handleTouchStart = (e: React.TouchEvent<HTMLInputElement>): void => {
       const currentTouch = e.touches[0].clientY;
-      setTouch(currentTouch);
+      // setTouch(currentTouch);
+      touch = currentTouch
     };
     const touchScrollHandler = (
       e: React.TouchEvent<HTMLInputElement>
     ): void => {
       e.preventDefault();
+      
       const touchDown: number | null = touch;
       const footerHeight = ref.current.children[5].clientHeight;
       const { scrollTop } = ref.current;
@@ -50,8 +54,9 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 2010);
-      setTouch(null);
+      }, 1310);
+      // setTouch(null);
+      touch = null;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
       if (touchDirection > 4) {
@@ -85,7 +90,6 @@ const useScrollPagination = () => {
       setTimeout(() => {
         setThrottle(false);
       }, 1510);
-      setTouch(null);
       if (!throttle) {
         if (scrollDown) {
           //아래로 스크롤;
@@ -123,7 +127,6 @@ const useScrollPagination = () => {
     pageHeight,
     isFooter,
     page,
-    touch
   ]);
 
   return { ref, style };
