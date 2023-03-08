@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 import leftWall from "@/assets/home/main-intro/left-wall.webp";
 import rightWall from "@/assets/home/main-intro/right-wall.webp";
