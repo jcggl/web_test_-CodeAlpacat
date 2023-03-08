@@ -23,12 +23,6 @@ const useScrollPagination = () => {
   });
 
   useEffect(() => {
-    smoothscroll.polyfill();
-    setPage(0);
-    setStyle({
-      transform: `translateY(0px)`,
-      transition: "all 0.7s ease-in-out",
-    });
     setTimeout(() => {
       setThrottle(false);
     }, 1010);
@@ -53,6 +47,7 @@ const useScrollPagination = () => {
   const touchScrollHandler = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
       e.preventDefault();
+      e.stopPropagation()
       const touchDown: number | null = touch;
       const footerHeight = ref.current.children[5].clientHeight;
       const { scrollTop } = ref.current;
@@ -60,7 +55,7 @@ const useScrollPagination = () => {
       if (throttle) return;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
-      if (touchDirection > 3) {
+      if (touchDirection > 4) {
         //아래로 스크롤;
         if (page <= 0 && page > -pageHeight * 4) {
           movePage(-pageHeight);
@@ -68,7 +63,7 @@ const useScrollPagination = () => {
           movePage(-footerHeight);
           setIsFooter(true);
         }
-      } else if (touchDirection < -3) {
+      } else if (touchDirection < -4) {
         //위로 스크롤
         if (page < -pageHeight * 4 && isFooter) {
           movePage(footerHeight);
@@ -81,7 +76,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1210);
+      }, 1510);
       setTouch(null);
     },
     [touch, throttle, isFooter, page, pageHeight]
