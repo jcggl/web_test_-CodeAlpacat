@@ -11,13 +11,14 @@ import useResetScroll from "@/hooks/useResetScroll";
 import useScrollPagination from "@/hooks/useScrollPagination";
 
 const Home = () => {
-  const { ref: scrollRef } = useScrollPagination();
+  const { ref: scrollRef, style } = useScrollPagination();
   useResetScroll();
   return (
     <TouchScrollProvider>
       <div
         ref={scrollRef}
         className={`bg-[#1A1A1A] overflow-hidden touch-none`}
+        style={style}
       >
           <MainIntro />
           <SubIntro />
