@@ -40,23 +40,12 @@ const useScrollPagination = () => {
       if (touchDirection > 3) {
         //아래로 스크롤;
         if (page < 4) {
-          if (
-            ref.current.style.transform ===
-            `translateY(${-pageHeight * page}px)`
-          ) {
-            gsap.to(ref.current.style, {
-              transform: `translateY(${-pageHeight * (page + 1)}px)`,
-              duration: 0.7,
-              ease: "power1.inOut",
-            });
-            setPage((prev) => prev + 1);
-          } else {
-            gsap.to(ref.current.style, {
-              transform: `translateY(${-pageHeight * (page)}px)`,
-              duration: 0.7,
-              ease: "power1.inOut",
-            });
-          }
+          gsap.to(ref.current.style, {
+            transform: `translateY(${-pageHeight * (page + 1)}px)`,
+            duration: 0.7,
+            ease: "power1.inOut",
+          });
+          setPage((prev) => prev + 1);
         } else if (page === 4 && !isFooter) {
           const footerHeight = ref.current.children[5].clientHeight;
           gsap.to(ref.current.style, {
@@ -76,29 +65,18 @@ const useScrollPagination = () => {
           });
           setIsFooter(false);
         } else if (page > 0) {
-          if (
-            ref.current.style.transform ===
-            `translateY(${-pageHeight * (page)}px)`
-          ) {
-            gsap.to(ref.current.style, {
-              transform: `translateY(${-pageHeight * (page - 1)}px)`,
-              duration: 0.7,
-              ease: "power1.inOut",
-            });
-            setPage((prev) => prev - 1);
-          } else {
-            gsap.to(ref.current.style, {
-              transform: `translateY(${-pageHeight * (page)}px)`,
-              duration: 0.7,
-              ease: "power1.inOut",
-            });
-          }
+          gsap.to(ref.current.style, {
+            transform: `translateY(${-pageHeight * (page - 1)}px)`,
+            duration: 0.7,
+            ease: "power1.inOut",
+          });
+          setPage((prev) => prev - 1);
         }
       }
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1510);
+      }, 1210);
 
       setTouch(null);
     },
@@ -117,33 +95,14 @@ const useScrollPagination = () => {
         if (scrollDown) {
           //아래로 스크롤;
           if (page < 4) {
-              // console.log(ref.current.style)
-              // gsap.to(ref.current.style, {
-              //   transform: `translateY(${-pageHeight * (page + 1)}px)`,
-              //   duration: 0.7,
-              //   ease: "power1.inOut",
-              // });
-              // setPage((prev) => prev + 1);
-            if (
-              ref.current.style.transform ===
-              `translateY(${-pageHeight * page}px)`
-            ) {
-              gsap.to(ref.current.style, {
-                transform: `translateY(${-pageHeight * (page + 1)}px)`,
-                duration: 0.7,
-                ease: "power1.inOut",
-              });
-              setPage((prev) => prev + 1);
-            } else {
-              gsap.to(ref.current.style, {
-                transform: `translateY(${-pageHeight * page}px)`,
-                duration: 0.7,
-                ease: "power1.inOut",
-              });
-            }
+            gsap.to(ref.current.style, {
+              transform: `translateY(${-pageHeight * (page + 1)}px)`,
+              duration: 0.7,
+              ease: "power1.inOut",
+            });
+            setPage((prev) => prev + 1);
           } else if (page === 4 && !isFooter) {
-            const footerHeight =
-              ref.current.children[5].clientHeight;
+            const footerHeight = ref.current.children[5].clientHeight;
             gsap.to(ref.current.style, {
               transform: `translateY(${-(pageHeight * page + footerHeight)}px)`,
               duration: 0.4,
@@ -161,23 +120,12 @@ const useScrollPagination = () => {
             });
             setIsFooter(false);
           } else if (page > 0) {
-            if (
-              ref.current.style.transform ===
-              `translateY(${-pageHeight * page}px)`
-            ) {
-              gsap.to(ref.current.style, {
-                transform: `translateY(${-pageHeight * (page - 1)}px)`,
-                duration: 0.7,
-                ease: "power1.inOut",
-              });
-              setPage((prev) => prev - 1);
-            } else {
-              gsap.to(ref.current.style, {
-                transform: `translateY(${-pageHeight * page}px)`,
-                duration: 0.7,
-                ease: "power1.inOut",
-              });
-            }
+            gsap.to(ref.current.style, {
+              transform: `translateY(${-pageHeight * (page - 1)}px)`,
+              duration: 0.7,
+              ease: "power1.inOut",
+            });
+            setPage((prev) => prev - 1);
           }
         }
         setThrottle(true);
