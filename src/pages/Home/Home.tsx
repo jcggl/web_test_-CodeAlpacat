@@ -17,11 +17,8 @@ const Home = () => {
     <TouchScrollProvider>
       <div
         ref={scrollRef}
-        className={`bg-[#1A1A1A] overflow-y-scroll`}
+        className={`bg-[#1A1A1A] overflow-y-hidden touch-none`}
         style={style}
-        onWheel={wheelHandler}
-        onTouchStart={handleTouchStart}
-        onTouchMove={touchScrollHandler}
       >
           <MainIntro />
           <SubIntro />
