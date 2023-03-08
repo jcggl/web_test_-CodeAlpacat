@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { NavRouterType } from "./NavRouter.types";
 
-const PATH: string[] = ["About", "Technology", "Product", "Team"];
+const PATH: string[] = ["About", "Partners", "Product", "Team"];
 
 const NavRouters = ({ location, selected, checkActiveLink, isTechVision }: NavRouterType) => {
   const isHome: string =

@@ -3,7 +3,7 @@ import { partnersImageList } from "@/constants/Images/partners-image-list";
 import usePartnerAnimation from "@/hooks/usePartnerAnimation";
 import AutoSlider from "@/components/Home/AutoSlider/AutoSlider";
 
-const Partners = () => {
+const OurPartners = () => {
   const { ref, style } = usePartnerAnimation(0.7);
 
   return (
@@ -23,4 +23,4 @@ const Partners = () => {
   );
 };
 
-export default Partners;
+export default OurPartners;

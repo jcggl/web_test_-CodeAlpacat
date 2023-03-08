@@ -79,7 +79,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1510);
+      }, 1210);
 
       setTouch(null);
     },
@@ -136,7 +136,7 @@ const useScrollPagination = () => {
         setThrottle(true);
         setTimeout(() => {
           setThrottle(false);
-        }, 1510);
+        }, 1210);
       }
     },
     [throttle, page, isFooter]

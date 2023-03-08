@@ -51,7 +51,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
               "translate3d(0, 0, 0)";
             setIntersection(false);
             setMainAnimation(false)
-          }, 750);
+          }, 700);
         }
       } else if (!subIntroValue) {
         ref.current.children[1].children[0].style.transform =
@@ -71,7 +71,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
 
     if (ref.current) {
       observer = new IntersectionObserver(handleScroll, {
-        threshold: 0.25,
+        threshold: 0.3,
         rootMargin: `0px 0px 0px 0px`,
       });
       observer.observe(ref.current);

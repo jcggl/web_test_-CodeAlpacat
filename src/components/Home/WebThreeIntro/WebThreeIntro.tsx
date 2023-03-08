@@ -4,7 +4,7 @@ import intersectReverse from "@/assets/svg/home/Intersect-reverse.svg";
 import useIntersectAnimation from "@/hooks/useIntersectAnimation";
 
 const WebThreeIntro = () => {
-  const { ref, FirstStyle, SecondStyle, ThirdStyle, FourthStyle, textStyle } = useIntersectAnimation(0.8);
+  const { ref, FirstStyle, SecondStyle, ThirdStyle, FourthStyle, textStyle } = useIntersectAnimation(0.7);
 
   return (
     <div

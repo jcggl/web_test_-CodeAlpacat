@@ -2,7 +2,7 @@ import { Footer } from "@/components/Common";
 import {
   JoinUs,
   MainIntro,
-  Partners,
+  OurPartners,
   SubIntro,
   WebThreeIntro,
 } from "@/components/Home";
@@ -25,7 +25,7 @@ const Home = () => {
           <MainIntro />
           <SubIntro />
           <WebThreeIntro />
-          <Partners />
+          <OurPartners />
           <JoinUs />
           <Footer />
         </div>

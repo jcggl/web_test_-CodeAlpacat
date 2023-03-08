@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { Home, About, Technology, Product, Team } from "@/pages";
+import { Home, About, Technology, Product, Team, Partners } from "@/pages";
 import { GlobalLayout } from "@/components/Common";
 import useRouteChecker from "@/hooks/useRouteChecker";
 import { useEffect } from "react";
@@ -24,7 +24,8 @@ function App() {
     <Routes>
       <Route element={<GlobalLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/About" element={<About />} />        
+        <Route path="/Partners" element={<Partners />} />        
         <Route path="/Technology" element={<Technology />} />
         <Route path="/Product" element={<Product />} />
         <Route path="/Team" element={<Team />} />

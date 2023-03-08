@@ -3,10 +3,9 @@ import React from "react";
 import subIntroAsset from "@/assets/svg/home/sub-intro.svg";
 import { useRecoilValue } from "recoil";
 import { subIntroState } from "@/store/atoms";
-import TouchScrollContext from "@/contexts/TouchScrollContext";
 
 const SubIntro = () => {
-  const { ref, textStyle, imageStyle } = useScrollAnimation(0.75);
+  const { ref, textStyle, imageStyle } = useScrollAnimation(0.7);
   const subIntroValue = useRecoilValue(subIntroState);
 
   return (

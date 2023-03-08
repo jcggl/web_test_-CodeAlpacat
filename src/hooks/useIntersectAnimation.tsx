@@ -49,7 +49,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
             setSubIntro(false);
             setPartner(false);
             setWall(false)
-          }, 800);
+          }, 700);
         }
       } else if (!intersection) {
         // for (let i=0; i < 5; i++) {

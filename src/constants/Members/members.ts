@@ -25,4 +25,28 @@ export const members: MemberInfoType[] = [
     href: "https://www.linkedin.com/in/brianlee00/",
     hasLinkedIn: true,
   },
+  {
+    role: "IOS Developer",
+    name: "Jiyoun Moon",
+    href: "",
+    hasLinkedIn: false,
+  },
+  {
+    role: "3D Generalist",
+    name: "Wooyong Sim",
+    href: "",
+    hasLinkedIn: false,
+  },
+  {
+    role: "Community Manager",
+    name: "Chanyeon Park",
+    href: "",
+    hasLinkedIn: false,
+  },
+  {
+    role: "Back End Developer",
+    name: "Iseob Kim",
+    href: "",
+    hasLinkedIn: true,
+  },
 ];

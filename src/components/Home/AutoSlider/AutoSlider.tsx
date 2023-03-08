@@ -20,19 +20,23 @@ const AutoSlider = ({ imageList, intersectionStyle }: Props) => {
     images.current.length
   );
   const imageRatio = useRef<string[]>([
-    "aspect-[266.79/60.65]",
-    "aspect-[149.08/137.48]",
-    "aspect-[254.55/100]",
-    "aspect-[108.34/162]",
-    "aspect-[299.28/110]"
-  ])
+    "aspect-[249.28/57.42]", //naverZ
+    "aspect-[219.61/111.02]", //lineNext
+    "aspect-[236/91]", //d2StartUp
+    "aspect-[219.86/68]", //dosi
+    "aspect-[277.84/100]", //nvidia
+    "aspect-[139.12/130]", //planetarium
+    "aspect-[100.31/150]", //kimgisaLab
+  ]);
 
   const imageWidth = useRef<string[]>([
-    "w-[clamp(135.06px,37.517vw,162.072px)] pad:w-[clamp(200.09px,18.527vw,246.79px)] desktop:w-[clamp(266.79px,13.895vw,320.148px)]",
-    "w-[clamp(75px,20.833vw,90px)] pad:w-[clamp(111.81px,10.353vw,129.08px)] desktop:w-[clamp(149.08px,7.765vw,178.9px)]",
-    "w-[clamp(136px,37.778vw,163px)] pad:w-[clamp(200px,18.519vw,220px)] desktop:w-[clamp(254.55px,13.258vw,294.66px)]",
-    "w-[clamp(54.85px,15.236vw,65.82px)] pad:w-[clamp(81.25px,7.523vw,98.34px)] desktop:w-[clamp(108.34px,5.643vw,130px)]",
-    "w-[clamp(150.57px,41.825vw,175px)] pad:w-[clamp(224.46px,20.783vw,247.2px)] desktop:w-[clamp(299.28px,15.587vw,100vw)]",
+    "w-[clamp(115.5px,32.083vw,169.51px)] pad:w-[clamp(169.51px,15.695vw,249.28px)] desktop:w-[clamp(249.28px,12.983vw,100vw)]", //naverZ
+    "w-[clamp(101.75px,28.264vw,149.33px)] pad:w-[clamp(149.33px,13.827vw,219.61px)] desktop:w-[clamp(219.61px,11.438vw,100vw)]", //lineNext
+    "w-[clamp(108.56px,30.156vw,159.69px)] pad:w-[clamp(159.69px,14.786vw,236px)] desktop:w-[clamp(236px,12.292vw,100vw)]", //d2StartUp
+    "w-[clamp(101.14px,28.094vw,149.51px)] pad:w-[clamp(149.51px,13.844vw,219.86px)] desktop:w-[clamp(219.86px,11.451vw,100vw)]", //dosi
+    "w-[clamp(127.81px,35.503vw,188px)] pad:w-[clamp(188px,17.407vw,277.84px)] desktop:w-[clamp(277.84px,14.471vw,100vw)]", //nvidia
+    "w-[clamp(64.46px,17.906vw,139.12px)] pad:w-[clamp(94.6px,8.759vw,139.12px)] desktop:w-[clamp(139.12px,7.246vw,100vw)]", //planetarium
+    "w-[clamp(46.48px,12.911vw,68.21px)] pad:w-[clamp(68.21px,6.316vw,100.31px)] desktop:w-[clamp(100.31px,5.224vw,100vw)]", //kimgisaLab
   ]);
 
   useInterval(() => {

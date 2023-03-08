@@ -18,8 +18,7 @@ const GlobalLayout = () => {
       <Navbar />
       {toggle && <Modal />}
       <Outlet />
-      <Footer/>
-      {/* {pathname !== "/" && <Footer />} */}
+      {pathname !== "/" && <Footer />}
     </div>
   );
 };
