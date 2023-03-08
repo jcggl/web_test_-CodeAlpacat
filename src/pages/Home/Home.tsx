@@ -18,17 +18,17 @@ const Home = () => {
     <TouchScrollProvider>
       <div
         ref={scrollRef}
-        className={`bg-[#1A1A1A] overflow-y-scroll ${styles.smoothScroll}`}
-        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+        className={`bg-[#1A1A1A] overflow-hidden ${styles.smoothScroll}`}
+        // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
       >
-        <div className="w-full h-full">
           <MainIntro />
           <SubIntro />
           <WebThreeIntro />
           <OurPartners />
           <JoinUs />
           <Footer />
-        </div>
+        {/* <div className="w-full h-full">
+        </div> */}
       </div>
     </TouchScrollProvider>
   );

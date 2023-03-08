@@ -17,7 +17,7 @@ const useScrollPagination = () => {
     setTimeout(() => {
       setThrottle(false);
     }, 1010);
-    ref.current.children[0].style.transform = "translateY(0px)";
+    ref.current.style.transform = "translateY(0px)";
   }, []);
 
   const handleTouchStart = useCallback(
@@ -31,7 +31,6 @@ const useScrollPagination = () => {
   const touchScrollHandler = useCallback(
     (e: React.TouchEvent<HTMLInputElement>): void => {
       e.preventDefault();
-      const pageHeight = ref.current.clientHeight;
       const touchDown: number | null = touch;
       const { scrollTop } = ref.current;
       if (touchDown === null) return;
@@ -42,25 +41,25 @@ const useScrollPagination = () => {
         //아래로 스크롤;
         if (page < 4) {
           if (
-            ref.current.children[0].style.transform ===
+            ref.current.style.transform ===
             `translateY(${-pageHeight * page}px)`
           ) {
-            gsap.to(ref.current.children[0].style, {
+            gsap.to(ref.current.style, {
               transform: `translateY(${-pageHeight * (page + 1)}px)`,
               duration: 0.7,
               ease: "power1.inOut",
             });
             setPage((prev) => prev + 1);
           } else {
-            gsap.to(ref.current.children[0].style, {
+            gsap.to(ref.current.style, {
               transform: `translateY(${-pageHeight * (page)}px)`,
               duration: 0.7,
               ease: "power1.inOut",
             });
           }
         } else if (page === 4 && !isFooter) {
-          const footerHeight = ref.current.children[0].children[5].clientHeight;
-          gsap.to(ref.current.children[0].style, {
+          const footerHeight = ref.current.children[5].clientHeight;
+          gsap.to(ref.current.style, {
             transform: `translateY(${-(pageHeight * page + footerHeight)}px)`,
             duration: 0.4,
             ease: "power1.inOut",
@@ -70,7 +69,7 @@ const useScrollPagination = () => {
       } else if (touchDirection < -3) {
         //위로 스크롤
         if (page === 4 && isFooter) {
-          gsap.to(ref.current.children[0].style, {
+          gsap.to(ref.current.style, {
             transform: `translateY(${-pageHeight * page}px)`,
             duration: 0.4,
             ease: "power1.inOut",
@@ -78,17 +77,17 @@ const useScrollPagination = () => {
           setIsFooter(false);
         } else if (page > 0) {
           if (
-            ref.current.children[0].style.transform ===
+            ref.current.style.transform ===
             `translateY(${-pageHeight * (page)}px)`
           ) {
-            gsap.to(ref.current.children[0].style, {
+            gsap.to(ref.current.style, {
               transform: `translateY(${-pageHeight * (page - 1)}px)`,
               duration: 0.7,
               ease: "power1.inOut",
             });
             setPage((prev) => prev - 1);
           } else {
-            gsap.to(ref.current.children[0].style, {
+            gsap.to(ref.current.style, {
               transform: `translateY(${-pageHeight * (page)}px)`,
               duration: 0.7,
               ease: "power1.inOut",
@@ -103,13 +102,13 @@ const useScrollPagination = () => {
 
       setTouch(null);
     },
-    [touch, throttle, isFooter, page]
+    [touch, throttle, isFooter, page, pageHeight]
   );
 
   const wheelHandler = useCallback(
     (e: React.WheelEvent) => {
       e.preventDefault();
-      const pageHeight = ref.current.clientHeight;
+      // const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
 
@@ -118,19 +117,25 @@ const useScrollPagination = () => {
         if (scrollDown) {
           //아래로 스크롤;
           if (page < 4) {
-            
+              // console.log(ref.current.style)
+              // gsap.to(ref.current.style, {
+              //   transform: `translateY(${-pageHeight * (page + 1)}px)`,
+              //   duration: 0.7,
+              //   ease: "power1.inOut",
+              // });
+              // setPage((prev) => prev + 1);
             if (
-              ref.current.children[0].style.transform ===
+              ref.current.style.transform ===
               `translateY(${-pageHeight * page}px)`
             ) {
-              gsap.to(ref.current.children[0].style, {
+              gsap.to(ref.current.style, {
                 transform: `translateY(${-pageHeight * (page + 1)}px)`,
                 duration: 0.7,
                 ease: "power1.inOut",
               });
               setPage((prev) => prev + 1);
             } else {
-              gsap.to(ref.current.children[0].style, {
+              gsap.to(ref.current.style, {
                 transform: `translateY(${-pageHeight * page}px)`,
                 duration: 0.7,
                 ease: "power1.inOut",
@@ -138,8 +143,8 @@ const useScrollPagination = () => {
             }
           } else if (page === 4 && !isFooter) {
             const footerHeight =
-              ref.current.children[0].children[5].clientHeight;
-            gsap.to(ref.current.children[0].style, {
+              ref.current.children[5].clientHeight;
+            gsap.to(ref.current.style, {
               transform: `translateY(${-(pageHeight * page + footerHeight)}px)`,
               duration: 0.4,
               ease: "power1.inOut",
@@ -149,7 +154,7 @@ const useScrollPagination = () => {
         } else if (scrollUp) {
           //위로 스크롤
           if (page === 4 && isFooter) {
-            gsap.to(ref.current.children[0].style, {
+            gsap.to(ref.current.style, {
               transform: `translateY(${-pageHeight * page}px)`,
               duration: 0.4,
               ease: "power1.inOut",
@@ -157,17 +162,17 @@ const useScrollPagination = () => {
             setIsFooter(false);
           } else if (page > 0) {
             if (
-              ref.current.children[0].style.transform ===
+              ref.current.style.transform ===
               `translateY(${-pageHeight * page}px)`
             ) {
-              gsap.to(ref.current.children[0].style, {
+              gsap.to(ref.current.style, {
                 transform: `translateY(${-pageHeight * (page - 1)}px)`,
                 duration: 0.7,
                 ease: "power1.inOut",
               });
               setPage((prev) => prev - 1);
             } else {
-              gsap.to(ref.current.children[0].style, {
+              gsap.to(ref.current.style, {
                 transform: `translateY(${-pageHeight * page}px)`,
                 duration: 0.7,
                 ease: "power1.inOut",
@@ -181,7 +186,7 @@ const useScrollPagination = () => {
         }, 1210);
       }
     },
-    [throttle, page, isFooter]
+    [throttle, page, isFooter, pageHeight]
   );
 
   useEffect(() => {
