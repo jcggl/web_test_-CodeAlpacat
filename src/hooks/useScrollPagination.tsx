@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 interface positionStyleType {
   transform: string;
   transition: string;
+  OverflowY: string;
 }
 
 const useScrollPagination = () => {
@@ -20,6 +21,7 @@ const useScrollPagination = () => {
   const [style, setStyle] = useState<positionStyleType>({
     transform: `translateY(0px)`,
     transition: "all 0.7s ease-in-out",
+    OverflowY: "hidden"
   });
 
   useEffect(() => {
@@ -90,7 +92,7 @@ const useScrollPagination = () => {
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
       const footerHeight = ref.current.children[5].clientHeight;
-      console.log("뭐지")
+
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {
