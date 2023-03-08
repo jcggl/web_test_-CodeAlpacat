@@ -58,16 +58,18 @@ const useScrollPagination = () => {
         //아래로 스크롤;
         if (page <= 0 && page > -pageHeight * 4) {
           setPage((prev) => prev - pageHeight);
-        } else if (page === -pageHeight * 4 && !isFooter) {
-          setPage((prev) => prev - footerHeight);
-          setIsFooter(true);
-        }
+        } 
+        // else if (page === -pageHeight * 4 && !isFooter) {
+        //   setPage((prev) => prev - footerHeight);
+        //   setIsFooter(true);
+        // }
       } else if (touchDirection < -4) {
         //위로 스크롤
-        if (page < -pageHeight * 4 && isFooter) {
-          setPage((prev) => prev + footerHeight);
-          setIsFooter(false);
-        } else if (page < 0) {
+        // if (page < -pageHeight * 4 && isFooter) {
+        //   setPage((prev) => prev + footerHeight);
+        //   setIsFooter(false);
+        // } 
+        if (page < 0) {
           // movePage(pageHeight);
           setPage((prev) => prev + pageHeight);
         }
