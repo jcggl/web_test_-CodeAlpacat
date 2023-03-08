@@ -85,11 +85,12 @@ const useScrollPagination = () => {
   const wheelHandler = useCallback(
     (e: React.WheelEvent) => {
       e.preventDefault();
+      e.stopPropagation()
       // const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
       const footerHeight = ref.current.children[5].clientHeight;
-
+      console.log("뭐지")
       if (throttle) return;
       if (!throttle) {
         if (scrollDown) {

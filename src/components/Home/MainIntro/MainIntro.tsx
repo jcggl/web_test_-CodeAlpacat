@@ -18,7 +18,7 @@ const MainIntro = () => {
   return (
     <div
       ref={mainAniRef}
-      className="relative w-screen overflow-hidden"
+      className="relative w-screen overflow-hidden touch-none"
       style={{ height: "calc(var(--vh, 1vh) * 100)" }}
     >
       <div className="absolute flex justify-center items-center w-screen h-screen">

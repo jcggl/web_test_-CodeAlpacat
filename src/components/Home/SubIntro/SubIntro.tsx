@@ -12,7 +12,7 @@ const SubIntro = () => {
     <div
       ref={ref}
       style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      className={`relative w-full font-spline tracking-[.01em] text-main-white overflow-hidden mx-auto max-w-[450px] pad:max-w-none`}
+      className={`relative w-full font-spline tracking-[.01em] text-main-white overflow-hidden mx-auto max-w-[450px] pad:max-w-none touch-none`}
     >
       {/* title */}
       <div className="relative mx-auto max-w-[2304px]">
