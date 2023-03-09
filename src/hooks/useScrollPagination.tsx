@@ -138,12 +138,12 @@ const useScrollPagination = () => {
 
   useEffect(() => {
     const refCurrent = ref.current;
-    refCurrent.addEventListener("wheel", wheelHandler, { once: true });
+    refCurrent.addEventListener("wheel", wheelHandler);
     refCurrent.addEventListener("touchstart", handleTouchStart);
     refCurrent.addEventListener("touchmove", touchScrollHandler);
 
     return () => {
-      refCurrent.removeEventListener("wheel", wheelHandler, { once: true });
+      refCurrent.removeEventListener("wheel", wheelHandler);
       refCurrent.removeEventListener("touchstart", handleTouchStart);
       refCurrent.removeEventListener("touchmove", touchScrollHandler);
     };
