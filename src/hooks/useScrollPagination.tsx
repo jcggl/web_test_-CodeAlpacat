@@ -10,7 +10,7 @@ interface positionStyleType {
   OverflowY?: string;
 }
 
-let touch:number | null = null;
+let touch: number | null = null;
 
 const useScrollPagination = () => {
   const ref = useRef<any>();
@@ -19,6 +19,7 @@ const useScrollPagination = () => {
   const [throttle, setThrottle] = useState<boolean>(true);
   const [page, setPage] = useState<number>(0);
   const [isFooter, setIsFooter] = useState<boolean>(false);
+  const [timer, setTimer] = useState<any>();
 
   const [style, setStyle] = useState<positionStyleType>({
     transform: `translateY(0px)`,
@@ -39,22 +40,29 @@ const useScrollPagination = () => {
     const handleTouchStart = (e: React.TouchEvent<HTMLInputElement>): void => {
       const currentTouch = e.touches[0].clientY;
       // setTouch(currentTouch);
-      touch = currentTouch
+      touch = currentTouch;
     };
     const touchScrollHandler = (
       e: React.TouchEvent<HTMLInputElement>
     ): void => {
       e.preventDefault();
-      
+
       const touchDown: number | null = touch;
       const footerHeight = ref.current.children[5].clientHeight;
       const { scrollTop } = ref.current;
+      
+      timer.forEach((item:any) => {
+        clearTimeout(item)
+      })
+      setTimer([])
+      
+      let t = setTimeout(() => {
+        setThrottle(false);
+      }, 1310);
+      setTimer((prev: any) => [...prev, t]);
       if (touchDown === null) return;
       if (throttle) return;
       setThrottle(true);
-      setTimeout(() => {
-        setThrottle(false);
-      }, 1310);
       // setTouch(null);
       touch = null;
       const currentTouch = e.touches[0].clientY;
@@ -122,12 +130,7 @@ const useScrollPagination = () => {
       refCurrent.removeEventListener("touchstart", handleTouchStart);
       refCurrent.removeEventListener("touchmove", touchScrollHandler);
     };
-  }, [
-    throttle,
-    pageHeight,
-    isFooter,
-    page,
-  ]);
+  }, [throttle, pageHeight, isFooter, page]);
 
   return { ref, style };
 };
