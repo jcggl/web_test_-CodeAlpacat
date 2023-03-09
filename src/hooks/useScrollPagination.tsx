@@ -10,16 +10,14 @@ interface positionStyleType {
   OverflowY?: string;
 }
 
-let touch: number | null = null;
-
 const useScrollPagination = () => {
   const ref = useRef<any>();
-  // const [touch, setTouch] = useState<number | null>(null);
+  const [touch, setTouch] = useState<number | null>(null);
   const { height: pageHeight } = useResize();
   const [throttle, setThrottle] = useState<boolean>(true);
   const [page, setPage] = useState<number>(0);
   const [isFooter, setIsFooter] = useState<boolean>(false);
-  const [timer, setTimer] = useState<any>();
+  const [timer, setTimer] = useState<any>([]);
 
   const [style, setStyle] = useState<positionStyleType>({
     transform: `translateY(0px)`,
@@ -39,8 +37,7 @@ const useScrollPagination = () => {
   useEffect(() => {
     const handleTouchStart = (e: React.TouchEvent<HTMLInputElement>): void => {
       const currentTouch = e.touches[0].clientY;
-      // setTouch(currentTouch);
-      touch = currentTouch;
+      setTouch(currentTouch);
     };
     const touchScrollHandler = (
       e: React.TouchEvent<HTMLInputElement>
@@ -50,21 +47,20 @@ const useScrollPagination = () => {
       const touchDown: number | null = touch;
       const footerHeight = ref.current.children[5].clientHeight;
       const { scrollTop } = ref.current;
-      
-      timer.forEach((item:any) => {
-        clearTimeout(item)
-      })
-      setTimer([])
-      
+      console.log(page);
+      if (touchDown === null) return;
+      if (throttle) return;
+      // timer.forEach((item:any) => {
+      //   clearTimeout(item)
+      // })
+      // setTimer([])
+
+      // setTimer((prev: any) => [...prev, t]);
+      setTouch(null);
+      setThrottle(true);
       let t = setTimeout(() => {
         setThrottle(false);
       }, 1310);
-      setTimer((prev: any) => [...prev, t]);
-      if (touchDown === null) return;
-      if (throttle) return;
-      setThrottle(true);
-      // setTouch(null);
-      touch = null;
       const currentTouch = e.touches[0].clientY;
       const touchDirection = touchDown - currentTouch;
       if (touchDirection > 4) {

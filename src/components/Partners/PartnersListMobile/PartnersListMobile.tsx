@@ -6,9 +6,9 @@ import d2StartUp from "@/assets/svg/home/d2-startup.svg";
 import nvidia from "@/assets/svg/home/nvidia.svg";
 import lineNext from "@/assets/svg/home/line-next.svg";
 import dosi from "@/assets/svg/home/dosi.svg";
-import JJ from "@/assets/partners/img_partners_JJ.png";
-import JC from "@/assets/partners/img_partners_JC.png";
-import KP from "@/assets/partners/img_partners_KP.png";
+import JJ from "@/assets/partners/img_partners_JJ.webp";
+import JC from "@/assets/partners/img_partners_JC.webp";
+import KP from "@/assets/partners/img_partners_KP.webp";
 import PartnerWrapper from "../PartnerWrapper/PartnerWrapper";
 import AngelPartnerWrapper from "../AngelPartnerWrapper/AngelPartnerWrapper";
 

@@ -118,7 +118,7 @@ const ProductVideo = (props: Props) => {
         loop={true}
         controls={false}
       >
-        <source src={props.videoSrc} type="video/mp4" />
+        <source src={props.videoSrc} type="video/webm" />
       </video>
     </div>
   );
