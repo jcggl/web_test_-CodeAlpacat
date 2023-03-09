@@ -7,6 +7,8 @@ interface positionStyleType {
   OverflowY?: string;
 }
 
+let curTime = 0;
+
 const useScrollPagination = () => {
   const ref = useRef<any>();
   const [touch, setTouch] = useState<number | null>(null);
@@ -14,6 +16,7 @@ const useScrollPagination = () => {
   const [throttle, setThrottle] = useState<boolean>(true);
   const [page, setPage] = useState<number>(0);
   const [isFooter, setIsFooter] = useState<boolean>(false);
+  const [timer, setTimer] = useState<any>([]);
 
   const [style, setStyle] = useState<positionStyleType>({
     transform: `translateY(0px)`,
@@ -53,7 +56,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1010);
+      }, 1110);
       const footerMinus = page - ref.current.children[5].clientHeight;
       const footerPlus = page + ref.current.children[5].clientHeight;
       const minusScroll = page - pageHeight;
@@ -90,16 +93,26 @@ const useScrollPagination = () => {
       // const pageHeight = ref.current.clientHeight;
       const scrollDown: boolean = e.deltaY > 0;
       const scrollUp: boolean = e.deltaY <= 0;
-      if (throttle) return;
+      const copyThrottle = throttle;
+      const newTimer = timer;
+
+      if (copyThrottle) return;
+
+      timer.forEach((item: any) => {
+        clearTimeout(item);
+      });
+      setTimer([]);
       setThrottle(true);
-      setTimeout(() => {
+      let t = setTimeout(() => {
         setThrottle(false);
-      }, 1010);
+      }, 1700);
+      setTimer([...newTimer, t]);
+
       const footerMinus = page - ref.current.children[5].clientHeight;
       const footerPlus = page + ref.current.children[5].clientHeight;
       const minusScroll = page - pageHeight;
       const plusScroll = page + pageHeight;
-      if (!throttle) {
+      if (!copyThrottle) {
         if (scrollDown) {
           //아래로 스크롤;
           if (page <= 0 && page > -pageHeight * 4) {
@@ -120,17 +133,17 @@ const useScrollPagination = () => {
         }
       }
     },
-    [isFooter, page, pageHeight, throttle]
+    [isFooter, page, pageHeight, throttle, timer]
   );
 
   useEffect(() => {
     const refCurrent = ref.current;
-    refCurrent.addEventListener("wheel", wheelHandler);
+    refCurrent.addEventListener("wheel", wheelHandler, false);
     refCurrent.addEventListener("touchstart", handleTouchStart);
     refCurrent.addEventListener("touchmove", touchScrollHandler);
 
     return () => {
-      refCurrent.removeEventListener("wheel", wheelHandler);
+      refCurrent.removeEventListener("wheel", wheelHandler, { once: true });
       refCurrent.removeEventListener("touchstart", handleTouchStart);
       refCurrent.removeEventListener("touchmove", touchScrollHandler);
     };
