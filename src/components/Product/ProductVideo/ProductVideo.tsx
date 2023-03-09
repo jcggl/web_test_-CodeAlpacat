@@ -17,6 +17,7 @@ const ProductVideo = (props: Props) => {
   const [timer, setTimer] = useState<any>([]);
 
   useEffect(() => {
+    
     if (isPlaying) {
       videoRef.current.play();
     } else {
@@ -115,8 +116,9 @@ const ProductVideo = (props: Props) => {
         ref={videoRef}
         muted={!isMuted}
         autoPlay={false}
-        loop={true}
+        loop={false}
         controls={false}
+        // onEnded={}
       >
         <source src={props.videoSrc} type="video/webm" />
       </video>

@@ -30,80 +30,93 @@ const useScrollPagination = () => {
     setStyle((prev) => ({ ...prev, transform: `translateY(${page}px)` }));
   }, [page]);
 
-  const handleTouchStart = useCallback((e: React.TouchEvent<HTMLInputElement>): void => {
-    const currentTouch = e.touches[0].clientY;
-    setTouch(currentTouch);
-  }, []);
-  const touchScrollHandler = useCallback((e: React.TouchEvent<HTMLInputElement>): void => {
-    e.preventDefault();
-    const footerHeight = ref.current.children[5].clientHeight;
-    const touchDown: number | null = touch;
-    const { scrollTop } = ref.current;
-    if (touchDown === null) return;
-    if (throttle) return;
-    setTouch(null);
-    setThrottle(true);
-    setTimeout(() => {
-      setThrottle(false);
-    }, 1310);
-    const minusScroll = page - pageHeight
-    const plusScroll = page + pageHeight
-    const currentTouch = e.touches[0].clientY;
-    const touchDirection = touchDown - currentTouch;
-    if (!throttle && touchDown) {
-      if (touchDirection > 4) {
-        //아래로 스크롤;
-        if (page <= 0 && page > -pageHeight * 4) {
-          setPage(minusScroll);
-        } else if (page === -pageHeight * 4 && !isFooter) {
-          setPage(minusScroll);
-          setIsFooter(true);
-        }
-      } else if (touchDirection < -4) {
-        //위로 스크롤
-        if (page < -pageHeight * 4 && isFooter) {
-          setPage(plusScroll);
-          setIsFooter(false);
-        } else if (page < 0) {
-          // movePage(pageHeight);
-          setPage(plusScroll);
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent<HTMLInputElement>): void => {
+      const currentTouch = e.touches[0].clientY;
+      setTouch(currentTouch);
+    },
+    []
+  );
+  const touchScrollHandler = useCallback(
+    (e: React.TouchEvent<HTMLInputElement>): void => {
+      e.preventDefault();
+      const touchDown: number | null = touch;
+      const { scrollTop } = ref.current;
+      if (touchDown === null) return;
+      if (throttle) return;
+      setTouch(null);
+      setThrottle(true);
+      setTimeout(() => {
+        setThrottle(false);
+      }, 1310);
+      const footerMinus = page - ref.current.children[5].clientHeight;
+      const footerPlus = page + ref.current.children[5].clientHeight;
+      const minusScroll = page - pageHeight;
+      const plusScroll = page + pageHeight;
+      const currentTouch = e.touches[0].clientY;
+      const touchDirection = touchDown - currentTouch;
+      if (!throttle && touchDown) {
+        if (touchDirection > 4) {
+          //아래로 스크롤;
+          if (page <= 0 && page > -pageHeight * 4) {
+            setPage(minusScroll);
+          } else if (page === -pageHeight * 4 && !isFooter) {
+            setPage(footerMinus);
+            setIsFooter(true);
+          }
+        } else if (touchDirection < -4) {
+          //위로 스크롤
+          if (isFooter) {
+            setPage(footerPlus);
+            setIsFooter(false);
+          } else if (page < 0) {
+            // movePage(pageHeight);
+            setPage(plusScroll);
+          }
         }
       }
-    }
-  },[isFooter, page, pageHeight, throttle, touch]);
+    },
+    [isFooter, page, pageHeight, throttle, touch]
+  );
 
-  const wheelHandler = useCallback((e: React.WheelEvent) => {
-    e.preventDefault();
-    // const pageHeight = ref.current.clientHeight;
-    const scrollDown: boolean = e.deltaY > 0;
-    const scrollUp: boolean = e.deltaY <= 0;
-    const footerHeight = ref.current.children[5].clientHeight;
-    if (throttle) return;
-    setThrottle(true);
-    setTimeout(() => {
-      setThrottle(false);
-    }, 1210);
-    if (!throttle) {
-      if (scrollDown) {
-        //아래로 스크롤;
-        if (page <= 0 && page > -pageHeight * 4) {
-          setPage((prev) => prev - pageHeight);
-        } else if (page === -pageHeight * 4 && !isFooter) {
-          setPage((prev) => prev - footerHeight);
-          setIsFooter(true);
-        }
-      } else if (scrollUp) {
-        //위로 스크롤
-        if (page < -pageHeight * 4 && isFooter) {
-          setPage((prev) => prev + footerHeight);
-          setIsFooter(false);
-        } else if (page < 0) {
-          // movePage(pageHeight);
-          setPage((prev) => prev + pageHeight);
+  const wheelHandler = useCallback(
+    (e: React.WheelEvent) => {
+      e.preventDefault();
+      // const pageHeight = ref.current.clientHeight;
+      const scrollDown: boolean = e.deltaY > 0;
+      const scrollUp: boolean = e.deltaY <= 0;
+      if (throttle) return;
+      setThrottle(true);
+      setTimeout(() => {
+        setThrottle(false);
+      }, 1210);
+      const footerMinus = page - ref.current.children[5].clientHeight;
+      const footerPlus = page + ref.current.children[5].clientHeight;
+      const minusScroll = page - pageHeight;
+      const plusScroll = page + pageHeight;
+      if (!throttle) {
+        if (scrollDown) {
+          //아래로 스크롤;
+          if (page <= 0 && page > -pageHeight * 4) {
+            setPage(minusScroll);
+          } else if (page === -pageHeight * 4 && !isFooter) {
+            setPage(footerMinus);
+            setIsFooter(true);
+          }
+        } else if (scrollUp) {
+          //위로 스크롤
+          if (isFooter) {
+            setPage(footerPlus);
+            setIsFooter(false);
+          } else if (page < 0) {
+            // movePage(pageHeight);
+            setPage(plusScroll);
+          }
         }
       }
-    }
-  }, [isFooter, page, pageHeight, throttle]);
+    },
+    [isFooter, page, pageHeight, throttle]
+  );
 
   useEffect(() => {
     const refCurrent = ref.current;
