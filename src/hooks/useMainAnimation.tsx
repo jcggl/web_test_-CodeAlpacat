@@ -45,7 +45,7 @@ const useMainAnimation = (
             "translateY(0px)";
           setTimeout(() => {
             setSubIntro(false);
-          }, 1000);
+          }, 600);
         }
         
       } else if (!mainAnimation) {

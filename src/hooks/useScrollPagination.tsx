@@ -21,6 +21,12 @@ const useScrollPagination = () => {
   });
 
   useEffect(() => {
+    setStyle(() => {
+      return {
+        transform: `translateY(0px)`,
+        transition: "all 0.7s ease-in-out",
+      };
+    });
     setTimeout(() => {
       setThrottle(false);
     }, 1010);
@@ -41,14 +47,13 @@ const useScrollPagination = () => {
     (e: React.TouchEvent<HTMLInputElement>): void => {
       e.preventDefault();
       const touchDown: number | null = touch;
-      const { scrollTop } = ref.current;
       if (touchDown === null) return;
       if (throttle) return;
       setTouch(null);
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1310);
+      }, 1010);
       const footerMinus = page - ref.current.children[5].clientHeight;
       const footerPlus = page + ref.current.children[5].clientHeight;
       const minusScroll = page - pageHeight;
@@ -89,7 +94,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       setTimeout(() => {
         setThrottle(false);
-      }, 1210);
+      }, 1010);
       const footerMinus = page - ref.current.children[5].clientHeight;
       const footerPlus = page + ref.current.children[5].clientHeight;
       const minusScroll = page - pageHeight;

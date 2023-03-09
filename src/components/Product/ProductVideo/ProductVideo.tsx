@@ -17,7 +17,7 @@ const ProductVideo = (props: Props) => {
   const [timer, setTimer] = useState<any>([]);
 
   useEffect(() => {
-    
+    console.log(videoRef.current)
     if (isPlaying) {
       videoRef.current.play();
     } else {
@@ -32,6 +32,12 @@ const ProductVideo = (props: Props) => {
   const toggleMute = () => {
     setIsMuted((prev) => !prev);
   };
+
+  // const onEndedHandler = () => {
+  //   if (videoRef.current.ended === true){
+  //     videoRef.current.pause();
+  //   }
+  // }
 
   const togglePlay = () => {
     setIsPlaying((prev) => !prev);
