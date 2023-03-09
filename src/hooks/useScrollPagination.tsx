@@ -7,8 +7,6 @@ interface positionStyleType {
   OverflowY?: string;
 }
 
-let curTime = 0;
-
 const useScrollPagination = () => {
   const ref = useRef<any>();
   const [touch, setTouch] = useState<number | null>(null);
@@ -105,7 +103,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       let t = setTimeout(() => {
         setThrottle(false);
-      }, 1310);
+      }, 1410);
       setTimer([...newTimer, t]);
 
       const footerMinus = page - ref.current.children[5].clientHeight;
