@@ -105,7 +105,7 @@ const useScrollPagination = () => {
       setThrottle(true);
       let t = setTimeout(() => {
         setThrottle(false);
-      }, 1700);
+      }, 1310);
       setTimer([...newTimer, t]);
 
       const footerMinus = page - ref.current.children[5].clientHeight;
@@ -138,7 +138,7 @@ const useScrollPagination = () => {
 
   useEffect(() => {
     const refCurrent = ref.current;
-    refCurrent.addEventListener("wheel", wheelHandler, false);
+    refCurrent.addEventListener("wheel", wheelHandler, { once: true });
     refCurrent.addEventListener("touchstart", handleTouchStart);
     refCurrent.addEventListener("touchmove", touchScrollHandler);
 
