@@ -42,7 +42,9 @@ const NavRouters = ({
           <NavLink
             key={`NavLinkKey${index}`}
             to={`/${address}`}
-            className={`flex justify-center items-center pad:w-[clamp(74px,6.852vw,128px)] desktop:w-[clamp(128px,6.667vw,153.6px)] ${isHome} ${selectedFont} transition duration-[150ms] hover:opacity-70`}
+            className={`flex justify-center items-center ${isHome} ${selectedFont} transition duration-[150ms] hover:opacity-70`}
+            //424 697
+            // pad:w-[clamp(74px,6.852vw,128px)] desktop:w-[clamp(128px,6.667vw,153.6px)]
             onClick={(e: any) => checkActiveLink(e, address)}
           >
             {address}

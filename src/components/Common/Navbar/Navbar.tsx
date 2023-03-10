@@ -48,7 +48,7 @@ const Navbar = (props:any) => {
         checkActiveLink={checkActiveLink}
         isTechVision={isTechVision}
       />
-      <div className="hidden pad:flex justify-center items-center font-spline pad:gap-x-[clamp(8px,0.741vw,10px)] desktop:gap-x-[clamp(10px,0.521vw,12px)] pad:text-[clamp(12px,1.111vw,18px)] desktop:text-[clamp(18px,0.938vw,21.6px)] leading-[166%]">
+      <div className="hidden pad:flex justify-center items-center font-spline pad:gap-x-[clamp(43.2px,4vw,79.8px)] desktop:gap-x-[clamp(79.8px,4.156vw,95.76px)] pad:text-[clamp(12px,1.111vw,18px)] desktop:text-[clamp(18px,0.938vw,21.6px)] leading-[166%]">
         <NavRouters
           isTechVision={isTechVision}
           location={location}
