@@ -6,4 +6,5 @@ export interface CarouselCardType {
   subTitle?: string;
   description?: string;
   videoSrc: string;
+  iosVideoSrc: string;
 }

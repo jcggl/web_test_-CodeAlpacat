@@ -7,6 +7,7 @@ import pauseButton from "@/assets/svg/product/pause-button.svg";
 
 type Props = {
   videoSrc: string;
+  iosVideoSrc: string;
 };
 
 const ProductVideo = (props: Props) => {
@@ -149,6 +150,7 @@ const ProductVideo = (props: Props) => {
         // onEnded={}
       >
         <source src={props.videoSrc} type="video/webm" />
+        <source src={props.iosVideoSrc} type="video/h264" />
       </video>
     </div>
   );
