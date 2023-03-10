@@ -12,7 +12,7 @@ const ModalRouter = () => {
   const [hoverHire, setHoverHire] = useState<string>("right-0");
 
   const expandDiv = () => {
-    setHoverHire("right-[-25%]");
+    setHoverHire("right-[-33%]");
   };
   const shortenDiv = () => {
     setHoverHire("right-0");
@@ -60,11 +60,11 @@ const ModalRouter = () => {
           href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"
           target="_blank"
           rel="noopener noreferrer"
-          className={`absolute flex items-center justify-end right-0 pr-[clamp(22px,1.146vw,100vw)] rounded-[5rem] bg-main-grey w-[clamp(156px,43.333vw,245px)] h-[clamp(46px,12.778vw,64px)] transition-all ease-in-out duration-[300ms] ${hoverHire}`}
+          className={`absolute flex items-center justify-end right-0 pr-[clamp(22px,1.146vw,100vw)] rounded-[5rem] bg-main-grey w-[clamp(156px,43.333vw,245px)] h-[clamp(46px,12.778vw,64px)] transition-all ease-in-out duration-[200ms] ${hoverHire}`}
         >
           <div
             className={`${
-              hoverHire === "right-[-25%]" ? "opacity-100" : "opacity-0"
+              hoverHire === "right-[-33%]" ? "opacity-100" : "opacity-0"
             } transition-all ease-out duration-[300ms] font-bold`}
           >
             KO
