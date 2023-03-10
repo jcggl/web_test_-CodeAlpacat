@@ -9,8 +9,8 @@ import beergang from "@/assets/videos/beergang_video.mp4";
 export const products: CarouselCardType[] = [
   {
     imageList: kikitownImageList,
-    videoSrc: kikitown,
-    iosVideoSrc: kikitown,
+    videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/kiki_video.mp4",
+    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/kiki_video.mp4",
     href: "https://www.kiki.town/",
     title: "Kiki Town",
     subTitle: "Off with your video, On with your avatar!",
@@ -19,8 +19,8 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: marionetteImageList,
-    videoSrc: marionette,
-    iosVideoSrc: marionette,
+    videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/marionette_video.mp4",
+    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/marionette_video.mp4",
     href: "#",
     title: "Marionette API",
     subTitle: "Make your avatar alive with your face and voice.",
@@ -29,8 +29,8 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: beergangImageList,
-    videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/homepage_main.mp4",
-    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/homepage_main.mp4",
+    videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/beergang_video.mp4",
+    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/beergang_video.mp4",
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",
