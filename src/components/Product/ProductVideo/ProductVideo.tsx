@@ -149,7 +149,7 @@ const ProductVideo = (props: Props) => {
         controls={false}
         // onEnded={}
       >
-        <source src={props.videoSrc} type="video/mp4" />
+        {/* <source src={props.videoSrc} type="video/mp4" /> */}
         <source src={props.iosVideoSrc} type="video/mp4" />
       </video>
     </div>
