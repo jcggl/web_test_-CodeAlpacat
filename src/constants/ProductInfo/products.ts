@@ -2,7 +2,7 @@ import { CarouselCardType } from "@/components/Product/CarouselCard/CarouselCard
 import { beergangImageList } from "@/constants/Images/beergang-image-list";
 import { kikitownImageList } from "@/constants/Images/kikitown-image-list";
 import { marionetteImageList } from "@/constants/Images/marionette-image-list";
-import kikitown from "@/assets/videos/kiki_video.mp4";
+import kikitown from "../../assets/videos/kiki_video.mp4";
 import marionette from "@/assets/videos/marionette_video.mp4";
 import beergang from "@/assets/videos/beergang_video.mp4";
 
@@ -10,7 +10,7 @@ export const products: CarouselCardType[] = [
   {
     imageList: kikitownImageList,
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/kiki_video.mp4",
-    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/kiki_video.mp4",
+    iosVideoSrc: kikitown,
     href: "https://www.kiki.town/",
     title: "Kiki Town",
     subTitle: "Off with your video, On with your avatar!",
@@ -20,7 +20,7 @@ export const products: CarouselCardType[] = [
   {
     imageList: marionetteImageList,
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/marionette_video.mp4",
-    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/marionette_video.mp4",
+    iosVideoSrc: marionette,
     href: "#",
     title: "Marionette API",
     subTitle: "Make your avatar alive with your face and voice.",
@@ -30,7 +30,7 @@ export const products: CarouselCardType[] = [
   {
     imageList: beergangImageList,
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/beergang_video.mp4",
-    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/beergang_video.mp4",
+    iosVideoSrc: beergang,
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",

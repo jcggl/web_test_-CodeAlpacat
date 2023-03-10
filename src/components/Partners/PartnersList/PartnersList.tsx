@@ -78,7 +78,7 @@ const PartnersList = () => {
           );
         })}
       </div>
-      <div className="flex pad:gap-x-[clamp(74.8px,6.926vw,110px)] desktop:gap-x-[clamp(110px,5.729vw,100vw)]">
+      {/* <div className="flex pad:gap-x-[clamp(74.8px,6.926vw,110px)] desktop:gap-x-[clamp(110px,5.729vw,100vw)]">
         {thirdLayerImage.current.map((item, index) => {
           return (
             <AngelPartnerWrapper
@@ -90,7 +90,7 @@ const PartnersList = () => {
             />
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };

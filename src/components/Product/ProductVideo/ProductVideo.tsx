@@ -93,7 +93,7 @@ const ProductVideo = (props: Props) => {
     }, 1000);
     setTimer((prev: any) => [...prev, t]);
   };
-
+  console.log(props.iosVideoSrc)
   return (
     <div className="relative mx-auto w-[clamp(300px,83.333vw,563px)] pad:w-[clamp(717.35px,66.421vw,1000px)] desktop:w-[clamp(1000px,52.083vw,1200px)] aspect-[1000/562.5] cursor-pointer">
       {isMuted ? (
@@ -150,6 +150,7 @@ const ProductVideo = (props: Props) => {
         // onEnded={}
       >
         <source src={props.videoSrc} type="video/mp4" />
+        <source src={props.iosVideoSrc} type="video/mp4" />
       </video>
     </div>
   );
