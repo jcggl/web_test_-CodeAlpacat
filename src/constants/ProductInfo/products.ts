@@ -9,7 +9,7 @@ import { marionetteImageList } from "@/constants/Images/marionette-image-list";
 export const products: CarouselCardType[] = [
   {
     imageList: kikitownImageList,
-    videoSrc: "videos/kiki_video.webm",
+    videoSrc: "videos/kiki_video.mp4",
     iosVideoSrc: "videos/kiki_video.mp4",
     href: "https://www.kiki.town/",
     title: "Kiki Town",
@@ -19,7 +19,7 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: marionetteImageList,
-    videoSrc: "videos/marionette_video.webm",
+    videoSrc: "videos/marionette_video.mp4",
     iosVideoSrc: "videos/marionette_video.mp4",
     href: "#",
     title: "Marionette API",
@@ -29,7 +29,7 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: beergangImageList,
-    videoSrc: "videos/beergang_video.webm",
+    videoSrc: "videos/beergang_video.mp4",
     iosVideoSrc: "videos/beergang_video.mp4",
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
