@@ -8,25 +8,25 @@ const OurPartners = () => {
   const { ref, style } = usePartnerAnimation(0.7);
   const { width } = useResize();
 
-    const imageRatio = useRef<string[]>([
-      "aspect-[249.28/57.42]", //naverZ
-      "aspect-[219.61/111.02]", //lineNext
-      "aspect-[236/91]", //d2StartUp
-      "aspect-[219.86/68]", //dosi
-      "aspect-[277.84/100]", //nvidia
-      "aspect-[139.12/130]", //planetarium
-      "aspect-[100.31/150]", //kimgisaLab
-    ]);
+  const imageRatio = useRef<string[]>([
+    "aspect-[249.28/57.42]", //naverZ
+    "aspect-[219.61/111.02]", //lineNext
+    "aspect-[236/91]", //d2StartUp
+    "aspect-[219.86/68]", //dosi
+    "aspect-[277.84/100]", //nvidia
+    "aspect-[139.12/130]", //planetarium
+    "aspect-[100.31/150]", //kimgisaLab
+  ]);
 
-    const imageWidth = useRef<string[]>([
-      "w-[clamp(115.5px,32.083vw,169.51px)] pad:w-[clamp(169.51px,15.695vw,249.28px)] desktop:w-[clamp(249.28px,12.983vw,100vw)]", //naverZ
-      "w-[clamp(101.75px,28.264vw,149.33px)] pad:w-[clamp(149.33px,13.827vw,219.61px)] desktop:w-[clamp(219.61px,11.438vw,100vw)]", //lineNext
-      "w-[clamp(108.56px,30.156vw,159.69px)] pad:w-[clamp(159.69px,14.786vw,236px)] desktop:w-[clamp(236px,12.292vw,100vw)]", //d2StartUp
-      "w-[clamp(101.14px,28.094vw,149.51px)] pad:w-[clamp(149.51px,13.844vw,219.86px)] desktop:w-[clamp(219.86px,11.451vw,100vw)]", //dosi
-      "w-[clamp(127.81px,35.503vw,188px)] pad:w-[clamp(188px,17.407vw,277.84px)] desktop:w-[clamp(277.84px,14.471vw,100vw)]", //nvidia
-      "w-[clamp(64.46px,17.906vw,96.69px)] pad:w-[clamp(94.6px,8.759vw,139.12px)] desktop:w-[clamp(139.12px,7.246vw,100vw)]", //planetarium
-      "w-[clamp(46.48px,12.911vw,68.21px)] pad:w-[clamp(68.21px,6.316vw,100.31px)] desktop:w-[clamp(100.31px,5.224vw,100vw)]", //kimgisaLab
-    ]);
+  const imageWidth = useRef<string[]>([
+    "w-[clamp(115.5px,32.083vw,169.51px)] pad:w-[clamp(169.51px,15.695vw,249.28px)] desktop:w-[clamp(249.28px,12.983vw,100vw)]", //naverZ
+    "w-[clamp(101.75px,28.264vw,149.33px)] pad:w-[clamp(149.33px,13.827vw,219.61px)] desktop:w-[clamp(219.61px,11.438vw,100vw)]", //lineNext
+    "w-[clamp(108.56px,30.156vw,159.69px)] pad:w-[clamp(159.69px,14.786vw,236px)] desktop:w-[clamp(236px,12.292vw,100vw)]", //d2StartUp
+    "w-[clamp(101.14px,28.094vw,149.51px)] pad:w-[clamp(149.51px,13.844vw,219.86px)] desktop:w-[clamp(219.86px,11.451vw,100vw)]", //dosi
+    "w-[clamp(127.81px,35.503vw,188px)] pad:w-[clamp(188px,17.407vw,277.84px)] desktop:w-[clamp(277.84px,14.471vw,100vw)]", //nvidia
+    "w-[clamp(64.46px,17.906vw,96.69px)] pad:w-[clamp(94.6px,8.759vw,139.12px)] desktop:w-[clamp(139.12px,7.246vw,100vw)]", //planetarium
+    "w-[clamp(46.48px,12.911vw,68.21px)] pad:w-[clamp(68.21px,6.316vw,100.31px)] desktop:w-[clamp(100.31px,5.224vw,100vw)]", //kimgisaLab
+  ]);
 
   return (
     <div
@@ -61,11 +61,17 @@ const OurPartners = () => {
           />
           <AutoSlider
             // intersectionStyle={style}
-            imageRatio={[...imageRatio.current.slice(4, 7), ""]}
-            imageWidth={[...imageWidth.current.slice(4, 7), ""]}
+            imageRatio={[
+              ...imageRatio.current.slice(4, 7),
+              imageRatio.current[0],
+            ]}
+            imageWidth={[
+              ...imageWidth.current.slice(4, 7),
+              imageWidth.current[0],
+            ]}
             interval={2700}
             slideRange={2}
-            imageList={[...partnersImageList.slice(4, 7), [""]]}
+            imageList={[...partnersImageList.slice(4, 7), partnersImageList[0]]}
             slideStyle="flex pad:hidden"
           />
         </div>

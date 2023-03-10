@@ -54,24 +54,25 @@ const PartnersList = () => {
 
   return (
     <div className="hidden pad:flex flex-col items-center pad:mt-[clamp(122.4px,11.333vw,180px)] desktop:mt-[clamp(180px,9.375vw,100vw)] pad:gap-y-[clamp(60.52px,5.604vw,89px)] desktop:gap-y-[clamp(89px,4.635vw,100vw)] pad:mb-[clamp(137.36px,12.719vw,202px)] desktop:mb-[clamp(202px,10.521vw,100vw)]">
-      <div className="flex pad:gap-x-[clamp(17.68px,1.637vw,26px)] desktop:gap-x-[clamp(26px,1.354vw,100vw)]">
+      <div className="flex pad:gap-x-[clamp(88.4px,8.185vw,130px)] desktop:gap-x-[clamp(130px,6.771vw,100vw)]">
         {firstLayer.current.map((item, index) => {
           return (
             <PartnerWrapper
               key={`firstLayer${index}`}
-              boxStyle="pad:w-[clamp(204px,18.889vw,300px)] desktop:w-[clamp(300px,15.625vw,100vw)]"
+              boxStyle=""
               style={item}
               src={firstLayerImage.current[index]}
             />
           );
         })}
       </div>
-      <div className="flex pad:gap-x-[clamp(17.68px,1.637vw,26px)] desktop:gap-x-[clamp(26px,1.354vw,100vw)]">
+      <div className="flex pad:gap-x-[clamp(88.4px,8.185vw,130px)] desktop:gap-x-[clamp(130px,6.771vw,100vw)]">
         {secondLayer.current.map((item, index) => {
           return (
             <PartnerWrapper
               key={`secondLayer${index}`}
-              boxStyle="pad:w-[clamp(204px,18.889vw,300px)] desktop:w-[clamp(300px,15.625vw,100vw)]"
+              boxStyle=""
+              // pad:w-[clamp(204px,18.889vw,300px)] desktop:w-[clamp(300px,15.625vw,100vw)]
               style={item}
               src={secondLayerImage.current[index]}
             />
