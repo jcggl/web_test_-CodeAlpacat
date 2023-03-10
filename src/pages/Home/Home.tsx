@@ -7,14 +7,12 @@ import {
   WebThreeIntro,
 } from "@/components/Home";
 import { TouchScrollProvider } from "@/contexts/TouchScrollContext";
-import useResetScroll from "@/hooks/useResetScroll";
 import useScrollPagination from "@/hooks/useScrollPagination";
 import { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const { ref: scrollRef, style } = useScrollPagination();
-  useResetScroll();
   return (
     <TouchScrollProvider>
       <Suspense fallback={null}>
