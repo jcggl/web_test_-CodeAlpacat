@@ -6,24 +6,45 @@ import playButton from "@/assets/svg/product/play-button.svg";
 import pauseButton from "@/assets/svg/product/pause-button.svg";
 
 type Props = {
-  videoSrc: string
+  videoSrc: string;
 };
 
 const ProductVideo = (props: Props) => {
   const videoRef = useRef<any>();
   const [isMuted, setIsMuted] = useState<boolean>(true);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [hover, setHover] = useState<string>("opacity-0");
   const [timer, setTimer] = useState<any>([]);
 
   useEffect(() => {
-    console.log(videoRef.current)
-    if (isPlaying) {
-      videoRef.current.play();
-    } else {
-      videoRef.current.pause();
-    }
-  }, [isPlaying]);
+    let handlePlay = (entries: any): any => {
+      entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
+          if (isPlaying) {
+            videoRef.current.play();
+          } else if (!isPlaying) {
+            videoRef.current.pause();
+          }
+        }
+      });
+    };
+    let observer = new IntersectionObserver(handlePlay, {
+      threshold: 0.8,
+      rootMargin: "0px",
+    });
+
+    if (videoRef.current) observer.observe(videoRef.current);
+
+    return () => observer.disconnect();
+  }, [videoRef, isPlaying]);
+
+  // useEffect(() => {
+  //   if (isPlaying) {
+  //     videoRef.current.play();
+  //   } else {
+  //     videoRef.current.pause();
+  //   }
+  // }, [isPlaying]);
 
   const onFullScreenHandler = () => {
     videoRef.current?.requestFullscreen();
@@ -78,14 +99,14 @@ const ProductVideo = (props: Props) => {
         <img
           onClick={toggleMute}
           className="absolute w-[clamp(26px,7.222vw,39px)] pad:w-[clamp(40.8px,3.778vw,60px)] desktop:w-[clamp(60px,3.125vw,100vw)] bottom-[clamp(7.75px,2.153vw,20px)] pad:bottom-[clamp(20px,1.852vw,29.5px)] desktop:bottom-[clamp(29.5px,1.536vw,100vw)] left-[clamp(9px,2.5vw,21.76px)] pad:left-[clamp(21.76px,2.015vw,32px)] desktop:left-[clamp(32px,1.667vw,100vw)] hover:invert transition duration-[250ms] cursor-pointer z-[2] aspect-square"
-          src={soundOn}
+          src={soundOff}
           alt="음소거해제"
         />
       ) : (
         <img
           onClick={toggleMute}
           className="absolute w-[clamp(26px,7.222vw,39px)] pad:w-[clamp(40.8px,3.778vw,60px)] desktop:w-[clamp(60px,3.125vw,100vw)] bottom-[clamp(7.75px,2.153vw,20px)] pad:bottom-[clamp(20px,1.852vw,29.5px)] desktop:bottom-[clamp(29.5px,1.536vw,100vw)] left-[clamp(9px,2.5vw,21.76px)] pad:left-[clamp(21.76px,2.015vw,32px)] desktop:left-[clamp(32px,1.667vw,100vw)] hover:invert transition duration-[250ms] cursor-pointer z-[2] aspect-square"
-          src={soundOff}
+          src={soundOn}
           alt="음소거"
         />
       )}
@@ -100,19 +121,20 @@ const ProductVideo = (props: Props) => {
           onClick={togglePlay}
           onMouseEnter={hoverVideo}
           onMouseMove={moveMouseHandler}
-          className={`absolute w-[clamp(69px,19.167vw,90px)] pad:w-[clamp(115.6px,10.704vw,170px)] desktop:w-[clamp(170px,8.854vw,100vw)] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] transition duration-[350ms] cursor-pointer ${hover}`}
+          className={`absolute w-[clamp(69px,19.167vw,90px)] pad:w-[clamp(81.6px,7.556vw,120px)] desktop:w-[clamp(120px,6.250vw,100vw)] top-[50%] left-[52%] translate-x-[-50%] translate-y-[-50%] z-[2] transition duration-[350ms] cursor-pointer ${hover}`}
           src={pauseButton}
           alt="정지 버튼"
         />
       ) : (
         <img
           onClick={togglePlay}
-          className="absolute w-[clamp(69px,19.167vw,90px)] pad:w-[clamp(115.6px,10.704vw,170px)] desktop:w-[clamp(170px,8.854vw,100vw)] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[2] transition duration-[350ms] cursor-pointer"
+          className="absolute w-[clamp(69px,19.167vw,90px)] pad:w-[clamp(81.6px,7.556vw,120px)] desktop:w-[clamp(120px,6.250vw,100vw)] top-[50%] left-[52%] translate-x-[-50%] translate-y-[-50%] z-[2] transition duration-[350ms] cursor-pointer"
           src={playButton}
           alt="플레이 버튼"
         />
       )}
       <video
+        playsInline
         onMouseEnter={hoverVideo}
         onMouseMove={moveMouseHandler}
         onMouseLeave={unHoverVideo}
@@ -120,9 +142,9 @@ const ProductVideo = (props: Props) => {
         className="w-full h-full"
         style={{ clipPath: "inset(1px 1px)" }}
         ref={videoRef}
-        muted={!isMuted}
+        muted={isMuted}
         autoPlay={false}
-        loop={false}
+        loop={true}
         controls={false}
         // onEnded={}
       >

@@ -14,7 +14,7 @@ const MemberInfo = ({
 }: MemberInfoType) => {
   return (
     <div className="flex flex-col justify-center">
-      <h5 className="text-[clamp(11px,3.056vw,14px)] pad:text-[clamp(12px,1.111vw,22px)] desktop:text-[clamp(18px,0.938vw,21.6px)] leading-[200%] pad:leading-[216%] desktop:leading-[200%]">
+      <h5 className="text-[clamp(11px,3.056vw,14px)] pad:text-[clamp(12px,1.111vw,22px)] desktop:text-[clamp(18px,0.938vw,21.6px)] leading-[150%] pad:leading-[216%] desktop:leading-[200%]">
         {role}
       </h5>
       <div className="flex justify-between">

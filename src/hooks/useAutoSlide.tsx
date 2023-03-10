@@ -20,6 +20,10 @@ const useAutoSlide = (imageSize: number) => {
     transition: "all 0.5s ease-out",
   });
 
+  const initialLogoHandler = useCallback((index:number) => {
+    setCurrent(index)
+  },[])
+
   /**
    * 윈도우 크기에 따라 화면에 보이는 파트너 갯수
    */
@@ -64,7 +68,7 @@ const useAutoSlide = (imageSize: number) => {
     }
   }, [current]);
 
-  return { moveSlide, style, current, contentWidth };
+  return { moveSlide, style, current, contentWidth, initialLogoHandler };
 };
 
 export default useAutoSlide;

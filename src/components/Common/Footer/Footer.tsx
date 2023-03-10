@@ -21,7 +21,7 @@ const Footer = () => {
             hello@goodganglabs.com
           </a>
           <div className="text-[clamp(8px,2.222vw,12px)] pad:text-[clamp(10px,0.926vw,15px)] desktop:text-[clamp(16px,0.833vw,19.2px)] mt-[clamp(42px,11.667vw,63px)] pad:mt-[clamp(48px,4.444vw,72px)] desktop:mt-[clamp(62px,3.229vw,74.4px)]">
-            © 2022 Good Gang Labs Pte. Ltd. All rights reserved.
+            © 2023 GoodGang Labs Pte. Ltd. All rights reserved.
           </div>
         </div>
         <div className="flex flex-col h-full pt-[clamp(32px,8.889vw,48px)] pad:pt-[clamp(26px,2.407vw,39px)] desktop:pt-[clamp(76px,3.958vw,95px)]">

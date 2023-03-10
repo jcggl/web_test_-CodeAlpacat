@@ -46,7 +46,7 @@ export const members: MemberInfoType[] = [
   {
     role: "Full-Stack Developer",
     name: "Iseob Kim",
-    href: "",
+    href: "https://www.linkedin.com/in/seobew/",
     hasLinkedIn: true,
   },
 ];
