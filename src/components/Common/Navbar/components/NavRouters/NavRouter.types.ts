@@ -1,6 +1,6 @@
 export interface NavRouterType {
   location: any;
   selected: string;
-  checkActiveLink(address: string): void;
+  checkActiveLink(e:any, address: string): void;
   isTechVision: boolean
 }

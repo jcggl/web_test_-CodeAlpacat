@@ -1,22 +1,27 @@
-import { resetScrollState } from '@/store/atoms';
-import { useEffect } from 'react';
-import { useSetRecoilState } from 'recoil';
-import { useLocation } from 'react-router-dom';
+import { resetScrollState } from "@/store/atoms";
+import { useEffect } from "react";
+import { useSetRecoilState } from "recoil";
+import { useLocation } from "react-router-dom";
 
 const useResetScroll = () => {
-    const setResetScroll = useSetRecoilState(resetScrollState);
-    const location = useLocation()
-    
-    useEffect(() => {
-      let timer = setTimeout(() => {
-        document.documentElement.scrollTo({
-          top: 0,
-          left: 0,
-        });
-        setResetScroll(true);
-      }, 50);
-      return () => clearTimeout(timer);
-    }, [setResetScroll, location]);
-}
+  const setResetScroll = useSetRecoilState(resetScrollState);
+  const location = useLocation();
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
 
-export default useResetScroll
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      document.documentElement.scrollTo({
+        top: 0,
+        left: 0,
+      });
+      window.scrollTo(0, 0);
+      setResetScroll(true);
+    }, 10);
+
+    return () => clearTimeout(timer);
+  }, [setResetScroll, location]);
+};
+
+export default useResetScroll;

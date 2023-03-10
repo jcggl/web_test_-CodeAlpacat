@@ -54,7 +54,7 @@ const OurPartners = () => {
             // intersectionStyle={style}
             imageRatio={imageRatio.current.slice(0, 4)}
             imageWidth={imageWidth.current.slice(0, 4)}
-            interval={2680}
+            interval={2610}
             slideRange={2}
             imageList={partnersImageList.slice(0, 4)}
             slideStyle="flex pad:hidden mb-[clamp(48px,13.333vw,72px)]"

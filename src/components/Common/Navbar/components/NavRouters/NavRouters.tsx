@@ -27,7 +27,7 @@ const NavRouters = ({ location, selected, checkActiveLink, isTechVision }: NavRo
             key={`NavLinkKey${index}`}
             to={`/${address}`}
             className={`flex justify-center items-center pad:w-[clamp(74px,6.852vw,128px)] desktop:w-[clamp(128px,6.667vw,153.6px)] ${isHome} ${selectedFont} transition delay-150 hover:opacity-70`}
-            onClick={() => checkActiveLink(address)}
+            onClick={(e:any) => checkActiveLink(e,address)}
           >
             {address}
           </NavLink>

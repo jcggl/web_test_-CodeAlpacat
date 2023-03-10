@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useRef } from "react";
 import useResize from "./useResize";
+import { useLocation } from 'react-router-dom';
 interface positionStyleType {
   transform: string;
   transition: string;
@@ -15,6 +16,7 @@ const useScrollPagination = () => {
   const [page, setPage] = useState<number>(0);
   const [isFooter, setIsFooter] = useState<boolean>(false);
   const [timer, setTimer] = useState<any>([]);
+  const location = useLocation()
 
   const [style, setStyle] = useState<positionStyleType>({
     transform: `translateY(0px)`,
@@ -22,6 +24,7 @@ const useScrollPagination = () => {
   });
 
   useEffect(() => {
+    setPage(0)
     setStyle(() => {
       return {
         transform: `translateY(0px)`,
@@ -30,8 +33,8 @@ const useScrollPagination = () => {
     });
     setTimeout(() => {
       setThrottle(false);
-    }, 1010);
-  }, []);
+    }, 1110);
+  }, [location]);
 
   useEffect(() => {
     setStyle((prev) => ({ ...prev, transform: `translateY(${page}px)` }));

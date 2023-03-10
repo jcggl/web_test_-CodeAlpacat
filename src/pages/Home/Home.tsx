@@ -12,6 +12,7 @@ import { Suspense, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
+
   const { ref: scrollRef, style } = useScrollPagination();
   return (
     <TouchScrollProvider>

@@ -11,16 +11,17 @@ import NavRouters from "./components/NavRouters/NavRouters";
 import NavLogo from "./components/NavLogo/NavLogo";
 import { resetScrollState } from "@/store/atoms";
 import { useRecoilValue } from "recoil";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props:any) => {
   const location = useLocation();
   const { ref, isTechVision } = useReverseColor();
   const { style } = useHideOnScroll();
   const { closeNavigation, toggle } = useContext(NavigationContext);
   const resetScroll = useRecoilValue(resetScrollState);
   const [selected, setSelected] = useState<string>("/");
-
-  const checkActiveLink = (current: string): void => {
+  
+  const checkActiveLink = (e:any, current: string): void => {
     setSelected("/" + current);
     closeNavigation();
   };

@@ -1,5 +1,5 @@
 export interface NavLogoType {
   location: any,
-  checkActiveLink(address:string):void,
+  checkActiveLink(e:any, address:string):void,
   isTechVision: boolean
 }
