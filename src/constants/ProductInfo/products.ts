@@ -10,7 +10,7 @@ export const products: CarouselCardType[] = [
   {
     imageList: kikitownImageList,
     videoSrc: "videos/kiki_video.webm",
-    iosVideoSrc: "videos/kiki_video.h264",
+    iosVideoSrc: "videos/kiki_video.mp4",
     href: "https://www.kiki.town/",
     title: "Kiki Town",
     subTitle: "Off with your video, On with your avatar!",
@@ -20,7 +20,7 @@ export const products: CarouselCardType[] = [
   {
     imageList: marionetteImageList,
     videoSrc: "videos/marionette_video.webm",
-    iosVideoSrc: "videos/marionette_video.h264",
+    iosVideoSrc: "videos/marionette_video.mp4",
     href: "#",
     title: "Marionette API",
     subTitle: "Make your avatar alive with your face and voice.",
@@ -30,7 +30,7 @@ export const products: CarouselCardType[] = [
   {
     imageList: beergangImageList,
     videoSrc: "videos/beergang_video.webm",
-    iosVideoSrc: "videos/beergang_video.h264",
+    iosVideoSrc: "videos/beergang_video.mp4",
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",

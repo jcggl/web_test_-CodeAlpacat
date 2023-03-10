@@ -149,8 +149,7 @@ const ProductVideo = (props: Props) => {
         controls={false}
         // onEnded={}
       >
-        <source src={props.videoSrc} type="video/webm" />
-        <source src={props.iosVideoSrc} type="video/h264" />
+        <source src={props.videoSrc} type="video/mp4" />
       </video>
     </div>
   );
