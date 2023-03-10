@@ -29,8 +29,8 @@ export const products: CarouselCardType[] = [
   },
   {
     imageList: beergangImageList,
-    videoSrc: beergang,
-    iosVideoSrc: beergang,
+    videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/homepage_main.mp4",
+    iosVideoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/homepage_main.mp4",
     href: "https://www.beergang.xyz/",
     title: "Beergang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",
