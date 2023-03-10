@@ -66,7 +66,7 @@ const NavRouters = ({
           href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"
           target="_blank"
           rel="noopener noreferrer"
-          className={`absolute flex items-center justify-end right-0 pr-[clamp(22px,1.146vw,100vw)] rounded-[5rem] pad:w-[clamp(96px,8.889vw,154px)] desktop:w-[clamp(145px,7.552vw,174px)] aspect-[96/28] transition-all ease-in-out duration-[300ms] ${isHomeBackground} ${isNotHome} ${hoverHire}`}
+          className={`absolute flex items-center justify-end right-0 pad:pr-[clamp(15px,1.389vw,22px)] desktop:pr-[clamp(22px,1.146vw,100vw)] rounded-[5rem] pad:w-[clamp(96px,8.889vw,154px)] desktop:w-[clamp(145px,7.552vw,174px)] aspect-[96/28] transition-all ease-in-out duration-[300ms] ${isHomeBackground} ${isNotHome} ${hoverHire}`}
         >
           <div
             className={`${
