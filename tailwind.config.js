@@ -22,7 +22,7 @@ module.exports = {
         "main-black": "rgba(25, 25, 25, 1)",
         "main-white": "rgba(237, 237, 237, 1)",
         "font-black": "rgba(31, 31, 31, 1)",
-        "main-grey": "rgba(170, 170, 170, 0.8)",
+        "main-grey": "rgba(170, 170, 170, 1)",
         "sub-grey": "rgba(130, 130, 130, 1)",
         "third-grey": "rgba(169, 169, 169, 1)",
       },

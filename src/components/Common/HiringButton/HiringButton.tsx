@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from "react";
 
-
-const HiringButton = ({animationStyle}:{animationStyle:{transform:string}}) => {
+const HiringButton = ({
+  animationStyle,
+}: {
+  animationStyle: { transform: string };
+}) => {
   return (
     <div
       style={animationStyle}
@@ -16,6 +19,6 @@ const HiringButton = ({animationStyle}:{animationStyle:{transform:string}}) => {
       </a>
     </div>
   );
-}
+};
 
-export default HiringButton
+export default HiringButton;

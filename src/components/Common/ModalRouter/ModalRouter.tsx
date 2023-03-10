@@ -9,6 +9,14 @@ const ModalRouter = () => {
   const location = useLocation();
   const { toggleNavigation } = useContext(NavigationContext);
   const [selected, setSelected] = useState<string>("/");
+  const [hoverHire, setHoverHire] = useState<string>("right-0");
+
+  const expandDiv = () => {
+    setHoverHire("right-[-25%]");
+  };
+  const shortenDiv = () => {
+    setHoverHire("right-0");
+  };
 
   const checkActiveLink = (current: string): void => {
     setSelected("/" + current);
@@ -36,15 +44,31 @@ const ModalRouter = () => {
         );
       })}
       <div
-        className={`flex justify-center items-center text-[clamp(20px,5.556vw,30px)] w-[clamp(156px,43.333vw,245px)] h-[clamp(46px,12.778vw,64px)] bg-main-grey rounded-[5rem]`}
+        className={`relative flex justify-center items-center text-[clamp(20px,5.556vw,30px)] w-[clamp(156px,43.333vw,245px)] h-[clamp(46px,12.778vw,64px)] bg-main-grey rounded-[5rem]`}
+        onTouchStart={expandDiv}
+        onTouchEnd={shortenDiv}
       >
         <a
           href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-center text-black font-medium`}
+          className={`text-center text-black font-medium z-[1]`}
         >
           We're hiring!
+        </a>
+        <a
+          href="https://www.notion.so/goodganglabs/GoodGang-Careers-2565b36b1e134c42ac1a56b8a6b45b47"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`absolute flex items-center justify-end right-0 pr-[clamp(22px,1.146vw,100vw)] rounded-[5rem] bg-main-grey w-[clamp(156px,43.333vw,245px)] h-[clamp(46px,12.778vw,64px)] transition-all ease-in-out duration-[300ms] ${hoverHire}`}
+        >
+          <div
+            className={`${
+              hoverHire === "right-[-25%]" ? "opacity-100" : "opacity-0"
+            } transition-all ease-out duration-[300ms] font-bold`}
+          >
+            KO
+          </div>
         </a>
       </div>
     </div>
