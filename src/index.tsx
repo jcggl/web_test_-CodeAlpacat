@@ -22,9 +22,9 @@ root.render(
       <RecoilRoot>
         <NavigationProvider>
           <TechHeightProvider>
-            <BrowserRouter basename="/">
+            <HashRouter basename="/">
               <App />
-            </BrowserRouter>
+            </HashRouter>
           </TechHeightProvider>
         </NavigationProvider>
       </RecoilRoot>
