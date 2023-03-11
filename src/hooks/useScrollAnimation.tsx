@@ -2,7 +2,11 @@ import { useCallback, useEffect } from "react";
 import { useRef } from "react";
 import useResize from "@/hooks/useResize";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { intersectionState, mainAnimationState, subIntroState } from "@/store/atoms";
+import {
+  intersectionState,
+  mainAnimationState,
+  subIntroState,
+} from "@/store/atoms";
 
 const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
@@ -10,27 +14,28 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
   const [subIntroValue, setSubIntroValue] = useRecoilState(subIntroState);
   const setIntersection = useSetRecoilState(intersectionState);
   const setMainAnimation = useSetRecoilState(mainAnimationState);
+  useEffect(() => {
+    ref.current.children[1].children[0].style.transitionProperty = "all";
+    ref.current.children[0].children[0].style.transitionProperty = "all";
+    ref.current.children[0].children[1].children[0].style.transitionProperty =
+      "all";
+    ref.current.children[1].children[0].style.transitionDuration = `${duration}s`;
+    ref.current.children[0].children[0].style.transitionDuration = `${duration}s`;
+    ref.current.children[0].children[1].children[0].style.transitionDuration = `${duration}s`;
+    ref.current.children[1].children[0].style.transitionTimingFunction =
+      "cubic-bezier(0, 0, 0.58, 1)";
+    ref.current.children[0].children[0].style.transitionTimingFunction =
+      "cubic-bezier(0, 0, 0.58, 1)";
+    ref.current.children[0].children[1].children[0].style.transitionTimingFunction =
+      "cubic-bezier(0, 0, 0.58, 1)";
+    ref.current.children[1].children[0].style.transitionDelay = `${delay}s`;
+    ref.current.children[0].children[0].style.transitionDelay = `${delay}s`;
+    ref.current.children[0].children[1].children[0].style.transitionDelay = `${delay}s`;
+  }, [duration, delay]);
 
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting) {
-        ref.current.children[1].children[0].style.transitionProperty = "all";
-        ref.current.children[0].children[0].style.transitionProperty = "all";
-        ref.current.children[0].children[1].children[0].style.transitionProperty =
-          "all";
-        ref.current.children[1].children[0].style.transitionDuration = `${duration}s`;
-        ref.current.children[0].children[0].style.transitionDuration = `${duration}s`;
-        ref.current.children[0].children[1].children[0].style.transitionDuration = `${duration}s`;
-        ref.current.children[1].children[0].style.transitionTimingFunction =
-          "cubic-bezier(0, 0, 0.58, 1)";
-        ref.current.children[0].children[0].style.transitionTimingFunction =
-          "cubic-bezier(0, 0, 0.58, 1)";
-        ref.current.children[0].children[1].children[0].style.transitionTimingFunction =
-          "cubic-bezier(0, 0, 0.58, 1)";
-        ref.current.children[1].children[0].style.transitionDelay = `${delay}s`;
-        ref.current.children[0].children[0].style.transitionDelay = `${delay}s`;
-        ref.current.children[0].children[1].children[0].style.transitionDelay = `${delay}s`;
-
         if (
           ref.current.children[1].children[0].style.transform !==
           "translate3d(0px, 0px, 0px)"
@@ -50,7 +55,7 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
             ref.current.children[0].children[1].children[0].style.transform =
               "translate3d(0, 0, 0)";
             setIntersection(false);
-            setMainAnimation(false)
+            setMainAnimation(false);
           }, 700);
         }
       } else if (!subIntroValue) {
@@ -63,7 +68,12 @@ const useScrollAnimation = (duration: number = 1, delay: number = 0) => {
         setSubIntroValue(true);
       }
     },
-    [delay, duration, subIntroValue, setSubIntroValue, setIntersection, setMainAnimation]
+    [
+      subIntroValue,
+      setSubIntroValue,
+      setIntersection,
+      setMainAnimation,
+    ]
   );
 
   useEffect(() => {

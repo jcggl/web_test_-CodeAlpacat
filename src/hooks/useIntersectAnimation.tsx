@@ -1,4 +1,9 @@
-import { intersectionState, partnerState, subIntroState, wallState } from "@/store/atoms";
+import {
+  intersectionState,
+  partnerState,
+  subIntroState,
+  wallState,
+} from "@/store/atoms";
 import { useRef, useCallback, useEffect } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
@@ -10,17 +15,26 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
 
   const [intersection, setIntersection] = useRecoilState(intersectionState);
 
+  useEffect(() => {
+    for (let i = 0; i < 4; i++) {
+      ref.current.children[i].style.transitionProperty = "all";
+      ref.current.children[i].style.transitionDuration = `${duration}s`;
+      ref.current.children[i].style.transitionTimingFunction =
+        "cubic-bezier(0, 0, 0.58, 1)";
+      ref.current.children[i].style.transitionDelay = `${delay}s`;
+    }
+
+    ref.current.children[4].style.transitionProperty = "all";
+    ref.current.children[4].style.transitionDuration = `${duration}s`;
+    ref.current.children[4].style.transitionTimingFunction =
+      "cubic-bezier(0, 0, 0.58, 1)";
+    ref.current.children[4].style.transitionDelay = `${delay}s`;
+  }, [delay, duration]);
+
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting) {
         for (let i = 0; i < 4; i++) {
-          ref.current.children[i].style.transitionProperty = "all";
-          ref.current.children[i].style.transitionDuration =
-            // i % 2 ? `${duration}s` : `${duration * 1.5}s`;
-            `${duration}s`;
-          ref.current.children[i].style.transitionTimingFunction =
-            "cubic-bezier(0, 0, 0.58, 1)";
-          ref.current.children[i].style.transitionDelay = `${delay}s`;
           if (
             ref.current.children[4].style.transform !==
             "translate3d(0px, 0px, 0px)"
@@ -30,11 +44,6 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
           }
         }
 
-        ref.current.children[4].style.transitionProperty = "all";
-        ref.current.children[4].style.transitionDuration = `${duration}s`;
-        ref.current.children[4].style.transitionTimingFunction =
-          "cubic-bezier(0, 0, 0.58, 1)";
-        ref.current.children[4].style.transitionDelay = `${delay}s`;
         if (
           ref.current.children[4].style.transform !==
           "translate3d(0px, 0px, 0px)"
@@ -48,7 +57,7 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
             ref.current.children[4].style.transform = "translate3d(0,0,0)";
             setSubIntro(false);
             setPartner(false);
-            setWall(false)
+            setWall(false);
           }, 700);
         }
       } else if (!intersection) {
@@ -64,7 +73,13 @@ const useIntersectAnimation = (duration: number = 1, delay: number = 0) => {
         setIntersection(true);
       }
     },
-    [delay, duration, setSubIntro, intersection, setIntersection, setPartner, setWall]
+    [
+      setSubIntro,
+      intersection,
+      setIntersection,
+      setPartner,
+      setWall,
+    ]
   );
 
   useEffect(() => {

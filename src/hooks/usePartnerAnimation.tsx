@@ -8,29 +8,31 @@ const usePartnerAnimation = (duration: number = 1, delay: number = 0) => {
   const setIntersection = useSetRecoilState(intersectionState);
   const setWall = useSetRecoilState(wallState);
 
+  useEffect(() => {
+    for (let i = 0; i < 2; i++) {
+      ref.current.children[i].style.transitionProperty = "all";
+      ref.current.children[i].style.transitionDuration = `${duration}s`;
+      ref.current.children[i].style.transitionTimingFunction =
+        "cubic-bezier(0, 0, 0.58, 1)";
+      ref.current.children[i].style.transitionDelay = `${delay}s`;
+    }
+  }, [delay, duration]);
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting && partner) {
-        for (let i = 0; i < 2; i++) {
-          ref.current.children[i].style.transitionProperty = "all";
-          ref.current.children[i].style.transitionDuration = `${duration}s`;
-          ref.current.children[i].style.transitionTimingFunction =
-            "cubic-bezier(0, 0, 0.58, 1)";
-          ref.current.children[i].style.transitionDelay = `${delay}s`;
-        }
         ref.current.children[0].style.transform = "translate3d(0,0,0)";
         ref.current.children[1].style.transform = "translate3d(0,0,0)";
         setTimeout(() => {
           setIntersection(false);
           setWall(() => false);
-        }, 310)
+        }, 310);
       } else if (!partner) {
         ref.current.children[0].style.transform = "translate3d(0,-15vh,0)";
         ref.current.children[1].style.transform = "translate3d(0,-15vh,0)";
         setPartner(true);
       }
     },
-    [duration, delay, setIntersection, partner, setPartner, setWall]
+    [setIntersection, partner, setPartner, setWall]
   );
 
   useEffect(() => {

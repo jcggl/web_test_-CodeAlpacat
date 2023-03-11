@@ -8,12 +8,11 @@ import {
 } from "@/components/Home";
 import { TouchScrollProvider } from "@/contexts/TouchScrollContext";
 import useScrollPagination from "@/hooks/useScrollPagination";
-import { Suspense, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Suspense } from "react";
 
 const Home = () => {
-
   const { ref: scrollRef, style } = useScrollPagination();
+
   return (
     <TouchScrollProvider>
       <Suspense fallback={null}>

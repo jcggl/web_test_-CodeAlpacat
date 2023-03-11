@@ -1,39 +1,41 @@
-import { mainAnimationState, resetScrollState, subIntroState } from "@/store/atoms";
+import {
+  mainAnimationState,
+  resetScrollState,
+  subIntroState,
+} from "@/store/atoms";
 import React, { useCallback, useEffect, useRef } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import useResize from "./useResize";
 
-const useMainAnimation = (
-  duration: number = 1,
-  delay: number = 0
-) => {
+const useMainAnimation = (duration: number = 1, delay: number = 0) => {
   const ref = useRef<any>();
   const { height } = useResize();
   const setSubIntro = useSetRecoilState(subIntroState);
   const [mainAnimation, setMainAnimation] = useRecoilState(mainAnimationState);
 
+  useEffect(() => {
+    ref.current.children[1].style.transitionProperty = "all";
+    ref.current.children[1].style.transitionDuration = `${duration}s`;
+    ref.current.children[1].style.transitionTimingFunction = "ease-in-out";
+    ref.current.children[1].style.transitionDelay = `${delay}s`;
+    for (let i = 0; i < 3; i++) {
+      ref.current.children[0].children[0].children[i].style.transitionProperty =
+        "all";
+      ref.current.children[0].children[0].children[
+        i
+      ].style.transitionDuration = `${duration}s`;
+      ref.current.children[0].children[0].children[
+        i
+      ].style.transitionTimingFunction = "ease-in-out";
+      ref.current.children[0].children[0].children[
+        i
+      ].style.transitionDelay = `${delay}s`;
+    }
+  }, [delay, duration]);
+
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting) {
-        ref.current.children[1].style.transitionProperty = "all";
-        ref.current.children[1].style.transitionDuration = `${duration}s`;
-        ref.current.children[1].style.transitionTimingFunction = "ease-in-out";
-        ref.current.children[1].style.transitionDelay = `${delay}s`;
-        for (let i = 0; i < 3; i++) {
-          ref.current.children[0].children[0].children[
-            i
-          ].style.transitionProperty = "all";
-          ref.current.children[0].children[0].children[
-            i
-          ].style.transitionDuration = `${duration}s`;
-          ref.current.children[0].children[0].children[
-            i
-          ].style.transitionTimingFunction = "ease-in-out";
-          ref.current.children[0].children[0].children[
-            i
-          ].style.transitionDelay = `${delay}s`;
-        }
-
         if (ref.current.children[1].style.transform !== "scale(1, 1)") {
           ref.current.children[1].style.transform = "scale(1, 1)";
           ref.current.children[1].style.filter = "blur(0px)";
@@ -47,7 +49,6 @@ const useMainAnimation = (
             setSubIntro(false);
           }, 600);
         }
-        
       } else if (!mainAnimation) {
         ref.current.children[1].style.transform = "scale(2.5, 2.5)";
         ref.current.children[1].style.filter = "blur(48px)";
@@ -60,7 +61,7 @@ const useMainAnimation = (
         setMainAnimation(true);
       }
     },
-    [delay, duration, mainAnimation, setMainAnimation, setSubIntro]
+    [mainAnimation, setMainAnimation, setSubIntro]
   );
 
   useEffect(() => {

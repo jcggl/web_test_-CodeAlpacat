@@ -9,19 +9,22 @@ const useTextSlideUp = (duration: number = 1, delay: number = 0) => {
   const { width } = useResize();
   const mobileWidth = width < 1080 ? 600 : 700;
 
+  useEffect(() => {
+    for (let i = 0; i < 3; i++) {
+      ref.current.children[0].children[i].style.transitionProperty = "all";
+      ref.current.children[0].children[
+        i
+      ].style.transitionDuration = `${duration}s`;
+      ref.current.children[0].children[i].style.transitionTimingFunction =
+        "ease-out";
+      ref.current.children[0].children[i].style.transitionDelay = `${delay}s`;
+    }
+  }, [delay, duration]);
+  
   const handleScroll = useCallback(
     ([entry]: any) => {
       if (entry.isIntersecting) {
         for (let i = 0; i < 3; i++) {
-          ref.current.children[0].children[i].style.transitionProperty = "all";
-          ref.current.children[0].children[
-            i
-          ].style.transitionDuration = `${duration}s`;
-          ref.current.children[0].children[i].style.transitionTimingFunction =
-            "ease-out";
-          ref.current.children[0].children[
-            i
-          ].style.transitionDelay = `${delay}s`;
           if (
             ref.current.children[0].children[0].style.transform !==
             "translate3d(0px, 0px, 0px)"
@@ -58,7 +61,7 @@ const useTextSlideUp = (duration: number = 1, delay: number = 0) => {
           "translate3d(0, 14vw, 0)";
       }
     },
-    [duration, delay, wall, mobileWidth]
+    [wall, mobileWidth]
   );
 
   useEffect(() => {
@@ -74,6 +77,20 @@ const useTextSlideUp = (duration: number = 1, delay: number = 0) => {
 
     return () => observer && observer.disconnect();
   }, [handleScroll]);
+
+  //Safari 휠 이벤트 방지
+  // useEffect(() => {
+  //   const curRef = ref.current;
+  //   const preventHandler = (e: any) => {
+  //     e.preventDefault();
+  //   };
+  //   curRef.addEventListener("wheel", preventHandler);
+  //   curRef.addEventListener("scroll", preventHandler);
+  //   return () => {
+  //     curRef.removeEventListener("wheel", preventHandler);
+  //     curRef.removeEventListener("scroll", preventHandler);
+  //   };
+  // }, []);
 
   return {
     ref,

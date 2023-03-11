@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SNSIcon from "@/components/Common/SNSIcon/SNSIcon";
 
 import { SNS_LIST } from "./Footer.constants";
 import { SNSListType } from "./Footer.types";
 
 const Footer = () => {
+
   return (
     <footer className="relative translate-y-[0%] w-full bg-main-black flex h-[clamp(311px,86.389vw,450px)] pad:h-[clamp(185px,17.130vw,275px)] desktop:h-[clamp(330px,17.188vw,396px)] justify-center items-center px-[clamp(36px,10vw,54px)] pad:px-[clamp(159px,14.722vw,236px)] desktop:px-[clamp(263px,13.698vw,100vw)] z-[90]">
       <div className="flex text-main-white w-full h-full flex-col-reverse pad:flex-row justify-around pad:justify-between items-start pad:items-center">
@@ -16,7 +17,7 @@ const Footer = () => {
             href="mailto:hello@goodganglabs.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-extralight underline underline-offset-8 text-[clamp(16px,4.444vw,24px)] pad:text-[clamp(20px,1.852vw,30px)] desktop:text-[clamp(26px,1.354vw,31.2px)] mt-[clamp(12px,3.333vw,18px)] pad:mt-[clamp(8px,0.741vw,12px)] desktop:mt-[clamp(28px,1.458vw,33.6px)]"
+            className="font-extralight underline underline-offset-8 text-[clamp(16px,4.444vw,24px)] pad:text-[clamp(20px,1.852vw,30px)] desktop:text-[clamp(26px,1.354vw,31.2px)] mt-[clamp(12px,3.333vw,18px)] pad:mt-[clamp(8px,0.741vw,12px)] desktop:mt-[clamp(28px,1.458vw,33.6px)] transition-all ease-in-out duration-[300ms] hover:opacity-70"
           >
             hello@goodganglabs.com
           </a>
