@@ -8,7 +8,7 @@ export default (
       <Route path="/About" />
       {/* <Route path="/Technology" /> */}
       <Route path="/Partners" />
-      <Route path="/Product" />
+      <Route path="/Products" />
       <Route path="/Team" />
     </Routes>
   </BrowserRouter>

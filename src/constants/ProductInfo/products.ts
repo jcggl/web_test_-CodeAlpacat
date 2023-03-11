@@ -12,7 +12,7 @@ export const products: CarouselCardType[] = [
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/kiki_video.mp4",
     iosVideoSrc: kikitown,
     href: "https://www.kiki.town/",
-    title: "Kiki Town",
+    title: "kiki Town",
     subTitle: "Off with your video, On with your avatar!",
     description:
       "A place where you feel comfortable and private, no matter how you look and what you're talking about.",
@@ -32,9 +32,9 @@ export const products: CarouselCardType[] = [
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/beergang_video.mp4",
     iosVideoSrc: beergang,
     href: "https://www.beergang.xyz/",
-    title: "Beergang NFT",
+    title: "BeerGang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",
     description:
-      "Beergang is a collection avatars built on the Homebrew Algorithm and stored on blockchain network and IPFS. Using beer and pub culture as a motif.",
+      "BeerGang is a collection avatars built on the Homebrew Algorithm and stored on blockchain network and IPFS. Using beer and pub culture as a motif.",
   },
 ];
