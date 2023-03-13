@@ -17,6 +17,7 @@ function App() {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
 
+  
   useEffect(() => {
     if (location.pathname === "/") {
       document.body.style.overflow = "hidden";

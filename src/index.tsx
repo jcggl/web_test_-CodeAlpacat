@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./reset.css";
 import "./index.css";
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { NavigationProvider } from "@/contexts/NavigationContext";
 import ReactGA from "react-ga";
 import { TechHeightProvider } from "./contexts/TechHeightContext";
@@ -22,9 +22,9 @@ root.render(
       <RecoilRoot>
         <NavigationProvider>
           <TechHeightProvider>
-            <HashRouter basename="/">
+            <BrowserRouter basename="/">
               <App />
-            </HashRouter>
+            </BrowserRouter>
           </TechHeightProvider>
         </NavigationProvider>
       </RecoilRoot>
