@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SNSIcon from "@/components/Common/SNSIcon/SNSIcon";
 
 import { SNS_LIST } from "./Footer.constants";

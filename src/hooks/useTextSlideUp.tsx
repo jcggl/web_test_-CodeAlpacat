@@ -1,4 +1,4 @@
-import { joinUsTextState, wallState } from "@/store/atoms";
+import { wallState } from "@/store/atoms";
 import { useRef, useCallback, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import useResize from "./useResize";

@@ -5,11 +5,15 @@ import { marionetteImageList } from "@/constants/Images/marionette-image-list";
 import kikitown from "../../assets/videos/kiki_video.mp4";
 import marionette from "@/assets/videos/marionette_video.mp4";
 import beergang from "@/assets/videos/beergang_video.mp4";
+import thumbnail1 from "@/assets/product/thumbnail_1.webp";
+import thumbnail2 from "@/assets/product/thumbnail_2.webp";
+import thumbnail3 from "@/assets/product/thumbnail_3.webp";
 
 export const products: CarouselCardType[] = [
   {
     imageList: kikitownImageList,
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/kiki_video.mp4",
+    thumbnail: thumbnail1,
     iosVideoSrc: kikitown,
     href: "https://www.kiki.town/",
     title: "kiki Town",
@@ -20,6 +24,7 @@ export const products: CarouselCardType[] = [
   {
     imageList: marionetteImageList,
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/marionette_video.mp4",
+    thumbnail: thumbnail2,
     iosVideoSrc: marionette,
     href: "#",
     title: "Marionette API",
@@ -31,6 +36,7 @@ export const products: CarouselCardType[] = [
     imageList: beergangImageList,
     videoSrc: "http://d3n7wfb7g7ygbc.cloudfront.net/beergang_video.mp4",
     iosVideoSrc: beergang,
+    thumbnail: thumbnail3,
     href: "https://www.beergang.xyz/",
     title: "BeerGang NFT",
     subTitle: "The world’s first emotionally interactive full-body 3D avatar.",

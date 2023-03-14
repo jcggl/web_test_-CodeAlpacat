@@ -7,4 +7,5 @@ export interface CarouselCardType {
   description?: string;
   videoSrc: string;
   iosVideoSrc: string;
+  thumbnail: string;
 }

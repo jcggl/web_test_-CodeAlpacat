@@ -1,6 +1,5 @@
 import { useState, useCallback } from "react";
 import { useEffect } from "react";
-import { isReturnStatement } from "typescript";
 
 const useResize = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);

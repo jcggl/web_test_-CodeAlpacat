@@ -1,10 +1,9 @@
 import {
   mainAnimationState,
-  resetScrollState,
   subIntroState,
 } from "@/store/atoms";
 import React, { useCallback, useEffect, useRef } from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import useResize from "./useResize";
 
 const useMainAnimation = (duration: number = 1, delay: number = 0) => {

@@ -3,7 +3,6 @@ import { useRef } from "react";
 import useResize from "./useResize";
 import { useLocation } from "react-router-dom";
 import smoothscroll from "smoothscroll-polyfill";
-import gsap from "gsap";
 interface positionStyleType {
   transform: string;
   transition: string;
@@ -16,7 +15,6 @@ const useScrollPagination = () => {
   const { height: pageHeight } = useResize();
   const [throttle, setThrottle] = useState<boolean>(true);
   const [page, setPage] = useState<number>(0);
-  const [isFooter, setIsFooter] = useState<boolean>(false);
   const [timer, setTimer] = useState<any>([]);
   const location = useLocation();
   const [prevPage, setPrevPage] = useState<number>(0);

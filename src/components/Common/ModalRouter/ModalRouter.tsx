@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import NavigationContext from "@/contexts/NavigationContext";
 
-const PATH: string[] = ["About", "Products", "Partners", "Team"];
+const PATH: string[] = ["About", "Products", "Team", "Partners"];
 
 const ModalRouter = () => {
   const location = useLocation();
